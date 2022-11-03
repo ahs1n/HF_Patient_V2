@@ -1,0 +1,1370 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/title2"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/apptitle"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- prno  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVprno"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_prno" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/prno" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/prno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/prno"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.prno}"
+                            app:maxValue="0"
+                            app:minValue="0"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- facility  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVfacility"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_facility" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/facility" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/facility"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/facility"
+                            android:text="@={form.facility}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- date     -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVdate"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_date" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/date" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- time  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVtime"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_time" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/time" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss0title  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss0title"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss0title" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss100  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss100"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss100" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss100" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss100"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/ss100"
+                            android:text="@={form.ss100}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss1title  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss1title"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss1title" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss101  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss101"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss101" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss101" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss101"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/ss101"
+                            android:text="@={form.ss101}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss102  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss102"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss102" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss102" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss102"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/ss102"
+                            android:text="@={form.ss102}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss103  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss103"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss103" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss103" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ss103"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/ss10301"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss103.equals(`1`)}"
+                                android:onClick="@{()->form.setSs103(`1`)}"
+                                android:text="@string/ss10301" />
+
+                            <RadioButton
+                                android:id="@+id/ss10302"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss103.equals(`2`)}"
+                                android:onClick="@{()->form.setSs103(`2`)}"
+                                android:text="@string/ss10302" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss104  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss104"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss104" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss104y" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss104y"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss104y"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss104y}"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss104m" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss104m"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss104m"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss104m}"
+                            app:maxValue="11"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss104d" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss104d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss104d"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss104d}"
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss105  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss105"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss105" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss105" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ss105"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/ss10501"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss105.equals(`1`)}"
+                                android:onClick="@{()->form.setSs105(`1`)}"
+                                android:text="@string/ss10501" />
+
+                            <RadioButton
+                                android:id="@+id/ss10502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss105.equals(`2`)}"
+                                android:onClick="@{()->form.setSs105(`2`)}"
+                                android:text="@string/ss10502" />
+
+                            <RadioButton
+                                android:id="@+id/ss10503"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss105.equals(`3`)}"
+                                android:onClick="@{()->form.setSs105(`3`)}"
+                                android:text="@string/ss10503" />
+
+                            <RadioButton
+                                android:id="@+id/ss10504"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss105.equals(`4`)}"
+                                android:onClick="@{()->form.setSs105(`4`)}"
+                                android:text="@string/ss10504" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss106  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss106"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss106" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss106" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss106"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/ss106"
+                            android:text="@={form.ss106}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss107  CheckBox   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss107"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss107" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss107" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ss107check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/ss10701"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss10701.equals(`1`)}"
+                                android:onClick="@{()->form.setSs10701(form.ss10701.equals(`1`)?``:`1`)}"
+                                android:text="@string/ss10701" />
+
+                            <CheckBox
+                                android:id="@+id/ss10702"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss10702.equals(`2`)}"
+                                android:onClick="@{()->form.setSs10702(form.ss10702.equals(`2`)?``:`2`)}"
+                                android:text="@string/ss10702" />
+
+                            <CheckBox
+                                android:id="@+id/ss10703"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss10703.equals(`3`)}"
+                                android:onClick="@{()->form.setSs10703(form.ss10703.equals(`3`)?``:`3`)}"
+                                android:text="@string/ss10703" />
+
+                            <CheckBox
+                                android:id="@+id/ss10704"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss10704.equals(`4`)}"
+                                android:onClick="@{()->form.setSs10704(form.ss10704.equals(`4`)?``:`4`)}"
+                                android:text="@string/ss10704" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss108  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss108"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss108" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss108" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss108"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss108"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:text="@={form.ss108}"
+                            app:maxValue="99999999999"
+                            app:minValue="11111111111"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss200  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss200"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss200" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss201  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss201"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss201" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss201s" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss201s"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss201s"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss201s}"
+                            app:maxValue="200"
+                            app:minValue="10"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss201d" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss201d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss201d"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss201d}"
+                            app:maxValue="200"
+                            app:minValue="10"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss201nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss201nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs201nr(form.ss201nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss201nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss202  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss202"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss202" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss202" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss202"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss202"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss202}"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss202nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss202nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs202nr(form.ss202nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss202nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss203  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss203"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss203" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss203" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss203"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss203"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss203}"
+                            app:maxValue="99"
+                            app:minValue="30"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss203nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss203nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs203nr(form.ss203nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss203nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss204  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss204"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss204" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss204" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss204"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss204"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss204}"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss204nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss204nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs204nr(form.ss204nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss204nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss205  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss205"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss205" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss205" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss205"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss205"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss205}"
+                            app:maxValue="100"
+                            app:minValue="50"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss205nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss205nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs205nr(form.ss205nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss205nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss300  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss300"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss300" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss301" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss301"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss301"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss301}"
+                            app:maxValue="200"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss302" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss302"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss302"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.ss302}"
+                            app:maxValue="200"
+                            app:minValue="45"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss300nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss300nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs300nr(form.ss300nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss300nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss303  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss303"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss303" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss303" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss303"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss303"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss303}"
+                            app:maxValue="99"
+                            app:minValue="20"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss303nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss303nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs303nr(form.ss303nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss303nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss304  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss304"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss304" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss304" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss304"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss304"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss304}"
+                            app:maxValue="40"
+                            app:minValue="5"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss304nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss304nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs304nr(form.ss304nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss304nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss401  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss401"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss401" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss401" />
+
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss401"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss401"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.ss401}"
+                            app:maxValue="20"
+                            app:minValue="3"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss401nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss401nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs401nr(form.ss401nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss401nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss500  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss500"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss500" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss501" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss501"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss501"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.ss501}"
+                            app:maxValue="0"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss502" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss502"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss502"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.ss502}"
+                            app:maxValue="0"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss503" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss503"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss503"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.ss503}"
+                            app:maxValue="0"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss504" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss504"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss504"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.ss504}"
+                            app:maxValue="0"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/ss5nr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.ss5nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs5nr(form.ss5nr.equals(`999`)?``:`999`)}"
+                            android:text="@string/ss5nr" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ss601  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss601"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ss601" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss601" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ss601"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/ss60101"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss601.equals(`1`)}"
+                                android:onClick="@{()->form.setSs601(`1`)}"
+                                android:text="@string/ss60101" />
+
+                            <RadioButton
+                                android:id="@+id/ss60102"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss601.equals(`2`)}"
+                                android:onClick="@{()->form.setSs601(`2`)}"
+                                android:text="@string/ss60102" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/redOverlay"
+                        android:onClick="BtnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/greenLight"
+                        android:onClick="BtnContinue"
+                        android:text="Save"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>
