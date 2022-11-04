@@ -171,7 +171,10 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh101nr(form.sh101nr.equals(`999`)?``:`999`)}"
-                                android:text="@string/sh101nr" />
+                                android:background="#7fefd6d6"
+                                android:tag="-1"
+                                android:text="@string/sh101nr"
+                                android:textColor="@color/redDark" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -413,8 +416,12 @@
 
                         <CheckBox
                             android:id="@+id/sh204nr"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:background="#7fefd6d6"
+                            android:tag="-1"
+                            android:textColor="@color/redDark"
                             android:checked="@{form.sh204nr.equals(`999`)}"
                             android:onClick="@{()->form.setSh204nr(form.sh204nr.equals(`999`)?``:`999`)}"
                             android:text="@string/sh204nr" />
@@ -737,8 +744,12 @@
 
                         <CheckBox
                             android:id="@+id/sh401nr"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:background="#7fefd6d6"
+                            android:tag="-1"
+                            android:textColor="@color/redDark"
                             android:checked="@{form.sh401nr.equals(`999`)}"
                             android:onClick="@{()->form.setSh401nr(form.sh401nr.equals(`999`)?``:`999`)}"
                             android:text="@string/sh401nr" />
