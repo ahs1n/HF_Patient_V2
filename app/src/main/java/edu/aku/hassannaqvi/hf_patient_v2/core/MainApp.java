@@ -21,9 +21,14 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Form;
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
+import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetailsV2;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Users;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
 
 public class MainApp extends Application {
 
@@ -41,6 +46,7 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static final String _EMPTY_ = "";
     public static PatientDetails patientDetails;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
@@ -54,8 +60,16 @@ public class MainApp extends Application {
     public static int TRATS = 8;
     public static String selectedDoctorCode;
     public static String selectedDoctorName;
+    public static PatientDetailsV2 pd;
 
     public static boolean permissionCheck = false;
+    public static int entryType = 0;
+
+
+    public static Complaints complaints;
+    public static Diagnosis diagnosis;
+    public static Prescription prescription;
+    public static Vaccination vaccination;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.

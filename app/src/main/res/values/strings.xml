@@ -17,6 +17,9 @@
     <string name="downData">Download Data</string>
     <string name="oldPassword" translatable="false">Old Password</string>
     <string name="newPassword" translatable="false">New Password</string>
+    <string name="fail_db_upd"> Failed to Update Database! </string>
+    <string name="upd_db"> Updating Database...\t </string>
+    <string name="db_excp_error"> Database Exception... ERROR! </string>
 
 
     <!--New Strings V2-->

@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
+
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,5 +23,6 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_prescription);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        bi.setForm(prescription);
     }
 }
