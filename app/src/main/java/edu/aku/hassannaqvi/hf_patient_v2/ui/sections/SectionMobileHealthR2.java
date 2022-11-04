@@ -23,6 +23,8 @@ import com.google.gson.Gson;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -317,14 +319,14 @@ public class SectionMobileHealthR2 extends AppCompatActivity implements EndSecti
     }
 
 
-    private boolean UpdateDB() {
-        long updcount = db.addMH(patientDetails);
+    private boolean UpdateDB() throws JSONException {
+        long updcount = db.addPD(patientDetails);
         patientDetails.setId(String.valueOf(updcount));
         if (updcount > 0) {
             patientDetails.setUid(patientDetails.getDeviceId() + patientDetails.getId());
-            long count = db.updatesMHColumn(PDContract.MHTable.COLUMN_UID, patientDetails.getUid());
+            long count = db.updatesPDColumn(PDContract.PDTable.COLUMN_UID, patientDetails.getUid());
             if (count > 0)
-                count = db.updatesMHColumn(PDContract.MHTable.COLUMN_SA, patientDetails.sAtoString());
+                count = db.updatesPDColumn(PDContract.PDTable.COLUMN_SPD, patientDetails.sPDtoString());
             if (count > 0) return true;
             else {
                 Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
@@ -348,7 +350,7 @@ public class SectionMobileHealthR2 extends AppCompatActivity implements EndSecti
         patientDetails.setAppver(MainApp.appInfo.getAppVersion());
 
 
-        patientDetails.setSs101(bi.ss101.getText().toString());
+        /*patientDetails.setSs101(bi.ss101.getText().toString());
         patientDetails.setSs102(bi.ss102.getText().toString());
         patientDetails.setSs103(bi.ss103.getText().toString());
         patientDetails.setSs104(bi.ss104.getText().toString());
@@ -509,12 +511,12 @@ public class SectionMobileHealthR2 extends AppCompatActivity implements EndSecti
                 : "-1");
         patientDetails.setVs308(bi.vs308a.isChecked() ? "1"
                 : bi.vs308b.isChecked() ? "2"
-                : "-1");
+                : "-1");*/
 
     }
 
 
-    public void BtnContinue(View view) {
+    public void BtnContinue(View view) throws JSONException {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {

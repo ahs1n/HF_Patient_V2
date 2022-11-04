@@ -2,17 +2,25 @@ package edu.aku.hassannaqvi.hf_patient_v2.database;
 
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.diagnosis;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.vaccination;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.UserAuth.checkPassword;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_ALTER_USERS_ENABLED;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_ALTER_USERS_ISNEW_USER;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_ALTER_USERS_PWD_EXPIRY;
+import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_COMPLAINTS;
+import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_DIAGNOSIS;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_DOCTOR;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_ENTRYLOGS;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_FACILITIES;
-import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_MOBILE_HEALTH;
+import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_PATIENT_DETAILS;
+import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_PRESCRIPTION;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_UCS;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_USERS;
+import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_VACCINATION;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_VERSIONAPP;
 
 import android.content.ContentValues;
@@ -42,20 +50,27 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.ChildInformationContract.Chil
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.EntryLog.EntryLogTable;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.FormsContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
-import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.MHTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.COMPLAINTSTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.DIAGNOSISTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.PDTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.PRESCRIPTIONTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.VACCINATIONTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
 import edu.aku.hassannaqvi.hf_patient_v2.models.EntryLog;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Form;
 import edu.aku.hassannaqvi.hf_patient_v2.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities;
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.UCs;
 import edu.aku.hassannaqvi.hf_patient_v2.models.UCs.TableUCs;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Users;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Users.UsersTable;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
 
 /**
  * @author muhammad hussain on 03/11/22
@@ -79,7 +94,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FACILITIES);
         db.execSQL(SQL_CREATE_UCS);
-        db.execSQL(SQL_CREATE_MOBILE_HEALTH);
+        db.execSQL(SQL_CREATE_PATIENT_DETAILS);
+        db.execSQL(SQL_CREATE_DIAGNOSIS);
+        db.execSQL(SQL_CREATE_COMPLAINTS);
+        db.execSQL(SQL_CREATE_VACCINATION);
+        db.execSQL(SQL_CREATE_PRESCRIPTION);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_DOCTOR);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
@@ -126,38 +145,138 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMH(PatientDetails patientDetails) {
+    public Long addPD(PatientDetails patientDetails) throws JSONException {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(PDContract.MHTable.COLUMN_PROJECT_NAME, patientDetails.getProjectName());
-        values.put(PDContract.MHTable.COLUMN_UID, patientDetails.getUid());
-        values.put(PDContract.MHTable.COLUMN_USERNAME, patientDetails.getUserName());
-        values.put(PDContract.MHTable.COLUMN_SYSDATE, patientDetails.getSysDate());
-        values.put(PDContract.MHTable.COLUMN_SA, patientDetails.sAtoString());
-        values.put(PDContract.MHTable.COLUMN_SS101, patientDetails.getSs101());
-        values.put(PDContract.MHTable.COLUMN_SS102, patientDetails.getSs102());
-        values.put(PDContract.MHTable.COLUMN_SS103, patientDetails.getSs103());
-        values.put(PDContract.MHTable.COLUMN_SS104, patientDetails.getSs104());
-        values.put(PDContract.MHTable.COLUMN_SS105, patientDetails.getSs105());
-        values.put(PDContract.MHTable.COLUMN_SS106, patientDetails.getSs106());
-        values.put(PDContract.MHTable.COLUMN_SS107, patientDetails.getSs107());
-        values.put(PDContract.MHTable.COLUMN_DEVICEID, patientDetails.getDeviceId());
-        values.put(PDContract.MHTable.COLUMN_DEVICETAGID, patientDetails.getDeviceTag());
-        values.put(PDContract.MHTable.COLUMN_SYNCED, patientDetails.getSynced());
-        values.put(PDContract.MHTable.COLUMN_SYNCED_DATE, patientDetails.getSyncDate());
-        values.put(PDContract.MHTable.COLUMN_APPVERSION, patientDetails.getAppver());
-        values.put(PDContract.MHTable.COLUMN_STATUS, patientDetails.getStatus());
-        values.put(PDContract.MHTable.COLUMN_SERIAL, patientDetails.getSerial());
+        values.put(PDTable.COLUMN_PROJECT_NAME, patientDetails.getProjectName());
+        values.put(PDTable.COLUMN_UID, patientDetails.getUid());
+        values.put(PDTable.COLUMN_USERNAME, patientDetails.getUserName());
+        values.put(PDTable.COLUMN_SYSDATE, patientDetails.getSysDate());
+        values.put(PDTable.COLUMN_SPD, patientDetails.sPDtoString());
+        values.put(PDTable.COLUMN_DEVICEID, patientDetails.getDeviceId());
+        values.put(PDTable.COLUMN_DEVICETAGID, patientDetails.getDeviceTag());
+        values.put(PDTable.COLUMN_SYNCED, patientDetails.getSynced());
+        values.put(PDTable.COLUMN_SYNCED_DATE, patientDetails.getSyncDate());
+        values.put(PDTable.COLUMN_APPVERSION, patientDetails.getAppver());
+        values.put(PDTable.COLUMN_ISTATUS, patientDetails.getiStatus());
+        values.put(PDTable.COLUMN_ISTATUS96x, patientDetails.getiStatus96x());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                PDContract.MHTable.TABLE_NAME,
-                PDContract.MHTable.COLUMN_NAME_NULLABLE,
+                PDTable.TABLE_NAME,
+                PDTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addVAC(Vaccination vaccination) throws JSONException {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(VACCINATIONTable.COLUMN_PROJECT_NAME, vaccination.getProjectName());
+        values.put(VACCINATIONTable.COLUMN_UID, vaccination.getUid());
+        values.put(VACCINATIONTable.COLUMN_USERNAME, vaccination.getUserName());
+        values.put(VACCINATIONTable.COLUMN_SYSDATE, vaccination.getSysDate());
+        values.put(VACCINATIONTable.COLUMN_SVAC, vaccination.sVACtoString());
+        values.put(VACCINATIONTable.COLUMN_DEVICEID, vaccination.getDeviceId());
+        values.put(VACCINATIONTable.COLUMN_DEVICETAGID, vaccination.getDeviceTag());
+        values.put(VACCINATIONTable.COLUMN_SYNCED, vaccination.getSynced());
+        values.put(VACCINATIONTable.COLUMN_SYNCED_DATE, vaccination.getSyncDate());
+        values.put(VACCINATIONTable.COLUMN_APPVERSION, vaccination.getAppver());
+        values.put(VACCINATIONTable.COLUMN_ISTATUS, vaccination.getiStatus());
+        values.put(VACCINATIONTable.COLUMN_ISTATUS96x, vaccination.getiStatus96x());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                VACCINATIONTable.TABLE_NAME,
+                VACCINATIONTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addDIAG(Diagnosis diagnosis) throws JSONException {
+
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(DIAGNOSISTable.COLUMN_PROJECT_NAME, diagnosis.getProjectName());
+        values.put(DIAGNOSISTable.COLUMN_UID, diagnosis.getUid());
+        values.put(DIAGNOSISTable.COLUMN_USERNAME, diagnosis.getUserName());
+        values.put(DIAGNOSISTable.COLUMN_SYSDATE, diagnosis.getSysDate());
+        values.put(DIAGNOSISTable.COLUMN_SDIAG, diagnosis.sDIAGtoString());
+        values.put(DIAGNOSISTable.COLUMN_DEVICEID, diagnosis.getDeviceId());
+        values.put(DIAGNOSISTable.COLUMN_DEVICETAGID, diagnosis.getDeviceTag());
+        values.put(DIAGNOSISTable.COLUMN_SYNCED, diagnosis.getSynced());
+        values.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, diagnosis.getSyncDate());
+        values.put(DIAGNOSISTable.COLUMN_APPVERSION, diagnosis.getAppver());
+        values.put(DIAGNOSISTable.COLUMN_ISTATUS, diagnosis.getiStatus());
+        values.put(DIAGNOSISTable.COLUMN_ISTATUS96x, diagnosis.getiStatus96x());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                DIAGNOSISTable.TABLE_NAME,
+                DIAGNOSISTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addCOMP(Complaints complaints) throws JSONException {
+
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(COMPLAINTSTable.COLUMN_PROJECT_NAME, complaints.getProjectName());
+        values.put(COMPLAINTSTable.COLUMN_UID, complaints.getUid());
+        values.put(COMPLAINTSTable.COLUMN_USERNAME, complaints.getUserName());
+        values.put(COMPLAINTSTable.COLUMN_SYSDATE, complaints.getSysDate());
+        values.put(COMPLAINTSTable.COLUMN_SCOMP, complaints.sCOMPtoString());
+        values.put(COMPLAINTSTable.COLUMN_DEVICEID, complaints.getDeviceId());
+        values.put(COMPLAINTSTable.COLUMN_DEVICETAGID, complaints.getDeviceTag());
+        values.put(COMPLAINTSTable.COLUMN_SYNCED, complaints.getSynced());
+        values.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, complaints.getSyncDate());
+        values.put(COMPLAINTSTable.COLUMN_APPVERSION, complaints.getAppver());
+        values.put(COMPLAINTSTable.COLUMN_ISTATUS, complaints.getiStatus());
+        values.put(COMPLAINTSTable.COLUMN_ISTATUS96x, complaints.getiStatus96x());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                COMPLAINTSTable.TABLE_NAME,
+                COMPLAINTSTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addPRES(Prescription prescription) throws JSONException {
+
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(PRESCRIPTIONTable.COLUMN_PROJECT_NAME, prescription.getProjectName());
+        values.put(PRESCRIPTIONTable.COLUMN_UID, prescription.getUid());
+        values.put(PRESCRIPTIONTable.COLUMN_USERNAME, prescription.getUserName());
+        values.put(PRESCRIPTIONTable.COLUMN_SYSDATE, prescription.getSysDate());
+        values.put(PRESCRIPTIONTable.COLUMN_PRES, prescription.sPREStoString());
+        values.put(PRESCRIPTIONTable.COLUMN_DEVICEID, prescription.getDeviceId());
+        values.put(PRESCRIPTIONTable.COLUMN_DEVICETAGID, prescription.getDeviceTag());
+        values.put(PRESCRIPTIONTable.COLUMN_SYNCED, prescription.getSynced());
+        values.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, prescription.getSyncDate());
+        values.put(PRESCRIPTIONTable.COLUMN_APPVERSION, prescription.getAppver());
+        values.put(PRESCRIPTIONTable.COLUMN_ISTATUS, prescription.getiStatus());
+        values.put(PRESCRIPTIONTable.COLUMN_ISTATUS96x, prescription.getiStatus96x());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                COMPLAINTSTable.TABLE_NAME,
+                COMPLAINTSTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -563,16 +682,76 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * Update data in tables
      * */
 
-    public int updatesMHColumn(String column, String value) {
+    public int updatesPDColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = PDContract.MHTable._ID + " =? ";
+        String selection = PDTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(patientDetails.getId())};
 
-        return db.update(PDContract.MHTable.TABLE_NAME,
+        return db.update(PDTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesVACColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = VACCINATIONTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(vaccination.getId())};
+
+        return db.update(VACCINATIONTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesDIAGColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = DIAGNOSISTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(diagnosis.getId())};
+
+        return db.update(DIAGNOSISTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesCOMPColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = COMPLAINTSTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(complaints.getId())};
+
+        return db.update(COMPLAINTSTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesPRESColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = PRESCRIPTIONTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(prescription.getId())};
+
+        return db.update(PRESCRIPTIONTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -840,41 +1019,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
-                PDContract.MHTable.COLUMN_ID,
-                PDContract.MHTable.COLUMN_UID,
-                PDContract.MHTable.COLUMN_USERNAME,
-                PDContract.MHTable.COLUMN_SYSDATE,
-                PDContract.MHTable.COLUMN_DEVICEID,
-                PDContract.MHTable.COLUMN_DEVICETAGID,
-                PDContract.MHTable.COLUMN_APPVERSION,
-                PDContract.MHTable.COLUMN_SYNCED,
-                PDContract.MHTable.COLUMN_SYNCED_DATE,
-                PDContract.MHTable.COLUMN_STATUS,
-                PDContract.MHTable.COLUMN_SERIAL,
-                PDContract.MHTable.COLUMN_SS101,
-                PDContract.MHTable.COLUMN_SS102,
-                PDContract.MHTable.COLUMN_SS103,
-                PDContract.MHTable.COLUMN_SS104,
-                PDContract.MHTable.COLUMN_SS105,
-                PDContract.MHTable.COLUMN_SS106,
-                PDContract.MHTable.COLUMN_SS107,
-                PDContract.MHTable.COLUMN_SA
+                PDTable.COLUMN_ID,
+                PDTable.COLUMN_UID,
+                PDTable.COLUMN_USERNAME,
+                PDTable.COLUMN_SYSDATE,
+                PDTable.COLUMN_DEVICEID,
+                PDTable.COLUMN_DEVICETAGID,
+                PDTable.COLUMN_APPVERSION,
+                PDTable.COLUMN_SYNCED,
+                PDTable.COLUMN_SYNCED_DATE,
+                PDTable.COLUMN_ISTATUS,
+                PDTable.COLUMN_SPD
         };
 
         String whereClause;
-        whereClause = PDContract.MHTable.COLUMN_SYNCED + " is null ";
+        whereClause = PDTable.COLUMN_SYNCED + " is null ";
 
         String[] whereArgs = null;
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = PDContract.MHTable.COLUMN_ID + " ASC";
+        String orderBy = PDTable.COLUMN_ID + " ASC";
 
         JSONArray jsa = new JSONArray();
 
         c = db.query(
-                PDContract.MHTable.TABLE_NAME,  // The table to query
+                PDTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
@@ -890,6 +1061,184 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         c.close();
 
+        return jsa;
+    }
+
+    public JSONArray getUnsyncedVAC() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {
+                VACCINATIONTable.COLUMN_ID,
+                VACCINATIONTable.COLUMN_UID,
+                VACCINATIONTable.COLUMN_USERNAME,
+                VACCINATIONTable.COLUMN_SYSDATE,
+                VACCINATIONTable.COLUMN_DEVICEID,
+                VACCINATIONTable.COLUMN_DEVICETAGID,
+                VACCINATIONTable.COLUMN_APPVERSION,
+                VACCINATIONTable.COLUMN_SYNCED,
+                VACCINATIONTable.COLUMN_SYNCED_DATE,
+                VACCINATIONTable.COLUMN_ISTATUS,
+                VACCINATIONTable.COLUMN_SVAC
+        };
+
+        String whereClause;
+        whereClause = VACCINATIONTable.COLUMN_SYNCED + " is null ";
+
+        String[] whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = VACCINATIONTable.COLUMN_ID + " ASC";
+
+        JSONArray jsa = new JSONArray();
+
+        c = db.query(
+                VACCINATIONTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedVACCINATION: " + c.getCount());
+            Vaccination vaccination = new Vaccination();
+            jsa.put(vaccination.Hydrate(c).toJSONObject());
+        }
+
+        c.close();
+
+        return jsa;
+    }
+
+    public JSONArray getUnsyncedDIAG() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {
+                DIAGNOSISTable.COLUMN_ID,
+                DIAGNOSISTable.COLUMN_UID,
+                DIAGNOSISTable.COLUMN_USERNAME,
+                DIAGNOSISTable.COLUMN_SYSDATE,
+                DIAGNOSISTable.COLUMN_DEVICEID,
+                DIAGNOSISTable.COLUMN_DEVICETAGID,
+                DIAGNOSISTable.COLUMN_APPVERSION,
+                DIAGNOSISTable.COLUMN_SYNCED,
+                DIAGNOSISTable.COLUMN_SYNCED_DATE,
+                DIAGNOSISTable.COLUMN_ISTATUS,
+                DIAGNOSISTable.COLUMN_SDIAG
+        };
+
+        String whereClause = DIAGNOSISTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = DIAGNOSISTable.COLUMN_ID + " ASC";
+
+        JSONArray jsa = new JSONArray();
+
+        c = db.query(
+                DIAGNOSISTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedDIAGNOSIS: " + c.getCount());
+            Diagnosis diagnosis = new Diagnosis();
+            jsa.put(diagnosis.Hydrate(c).toJSONObject());
+        }
+        c.close();
+        return jsa;
+    }
+
+    public JSONArray getUnsyncedCOMP() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {
+                COMPLAINTSTable.COLUMN_ID,
+                COMPLAINTSTable.COLUMN_UID,
+                COMPLAINTSTable.COLUMN_USERNAME,
+                COMPLAINTSTable.COLUMN_SYSDATE,
+                COMPLAINTSTable.COLUMN_DEVICEID,
+                COMPLAINTSTable.COLUMN_DEVICETAGID,
+                COMPLAINTSTable.COLUMN_APPVERSION,
+                COMPLAINTSTable.COLUMN_SYNCED,
+                COMPLAINTSTable.COLUMN_SYNCED_DATE,
+                COMPLAINTSTable.COLUMN_ISTATUS,
+                COMPLAINTSTable.COLUMN_SCOMP
+        };
+
+        String whereClause = COMPLAINTSTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = COMPLAINTSTable.COLUMN_ID + " ASC";
+
+        JSONArray jsa = new JSONArray();
+
+        c = db.query(
+                COMPLAINTSTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedCOMPLAINTS: " + c.getCount());
+            Complaints complaints = new Complaints();
+            jsa.put(complaints.Hydrate(c).toJSONObject());
+        }
+        c.close();
+        return jsa;
+    }
+
+    public JSONArray getUnsyncedPRES() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {
+                PRESCRIPTIONTable.COLUMN_ID,
+                PRESCRIPTIONTable.COLUMN_UID,
+                PRESCRIPTIONTable.COLUMN_USERNAME,
+                PRESCRIPTIONTable.COLUMN_SYSDATE,
+                PRESCRIPTIONTable.COLUMN_DEVICEID,
+                PRESCRIPTIONTable.COLUMN_DEVICETAGID,
+                PRESCRIPTIONTable.COLUMN_APPVERSION,
+                PRESCRIPTIONTable.COLUMN_SYNCED,
+                PRESCRIPTIONTable.COLUMN_SYNCED_DATE,
+                PRESCRIPTIONTable.COLUMN_ISTATUS,
+                PRESCRIPTIONTable.COLUMN_PRES
+        };
+
+        String whereClause = PRESCRIPTIONTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = PRESCRIPTIONTable.COLUMN_ID + " ASC";
+
+        JSONArray jsa = new JSONArray();
+
+        c = db.query(
+                PRESCRIPTIONTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedPRESCRIPTION: " + c.getCount());
+            Prescription prescription = new Prescription();
+            jsa.put(prescription.Hydrate(c).toJSONObject());
+        }
+        c.close();
         return jsa;
     }
 
@@ -971,15 +1320,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(PDContract.MHTable.COLUMN_SYNCED, true);
-        values.put(PDContract.MHTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(PDTable.COLUMN_SYNCED, true);
+        values.put(PDTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = PDContract.MHTable.COLUMN_ID + " = ?";
+        String where = PDTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                PDContract.MHTable.TABLE_NAME,
+                PDTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -1023,29 +1372,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
-                MHTable.COLUMN_ID,
-                MHTable.COLUMN_UID,
-                MHTable.COLUMN_SYSDATE,
-                MHTable.COLUMN_SS102,
-                MHTable.COLUMN_SS106,
-                MHTable.COLUMN_SS107,
-                MHTable.COLUMN_SA,
-                MHTable.COLUMN_SYNCED,
+                PDTable.COLUMN_ID,
+                PDTable.COLUMN_UID,
+                PDTable.COLUMN_SYSDATE,
+                PDTable.COLUMN_SPD,
+                PDTable.COLUMN_SYNCED,
 
         };
-        String whereClause = MHTable.COLUMN_SS102 + " = ? ";
+        String whereClause = null;
         String[] whereArgs = new String[]{cluster};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                MHTable.COLUMN_ID + " ASC";
+                PDTable.COLUMN_ID + " ASC";
 
         Collection<PatientDetails> allFC = new ArrayList<>();
         try {
             c = db.query(
-                    MHTable.TABLE_NAME,  // The table to query
+                    PDTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1055,15 +1401,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 PatientDetails fc = new PatientDetails();
-                fc.setId(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_ID)));
-                fc.setUid(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_UID)));
-                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SYSDATE)));
-                fc.setSs102(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS102)));
-                fc.setSs106(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS106)));
-                fc.setSs107(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS107)));
-                fc.setSynced(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SYNCED)));
-                fc.sAHydrate(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SA)));
-                Log.d(TAG, "getFormsByCluster: " + c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SA)));
+                fc.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+                fc.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
+                fc.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
+                Log.d(TAG, "getFormsByCluster: " + c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
                 allFC.add(fc);
             }
         } finally {
@@ -1128,29 +1471,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = {
-                MHTable.COLUMN_ID,
-                MHTable.COLUMN_UID,
-                MHTable.COLUMN_SYSDATE,
-                MHTable.COLUMN_SS102,
-                MHTable.COLUMN_SS106,
-                MHTable.COLUMN_SS107,
-                MHTable.COLUMN_SA,
-                MHTable.COLUMN_SYNCED,
+                PDTable.COLUMN_ID,
+                PDTable.COLUMN_UID,
+                PDTable.COLUMN_SYSDATE,
+                PDTable.COLUMN_SPD,
+                PDTable.COLUMN_SYNCED,
 
 
         };
-        String whereClause = MHTable.COLUMN_SYSDATE + " Like ? ";
+        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
         String[] whereArgs = new String[]{"%" + sysdate + " %"};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
-        String orderBy = MHTable.COLUMN_ID + " DESC";
+        String orderBy = PDTable.COLUMN_ID + " DESC";
 
         Collection<PatientDetails> allFC = new ArrayList<>();
         try {
             c = db.query(
-                    MHTable.TABLE_NAME,  // The table to query
+                    PDTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1160,14 +1500,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 PatientDetails fc = new PatientDetails();
-                fc.setId(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_ID)));
-                fc.setUid(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_UID)));
-                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SYSDATE)));
-                fc.setSs102(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS102)));
-                fc.setSs106(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS106)));
-                fc.setSs107(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SS107)));
-                fc.sAHydrate(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SA)));
-                fc.setSynced(c.getString(c.getColumnIndexOrThrow(MHTable.COLUMN_SYNCED)));
+                fc.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+                fc.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
+                fc.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
                 allFC.add(fc);
             }
         } finally {

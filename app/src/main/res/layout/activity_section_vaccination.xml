@@ -489,6 +489,8 @@
                                             android:id="@+id/bcg"
                                             android:layout_width="105dp"
                                             android:layout_height="wrap_content"
+                                            android:checked="@{form.bcg.equals(`1`)}"
+                                            android:onClick="@{()->form.setBcg(`1`)}"
                                             android:text="@string/bcg" />
 
                                         <RadioGroup
@@ -501,18 +503,24 @@
                                                 android:id="@+id/penta1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.penta1.equals(`1`)}"
+                                                android:onClick="@{()->form.setPenta1(`1`)}"
                                                 android:text="@string/penta1" />
 
                                             <RadioButton
                                                 android:id="@+id/penta2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.penta2.equals(`1`)}"
+                                                android:onClick="@{()->form.setPenta2(`1`)}"
                                                 android:text="@string/penta2" />
 
                                             <RadioButton
                                                 android:id="@+id/penta3"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.penta3.equals(`1`)}"
+                                                android:onClick="@{()->form.setPenta3(`1`)}"
                                                 android:text="@string/penta3" />
 
                                         </RadioGroup>
@@ -527,12 +535,16 @@
                                                 android:id="@+id/measles1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.measles1.equals(`1`)}"
+                                                android:onClick="@{()->form.setMeasles1(`1`)}"
                                                 android:text="@string/measles1" />
 
                                             <RadioButton
                                                 android:id="@+id/measles2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.measles2.equals(`1`)}"
+                                                android:onClick="@{()->form.setMeasles2(`1`)}"
                                                 android:text="@string/measles2" />
 
                                         </RadioGroup>
@@ -541,6 +553,8 @@
                                             android:id="@+id/dpt"
                                             android:layout_width="105dp"
                                             android:layout_height="match_parent"
+                                            android:checked="@{form.dpt.equals(`1`)}"
+                                            android:onClick="@{()->form.setDpt(`1`)}"
                                             android:text="@string/dpt" />
 
                                     </LinearLayout>
@@ -566,24 +580,32 @@
                                                 android:id="@+id/opv0"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.opv0.equals(`1`)}"
+                                                android:onClick="@{()->form.setOpv0(`1`)}"
                                                 android:text="@string/opv0" />
 
                                             <RadioButton
                                                 android:id="@+id/opv1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.opv1.equals(`1`)}"
+                                                android:onClick="@{()->form.setOpv1(`1`)}"
                                                 android:text="@string/opv1" />
 
                                             <RadioButton
                                                 android:id="@+id/opv2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.opv2.equals(`1`)}"
+                                                android:onClick="@{()->form.setOpv2(`1`)}"
                                                 android:text="@string/opv2" />
 
                                             <RadioButton
                                                 android:id="@+id/opv3"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.opv3.equals(`1`)}"
+                                                android:onClick="@{()->form.setOpv3(`1`)}"
                                                 android:text="@string/opv3" />
 
                                         </RadioGroup>
@@ -592,6 +614,8 @@
                                             android:id="@+id/tcv"
                                             android:layout_width="105dp"
                                             android:layout_height="wrap_content"
+                                            android:checked="@{form.tcv.equals(`1`)}"
+                                            android:onClick="@{()->form.setTcv(`1`)}"
                                             android:text="@string/tcv" />
 
                                         <View
@@ -624,18 +648,24 @@
                                                 android:id="@+id/pcv1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.pcv1.equals(`1`)}"
+                                                android:onClick="@{()->form.setPcv1(`1`)}"
                                                 android:text="@string/pcv1" />
 
                                             <RadioButton
                                                 android:id="@+id/pcv2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.pcv2.equals(`1`)}"
+                                                android:onClick="@{()->form.setPcv2(`1`)}"
                                                 android:text="@string/pcv2" />
 
                                             <RadioButton
                                                 android:id="@+id/pcv3"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.pcv3.equals(`1`)}"
+                                                android:onClick="@{()->form.setPcv3(`1`)}"
                                                 android:text="@string/pcv3" />
 
                                         </RadioGroup>
@@ -661,6 +691,8 @@
                                             android:id="@+id/hepb"
                                             android:layout_width="105dp"
                                             android:layout_height="wrap_content"
+                                            android:checked="@{form.hepb.equals(`1`)}"
+                                            android:onClick="@{()->form.setHepb(`1`)}"
                                             android:text="@string/hepb" />
 
                                         <RadioGroup
@@ -673,12 +705,16 @@
                                                 android:id="@+id/rota1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.rota1.equals(`1`)}"
+                                                android:onClick="@{()->form.setRota1(`1`)}"
                                                 android:text="@string/rota1" />
 
                                             <RadioButton
                                                 android:id="@+id/rota2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.rota2.equals(`1`)}"
+                                                android:onClick="@{()->form.setRota2(`1`)}"
                                                 android:text="@string/rota2" />
 
                                         </RadioGroup>
@@ -693,12 +729,16 @@
                                                 android:id="@+id/ipv1"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.ipv1.equals(`1`)}"
+                                                android:onClick="@{()->form.setIpv1(`1`)}"
                                                 android:text="@string/ipv1" />
 
                                             <RadioButton
                                                 android:id="@+id/ipv2"
                                                 android:layout_width="105dp"
                                                 android:layout_height="wrap_content"
+                                                android:checked="@{form.ipv2.equals(`1`)}"
+                                                android:onClick="@{()->form.setIpv2(`1`)}"
                                                 android:text="@string/ipv2" />
 
                                         </RadioGroup>

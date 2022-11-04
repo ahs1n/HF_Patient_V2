@@ -3,15 +3,22 @@ package edu.aku.hassannaqvi.hf_patient_v2.models;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp._EMPTY_;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.COMPLAINTSTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Complaints extends BaseObservable implements Observable {
@@ -930,6 +937,193 @@ public class Complaints extends BaseObservable implements Observable {
     public void setPc200nr(String pc200nr) {
         this.pc200nr = pc200nr;
         notifyPropertyChanged(BR.pc200nr);
+    }
+
+
+    public Complaints Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_APPVERSION));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED_DATE));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ISTATUS96x));
+
+        sCOMPHydrate(cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SCOMP)));
+
+        return this;
+    }
+
+    public void sCOMPHydrate(String string) throws JSONException {
+        Log.d(TAG, "sCOMPHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.pc200 = json.getString("pc200");
+            this.pc201 = json.getString("pc201");
+            this.pc202 = json.getString("pc202");
+            this.pc203 = json.getString("pc203");
+            this.pc204 = json.getString("pc204");
+            this.pc205 = json.getString("pc205");
+            this.pc206 = json.getString("pc206");
+            this.pc207 = json.getString("pc207");
+            this.pc208 = json.getString("pc208");
+            this.pc209 = json.getString("pc209");
+            this.pc210 = json.getString("pc210");
+            this.pc211 = json.getString("pc211");
+            this.pc212 = json.getString("pc212");
+            this.pc213 = json.getString("pc213");
+            this.pc214 = json.getString("pc214");
+            this.pc215 = json.getString("pc215");
+            this.pc216 = json.getString("pc216");
+            this.pc217 = json.getString("pc217");
+            this.pc218 = json.getString("pc218");
+            this.pc219 = json.getString("pc219");
+            this.pc220 = json.getString("pc220");
+            this.pc221 = json.getString("pc221");
+            this.pc222 = json.getString("pc222");
+            this.pc223 = json.getString("pc223");
+            this.pc224 = json.getString("pc224");
+            this.pc225 = json.getString("pc225");
+            this.pc226 = json.getString("pc226");
+            this.pc227 = json.getString("pc227");
+            this.pc228 = json.getString("pc228");
+            this.pc229 = json.getString("pc229");
+            this.pc230 = json.getString("pc230");
+            this.pc231 = json.getString("pc231");
+            this.pc232 = json.getString("pc232");
+            this.pc233 = json.getString("pc233");
+            this.pc234 = json.getString("pc234");
+            this.pc235 = json.getString("pc235");
+            this.pc236 = json.getString("pc236");
+            this.pc237 = json.getString("pc237");
+            this.pc238 = json.getString("pc238");
+            this.pc239 = json.getString("pc239");
+            this.pc240 = json.getString("pc240");
+            this.pc241 = json.getString("pc241");
+            this.pc242 = json.getString("pc242");
+            this.pc243 = json.getString("pc243");
+            this.pc244 = json.getString("pc244");
+            this.pc245 = json.getString("pc245");
+            this.pc246 = json.getString("pc246");
+            this.pc247 = json.getString("pc247");
+            this.pc248 = json.getString("pc248");
+            this.pc249 = json.getString("pc249");
+            this.pc250 = json.getString("pc250");
+            this.pc251 = json.getString("pc251");
+            this.pc252 = json.getString("pc252");
+            this.pc253 = json.getString("pc253");
+            this.pc254 = json.getString("pc254");
+            this.pc255 = json.getString("pc255");
+            this.pc256 = json.getString("pc256");
+            this.pc257 = json.getString("pc257");
+            this.pc258 = json.getString("pc258");
+            this.pc259 = json.getString("pc259");
+            this.pc2961 = json.getString("pc2961");
+            this.pc2961x = json.getString("pc2961x");
+            this.pc2962 = json.getString("pc2962");
+            this.pc2962x = json.getString("pc2962x");
+            this.pc2963 = json.getString("pc2963");
+            this.pc2963x = json.getString("pc2963x");
+            this.pc200nr = json.getString("pc200nr");
+
+        }
+    }
+
+    public JSONObject toJSONObject() throws JSONException {
+
+        JSONObject json = new JSONObject();
+        json.put(COMPLAINTSTable.COLUMN_ID, this.id);
+        json.put(COMPLAINTSTable.COLUMN_UID, this.uid);
+        json.put(COMPLAINTSTable.COLUMN_USERNAME, this.userName);
+        json.put(COMPLAINTSTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(COMPLAINTSTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(COMPLAINTSTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(COMPLAINTSTable.COLUMN_APPVERSION, this.appver);
+        json.put(COMPLAINTSTable.COLUMN_SYNCED, this.synced);
+        json.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(COMPLAINTSTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(COMPLAINTSTable.COLUMN_ISTATUS96x, this.iStatus96x);
+
+        json.put(COMPLAINTSTable.COLUMN_SCOMP, new JSONObject(sCOMPtoString()));
+        return json;
+    }
+
+    public String sCOMPtoString() throws JSONException {
+        Log.d(TAG, "sCOMPtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("pc200", pc200)
+                .put("pc201", pc201)
+                .put("pc202", pc202)
+                .put("pc203", pc203)
+                .put("pc204", pc204)
+                .put("pc205", pc205)
+                .put("pc206", pc206)
+                .put("pc207", pc207)
+                .put("pc208", pc208)
+                .put("pc209", pc209)
+                .put("pc210", pc210)
+                .put("pc211", pc211)
+                .put("pc212", pc212)
+                .put("pc213", pc213)
+                .put("pc214", pc214)
+                .put("pc215", pc215)
+                .put("pc216", pc216)
+                .put("pc217", pc217)
+                .put("pc218", pc218)
+                .put("pc219", pc219)
+                .put("pc220", pc220)
+                .put("pc221", pc221)
+                .put("pc222", pc222)
+                .put("pc223", pc223)
+                .put("pc224", pc224)
+                .put("pc225", pc225)
+                .put("pc226", pc226)
+                .put("pc227", pc227)
+                .put("pc228", pc228)
+                .put("pc229", pc229)
+                .put("pc230", pc230)
+                .put("pc231", pc231)
+                .put("pc232", pc232)
+                .put("pc233", pc233)
+                .put("pc234", pc234)
+                .put("pc235", pc235)
+                .put("pc236", pc236)
+                .put("pc237", pc237)
+                .put("pc238", pc238)
+                .put("pc239", pc239)
+                .put("pc240", pc240)
+                .put("pc241", pc241)
+                .put("pc242", pc242)
+                .put("pc243", pc243)
+                .put("pc244", pc244)
+                .put("pc245", pc245)
+                .put("pc246", pc246)
+                .put("pc247", pc247)
+                .put("pc248", pc248)
+                .put("pc249", pc249)
+                .put("pc250", pc250)
+                .put("pc251", pc251)
+                .put("pc252", pc252)
+                .put("pc253", pc253)
+                .put("pc254", pc254)
+                .put("pc255", pc255)
+                .put("pc256", pc256)
+                .put("pc257", pc257)
+                .put("pc258", pc258)
+                .put("pc259", pc259)
+                .put("pc2961", pc2961)
+                .put("pc2961x", pc2961x)
+                .put("pc2962", pc2962)
+                .put("pc2962x", pc2962x)
+                .put("pc2963", pc2963)
+                .put("pc2963x", pc2963x)
+                .put("pc200nr", pc200nr);
+        return json.toString();
     }
 
 }

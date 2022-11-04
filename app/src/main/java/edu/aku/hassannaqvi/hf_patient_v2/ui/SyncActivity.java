@@ -140,15 +140,54 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.clear();
                 MainApp.uploadData.clear();
 
-                // MobileHealth
-                uploadTables.add(new SyncModel(PDContract.MHTable.TABLE_NAME));
+                // PatientDetails
+                uploadTables.add(new SyncModel(PDContract.PDTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedPD());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart(MHTable): " + e.getMessage());
                     Toast.makeText(this, "ProcessStart(MHTable): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
+                // Complaints
+                uploadTables.add(new SyncModel(PDContract.COMPLAINTSTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedCOMP());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart(COMPLAINTSTable): " + e.getMessage());
+                    Toast.makeText(this, "ProcessStart(COMPLAINTSTable): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Diagnosis
+                uploadTables.add(new SyncModel(PDContract.DIAGNOSISTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedDIAG());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart(DIAGNOSISTable): " + e.getMessage());
+                    Toast.makeText(this, "ProcessStart(DIAGNOSISTable): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Vaccination
+                uploadTables.add(new SyncModel(PDContract.VACCINATIONTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedVAC());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart(VACCINATIONTable): " + e.getMessage());
+                    Toast.makeText(this, "ProcessStart(VACCINATIONTable): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Prescription
+                uploadTables.add(new SyncModel(PDContract.PRESCRIPTIONTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedPRES());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart(PRESCRIPTIONTable): " + e.getMessage());
+                    Toast.makeText(this, "ProcessStart(PRESCRIPTIONTable): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 //Entry Log

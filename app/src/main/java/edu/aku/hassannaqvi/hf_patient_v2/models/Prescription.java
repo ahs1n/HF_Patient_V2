@@ -3,15 +3,22 @@ package edu.aku.hassannaqvi.hf_patient_v2.models;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp._EMPTY_;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.PRESCRIPTIONTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Prescription extends BaseObservable implements Observable {
@@ -1821,6 +1828,355 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp137du(String mp137du) {
         this.mp137du = mp137du;
         notifyPropertyChanged(BR.mp137du);
+    }
+
+
+    public Prescription Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_APPVERSION));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYNCED_DATE));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS96x));
+
+        sPRESHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRES)));
+
+        return this;
+    }
+
+    public void sPRESHydrate(String string) throws JSONException {
+        Log.d(TAG, "sPRESHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.mp101 = json.getString("mp101");
+            this.mp101do = json.getString("mp101do");
+            this.mp101f = json.getString("mp101f");
+            this.mp101du = json.getString("mp101du");
+            this.mp102 = json.getString("mp102");
+            this.mp102do = json.getString("mp102do");
+            this.mp102f = json.getString("mp102f");
+            this.mp102du = json.getString("mp102du");
+            this.mp103 = json.getString("mp103");
+            this.mp103do = json.getString("mp103do");
+            this.mp103f = json.getString("mp103f");
+            this.mp103du = json.getString("mp103du");
+            this.mp104 = json.getString("mp104");
+            this.mp104do = json.getString("mp104do");
+            this.mp104f = json.getString("mp104f");
+            this.mp104du = json.getString("mp104du");
+            this.mp105 = json.getString("mp105");
+            this.mp105do = json.getString("mp105do");
+            this.mp105f = json.getString("mp105f");
+            this.mp105du = json.getString("mp105du");
+            this.mp106 = json.getString("mp106");
+            this.mp106do = json.getString("mp106do");
+            this.mp106f = json.getString("mp106f");
+            this.mp106du = json.getString("mp106du");
+            this.mp107 = json.getString("mp107");
+            this.mp107do = json.getString("mp107do");
+            this.mp107f = json.getString("mp107f");
+            this.mp107du = json.getString("mp107du");
+            this.mp108 = json.getString("mp108");
+            this.mp108do = json.getString("mp108do");
+            this.mp108f = json.getString("mp108f");
+            this.mp108du = json.getString("mp108du");
+            this.mp109 = json.getString("mp109");
+            this.mp109do = json.getString("mp109do");
+            this.mp109f = json.getString("mp109f");
+            this.mp109du = json.getString("mp109du");
+            this.mp110 = json.getString("mp110");
+            this.mp110do = json.getString("mp110do");
+            this.mp110f = json.getString("mp110f");
+            this.mp110du = json.getString("mp110du");
+            this.mp111 = json.getString("mp111");
+            this.mp111do = json.getString("mp111do");
+            this.mp111f = json.getString("mp111f");
+            this.mp111du = json.getString("mp111du");
+            this.mp112 = json.getString("mp112");
+            this.mp112do = json.getString("mp112do");
+            this.mp112f = json.getString("mp112f");
+            this.mp112du = json.getString("mp112du");
+            this.mp113 = json.getString("mp113");
+            this.mp113do = json.getString("mp113do");
+            this.mp113f = json.getString("mp113f");
+            this.mp113du = json.getString("mp113du");
+            this.mp114 = json.getString("mp114");
+            this.mp114do = json.getString("mp114do");
+            this.mp114f = json.getString("mp114f");
+            this.mp114du = json.getString("mp114du");
+            this.mp115 = json.getString("mp115");
+            this.mp115do = json.getString("mp115do");
+            this.mp115f = json.getString("mp115f");
+            this.mp115du = json.getString("mp115du");
+            this.mp116 = json.getString("mp116");
+            this.mp116do = json.getString("mp116do");
+            this.mp116f = json.getString("mp116f");
+            this.mp116du = json.getString("mp116du");
+            this.mp117 = json.getString("mp117");
+            this.mp117do = json.getString("mp117do");
+            this.mp117f = json.getString("mp117f");
+            this.mp117du = json.getString("mp117du");
+            this.mp118 = json.getString("mp118");
+            this.mp118do = json.getString("mp118do");
+            this.mp118f = json.getString("mp118f");
+            this.mp118du = json.getString("mp118du");
+            this.mp119 = json.getString("mp119");
+            this.mp119do = json.getString("mp119do");
+            this.mp119f = json.getString("mp119f");
+            this.mp119du = json.getString("mp119du");
+            this.mp120 = json.getString("mp120");
+            this.mp120do = json.getString("mp120do");
+            this.mp120f = json.getString("mp120f");
+            this.mp120du = json.getString("mp120du");
+            this.mp121 = json.getString("mp121");
+            this.mp121do = json.getString("mp121do");
+            this.mp121f = json.getString("mp121f");
+            this.mp121du = json.getString("mp121du");
+            this.mp122 = json.getString("mp122");
+            this.mp122do = json.getString("mp122do");
+            this.mp122f = json.getString("mp122f");
+            this.mp122du = json.getString("mp122du");
+            this.mp123 = json.getString("mp123");
+            this.mp123do = json.getString("mp123do");
+            this.mp123f = json.getString("mp123f");
+            this.mp123du = json.getString("mp123du");
+            this.mp124 = json.getString("mp124");
+            this.mp124do = json.getString("mp124do");
+            this.mp124f = json.getString("mp124f");
+            this.mp124du = json.getString("mp124du");
+            this.mp125 = json.getString("mp125");
+            this.mp125do = json.getString("mp125do");
+            this.mp125f = json.getString("mp125f");
+            this.mp125du = json.getString("mp125du");
+            this.mp126 = json.getString("mp126");
+            this.mp126do = json.getString("mp126do");
+            this.mp126f = json.getString("mp126f");
+            this.mp126du = json.getString("mp126du");
+            this.mp127 = json.getString("mp127");
+            this.mp127do = json.getString("mp127do");
+            this.mp127f = json.getString("mp127f");
+            this.mp127du = json.getString("mp127du");
+            this.mp128 = json.getString("mp128");
+            this.mp128do = json.getString("mp128do");
+            this.mp128f = json.getString("mp128f");
+            this.mp128du = json.getString("mp128du");
+            this.mp129 = json.getString("mp129");
+            this.mp129do = json.getString("mp129do");
+            this.mp129f = json.getString("mp129f");
+            this.mp129du = json.getString("mp129du");
+            this.mp130 = json.getString("mp130");
+            this.mp130do = json.getString("mp130do");
+            this.mp130f = json.getString("mp130f");
+            this.mp130du = json.getString("mp130du");
+            this.mp131 = json.getString("mp131");
+            this.mp131do = json.getString("mp131do");
+            this.mp131f = json.getString("mp131f");
+            this.mp131du = json.getString("mp131du");
+            this.mp132 = json.getString("mp132");
+            this.mp132do = json.getString("mp132do");
+            this.mp132f = json.getString("mp132f");
+            this.mp132du = json.getString("mp132du");
+            this.mp133 = json.getString("mp133");
+            this.mp133do = json.getString("mp133do");
+            this.mp133f = json.getString("mp133f");
+            this.mp133du = json.getString("mp133du");
+            this.mp134 = json.getString("mp134");
+            this.mp134do = json.getString("mp134do");
+            this.mp134f = json.getString("mp134f");
+            this.mp134du = json.getString("mp134du");
+            this.mp135 = json.getString("mp135");
+            this.mp135do = json.getString("mp135do");
+            this.mp135f = json.getString("mp135f");
+            this.mp135du = json.getString("mp135du");
+            this.mp136 = json.getString("mp136");
+            this.mp136do = json.getString("mp136do");
+            this.mp136f = json.getString("mp136f");
+            this.mp136du = json.getString("mp136du");
+            this.mp137 = json.getString("mp137");
+            this.mp137do = json.getString("mp137do");
+            this.mp137f = json.getString("mp137f");
+            this.mp137du = json.getString("mp137du");
+
+        }
+    }
+
+    public JSONObject toJSONObject() throws JSONException {
+
+        JSONObject json = new JSONObject();
+        json.put(PRESCRIPTIONTable.COLUMN_ID, this.id);
+        json.put(PRESCRIPTIONTable.COLUMN_UID, this.uid);
+        json.put(PRESCRIPTIONTable.COLUMN_USERNAME, this.userName);
+        json.put(PRESCRIPTIONTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(PRESCRIPTIONTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(PRESCRIPTIONTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(PRESCRIPTIONTable.COLUMN_APPVERSION, this.appver);
+        json.put(PRESCRIPTIONTable.COLUMN_SYNCED, this.synced);
+        json.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(PRESCRIPTIONTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(PRESCRIPTIONTable.COLUMN_ISTATUS96x, this.iStatus96x);
+
+        json.put(PRESCRIPTIONTable.COLUMN_PRES, new JSONObject(sPREStoString()));
+        return json;
+    }
+
+    public String sPREStoString() throws JSONException {
+        Log.d(TAG, "sPREStoString: ");
+        JSONObject json = new JSONObject();
+        json.put("mp101", mp101)
+                .put("mp101do", mp101do)
+                .put("mp101f", mp101f)
+                .put("mp101du", mp101du)
+                .put("mp102", mp102)
+                .put("mp102do", mp102do)
+                .put("mp102f", mp102f)
+                .put("mp102du", mp102du)
+                .put("mp103", mp103)
+                .put("mp103do", mp103do)
+                .put("mp103f", mp103f)
+                .put("mp103du", mp103du)
+                .put("mp104", mp104)
+                .put("mp104do", mp104do)
+                .put("mp104f", mp104f)
+                .put("mp104du", mp104du)
+                .put("mp105", mp105)
+                .put("mp105do", mp105do)
+                .put("mp105f", mp105f)
+                .put("mp105du", mp105du)
+                .put("mp106", mp106)
+                .put("mp106do", mp106do)
+                .put("mp106f", mp106f)
+                .put("mp106du", mp106du)
+                .put("mp107", mp107)
+                .put("mp107do", mp107do)
+                .put("mp107f", mp107f)
+                .put("mp107du", mp107du)
+                .put("mp108", mp108)
+                .put("mp108do", mp108do)
+                .put("mp108f", mp108f)
+                .put("mp108du", mp108du)
+                .put("mp109", mp109)
+                .put("mp109do", mp109do)
+                .put("mp109f", mp109f)
+                .put("mp109du", mp109du)
+                .put("mp110", mp110)
+                .put("mp110do", mp110do)
+                .put("mp110f", mp110f)
+                .put("mp110du", mp110du)
+                .put("mp111", mp111)
+                .put("mp111do", mp111do)
+                .put("mp111f", mp111f)
+                .put("mp111du", mp111du)
+                .put("mp112", mp112)
+                .put("mp112do", mp112do)
+                .put("mp112f", mp112f)
+                .put("mp112du", mp112du)
+                .put("mp113", mp113)
+                .put("mp113do", mp113do)
+                .put("mp113f", mp113f)
+                .put("mp113du", mp113du)
+                .put("mp114", mp114)
+                .put("mp114do", mp114do)
+                .put("mp114f", mp114f)
+                .put("mp114du", mp114du)
+                .put("mp115", mp115)
+                .put("mp115do", mp115do)
+                .put("mp115f", mp115f)
+                .put("mp115du", mp115du)
+                .put("mp116", mp116)
+                .put("mp116do", mp116do)
+                .put("mp116f", mp116f)
+                .put("mp116du", mp116du)
+                .put("mp117", mp117)
+                .put("mp117do", mp117do)
+                .put("mp117f", mp117f)
+                .put("mp117du", mp117du)
+                .put("mp118", mp118)
+                .put("mp118do", mp118do)
+                .put("mp118f", mp118f)
+                .put("mp118du", mp118du)
+                .put("mp119", mp119)
+                .put("mp119do", mp119do)
+                .put("mp119f", mp119f)
+                .put("mp119du", mp119du)
+                .put("mp120", mp120)
+                .put("mp120do", mp120do)
+                .put("mp120f", mp120f)
+                .put("mp120du", mp120du)
+                .put("mp121", mp121)
+                .put("mp121do", mp121do)
+                .put("mp121f", mp121f)
+                .put("mp121du", mp121du)
+                .put("mp122", mp122)
+                .put("mp122do", mp122do)
+                .put("mp122f", mp122f)
+                .put("mp122du", mp122du)
+                .put("mp123", mp123)
+                .put("mp123do", mp123do)
+                .put("mp123f", mp123f)
+                .put("mp123du", mp123du)
+                .put("mp124", mp124)
+                .put("mp124do", mp124do)
+                .put("mp124f", mp124f)
+                .put("mp124du", mp124du)
+                .put("mp125", mp125)
+                .put("mp125do", mp125do)
+                .put("mp125f", mp125f)
+                .put("mp125du", mp125du)
+                .put("mp126", mp126)
+                .put("mp126do", mp126do)
+                .put("mp126f", mp126f)
+                .put("mp126du", mp126du)
+                .put("mp127", mp127)
+                .put("mp127do", mp127do)
+                .put("mp127f", mp127f)
+                .put("mp127du", mp127du)
+                .put("mp128", mp128)
+                .put("mp128do", mp128do)
+                .put("mp128f", mp128f)
+                .put("mp128du", mp128du)
+                .put("mp129", mp129)
+                .put("mp129do", mp129do)
+                .put("mp129f", mp129f)
+                .put("mp129du", mp129du)
+                .put("mp130", mp130)
+                .put("mp130do", mp130do)
+                .put("mp130f", mp130f)
+                .put("mp130du", mp130du)
+                .put("mp131", mp131)
+                .put("mp131do", mp131do)
+                .put("mp131f", mp131f)
+                .put("mp131du", mp131du)
+                .put("mp132", mp132)
+                .put("mp132do", mp132do)
+                .put("mp132f", mp132f)
+                .put("mp132du", mp132du)
+                .put("mp133", mp133)
+                .put("mp133do", mp133do)
+                .put("mp133f", mp133f)
+                .put("mp133du", mp133du)
+                .put("mp134", mp134)
+                .put("mp134do", mp134do)
+                .put("mp134f", mp134f)
+                .put("mp134du", mp134du)
+                .put("mp135", mp135)
+                .put("mp135do", mp135do)
+                .put("mp135f", mp135f)
+                .put("mp135du", mp135du)
+                .put("mp136", mp136)
+                .put("mp136do", mp136do)
+                .put("mp136f", mp136f)
+                .put("mp136du", mp136du)
+                .put("mp137", mp137)
+                .put("mp137do", mp137do)
+                .put("mp137f", mp137f)
+                .put("mp137du", mp137du);
+        return json.toString();
     }
 
 }

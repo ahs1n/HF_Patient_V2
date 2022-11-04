@@ -3,15 +3,22 @@ package edu.aku.hassannaqvi.hf_patient_v2.models;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp._EMPTY_;
 
+import android.database.Cursor;
+import android.util.Log;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.DIAGNOSISTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Diagnosis extends BaseObservable implements Observable {
@@ -886,5 +893,184 @@ public class Diagnosis extends BaseObservable implements Observable {
     public void setSd100nr(String sd100nr) {
         this.sd100nr = sd100nr;
         notifyPropertyChanged(BR.sd100nr);
+    }
+
+
+    public Diagnosis Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_APPVERSION));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED_DATE));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ISTATUS96x));
+
+        sDIAGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SDIAG)));
+
+        return this;
+    }
+
+    public void sDIAGHydrate(String string) throws JSONException {
+        Log.d(TAG, "sDIAGHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.sd100 = json.getString("sd100");
+            this.sd101 = json.getString("sd101");
+            this.sd102 = json.getString("sd102");
+            this.sd103 = json.getString("sd103");
+            this.sd104 = json.getString("sd104");
+            this.sd105 = json.getString("sd105");
+            this.sd106 = json.getString("sd106");
+            this.sd107 = json.getString("sd107");
+            this.sd108 = json.getString("sd108");
+            this.sd109 = json.getString("sd109");
+            this.sd110 = json.getString("sd110");
+            this.sd111 = json.getString("sd111");
+            this.sd112 = json.getString("sd112");
+            this.sd113 = json.getString("sd113");
+            this.sd114 = json.getString("sd114");
+            this.sd115 = json.getString("sd115");
+            this.sd116 = json.getString("sd116");
+            this.sd117 = json.getString("sd117");
+            this.sd118 = json.getString("sd118");
+            this.sd119 = json.getString("sd119");
+            this.sd120 = json.getString("sd120");
+            this.sd121 = json.getString("sd121");
+            this.sd122 = json.getString("sd122");
+            this.sd123 = json.getString("sd123");
+            this.sd124 = json.getString("sd124");
+            this.sd125 = json.getString("sd125");
+            this.sd126 = json.getString("sd126");
+            this.sd127 = json.getString("sd127");
+            this.sd128 = json.getString("sd128");
+            this.sd129 = json.getString("sd129");
+            this.sd130 = json.getString("sd130");
+            this.sd131 = json.getString("sd131");
+            this.sd132 = json.getString("sd132");
+            this.sd133 = json.getString("sd133");
+            this.sd134 = json.getString("sd134");
+            this.sd135 = json.getString("sd135");
+            this.sd136 = json.getString("sd136");
+            this.sd137 = json.getString("sd137");
+            this.sd138 = json.getString("sd138");
+            this.sd139 = json.getString("sd139");
+            this.sd140 = json.getString("sd140");
+            this.sd141 = json.getString("sd141");
+            this.sd142 = json.getString("sd142");
+            this.sd143 = json.getString("sd143");
+            this.sd144 = json.getString("sd144");
+            this.sd145 = json.getString("sd145");
+            this.sd146 = json.getString("sd146");
+            this.sd147 = json.getString("sd147");
+            this.sd148 = json.getString("sd148");
+            this.sd149 = json.getString("sd149");
+            this.sd961 = json.getString("sd961");
+            this.sd961x = json.getString("sd961x");
+            this.sd962 = json.getString("sd962");
+            this.sd962x = json.getString("sd962x");
+            this.sd963 = json.getString("sd963");
+            this.sd963x = json.getString("sd963x");
+            this.sd964 = json.getString("sd964");
+            this.sd964x = json.getString("sd964x");
+            this.sd965 = json.getString("sd965");
+            this.sd965x = json.getString("sd965x");
+            this.sd966 = json.getString("sd966");
+            this.sd966x = json.getString("sd966x");
+            this.sd100nr = json.getString("sd100nr");
+
+        }
+    }
+
+    public JSONObject toJSONObject() throws JSONException {
+
+        JSONObject json = new JSONObject();
+        json.put(DIAGNOSISTable.COLUMN_ID, this.id);
+        json.put(DIAGNOSISTable.COLUMN_UID, this.uid);
+        json.put(DIAGNOSISTable.COLUMN_USERNAME, this.userName);
+        json.put(DIAGNOSISTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(DIAGNOSISTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(DIAGNOSISTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(DIAGNOSISTable.COLUMN_APPVERSION, this.appver);
+        json.put(DIAGNOSISTable.COLUMN_SYNCED, this.synced);
+        json.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(DIAGNOSISTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(DIAGNOSISTable.COLUMN_ISTATUS96x, this.iStatus96x);
+
+        json.put(DIAGNOSISTable.COLUMN_SDIAG, new JSONObject(sDIAGtoString()));
+        return json;
+    }
+
+    public String sDIAGtoString() throws JSONException {
+        Log.d(TAG, "sDIAGtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("sd100", sd100)
+                .put("sd101", sd101)
+                .put("sd102", sd102)
+                .put("sd103", sd103)
+                .put("sd104", sd104)
+                .put("sd105", sd105)
+                .put("sd106", sd106)
+                .put("sd107", sd107)
+                .put("sd108", sd108)
+                .put("sd109", sd109)
+                .put("sd110", sd110)
+                .put("sd111", sd111)
+                .put("sd112", sd112)
+                .put("sd113", sd113)
+                .put("sd114", sd114)
+                .put("sd115", sd115)
+                .put("sd116", sd116)
+                .put("sd117", sd117)
+                .put("sd118", sd118)
+                .put("sd119", sd119)
+                .put("sd120", sd120)
+                .put("sd121", sd121)
+                .put("sd122", sd122)
+                .put("sd123", sd123)
+                .put("sd124", sd124)
+                .put("sd125", sd125)
+                .put("sd126", sd126)
+                .put("sd127", sd127)
+                .put("sd128", sd128)
+                .put("sd129", sd129)
+                .put("sd130", sd130)
+                .put("sd131", sd131)
+                .put("sd132", sd132)
+                .put("sd133", sd133)
+                .put("sd134", sd134)
+                .put("sd135", sd135)
+                .put("sd136", sd136)
+                .put("sd137", sd137)
+                .put("sd138", sd138)
+                .put("sd139", sd139)
+                .put("sd140", sd140)
+                .put("sd141", sd141)
+                .put("sd142", sd142)
+                .put("sd143", sd143)
+                .put("sd144", sd144)
+                .put("sd145", sd145)
+                .put("sd146", sd146)
+                .put("sd147", sd147)
+                .put("sd148", sd148)
+                .put("sd149", sd149)
+                .put("sd961", sd961)
+                .put("sd961x", sd961x)
+                .put("sd962", sd962)
+                .put("sd962x", sd962x)
+                .put("sd963", sd963)
+                .put("sd963x", sd963x)
+                .put("sd964", sd964)
+                .put("sd964x", sd964x)
+                .put("sd965", sd965)
+                .put("sd965x", sd965x)
+                .put("sd966", sd966)
+                .put("sd966x", sd966x)
+                .put("sd100nr", sd100nr);
+        return json.toString();
     }
 }

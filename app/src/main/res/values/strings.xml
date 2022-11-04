@@ -30,7 +30,7 @@
     <string name="section05diagnosis_mainheading">Section 05: Diagnosis: </string>
     <string name="section06vaccination_mainheading">Section 06: Vaccination: </string>
     <string name="section07medicineprescription_mainheading">Section 07: Medicine Prescription: </string>
-    <string name="app_name"> Health Facility Patient Information </string>
+    <string name="app_name"> Health Facility Patient Information V2</string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="prompt_email">Email</string>
@@ -80,8 +80,8 @@
     <string name="facility">Facility Name</string>
     <string name="date">Date</string>
     <string name="time">Form TIME</string>
-    <string name="ss0title">Doctor&#039;s Information</string>
-    <string name="ss100">Doctor&#039;s Name</string>
+    <string name="ss0title">Doctor\'s Information</string>
+    <string name="ss100">Doctor\'s Name</string>
     <string name="ss1title">Patient Information</string>
     <string name="ss101">Patient Name</string>
     <string name="ss102">Father / Husband Name</string>

@@ -23,18 +23,21 @@ import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.validatorcrawler.aliazaz.Validator
 import edu.aku.hassannaqvi.hf_patient_v2.R
+import edu.aku.hassannaqvi.hf_patient_v2.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.hf_patient_v2.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.hf_patient_v2.base.viewmodel.MainViewModel
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp
 import edu.aku.hassannaqvi.hf_patient_v2.database.AndroidManager
+import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate
-import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionMobileHealthR2
+import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivityWithNoHistory
+import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.hf_patient_v2.utils.isNetworkConnected
 import edu.aku.hassannaqvi.hf_patient_v2.utils.shared.SharedStorage
 import kotlinx.coroutines.delay
@@ -63,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         bi.callback = this
         setSupportActionBar(bi.toolbar)
         if (MainApp.admin) bi.adminSection.visibility = View.VISIBLE
+        viewModel =
+            obtainViewModel(MainViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
 
         /*
         * Setting Adapters
@@ -359,7 +364,7 @@ class MainActivity : AppCompatActivity() {
         when (v.id) {
             R.id.formA -> {
                 SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
-                gotoActivity(SectionMobileHealthR2::class.java)
+                gotoActivity(SectionScreeningActivity::class.java)
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidManager::class.java))
             R.id.btn_check_camp -> {

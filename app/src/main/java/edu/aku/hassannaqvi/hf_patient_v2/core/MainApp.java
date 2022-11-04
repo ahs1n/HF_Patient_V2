@@ -25,7 +25,6 @@ import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Form;
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
-import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetailsV2;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Users;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
@@ -60,12 +59,12 @@ public class MainApp extends Application {
     public static int TRATS = 8;
     public static String selectedDoctorCode;
     public static String selectedDoctorName;
-    public static PatientDetailsV2 pd;
 
     public static boolean permissionCheck = false;
     public static int entryType = 0;
 
 
+    public static PatientDetails pd;
     public static Complaints complaints;
     public static Diagnosis diagnosis;
     public static Prescription prescription;

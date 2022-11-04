@@ -55,7 +55,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private void saveDraft() {
-        patientDetails.setStatus(bi.istatusa.isChecked() ? "1"
+        patientDetails.setiStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
                 : bi.istatusc.isChecked() ? "3"
                 : "-1");
@@ -76,7 +76,7 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesMHColumn(PDContract.MHTable.COLUMN_STATUS, patientDetails.getStatus());
+        int updcount = db.updatesPDColumn(PDContract.PDTable.COLUMN_ISTATUS, patientDetails.getiStatus());
         if (updcount > 0) {
             //int count = db.updateEnding();
             return updcount > 0;

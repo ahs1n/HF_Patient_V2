@@ -112,7 +112,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.father.setText(" ( " + fc.get(position).getSs108() + " )");
         holder.cluster.setText(fc.get(position).getSs107());
         holder.istatus.setText(fc.get(position).getSs106());
-        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
+//        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
         holder.status.setBackgroundColor(iColor);
 
 
