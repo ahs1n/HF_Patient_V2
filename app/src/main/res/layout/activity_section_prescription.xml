@@ -139,29 +139,15 @@
 
                         </com.google.android.flexbox.FlexboxLayout>
 
-                        <ViewStub
+                        <include
                             android:id="@+id/presStub1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout="@layout/view_prescription_1" />
+                            layout="@layout/view_prescription_1"
+                            app:form="@{form}" />
 
-                        <ViewStub
+                        <include
                             android:id="@+id/presStub2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout="@layout/view_prescription_2" />
-
-                        <Button
-                            android:id="@+id/navPresBtn"
-                            android:layout_width="@dimen/_75sdp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginBottom="@dimen/_10sdp"
-                            android:background="@color/colorPrimary"
-                            android:onClick="presToggle"
-                            android:text="@string/more"
-                            android:textColor="@color/white" />
+                            layout="@layout/view_prescription_2"
+                            app:form="@{form}" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

@@ -21,43 +21,21 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionPrescriptionBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 
 public class SectionPrescriptionActivity extends AppCompatActivity {
 
     ActivitySectionPrescriptionBinding bi;
     private DatabaseHelper db;
 
-    private ViewStub presStub1, presStub2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MainApp.prescription = new Prescription();
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_prescription);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(prescription);
-
-        presStub1 = findViewById(R.id.presStub1);
-        presStub2 = findViewById(R.id.presStub2);
-        presStub1.inflate();
-        presStub2.inflate();
-
-    }
-
-    // For prescription visibility
-    // This code is used to divide the load of views as there are 'too many parameters'
-    // error occurred in data binding while loading prescription UI
-    public void presToggle(View view) {
-        Button navPresBtn = (Button) view;
-        if (presStub1.getVisibility() == View.VISIBLE) {
-            presStub1.setVisibility(View.GONE);
-            presStub2.setVisibility(View.VISIBLE);
-            navPresBtn.setText(getString(R.string.back));
-        } else {
-            presStub2.setVisibility(View.GONE);
-            presStub1.setVisibility(View.VISIBLE);
-            navPresBtn.setText(getString(R.string.more));
-        }
 
     }
 
