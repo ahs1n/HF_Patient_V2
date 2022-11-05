@@ -68,16 +68,22 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/sd100check"
+
+                        <com.google.android.flexbox.FlexboxLayout
+                            android:id="@+id/me203check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/sd101"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd101.equals(`1`)}"
                                 android:onClick="@{()->form.setSd101(form.sd101.equals(`1`)?``:`1`)}"
@@ -85,7 +91,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd102"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd102.equals(`2`)}"
                                 android:onClick="@{()->form.setSd102(form.sd102.equals(`2`)?``:`2`)}"
@@ -93,7 +99,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd103"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd103.equals(`3`)}"
                                 android:onClick="@{()->form.setSd103(form.sd103.equals(`3`)?``:`3`)}"
@@ -101,7 +107,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd104"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd104.equals(`4`)}"
                                 android:onClick="@{()->form.setSd104(form.sd104.equals(`4`)?``:`4`)}"
@@ -109,7 +115,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd105"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd105.equals(`5`)}"
                                 android:onClick="@{()->form.setSd105(form.sd105.equals(`5`)?``:`5`)}"
@@ -117,7 +123,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd106"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd106.equals(`6`)}"
                                 android:onClick="@{()->form.setSd106(form.sd106.equals(`6`)?``:`6`)}"
@@ -125,7 +131,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd107"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd107.equals(`7`)}"
                                 android:onClick="@{()->form.setSd107(form.sd107.equals(`7`)?``:`7`)}"
@@ -133,7 +139,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd108"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd108.equals(`8`)}"
                                 android:onClick="@{()->form.setSd108(form.sd108.equals(`8`)?``:`8`)}"
@@ -141,7 +147,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd109"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd109.equals(`9`)}"
                                 android:onClick="@{()->form.setSd109(form.sd109.equals(`9`)?``:`9`)}"
@@ -149,7 +155,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd110"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd110.equals(`10`)}"
                                 android:onClick="@{()->form.setSd110(form.sd110.equals(`10`)?``:`10`)}"
@@ -157,7 +163,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd111"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd111.equals(`11`)}"
                                 android:onClick="@{()->form.setSd111(form.sd111.equals(`11`)?``:`11`)}"
@@ -165,7 +171,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd112"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd112.equals(`12`)}"
                                 android:onClick="@{()->form.setSd112(form.sd112.equals(`12`)?``:`12`)}"
@@ -173,7 +179,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd113"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd113.equals(`13`)}"
                                 android:onClick="@{()->form.setSd113(form.sd113.equals(`13`)?``:`13`)}"
@@ -181,7 +187,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd114"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd114.equals(`14`)}"
                                 android:onClick="@{()->form.setSd114(form.sd114.equals(`14`)?``:`14`)}"
@@ -189,7 +195,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd115"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd115.equals(`15`)}"
                                 android:onClick="@{()->form.setSd115(form.sd115.equals(`15`)?``:`15`)}"
@@ -197,7 +203,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd116"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd116.equals(`16`)}"
                                 android:onClick="@{()->form.setSd116(form.sd116.equals(`16`)?``:`16`)}"
@@ -205,7 +211,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd117"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd117.equals(`17`)}"
                                 android:onClick="@{()->form.setSd117(form.sd117.equals(`17`)?``:`17`)}"
@@ -213,7 +219,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd118"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd118.equals(`18`)}"
                                 android:onClick="@{()->form.setSd118(form.sd118.equals(`18`)?``:`18`)}"
@@ -221,7 +227,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd119"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd119.equals(`19`)}"
                                 android:onClick="@{()->form.setSd119(form.sd119.equals(`19`)?``:`19`)}"
@@ -229,7 +235,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd120"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd120.equals(`20`)}"
                                 android:onClick="@{()->form.setSd120(form.sd120.equals(`20`)?``:`20`)}"
@@ -237,7 +243,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd121"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd121.equals(`21`)}"
                                 android:onClick="@{()->form.setSd121(form.sd121.equals(`21`)?``:`21`)}"
@@ -245,7 +251,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd122"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd122.equals(`22`)}"
                                 android:onClick="@{()->form.setSd122(form.sd122.equals(`22`)?``:`22`)}"
@@ -253,7 +259,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd123"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd123.equals(`23`)}"
                                 android:onClick="@{()->form.setSd123(form.sd123.equals(`23`)?``:`23`)}"
@@ -261,7 +267,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd124"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd124.equals(`24`)}"
                                 android:onClick="@{()->form.setSd124(form.sd124.equals(`24`)?``:`24`)}"
@@ -269,7 +275,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd125"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd125.equals(`25`)}"
                                 android:onClick="@{()->form.setSd125(form.sd125.equals(`25`)?``:`25`)}"
@@ -277,7 +283,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd126"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd126.equals(`26`)}"
                                 android:onClick="@{()->form.setSd126(form.sd126.equals(`26`)?``:`26`)}"
@@ -285,7 +291,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd127"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd127.equals(`27`)}"
                                 android:onClick="@{()->form.setSd127(form.sd127.equals(`27`)?``:`27`)}"
@@ -293,7 +299,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd128"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd128.equals(`28`)}"
                                 android:onClick="@{()->form.setSd128(form.sd128.equals(`28`)?``:`28`)}"
@@ -301,7 +307,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd129"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd129.equals(`29`)}"
                                 android:onClick="@{()->form.setSd129(form.sd129.equals(`29`)?``:`29`)}"
@@ -309,7 +315,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd130"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd130.equals(`30`)}"
                                 android:onClick="@{()->form.setSd130(form.sd130.equals(`30`)?``:`30`)}"
@@ -317,7 +323,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd131"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd131.equals(`31`)}"
                                 android:onClick="@{()->form.setSd131(form.sd131.equals(`31`)?``:`31`)}"
@@ -325,7 +331,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd132"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd132.equals(`32`)}"
                                 android:onClick="@{()->form.setSd132(form.sd132.equals(`32`)?``:`32`)}"
@@ -333,7 +339,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd133"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd133.equals(`33`)}"
                                 android:onClick="@{()->form.setSd133(form.sd133.equals(`33`)?``:`33`)}"
@@ -341,7 +347,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd134"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd134.equals(`34`)}"
                                 android:onClick="@{()->form.setSd134(form.sd134.equals(`34`)?``:`34`)}"
@@ -349,7 +355,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd135"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd135.equals(`35`)}"
                                 android:onClick="@{()->form.setSd135(form.sd135.equals(`35`)?``:`35`)}"
@@ -357,7 +363,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd136"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd136.equals(`36`)}"
                                 android:onClick="@{()->form.setSd136(form.sd136.equals(`36`)?``:`36`)}"
@@ -365,7 +371,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd137"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd137.equals(`37`)}"
                                 android:onClick="@{()->form.setSd137(form.sd137.equals(`37`)?``:`37`)}"
@@ -373,7 +379,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd138"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd138.equals(`38`)}"
                                 android:onClick="@{()->form.setSd138(form.sd138.equals(`38`)?``:`38`)}"
@@ -381,7 +387,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd139"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd139.equals(`39`)}"
                                 android:onClick="@{()->form.setSd139(form.sd139.equals(`39`)?``:`39`)}"
@@ -389,7 +395,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd140"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd140.equals(`40`)}"
                                 android:onClick="@{()->form.setSd140(form.sd140.equals(`40`)?``:`40`)}"
@@ -397,7 +403,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd141"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd141.equals(`41`)}"
                                 android:onClick="@{()->form.setSd141(form.sd141.equals(`41`)?``:`41`)}"
@@ -405,7 +411,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd142"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd142.equals(`42`)}"
                                 android:onClick="@{()->form.setSd142(form.sd142.equals(`42`)?``:`42`)}"
@@ -413,7 +419,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd143"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd143.equals(`43`)}"
                                 android:onClick="@{()->form.setSd143(form.sd143.equals(`43`)?``:`43`)}"
@@ -421,7 +427,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd144"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd144.equals(`44`)}"
                                 android:onClick="@{()->form.setSd144(form.sd144.equals(`44`)?``:`44`)}"
@@ -429,7 +435,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd145"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd145.equals(`45`)}"
                                 android:onClick="@{()->form.setSd145(form.sd145.equals(`45`)?``:`45`)}"
@@ -437,7 +443,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd146"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd146.equals(`46`)}"
                                 android:onClick="@{()->form.setSd146(form.sd146.equals(`46`)?``:`46`)}"
@@ -445,7 +451,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd147"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd147.equals(`47`)}"
                                 android:onClick="@{()->form.setSd147(form.sd147.equals(`47`)?``:`47`)}"
@@ -453,7 +459,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd148"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd148.equals(`48`)}"
                                 android:onClick="@{()->form.setSd148(form.sd148.equals(`48`)?``:`48`)}"
@@ -461,7 +467,7 @@
 
                             <CheckBox
                                 android:id="@+id/sd149"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd149.equals(`49`)}"
                                 android:onClick="@{()->form.setSd149(form.sd149.equals(`49`)?``:`49`)}"
@@ -469,120 +475,125 @@
 
                             <CheckBox
                                 android:id="@+id/sd961"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd961.equals(`961`)}"
                                 android:onClick="@{()->form.setSd961(form.sd961.equals(`961`)?``:`961`)}"
                                 android:text="@string/sd961" />
 
-                            <EditText
-                                android:id="@+id/sd961x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd961"
-                                android:tag="sd961"
-                                android:text="@={form.sd961x}"
-                                android:visibility="@{form.sd961.equals(`961`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd962"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd962.equals(`962`)}"
                                 android:onClick="@{()->form.setSd962(form.sd962.equals(`962`)?``:`962`)}"
                                 android:text="@string/sd962" />
 
-                            <EditText
-                                android:id="@+id/sd962x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd962"
-                                android:tag="sd962"
-                                android:text="@={form.sd962x}"
-                                android:visibility="@{form.sd962.equals(`962`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd963"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd963.equals(`963`)}"
                                 android:onClick="@{()->form.setSd963(form.sd963.equals(`963`)?``:`963`)}"
                                 android:text="@string/sd963" />
 
-                            <EditText
-                                android:id="@+id/sd963x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd963"
-                                android:tag="sd963"
-                                android:text="@={form.sd963x}"
-                                android:visibility="@{form.sd963.equals(`963`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd964"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd964.equals(`964`)}"
                                 android:onClick="@{()->form.setSd964(form.sd964.equals(`964`)?``:`964`)}"
                                 android:text="@string/sd964" />
 
-                            <EditText
-                                android:id="@+id/sd964x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd964"
-                                android:tag="sd964"
-                                android:text="@={form.sd964x}"
-                                android:visibility="@{form.sd964.equals(`964`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd965"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd965.equals(`965`)}"
                                 android:onClick="@{()->form.setSd965(form.sd965.equals(`965`)?``:`965`)}"
                                 android:text="@string/sd965" />
 
-                            <EditText
-                                android:id="@+id/sd965x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd965"
-                                android:tag="sd965"
-                                android:text="@={form.sd965x}"
-                                android:visibility="@{form.sd965.equals(`965`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd966"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd966.equals(`966`)}"
                                 android:onClick="@{()->form.setSd966(form.sd966.equals(`966`)?``:`966`)}"
                                 android:text="@string/sd966" />
 
-                            <EditText
-                                android:id="@+id/sd966x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sd966"
-                                android:tag="sd966"
-                                android:text="@={form.sd966x}"
-                                android:visibility="@{form.sd966.equals(`966`) ? View.VISIBLE : View.GONE}" />
-
                             <CheckBox
                                 android:id="@+id/sd100nr"
-                                android:layout_width="match_parent"
+                                android:layout_width="260dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="#7fefd6d6"
                                 android:checked="@{form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd100nr(form.sd100nr.equals(`999`)?``:`999`)}"
-                                android:text="@string/sd100nr" />
-                        </LinearLayout>
+                                android:tag="-1"
+                                android:text="@string/sd100nr"
+                                android:textColor="@color/redDark" />
+                        </com.google.android.flexbox.FlexboxLayout>
+
+                        <EditText
+                            android:id="@+id/sd961x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd961"
+                            android:tag="sd961"
+                            android:text="@={form.sd961x}"
+                            android:visibility="@{form.sd961.equals(`961`) ? View.VISIBLE : View.GONE}" />
+
+                        <EditText
+                            android:id="@+id/sd962x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd962"
+                            android:tag="sd962"
+                            android:text="@={form.sd962x}"
+                            android:visibility="@{form.sd962.equals(`962`) ? View.VISIBLE : View.GONE}" />
+
+                        <EditText
+                            android:id="@+id/sd963x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd963"
+                            android:tag="sd963"
+                            android:text="@={form.sd963x}"
+                            android:visibility="@{form.sd963.equals(`963`) ? View.VISIBLE : View.GONE}" />
+
+                        <EditText
+                            android:id="@+id/sd964x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd964"
+                            android:tag="sd964"
+                            android:text="@={form.sd964x}"
+                            android:visibility="@{form.sd964.equals(`964`) ? View.VISIBLE : View.GONE}" />
+
+                        <EditText
+                            android:id="@+id/sd965x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd965"
+                            android:tag="sd965"
+                            android:text="@={form.sd965x}"
+                            android:visibility="@{form.sd965.equals(`965`) ? View.VISIBLE : View.GONE}" />
+
+                        <EditText
+                            android:id="@+id/sd966x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sd966"
+                            android:tag="sd966"
+                            android:text="@={form.sd966x}"
+                            android:visibility="@{form.sd966.equals(`966`) ? View.VISIBLE : View.GONE}" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
