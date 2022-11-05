@@ -65,7 +65,7 @@ android {
             applicationId "edu.aku.hassannaqvi.hf_patient_v2"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
-            minSdkVersion 29
+            minSdkVersion 22
             targetSdkVersion 31
         }
 

@@ -24,62 +24,6 @@
         app:flexWrap="wrap"
         app:justifyContent="space_evenly">
 
-        <TextView
-            android:id="@+id/medName"
-            style="@style/sub_labels"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Medicines" />
-
-        <TextView
-            android:id="@+id/medDOS"
-            style="@style/sub_labels"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Dose" />
-
-        <TextView
-            android:id="@+id/medOD"
-            style="@style/sub_labels"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="OD" />
-
-        <TextView
-            android:id="@+id/medBD"
-            style="@style/sub_labels"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="BD" />
-
-        <TextView
-            android:id="@+id/medTDS"
-            style="@style/sub_labels"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="TDS" />
-
-        <TextView
-            android:id="@+id/medQID"
-            style="@style/sub_labels"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="QID" />
-
-        <TextView
-            android:id="@+id/medDUR"
-            style="@style/sub_labels"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Duration" />
-
         <CheckBox
             android:id="@+id/mp101"
             android:layout_width="230dp"
