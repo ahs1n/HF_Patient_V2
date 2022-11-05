@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#6667ab</color>
-    <color name="colorPrimaryLight">#E8EAF6</color>
-    <color name="colorPrimaryDark">#3949AB</color>
+    <color name="colorPrimary">#36beb7</color>
+    <color name="colorPrimaryLight">#3DD3CB</color>
+    <color name="colorPrimaryDark">#2EA19B</color>
     <color name="colorAccent">#ab8d67</color>
     <color name="colorAccentLight">#FFAB40</color>
 
@@ -49,4 +49,8 @@
 
     <color name="grayDark1">#696969</color>
     <color name="lightPink1">#7fefd6d6</color>
+
+    <color name="orange">#EEDA773B</color>
+    <color name="grayOverlay">#7f7f7f7f</color>
+    <color name="red">#990000</color>
 </resources>

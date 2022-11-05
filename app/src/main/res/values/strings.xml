@@ -1734,6 +1734,10 @@
     <string name='Q_vstitle'>vstitle</string>
     <string name="more">More</string>
     <string name="back">Back</string>
+    <string name="signin">Sign In</string>
+    <string name="btnDownloadData">Download Data</string>
+    <string name="downloadDataDesc">Please download the data before login</string>
+    <string name="data_sync_activity">Data Sync Screen</string>
 
 
 </resources>

@@ -5,12 +5,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:background="@drawable/outline_btn"
+        android:background="@drawable/bg_rounded_app_color_bordered"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_top_app_color_filled"
+            android:padding="@dimen/_1sdp"
             android:orientation="horizontal">
 
             <TextView
@@ -18,13 +20,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="@color/colorAccent"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:background="@drawable/bg_rounded_left_top_app_color_filled"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="@dimen/_5sdp"
                 android:text="Facility Information"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -34,24 +36,24 @@
                 android:layout_gravity="center"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:padding="8dp"
+                android:background="@drawable/bg_rounded_right_top_app_color_filled"
                 android:text="@string/mh02"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@color/grayDark"
+                android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="@color/gray" />
+<!--        <View-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/gray" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="@dimen/_15sdp">
 
             <!--<TextView
                 android:id="@+id/dist1"
@@ -70,71 +72,74 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/gray" />-->
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_margin="8dp"
-                android:background="@color/gray" />
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:background="@color/gray" />-->
 
             <TextView
                 android:id="@+id/area1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Facility Code"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/area2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:text="@string/mh05"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/gray" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_margin="8dp"
-                android:background="@color/gray" />
+                android:layout_height="@dimen/_1sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@color/grayLight" />
 
             <TextView
                 android:id="@+id/uc1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UC Name"
-                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_9ssp"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/uc2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:text="@string/mh04"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/gray" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_margin="8dp"
-                android:background="@color/gray" />
+                android:layout_height="@dimen/_1sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@color/grayLight" />
 
             <TextView
                 android:id="@+id/uc3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UC Code"
-                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_9ssp"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/uc4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:text="@string/mh04"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/gray" />

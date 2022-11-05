@@ -22,6 +22,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.karumi.dexter.Dexter;
@@ -263,10 +264,12 @@ public class LoginActivity extends AppCompatActivity {
         //TODO implement
         if (bi.password.getTransformationMethod() == null) {
             bi.password.setTransformationMethod(new PasswordTransformationMethod());
-            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_close, 0, 0, 0);
+//            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_close, 0, 0, 0);
+            bi.passwordIV.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_locked));
         } else {
             bi.password.setTransformationMethod(null);
-            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open, 0, 0, 0);
+//            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open, 0, 0, 0);
+            bi.passwordIV.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_unlocked));
         }
     }
 

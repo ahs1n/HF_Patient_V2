@@ -1,41 +1,91 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEEE"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:orientation="vertical">
 
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/akuLogoIV"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="@dimen/_225sdp"
+        android:layout_marginStart="@dimen/_minus60sdp"
+        android:layout_marginTop="@dimen/_minus60sdp"
+        android:alpha="0.04"
+        android:background="@drawable/aku_logo"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/appLogoIV"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="@dimen/_85sdp"
+        android:layout_above="@+id/appTitleTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_minus10sdp"
+        android:background="@drawable/logo_2"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/appTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="@color/grayDark"
+        android:textSize="@dimen/_20ssp" />
+
+    <ProgressBar
+        android:id="@+id/progressSplashscreen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="24dp"
-            android:paddingTop="24dp"
-            android:src="@drawable/app_icon" />
+    <ImageView
+        android:id="@+id/akuFullLogoIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/aku_logo_3"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_30ssp"
+        tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageView2"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:layout_marginStart="24dp"-->
+    <!--            android:layout_marginTop="24dp"-->
+    <!--            android:layout_marginEnd="24dp"-->
+    <!--            android:layout_marginBottom="24dp"-->
+    <!--            android:paddingTop="24dp"-->
+    <!--            android:src="@drawable/logo" />-->
 
-    </RelativeLayout>
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView7"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/imageView2"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:layout_marginTop="24dp"-->
+    <!--            android:fontFamily="@font/roboto"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="@string/app_name"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="30sp"-->
+    <!--            android:textStyle="bold" />-->
 
-</LinearLayout>
+</RelativeLayout>
