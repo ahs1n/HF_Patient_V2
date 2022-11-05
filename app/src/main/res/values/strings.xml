@@ -1732,6 +1732,8 @@
     <string name='Q_vs307'>vs307</string>
     <string name='Q_vs308'>vs308</string>
     <string name='Q_vstitle'>vstitle</string>
+    <string name="more">More</string>
+    <string name="back">Back</string>
 
 
 </resources>

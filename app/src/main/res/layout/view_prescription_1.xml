@@ -1,0 +1,3020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.hassannaqvi.hf_patient_v2.models.Prescription" />
+    </data>
+
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/me203check1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:tag="0"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_evenly">
+
+        <TextView
+            android:id="@+id/medName"
+            style="@style/sub_labels"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Medicines" />
+
+        <TextView
+            android:id="@+id/medDOS"
+            style="@style/sub_labels"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Dose" />
+
+        <TextView
+            android:id="@+id/medOD"
+            style="@style/sub_labels"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OD" />
+
+        <TextView
+            android:id="@+id/medBD"
+            style="@style/sub_labels"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="BD" />
+
+        <TextView
+            android:id="@+id/medTDS"
+            style="@style/sub_labels"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TDS" />
+
+        <TextView
+            android:id="@+id/medQID"
+            style="@style/sub_labels"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="QID" />
+
+        <TextView
+            android:id="@+id/medDUR"
+            style="@style/sub_labels"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Duration" />
+
+        <CheckBox
+            android:id="@+id/mp101"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp101.equals(`1`)}"
+            android:onClick="@{()->form.setMp101(form.mp101.equals(`1`)?``:`1`)}"
+            android:text="@string/mp101" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp101do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp101.equals(`1`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp101do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp101f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <RadioButton
+                android:id="@+id/mp101f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:checked="@{form.mp101f.equals(`1`)}"
+                android:enabled="@{form.mp101.equals(`1`)}"
+                android:onClick="@{()->form.setMp101f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp101f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:checked="@{form.mp101f.equals(`2`)}"
+                android:enabled="@{form.mp101.equals(`1`)}"
+                android:onClick="@{()->form.setMp101f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp101f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:checked="@{form.mp101f.equals(`3`)}"
+                android:enabled="@{form.mp101.equals(`1`)}"
+                android:onClick="@{()->form.setMp101f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp101f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:checked="@{form.mp101f.equals(`4`)}"
+                android:enabled="@{form.mp101.equals(`1`)}"
+                android:onClick="@{()->form.setMp101f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp101du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp101.equals(`1`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp101du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp102"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp102.equals(`2`)}"
+            android:onClick="@{()->form.setMp102(form.mp102.equals(`2`)?``:`2`)}"
+            android:text="@string/mp102" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp102do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp102.equals(`2`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp102do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp102f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp102f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp102f.equals(`1`)}"
+                android:enabled="@{form.mp102.equals(`2`)}"
+                android:onClick="@{()->form.setMp102f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp102f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp102f.equals(`2`)}"
+                android:enabled="@{form.mp102.equals(`2`)}"
+                android:onClick="@{()->form.setMp102f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp102f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp102f.equals(`3`)}"
+                android:enabled="@{form.mp102.equals(`2`)}"
+                android:onClick="@{()->form.setMp102f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp102f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp102f.equals(`4`)}"
+                android:enabled="@{form.mp102.equals(`2`)}"
+                android:onClick="@{()->form.setMp102f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp102du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp102.equals(`2`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp102du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp103"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp103.equals(`3`)}"
+            android:onClick="@{()->form.setMp103(form.mp103.equals(`3`)?``:`3`)}"
+            android:text="@string/mp103" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp103do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp103.equals(`3`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp103do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp103f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp103f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp103f.equals(`1`)}"
+                android:enabled="@{form.mp103.equals(`3`)}"
+                android:onClick="@{()->form.setMp103f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp103f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp103f.equals(`2`)}"
+                android:enabled="@{form.mp103.equals(`3`)}"
+                android:onClick="@{()->form.setMp103f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp103f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp103f.equals(`3`)}"
+                android:enabled="@{form.mp103.equals(`3`)}"
+                android:onClick="@{()->form.setMp103f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp103f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp103f.equals(`4`)}"
+                android:enabled="@{form.mp103.equals(`3`)}"
+                android:onClick="@{()->form.setMp103f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp103du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp103.equals(`3`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp103du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp104"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp104.equals(`4`)}"
+            android:onClick="@{()->form.setMp104(form.mp104.equals(`4`)?``:`4`)}"
+            android:text="@string/mp104" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp104do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp104.equals(`4`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp104do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp104f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp104f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp104f.equals(`1`)}"
+                android:enabled="@{form.mp104.equals(`4`)}"
+                android:onClick="@{()->form.setMp104f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp104f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp104f.equals(`2`)}"
+                android:enabled="@{form.mp104.equals(`4`)}"
+                android:onClick="@{()->form.setMp104f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp104f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp104f.equals(`3`)}"
+                android:enabled="@{form.mp104.equals(`4`)}"
+                android:onClick="@{()->form.setMp104f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp104f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp104f.equals(`4`)}"
+                android:enabled="@{form.mp104.equals(`4`)}"
+                android:onClick="@{()->form.setMp104f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp104du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp104.equals(`4`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp104du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp105"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp105.equals(`5`)}"
+            android:onClick="@{()->form.setMp105(form.mp105.equals(`5`)?``:`5`)}"
+            android:text="@string/mp105" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp105do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp105.equals(`5`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp105do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp105f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp105f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp105f.equals(`1`)}"
+                android:enabled="@{form.mp105.equals(`5`)}"
+                android:onClick="@{()->form.setMp105f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp105f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp105f.equals(`2`)}"
+                android:enabled="@{form.mp105.equals(`5`)}"
+                android:onClick="@{()->form.setMp105f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp105f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp105f.equals(`3`)}"
+                android:enabled="@{form.mp105.equals(`5`)}"
+                android:onClick="@{()->form.setMp105f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp105f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp105f.equals(`4`)}"
+                android:enabled="@{form.mp105.equals(`5`)}"
+                android:onClick="@{()->form.setMp105f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp105du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp105.equals(`5`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp105du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp106"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp106.equals(`6`)}"
+            android:onClick="@{()->form.setMp106(form.mp106.equals(`6`)?``:`6`)}"
+            android:text="@string/mp106" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp106do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp106.equals(`6`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp106do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp106f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp106f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp106f.equals(`1`)}"
+                android:enabled="@{form.mp106.equals(`6`)}"
+                android:onClick="@{()->form.setMp106f(`1`)}" />
+
+
+            <RadioButton
+                android:id="@+id/mp106f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp106f.equals(`2`)}"
+                android:enabled="@{form.mp106.equals(`6`)}"
+                android:onClick="@{()->form.setMp106f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp106f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp106f.equals(`3`)}"
+                android:enabled="@{form.mp106.equals(`6`)}"
+                android:onClick="@{()->form.setMp106f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp106f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp106f.equals(`4`)}"
+                android:enabled="@{form.mp106.equals(`6`)}"
+                android:onClick="@{()->form.setMp106f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp106du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp106.equals(`6`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp106du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp107"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp107.equals(`7`)}"
+            android:onClick="@{()->form.setMp107(form.mp107.equals(`7`)?``:`7`)}"
+            android:text="@string/mp107" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp107do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp107.equals(`7`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp107do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp107f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp107f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp107f.equals(`1`)}"
+                android:enabled="@{form.mp107.equals(`7`)}"
+                android:onClick="@{()->form.setMp107f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp107f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp107f.equals(`2`)}"
+                android:enabled="@{form.mp107.equals(`7`)}"
+                android:onClick="@{()->form.setMp107f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp107f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp107f.equals(`3`)}"
+                android:enabled="@{form.mp107.equals(`7`)}"
+                android:onClick="@{()->form.setMp107f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp107f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp107f.equals(`4`)}"
+                android:enabled="@{form.mp107.equals(`7`)}"
+                android:onClick="@{()->form.setMp107f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp107du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp107.equals(`7`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp107du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp108"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp108.equals(`8`)}"
+            android:onClick="@{()->form.setMp108(form.mp108.equals(`8`)?``:`8`)}"
+            android:text="@string/mp108" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp108do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp108.equals(`8`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp108do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp108f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp108f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp108f.equals(`1`)}"
+                android:enabled="@{form.mp108.equals(`8`)}"
+                android:onClick="@{()->form.setMp108f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp108f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp108f.equals(`2`)}"
+                android:enabled="@{form.mp108.equals(`8`)}"
+                android:onClick="@{()->form.setMp108f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp108f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp108f.equals(`3`)}"
+                android:enabled="@{form.mp108.equals(`8`)}"
+                android:onClick="@{()->form.setMp108f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp108f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp108f.equals(`4`)}"
+                android:enabled="@{form.mp108.equals(`8`)}"
+                android:onClick="@{()->form.setMp108f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp108du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp108.equals(`8`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp108du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp109"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp109.equals(`9`)}"
+            android:onClick="@{()->form.setMp109(form.mp109.equals(`9`)?``:`9`)}"
+            android:text="@string/mp109" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp109do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp109.equals(`9`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp109do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp109f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp109f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp109f.equals(`1`)}"
+                android:enabled="@{form.mp109.equals(`9`)}"
+                android:onClick="@{()->form.setMp109f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp109f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp109f.equals(`2`)}"
+                android:enabled="@{form.mp109.equals(`9`)}"
+                android:onClick="@{()->form.setMp109f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp109f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp109f.equals(`3`)}"
+                android:enabled="@{form.mp109.equals(`9`)}"
+                android:onClick="@{()->form.setMp109f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp109f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp109f.equals(`4`)}"
+                android:enabled="@{form.mp109.equals(`9`)}"
+                android:onClick="@{()->form.setMp109f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp109du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp109.equals(`9`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp109du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp110"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp110.equals(`10`)}"
+            android:onClick="@{()->form.setMp110(form.mp110.equals(`10`)?``:`10`)}"
+            android:text="@string/mp110" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp110do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp110.equals(`10`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp110do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp110f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp110f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp110f.equals(`1`)}"
+                android:enabled="@{form.mp110.equals(`10`)}"
+                android:onClick="@{()->form.setMp110f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp110f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp110f.equals(`2`)}"
+                android:enabled="@{form.mp110.equals(`10`)}"
+                android:onClick="@{()->form.setMp110f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp110f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp110f.equals(`3`)}"
+                android:enabled="@{form.mp110.equals(`10`)}"
+                android:onClick="@{()->form.setMp110f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp110f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp110f.equals(`4`)}"
+                android:enabled="@{form.mp110.equals(`10`)}"
+                android:onClick="@{()->form.setMp110f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp110du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp110.equals(`10`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp110du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp111"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp111.equals(`11`)}"
+            android:onClick="@{()->form.setMp111(form.mp111.equals(`11`)?``:`11`)}"
+            android:text="@string/mp111" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp111do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp111.equals(`11`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp111do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp111f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp111f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp111f.equals(`1`)}"
+                android:enabled="@{form.mp111.equals(`11`)}"
+                android:onClick="@{()->form.setMp111f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp111f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp111f.equals(`2`)}"
+                android:enabled="@{form.mp111.equals(`11`)}"
+                android:onClick="@{()->form.setMp111f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp111f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp111f.equals(`3`)}"
+                android:enabled="@{form.mp111.equals(`11`)}"
+                android:onClick="@{()->form.setMp111f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp111f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp111f.equals(`4`)}"
+                android:enabled="@{form.mp111.equals(`11`)}"
+                android:onClick="@{()->form.setMp111f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp111du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp111.equals(`11`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp111du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp112"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp112.equals(`12`)}"
+            android:onClick="@{()->form.setMp112(form.mp112.equals(`12`)?``:`12`)}"
+            android:text="@string/mp112" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp112do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp112.equals(`12`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp112do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp112f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp112f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp112f.equals(`1`)}"
+                android:enabled="@{form.mp112.equals(`12`)}"
+                android:onClick="@{()->form.setMp112f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp112f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp112f.equals(`2`)}"
+                android:enabled="@{form.mp112.equals(`12`)}"
+                android:onClick="@{()->form.setMp112f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp112f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp112f.equals(`3`)}"
+                android:enabled="@{form.mp112.equals(`12`)}"
+                android:onClick="@{()->form.setMp112f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp112f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp112f.equals(`4`)}"
+                android:enabled="@{form.mp112.equals(`12`)}"
+                android:onClick="@{()->form.setMp112f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp112du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp112.equals(`12`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp112du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp113"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp113.equals(`13`)}"
+            android:onClick="@{()->form.setMp113(form.mp113.equals(`13`)?``:`13`)}"
+            android:text="@string/mp113" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp113do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp113.equals(`13`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp113do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp113f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp113f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp113f.equals(`1`)}"
+                android:enabled="@{form.mp113.equals(`13`)}"
+                android:onClick="@{()->form.setMp113f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp113f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp113f.equals(`2`)}"
+                android:enabled="@{form.mp113.equals(`13`)}"
+                android:onClick="@{()->form.setMp113f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp113f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp113f.equals(`3`)}"
+                android:enabled="@{form.mp113.equals(`13`)}"
+                android:onClick="@{()->form.setMp113f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp113f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp113f.equals(`4`)}"
+                android:enabled="@{form.mp113.equals(`13`)}"
+                android:onClick="@{()->form.setMp113f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp113du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp113.equals(`13`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp113du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp114"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp114.equals(`14`)}"
+            android:onClick="@{()->form.setMp114(form.mp114.equals(`14`)?``:`14`)}"
+            android:text="@string/mp114" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp114do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp114.equals(`14`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp114do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp114f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp114f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp114f.equals(`1`)}"
+                android:enabled="@{form.mp114.equals(`14`)}"
+                android:onClick="@{()->form.setMp114f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp114f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp114f.equals(`2`)}"
+                android:enabled="@{form.mp114.equals(`14`)}"
+                android:onClick="@{()->form.setMp114f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp114f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp114f.equals(`3`)}"
+                android:enabled="@{form.mp114.equals(`14`)}"
+                android:onClick="@{()->form.setMp114f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp114f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp114f.equals(`4`)}"
+                android:enabled="@{form.mp114.equals(`14`)}"
+                android:onClick="@{()->form.setMp114f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp114du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp114.equals(`14`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp114du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp115"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp115.equals(`15`)}"
+            android:onClick="@{()->form.setMp115(form.mp115.equals(`15`)?``:`15`)}"
+            android:text="@string/mp115" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp115do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp115.equals(`15`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp115do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp115f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp115f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp115f.equals(`1`)}"
+                android:enabled="@{form.mp115.equals(`15`)}"
+                android:onClick="@{()->form.setMp115f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp115f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp115f.equals(`2`)}"
+                android:enabled="@{form.mp115.equals(`15`)}"
+                android:onClick="@{()->form.setMp115f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp115f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp115f.equals(`3`)}"
+                android:enabled="@{form.mp115.equals(`15`)}"
+                android:onClick="@{()->form.setMp115f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp115f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp115f.equals(`4`)}"
+                android:enabled="@{form.mp115.equals(`15`)}"
+                android:onClick="@{()->form.setMp115f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp115du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp115.equals(`15`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp115du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp116"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp116.equals(`16`)}"
+            android:onClick="@{()->form.setMp116(form.mp116.equals(`16`)?``:`16`)}"
+            android:text="@string/mp116" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp116do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp116.equals(`16`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp116do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp116f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp116f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp116f.equals(`1`)}"
+                android:enabled="@{form.mp116.equals(`16`)}"
+                android:onClick="@{()->form.setMp116f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp116f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp116f.equals(`2`)}"
+                android:enabled="@{form.mp116.equals(`16`)}"
+                android:onClick="@{()->form.setMp116f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp116f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp116f.equals(`3`)}"
+                android:enabled="@{form.mp116.equals(`16`)}"
+                android:onClick="@{()->form.setMp116f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp116f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp116f.equals(`4`)}"
+                android:enabled="@{form.mp116.equals(`16`)}"
+                android:onClick="@{()->form.setMp116f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp116du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp116.equals(`16`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp116du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp117"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp117.equals(`17`)}"
+            android:onClick="@{()->form.setMp117(form.mp117.equals(`17`)?``:`17`)}"
+            android:text="@string/mp117" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp117do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp117.equals(`17`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp117do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp117f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp117f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp117f.equals(`1`)}"
+                android:enabled="@{form.mp117.equals(`17`)}"
+                android:onClick="@{()->form.setMp117f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp117f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp117f.equals(`2`)}"
+                android:enabled="@{form.mp117.equals(`17`)}"
+                android:onClick="@{()->form.setMp117f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp117f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp117f.equals(`3`)}"
+                android:enabled="@{form.mp117.equals(`17`)}"
+                android:onClick="@{()->form.setMp117f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp117f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp117f.equals(`4`)}"
+                android:enabled="@{form.mp117.equals(`17`)}"
+                android:onClick="@{()->form.setMp117f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp117du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp117.equals(`17`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp117du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp118"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp118.equals(`18`)}"
+            android:onClick="@{()->form.setMp118(form.mp118.equals(`18`)?``:`18`)}"
+            android:text="@string/mp118" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp118do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp118.equals(`18`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp118do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp118f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp118f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp118f.equals(`1`)}"
+                android:enabled="@{form.mp118.equals(`18`)}"
+                android:onClick="@{()->form.setMp118f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp118f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp118f.equals(`2`)}"
+                android:enabled="@{form.mp118.equals(`18`)}"
+                android:onClick="@{()->form.setMp118f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp118f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp118f.equals(`3`)}"
+                android:enabled="@{form.mp118.equals(`18`)}"
+                android:onClick="@{()->form.setMp118f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp118f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp118f.equals(`4`)}"
+                android:enabled="@{form.mp118.equals(`18`)}"
+                android:onClick="@{()->form.setMp118f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp118du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp118.equals(`18`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp118du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp119"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp119.equals(`19`)}"
+            android:onClick="@{()->form.setMp119(form.mp119.equals(`19`)?``:`19`)}"
+            android:text="@string/mp119" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp119do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp119.equals(`19`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp119do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp119f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp119f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp119f.equals(`1`)}"
+                android:enabled="@{form.mp119.equals(`19`)}"
+                android:onClick="@{()->form.setMp119f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp119f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp119f.equals(`2`)}"
+                android:enabled="@{form.mp119.equals(`19`)}"
+                android:onClick="@{()->form.setMp119f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp119f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp119f.equals(`3`)}"
+                android:enabled="@{form.mp119.equals(`19`)}"
+                android:onClick="@{()->form.setMp119f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp119f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp119f.equals(`4`)}"
+                android:enabled="@{form.mp119.equals(`19`)}"
+                android:onClick="@{()->form.setMp119f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp119du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp119.equals(`19`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp119du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mp120"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:checked="@{form.mp120.equals(`20`)}"
+            android:onClick="@{()->form.setMp120(form.mp120.equals(`20`)?``:`20`)}"
+            android:text="@string/mp120" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp120do"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp120.equals(`20`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp120do}"
+            app:maxValue="25"
+            app:minValue="1"
+            app:type="range" />
+
+        <RadioGroup
+            android:id="@+id/mp120f"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mp120f1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp120f.equals(`1`)}"
+                android:enabled="@{form.mp120.equals(`20`)}"
+                android:onClick="@{()->form.setMp120f(`1`)}" />
+
+            <RadioButton
+                android:id="@+id/mp120f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp120f.equals(`2`)}"
+                android:enabled="@{form.mp120.equals(`20`)}"
+                android:onClick="@{()->form.setMp120f(`2`)}" />
+
+            <RadioButton
+                android:id="@+id/mp120f3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp120f.equals(`3`)}"
+                android:enabled="@{form.mp120.equals(`20`)}"
+                android:onClick="@{()->form.setMp120f(`3`)}" />
+
+            <RadioButton
+                android:id="@+id/mp120f4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checked="@{form.mp120f.equals(`4`)}"
+                android:enabled="@{form.mp120.equals(`20`)}"
+                android:onClick="@{()->form.setMp120f(`4`)}" />
+        </RadioGroup>
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/mp120du"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:enabled="@{form.mp120.equals(`20`)}"
+            android:gravity="center"
+            android:hint="##"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={form.mp120du}"
+            app:maxValue="30"
+            app:minValue="1"
+            app:type="range" />
+
+        <ViewStub
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/view_prescription_2"
+            android:visibility="visible" />
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp121"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp121.equals(`21`)}"-->
+        <!--                                android:onClick="@{()->form.setMp121(form.mp121.equals(`21`)?``:`21`)}"-->
+        <!--                                android:text="@string/mp121" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp121do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp121do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp121f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp121f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp121f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp121f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp121f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp121f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp121f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp121f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp121f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp121f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp121f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp121f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp121f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp121du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp121.equals(`21`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp121du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp122"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp122.equals(`22`)}"-->
+        <!--                                android:onClick="@{()->form.setMp122(form.mp122.equals(`22`)?``:`22`)}"-->
+        <!--                                android:text="@string/mp122" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp122do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp122do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp122f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp122f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp122f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp122f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp122f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp122f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp122f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp122f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp122f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp122f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp122f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp122f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp122f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp122du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp122.equals(`22`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp122du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp123"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp123.equals(`23`)}"-->
+        <!--                                android:onClick="@{()->form.setMp123(form.mp123.equals(`23`)?``:`23`)}"-->
+        <!--                                android:text="@string/mp123" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp123do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp123do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp123f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp123f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp123f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp123f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp123f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp123f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp123f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp123f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp123f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp123f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp123f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp123f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp123f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp123du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp123.equals(`23`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp123du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp124"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp124.equals(`24`)}"-->
+        <!--                                android:onClick="@{()->form.setMp124(form.mp124.equals(`24`)?``:`24`)}"-->
+        <!--                                android:text="@string/mp124" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp124do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp124do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp124f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp124f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp124f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp124f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp124f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp124f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp124f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp124f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp124f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp124f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp124f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp124f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp124f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp124du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp124.equals(`24`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp124du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp125"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp125.equals(`25`)}"-->
+        <!--                                android:onClick="@{()->form.setMp125(form.mp125.equals(`25`)?``:`25`)}"-->
+        <!--                                android:text="@string/mp125" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp125do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp125do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp125f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp125f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp125f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp125f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp125f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp125f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp125f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp125f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp125f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp125f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp125f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp125f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp125f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp125du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp125.equals(`25`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp125du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp126"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp126.equals(`26`)}"-->
+        <!--                                android:onClick="@{()->form.setMp126(form.mp126.equals(`26`)?``:`26`)}"-->
+        <!--                                android:text="@string/mp126" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp126do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp126do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp126f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp126f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp126f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp126f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp126f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp126f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp126f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp126f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp126f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp126f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp126f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp126f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp126f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp126du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp126.equals(`26`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp126du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp127"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp127.equals(`27`)}"-->
+        <!--                                android:onClick="@{()->form.setMp127(form.mp127.equals(`27`)?``:`27`)}"-->
+        <!--                                android:text="@string/mp127" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp127do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp127do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp127f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp127f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp127f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp127f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp127f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp127f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp127f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp127f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp127f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp127f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp127f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp127f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp127f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp127du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp127.equals(`27`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp127du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp128"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp128.equals(`28`)}"-->
+        <!--                                android:onClick="@{()->form.setMp128(form.mp128.equals(`28`)?``:`28`)}"-->
+        <!--                                android:text="@string/mp128" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp128do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp128do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp128f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp128f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp128f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp128f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp128f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp128f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp128f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp128f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp128f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp128f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp128f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp128f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp128f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp128du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp128.equals(`28`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp128du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp129"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp129.equals(`29`)}"-->
+        <!--                                android:onClick="@{()->form.setMp129(form.mp129.equals(`29`)?``:`29`)}"-->
+        <!--                                android:text="@string/mp129" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp129do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp129do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp129f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp129f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp129f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp129f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp129f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp129f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp129f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp129f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp129f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp129f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp129f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp129f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp129f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp129du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp129.equals(`29`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp129du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp130"-->
+        <!--                                android:layout_width="230dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp130.equals(`30`)}"-->
+        <!--                                android:onClick="@{()->form.setMp130(form.mp130.equals(`30`)?``:`30`)}"-->
+        <!--                                android:text="@string/mp130" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp130do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp130do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp130f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp130f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp130f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp130f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp130f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp130f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp130f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp130f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp130f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp130f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp130f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp130f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp130f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp130du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp130.equals(`30`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp130du}"-->
+        <!--                                app:maxValue="30"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp131"-->
+        <!--                                android:layout_width="231dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp131.equals(`31`)}"-->
+        <!--                                android:onClick="@{()->form.setMp131(form.mp131.equals(`31`)?``:`31`)}"-->
+        <!--                                android:text="@string/mp131" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp131do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp131do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp131f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp131f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp131f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp131f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp131f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp131f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp131f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp131f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp131f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp131f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp131f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp131f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp131f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp131du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp131.equals(`31`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp131du}"-->
+        <!--                                app:maxValue="31"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp132"-->
+        <!--                                android:layout_width="232dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp132.equals(`32`)}"-->
+        <!--                                android:onClick="@{()->form.setMp132(form.mp132.equals(`32`)?``:`32`)}"-->
+        <!--                                android:text="@string/mp132" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp132do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp132do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp132f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp132f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp132f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp132f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp132f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp132f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp132f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp132f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp132f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp132f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp132f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp132f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp132f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp132du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp132.equals(`32`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp132du}"-->
+        <!--                                app:maxValue="32"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp133"-->
+        <!--                                android:layout_width="233dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp133.equals(`33`)}"-->
+        <!--                                android:onClick="@{()->form.setMp133(form.mp133.equals(`33`)?``:`33`)}"-->
+        <!--                                android:text="@string/mp133" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp133do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp133do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp133f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp133f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp133f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp133f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp133f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp133f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp133f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp133f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp133f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp133f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp133f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp133f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp133f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp133du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp133.equals(`33`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp133du}"-->
+        <!--                                app:maxValue="33"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp134"-->
+        <!--                                android:layout_width="233dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp134.equals(`34`)}"-->
+        <!--                                android:onClick="@{()->form.setMp134(form.mp134.equals(`34`)?``:`34`)}"-->
+        <!--                                android:text="@string/mp134" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp134do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp134do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp134f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp134f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp134f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp134f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp134f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp134f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp134f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp134f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp134f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp134f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp134f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp134f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp134f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp134du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp134.equals(`34`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp134du}"-->
+        <!--                                app:maxValue="34"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp135"-->
+        <!--                                android:layout_width="233dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp135.equals(`35`)}"-->
+        <!--                                android:onClick="@{()->form.setMp135(form.mp135.equals(`35`)?``:`35`)}"-->
+        <!--                                android:text="@string/mp135" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp135do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp135do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp135f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp135f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp135f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp135f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp135f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp135f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp135f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp135f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp135f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp135f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp135f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp135f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp135f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp135du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp135.equals(`35`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp135du}"-->
+        <!--                                app:maxValue="35"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp136"-->
+        <!--                                android:layout_width="233dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp136.equals(`36`)}"-->
+        <!--                                android:onClick="@{()->form.setMp136(form.mp136.equals(`36`)?``:`36`)}"-->
+        <!--                                android:text="@string/mp136" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp136do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp136do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp136f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp136f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp136f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp136f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp136f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp136f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp136f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp136f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp136f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp136f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp136f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp136f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp136f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp136du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp136.equals(`36`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp136du}"-->
+        <!--                                app:maxValue="36"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <CheckBox-->
+        <!--                                android:id="@+id/mp137"-->
+        <!--                                android:layout_width="233dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:checked="@{form.mp137.equals(`37`)}"-->
+        <!--                                android:onClick="@{()->form.setMp137(form.mp137.equals(`37`)?``:`37`)}"-->
+        <!--                                android:text="@string/mp137" />-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp137do"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp137do}"-->
+        <!--                                app:maxValue="25"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+        <!--                            <RadioGroup-->
+        <!--                                android:id="@+id/mp137f"-->
+        <!--                                android:layout_width="220dp"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp137f1"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp137f.equals(`1`)}"-->
+        <!--                                    android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp137f(`1`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp137f2"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp137f.equals(`2`)}"-->
+        <!--                                    android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp137f(`2`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp137f3"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp137f.equals(`3`)}"-->
+        <!--                                    android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp137f(`3`)}" />-->
+
+        <!--                                <RadioButton-->
+        <!--                                    android:id="@+id/mp137f4"-->
+        <!--                                    android:layout_width="wrap_content"-->
+        <!--                                    android:layout_height="wrap_content"-->
+        <!--                                    android:background="@null"-->
+        <!--                                    android:checked="@{form.mp137f.equals(`4`)}"-->
+        <!--                                    android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                    android:onClick="@{()->form.setMp137f(`4`)}" />-->
+        <!--                            </RadioGroup>-->
+
+        <!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+        <!--                                android:id="@+id/mp137du"-->
+        <!--                                android:layout_width="65dp"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:enabled="@{form.mp137.equals(`37`)}"-->
+        <!--                                android:gravity="center"-->
+        <!--                                android:hint="##"-->
+        <!--                                android:inputType="number"-->
+        <!--                                android:maxLength="2"-->
+        <!--                                android:text="@={form.mp137du}"-->
+        <!--                                app:maxValue="37"-->
+        <!--                                app:minValue="1"-->
+        <!--                                app:type="range" />-->
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>
