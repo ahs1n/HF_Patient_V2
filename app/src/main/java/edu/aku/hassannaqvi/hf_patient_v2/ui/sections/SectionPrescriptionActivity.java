@@ -5,8 +5,6 @@ import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewStub;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,6 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionPrescriptionBinding;
-import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 
 public class SectionPrescriptionActivity extends AppCompatActivity {
 
@@ -31,7 +28,6 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainApp.prescription = new Prescription();
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_prescription);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

@@ -45,11 +45,6 @@
                     android:id="@+id/fldGrpCVprno"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -63,24 +58,26 @@
                                 android:text="@string/Q_prno" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/prno" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/prno"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={form.prno}"
+                                app:maxValue="99"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/prno"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/prno"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={form.prno}"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
-                    </LinearLayout>
+                        </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- facility  Input   -->
@@ -567,7 +564,7 @@
                                 android:id="@+id/ss10501"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_weight="1.5"
                                 android:checked="@{form.ss105.equals(`1`)}"
                                 android:onClick="@{()->form.setSs105(`1`)}"
                                 android:text="@string/ss10501" />

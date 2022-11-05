@@ -1421,6 +1421,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSe412(String se412) {
         this.se412 = se412;
+        setSe41296x(se412.equals("96") ? this.se41296x : "");
         notifyPropertyChanged(BR.se412);
     }
 
@@ -1441,6 +1442,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSe413(String se413) {
         this.se413 = se413;
+        setSe41396x(se413.equals("96") ? this.se41396x : "");
         notifyPropertyChanged(BR.se413);
     }
 
