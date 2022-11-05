@@ -281,6 +281,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd101(String sd101) {
+        if (this.sd101.equals(sd101)) return; // for all checkboxes
         this.sd101 = sd101;
         notifyPropertyChanged(BR.sd101);
     }
@@ -291,6 +292,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd102(String sd102) {
+        if (this.sd102.equals(sd102)) return; // for all checkboxes
         this.sd102 = sd102;
         notifyPropertyChanged(BR.sd102);
     }
@@ -301,6 +303,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd103(String sd103) {
+        if (this.sd103.equals(sd103)) return; // for all checkboxes
         this.sd103 = sd103;
         notifyPropertyChanged(BR.sd103);
     }
@@ -311,6 +314,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd104(String sd104) {
+        if (this.sd104.equals(sd104)) return; // for all checkboxes
         this.sd104 = sd104;
         notifyPropertyChanged(BR.sd104);
     }
@@ -321,6 +325,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd105(String sd105) {
+        if (this.sd105.equals(sd105)) return; // for all checkboxes
         this.sd105 = sd105;
         notifyPropertyChanged(BR.sd105);
     }
@@ -331,6 +336,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd106(String sd106) {
+        if (this.sd106.equals(sd106)) return; // for all checkboxes
         this.sd106 = sd106;
         notifyPropertyChanged(BR.sd106);
     }
@@ -341,6 +347,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd107(String sd107) {
+        if (this.sd107.equals(sd107)) return; // for all checkboxes
         this.sd107 = sd107;
         notifyPropertyChanged(BR.sd107);
     }
@@ -351,6 +358,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd108(String sd108) {
+        if (this.sd108.equals(sd108)) return; // for all checkboxes
         this.sd108 = sd108;
         notifyPropertyChanged(BR.sd108);
     }
@@ -361,6 +369,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd109(String sd109) {
+        if (this.sd109.equals(sd109)) return; // for all checkboxes
         this.sd109 = sd109;
         notifyPropertyChanged(BR.sd109);
     }
@@ -371,6 +380,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd110(String sd110) {
+        if (this.sd110.equals(sd110)) return; // for all checkboxes
         this.sd110 = sd110;
         notifyPropertyChanged(BR.sd110);
     }
@@ -381,6 +391,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd111(String sd111) {
+        if (this.sd111.equals(sd111)) return; // for all checkboxes
         this.sd111 = sd111;
         notifyPropertyChanged(BR.sd111);
     }
@@ -391,6 +402,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd112(String sd112) {
+        if (this.sd112.equals(sd112)) return; // for all checkboxes
         this.sd112 = sd112;
         notifyPropertyChanged(BR.sd112);
     }
@@ -401,6 +413,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd113(String sd113) {
+        if (this.sd113.equals(sd113)) return; // for all checkboxes
         this.sd113 = sd113;
         notifyPropertyChanged(BR.sd113);
     }
@@ -411,6 +424,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd114(String sd114) {
+        if (this.sd114.equals(sd114)) return; // for all checkboxes
         this.sd114 = sd114;
         notifyPropertyChanged(BR.sd114);
     }
@@ -421,6 +435,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd115(String sd115) {
+        if (this.sd115.equals(sd115)) return; // for all checkboxes
         this.sd115 = sd115;
         notifyPropertyChanged(BR.sd115);
     }
@@ -431,6 +446,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd116(String sd116) {
+        if (this.sd116.equals(sd116)) return; // for all checkboxes
         this.sd116 = sd116;
         notifyPropertyChanged(BR.sd116);
     }
@@ -441,6 +457,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd117(String sd117) {
+        if (this.sd117.equals(sd117)) return; // for all checkboxes
         this.sd117 = sd117;
         notifyPropertyChanged(BR.sd117);
     }
@@ -451,6 +468,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd118(String sd118) {
+        if (this.sd118.equals(sd118)) return; // for all checkboxes
         this.sd118 = sd118;
         notifyPropertyChanged(BR.sd118);
     }
@@ -461,6 +479,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd119(String sd119) {
+        if (this.sd119.equals(sd119)) return; // for all checkboxes
         this.sd119 = sd119;
         notifyPropertyChanged(BR.sd119);
     }
@@ -471,6 +490,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd120(String sd120) {
+        if (this.sd120.equals(sd120)) return; // for all checkboxes
         this.sd120 = sd120;
         notifyPropertyChanged(BR.sd120);
     }
@@ -481,6 +501,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd121(String sd121) {
+        if (this.sd121.equals(sd121)) return; // for all checkboxes
         this.sd121 = sd121;
         notifyPropertyChanged(BR.sd121);
     }
@@ -491,6 +512,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd122(String sd122) {
+        if (this.sd122.equals(sd122)) return; // for all checkboxes
         this.sd122 = sd122;
         notifyPropertyChanged(BR.sd122);
     }
@@ -501,6 +523,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd123(String sd123) {
+        if (this.sd123.equals(sd123)) return; // for all checkboxes
         this.sd123 = sd123;
         notifyPropertyChanged(BR.sd123);
     }
@@ -511,6 +534,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd124(String sd124) {
+        if (this.sd124.equals(sd124)) return; // for all checkboxes
         this.sd124 = sd124;
         notifyPropertyChanged(BR.sd124);
     }
@@ -521,6 +545,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd125(String sd125) {
+        if (this.sd125.equals(sd125)) return; // for all checkboxes
         this.sd125 = sd125;
         notifyPropertyChanged(BR.sd125);
     }
@@ -531,6 +556,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd126(String sd126) {
+        if (this.sd126.equals(sd126)) return; // for all checkboxes
         this.sd126 = sd126;
         notifyPropertyChanged(BR.sd126);
     }
@@ -541,6 +567,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd127(String sd127) {
+        if (this.sd127.equals(sd127)) return; // for all checkboxes
         this.sd127 = sd127;
         notifyPropertyChanged(BR.sd127);
     }
@@ -551,6 +578,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd128(String sd128) {
+        if (this.sd128.equals(sd128)) return; // for all checkboxes
         this.sd128 = sd128;
         notifyPropertyChanged(BR.sd128);
     }
@@ -561,6 +589,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd129(String sd129) {
+        if (this.sd129.equals(sd129)) return; // for all checkboxes
         this.sd129 = sd129;
         notifyPropertyChanged(BR.sd129);
     }
@@ -571,6 +600,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd130(String sd130) {
+        if (this.sd130.equals(sd130)) return; // for all checkboxes
         this.sd130 = sd130;
         notifyPropertyChanged(BR.sd130);
     }
@@ -581,6 +611,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd131(String sd131) {
+        if (this.sd131.equals(sd131)) return; // for all checkboxes
         this.sd131 = sd131;
         notifyPropertyChanged(BR.sd131);
     }
@@ -591,6 +622,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd132(String sd132) {
+        if (this.sd132.equals(sd132)) return; // for all checkboxes
         this.sd132 = sd132;
         notifyPropertyChanged(BR.sd132);
     }
@@ -601,6 +633,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd133(String sd133) {
+        if (this.sd133.equals(sd133)) return; // for all checkboxes
         this.sd133 = sd133;
         notifyPropertyChanged(BR.sd133);
     }
@@ -611,6 +644,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd134(String sd134) {
+        if (this.sd134.equals(sd134)) return; // for all checkboxes
         this.sd134 = sd134;
         notifyPropertyChanged(BR.sd134);
     }
@@ -621,6 +655,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd135(String sd135) {
+        if (this.sd135.equals(sd135)) return; // for all checkboxes
         this.sd135 = sd135;
         notifyPropertyChanged(BR.sd135);
     }
@@ -631,6 +666,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd136(String sd136) {
+        if (this.sd136.equals(sd136)) return; // for all checkboxes
         this.sd136 = sd136;
         notifyPropertyChanged(BR.sd136);
     }
@@ -641,6 +677,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd137(String sd137) {
+        if (this.sd137.equals(sd137)) return; // for all checkboxes
         this.sd137 = sd137;
         notifyPropertyChanged(BR.sd137);
     }
@@ -651,6 +688,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd138(String sd138) {
+        if (this.sd138.equals(sd138)) return; // for all checkboxes
         this.sd138 = sd138;
         notifyPropertyChanged(BR.sd138);
     }
@@ -661,6 +699,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd139(String sd139) {
+        if (this.sd139.equals(sd139)) return; // for all checkboxes
         this.sd139 = sd139;
         notifyPropertyChanged(BR.sd139);
     }
@@ -671,6 +710,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd140(String sd140) {
+        if (this.sd140.equals(sd140)) return; // for all checkboxes
         this.sd140 = sd140;
         notifyPropertyChanged(BR.sd140);
     }
@@ -681,6 +721,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd141(String sd141) {
+        if (this.sd141.equals(sd141)) return; // for all checkboxes
         this.sd141 = sd141;
         notifyPropertyChanged(BR.sd141);
     }
@@ -691,6 +732,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd142(String sd142) {
+        if (this.sd142.equals(sd142)) return; // for all checkboxes
         this.sd142 = sd142;
         notifyPropertyChanged(BR.sd142);
     }
@@ -701,6 +743,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd143(String sd143) {
+        if (this.sd143.equals(sd143)) return; // for all checkboxes
         this.sd143 = sd143;
         notifyPropertyChanged(BR.sd143);
     }
@@ -711,6 +754,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd144(String sd144) {
+        if (this.sd144.equals(sd144)) return; // for all checkboxes
         this.sd144 = sd144;
         notifyPropertyChanged(BR.sd144);
     }
@@ -721,6 +765,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd145(String sd145) {
+        if (this.sd145.equals(sd145)) return; // for all checkboxes
         this.sd145 = sd145;
         notifyPropertyChanged(BR.sd145);
     }
@@ -731,6 +776,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd146(String sd146) {
+        if (this.sd146.equals(sd146)) return; // for all checkboxes
         this.sd146 = sd146;
         notifyPropertyChanged(BR.sd146);
     }
@@ -741,6 +787,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd147(String sd147) {
+        if (this.sd147.equals(sd147)) return; // for all checkboxes
         this.sd147 = sd147;
         notifyPropertyChanged(BR.sd147);
     }
@@ -751,6 +798,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd148(String sd148) {
+        if (this.sd148.equals(sd148)) return; // for all checkboxes
         this.sd148 = sd148;
         notifyPropertyChanged(BR.sd148);
     }
@@ -761,6 +809,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd149(String sd149) {
+        if (this.sd149.equals(sd149)) return; // for all checkboxes
         this.sd149 = sd149;
         notifyPropertyChanged(BR.sd149);
     }
@@ -771,7 +820,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd961(String sd961) {
+        if (this.sd961.equals(sd961)) return; // for all checkboxes
         this.sd961 = sd961;
+        setSd961x(sd961.equals("961") ? this.sd961x : "");
         notifyPropertyChanged(BR.sd961);
     }
 
@@ -791,7 +842,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd962(String sd962) {
+        if (this.sd962.equals(sd962)) return; // for all checkboxes
         this.sd962 = sd962;
+        setSd962x(sd962.equals("962") ? this.sd962x : "");
         notifyPropertyChanged(BR.sd962);
     }
 
@@ -811,7 +864,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd963(String sd963) {
+        if (this.sd963.equals(sd963)) return; // for all checkboxes
         this.sd963 = sd963;
+        setSd963x(sd963.equals("963") ? this.sd963x : "");
         notifyPropertyChanged(BR.sd963);
     }
 
@@ -831,7 +886,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd964(String sd964) {
+        if (this.sd964.equals(sd964)) return; // for all checkboxes
         this.sd964 = sd964;
+        setSd964x(sd964.equals("964") ? this.sd964x : "");
         notifyPropertyChanged(BR.sd964);
     }
 
@@ -851,7 +908,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd965(String sd965) {
+        if (this.sd965.equals(sd965)) return; // for all checkboxes
         this.sd965 = sd965;
+        setSd965x(sd965.equals("965") ? this.sd965x : "");
         notifyPropertyChanged(BR.sd965);
     }
 
@@ -871,7 +930,9 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd966(String sd966) {
+        if (this.sd966.equals(sd966)) return; // for all checkboxes
         this.sd966 = sd966;
+        setSd966x(sd966.equals("966") ? this.sd966x : "");
         notifyPropertyChanged(BR.sd966);
     }
 
@@ -891,7 +952,64 @@ public class Diagnosis extends BaseObservable implements Observable {
     }
 
     public void setSd100nr(String sd100nr) {
+        if (this.sd100nr.equals(sd100nr)) return; // for all checkboxes
         this.sd100nr = sd100nr;
+        setSd100(sd100nr.equals("999") ? "" : this.sd100);
+        setSd101(sd100nr.equals("999") ? "" : this.sd101);
+        setSd102(sd100nr.equals("999") ? "" : this.sd102);
+        setSd103(sd100nr.equals("999") ? "" : this.sd103);
+        setSd104(sd100nr.equals("999") ? "" : this.sd104);
+        setSd105(sd100nr.equals("999") ? "" : this.sd105);
+        setSd106(sd100nr.equals("999") ? "" : this.sd106);
+        setSd107(sd100nr.equals("999") ? "" : this.sd107);
+        setSd108(sd100nr.equals("999") ? "" : this.sd108);
+        setSd109(sd100nr.equals("999") ? "" : this.sd109);
+        setSd110(sd100nr.equals("999") ? "" : this.sd110);
+        setSd111(sd100nr.equals("999") ? "" : this.sd111);
+        setSd112(sd100nr.equals("999") ? "" : this.sd112);
+        setSd113(sd100nr.equals("999") ? "" : this.sd113);
+        setSd114(sd100nr.equals("999") ? "" : this.sd114);
+        setSd115(sd100nr.equals("999") ? "" : this.sd115);
+        setSd116(sd100nr.equals("999") ? "" : this.sd116);
+        setSd117(sd100nr.equals("999") ? "" : this.sd117);
+        setSd118(sd100nr.equals("999") ? "" : this.sd118);
+        setSd119(sd100nr.equals("999") ? "" : this.sd119);
+        setSd120(sd100nr.equals("999") ? "" : this.sd120);
+        setSd121(sd100nr.equals("999") ? "" : this.sd121);
+        setSd122(sd100nr.equals("999") ? "" : this.sd122);
+        setSd123(sd100nr.equals("999") ? "" : this.sd123);
+        setSd124(sd100nr.equals("999") ? "" : this.sd124);
+        setSd125(sd100nr.equals("999") ? "" : this.sd125);
+        setSd126(sd100nr.equals("999") ? "" : this.sd126);
+        setSd127(sd100nr.equals("999") ? "" : this.sd127);
+        setSd128(sd100nr.equals("999") ? "" : this.sd128);
+        setSd129(sd100nr.equals("999") ? "" : this.sd129);
+        setSd130(sd100nr.equals("999") ? "" : this.sd130);
+        setSd131(sd100nr.equals("999") ? "" : this.sd131);
+        setSd132(sd100nr.equals("999") ? "" : this.sd132);
+        setSd133(sd100nr.equals("999") ? "" : this.sd133);
+        setSd134(sd100nr.equals("999") ? "" : this.sd134);
+        setSd135(sd100nr.equals("999") ? "" : this.sd135);
+        setSd136(sd100nr.equals("999") ? "" : this.sd136);
+        setSd137(sd100nr.equals("999") ? "" : this.sd137);
+        setSd138(sd100nr.equals("999") ? "" : this.sd138);
+        setSd139(sd100nr.equals("999") ? "" : this.sd139);
+        setSd140(sd100nr.equals("999") ? "" : this.sd140);
+        setSd141(sd100nr.equals("999") ? "" : this.sd141);
+        setSd142(sd100nr.equals("999") ? "" : this.sd142);
+        setSd143(sd100nr.equals("999") ? "" : this.sd143);
+        setSd144(sd100nr.equals("999") ? "" : this.sd144);
+        setSd145(sd100nr.equals("999") ? "" : this.sd145);
+        setSd146(sd100nr.equals("999") ? "" : this.sd146);
+        setSd147(sd100nr.equals("999") ? "" : this.sd147);
+        setSd148(sd100nr.equals("999") ? "" : this.sd148);
+        setSd149(sd100nr.equals("999") ? "" : this.sd149);
+        setSd961(sd100nr.equals("999") ? "" : this.sd961);
+        setSd962(sd100nr.equals("999") ? "" : this.sd962);
+        setSd963(sd100nr.equals("999") ? "" : this.sd963);
+        setSd964(sd100nr.equals("999") ? "" : this.sd964);
+        setSd965(sd100nr.equals("999") ? "" : this.sd965);
+        setSd966(sd100nr.equals("999") ? "" : this.sd966);
         notifyPropertyChanged(BR.sd100nr);
     }
 

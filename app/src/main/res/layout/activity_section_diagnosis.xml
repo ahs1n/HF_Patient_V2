@@ -86,6 +86,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd101.equals(`1`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd101(form.sd101.equals(`1`)?``:`1`)}"
                                 android:text="@string/sd101" />
 
@@ -94,6 +95,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd102.equals(`2`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd102(form.sd102.equals(`2`)?``:`2`)}"
                                 android:text="@string/sd102" />
 
@@ -102,6 +104,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd103.equals(`3`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd103(form.sd103.equals(`3`)?``:`3`)}"
                                 android:text="@string/sd103" />
 
@@ -110,6 +113,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd104.equals(`4`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd104(form.sd104.equals(`4`)?``:`4`)}"
                                 android:text="@string/sd104" />
 
@@ -118,6 +122,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd105.equals(`5`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd105(form.sd105.equals(`5`)?``:`5`)}"
                                 android:text="@string/sd105" />
 
@@ -126,6 +131,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd106.equals(`6`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd106(form.sd106.equals(`6`)?``:`6`)}"
                                 android:text="@string/sd106" />
 
@@ -134,6 +140,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd107.equals(`7`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd107(form.sd107.equals(`7`)?``:`7`)}"
                                 android:text="@string/sd107" />
 
@@ -142,6 +149,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd108.equals(`8`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd108(form.sd108.equals(`8`)?``:`8`)}"
                                 android:text="@string/sd108" />
 
@@ -150,6 +158,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd109.equals(`9`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd109(form.sd109.equals(`9`)?``:`9`)}"
                                 android:text="@string/sd109" />
 
@@ -158,6 +167,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd110.equals(`10`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd110(form.sd110.equals(`10`)?``:`10`)}"
                                 android:text="@string/sd110" />
 
@@ -166,6 +176,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd111.equals(`11`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd111(form.sd111.equals(`11`)?``:`11`)}"
                                 android:text="@string/sd111" />
 
@@ -174,6 +185,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd112.equals(`12`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd112(form.sd112.equals(`12`)?``:`12`)}"
                                 android:text="@string/sd112" />
 
@@ -182,6 +194,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd113.equals(`13`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd113(form.sd113.equals(`13`)?``:`13`)}"
                                 android:text="@string/sd113" />
 
@@ -190,6 +203,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd114.equals(`14`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd114(form.sd114.equals(`14`)?``:`14`)}"
                                 android:text="@string/sd114" />
 
@@ -198,6 +212,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd115.equals(`15`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd115(form.sd115.equals(`15`)?``:`15`)}"
                                 android:text="@string/sd115" />
 
@@ -206,6 +221,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd116.equals(`16`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd116(form.sd116.equals(`16`)?``:`16`)}"
                                 android:text="@string/sd116" />
 
@@ -214,6 +230,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd117.equals(`17`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd117(form.sd117.equals(`17`)?``:`17`)}"
                                 android:text="@string/sd117" />
 
@@ -222,6 +239,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd118.equals(`18`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd118(form.sd118.equals(`18`)?``:`18`)}"
                                 android:text="@string/sd118" />
 
@@ -230,6 +248,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd119.equals(`19`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd119(form.sd119.equals(`19`)?``:`19`)}"
                                 android:text="@string/sd119" />
 
@@ -238,6 +257,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd120.equals(`20`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd120(form.sd120.equals(`20`)?``:`20`)}"
                                 android:text="@string/sd120" />
 
@@ -246,6 +266,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd121.equals(`21`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd121(form.sd121.equals(`21`)?``:`21`)}"
                                 android:text="@string/sd121" />
 
@@ -254,6 +275,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd122.equals(`22`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd122(form.sd122.equals(`22`)?``:`22`)}"
                                 android:text="@string/sd122" />
 
@@ -262,6 +284,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd123.equals(`23`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd123(form.sd123.equals(`23`)?``:`23`)}"
                                 android:text="@string/sd123" />
 
@@ -270,6 +293,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd124.equals(`24`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd124(form.sd124.equals(`24`)?``:`24`)}"
                                 android:text="@string/sd124" />
 
@@ -278,6 +302,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd125.equals(`25`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd125(form.sd125.equals(`25`)?``:`25`)}"
                                 android:text="@string/sd125" />
 
@@ -286,6 +311,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd126.equals(`26`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd126(form.sd126.equals(`26`)?``:`26`)}"
                                 android:text="@string/sd126" />
 
@@ -294,6 +320,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd127.equals(`27`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd127(form.sd127.equals(`27`)?``:`27`)}"
                                 android:text="@string/sd127" />
 
@@ -302,6 +329,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd128.equals(`28`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd128(form.sd128.equals(`28`)?``:`28`)}"
                                 android:text="@string/sd128" />
 
@@ -310,6 +338,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd129.equals(`29`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd129(form.sd129.equals(`29`)?``:`29`)}"
                                 android:text="@string/sd129" />
 
@@ -318,6 +347,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd130.equals(`30`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd130(form.sd130.equals(`30`)?``:`30`)}"
                                 android:text="@string/sd130" />
 
@@ -326,6 +356,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd131.equals(`31`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd131(form.sd131.equals(`31`)?``:`31`)}"
                                 android:text="@string/sd131" />
 
@@ -334,6 +365,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd132.equals(`32`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd132(form.sd132.equals(`32`)?``:`32`)}"
                                 android:text="@string/sd132" />
 
@@ -342,6 +374,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd133.equals(`33`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd133(form.sd133.equals(`33`)?``:`33`)}"
                                 android:text="@string/sd133" />
 
@@ -350,6 +383,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd134.equals(`34`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd134(form.sd134.equals(`34`)?``:`34`)}"
                                 android:text="@string/sd134" />
 
@@ -358,6 +392,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd135.equals(`35`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd135(form.sd135.equals(`35`)?``:`35`)}"
                                 android:text="@string/sd135" />
 
@@ -366,6 +401,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd136.equals(`36`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd136(form.sd136.equals(`36`)?``:`36`)}"
                                 android:text="@string/sd136" />
 
@@ -374,6 +410,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd137.equals(`37`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd137(form.sd137.equals(`37`)?``:`37`)}"
                                 android:text="@string/sd137" />
 
@@ -382,6 +419,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd138.equals(`38`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd138(form.sd138.equals(`38`)?``:`38`)}"
                                 android:text="@string/sd138" />
 
@@ -390,6 +428,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd139.equals(`39`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd139(form.sd139.equals(`39`)?``:`39`)}"
                                 android:text="@string/sd139" />
 
@@ -398,6 +437,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd140.equals(`40`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd140(form.sd140.equals(`40`)?``:`40`)}"
                                 android:text="@string/sd140" />
 
@@ -406,6 +446,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd141.equals(`41`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd141(form.sd141.equals(`41`)?``:`41`)}"
                                 android:text="@string/sd141" />
 
@@ -414,6 +455,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd142.equals(`42`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd142(form.sd142.equals(`42`)?``:`42`)}"
                                 android:text="@string/sd142" />
 
@@ -422,6 +464,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd143.equals(`43`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd143(form.sd143.equals(`43`)?``:`43`)}"
                                 android:text="@string/sd143" />
 
@@ -430,6 +473,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd144.equals(`44`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd144(form.sd144.equals(`44`)?``:`44`)}"
                                 android:text="@string/sd144" />
 
@@ -438,6 +482,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd145.equals(`45`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd145(form.sd145.equals(`45`)?``:`45`)}"
                                 android:text="@string/sd145" />
 
@@ -446,6 +491,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd146.equals(`46`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd146(form.sd146.equals(`46`)?``:`46`)}"
                                 android:text="@string/sd146" />
 
@@ -454,6 +500,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd147.equals(`47`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd147(form.sd147.equals(`47`)?``:`47`)}"
                                 android:text="@string/sd147" />
 
@@ -462,6 +509,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd148.equals(`48`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd148(form.sd148.equals(`48`)?``:`48`)}"
                                 android:text="@string/sd148" />
 
@@ -470,6 +518,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd149.equals(`49`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd149(form.sd149.equals(`49`)?``:`49`)}"
                                 android:text="@string/sd149" />
 
@@ -478,6 +527,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd961.equals(`961`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd961(form.sd961.equals(`961`)?``:`961`)}"
                                 android:text="@string/sd961" />
 
@@ -486,6 +536,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd962.equals(`962`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd962(form.sd962.equals(`962`)?``:`962`)}"
                                 android:text="@string/sd962" />
 
@@ -494,6 +545,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd963.equals(`963`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd963(form.sd963.equals(`963`)?``:`963`)}"
                                 android:text="@string/sd963" />
 
@@ -502,6 +554,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd964.equals(`964`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd964(form.sd964.equals(`964`)?``:`964`)}"
                                 android:text="@string/sd964" />
 
@@ -510,6 +563,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd965.equals(`965`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd965(form.sd965.equals(`965`)?``:`965`)}"
                                 android:text="@string/sd965" />
 
@@ -518,6 +572,7 @@
                                 android:layout_width="260dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd966.equals(`966`)}"
+                                android:enabled="@{!form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd966(form.sd966.equals(`966`)?``:`966`)}"
                                 android:text="@string/sd966" />
 
