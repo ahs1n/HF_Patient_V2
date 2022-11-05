@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionScreeningBinding;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
+import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 
 public class SectionScreeningActivity extends AppCompatActivity {
 
@@ -40,6 +41,8 @@ public class SectionScreeningActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(pd);
+
+        bi.date.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
     }
 
     private void populateSpinner() {
