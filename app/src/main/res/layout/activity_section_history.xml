@@ -80,6 +80,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10101.equals(`1`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10101(form.sh10101.equals(`1`)?``:`1`)}"
                                 android:text="@string/sh10101" />
 
@@ -88,6 +89,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10102.equals(`2`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10102(form.sh10102.equals(`2`)?``:`2`)}"
                                 android:text="@string/sh10102" />
 
@@ -96,6 +98,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10103.equals(`3`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10103(form.sh10103.equals(`3`)?``:`3`)}"
                                 android:text="@string/sh10103" />
 
@@ -104,6 +107,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10104.equals(`4`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10104(form.sh10104.equals(`4`)?``:`4`)}"
                                 android:text="@string/sh10104" />
 
@@ -112,6 +116,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10105.equals(`5`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10105(form.sh10105.equals(`5`)?``:`5`)}"
                                 android:text="@string/sh10105" />
 
@@ -120,6 +125,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10106.equals(`6`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10106(form.sh10106.equals(`6`)?``:`6`)}"
                                 android:text="@string/sh10106" />
 
@@ -128,6 +134,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10107.equals(`7`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10107(form.sh10107.equals(`7`)?``:`7`)}"
                                 android:text="@string/sh10107" />
 
@@ -136,6 +143,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10108.equals(`8`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10108(form.sh10108.equals(`8`)?``:`8`)}"
                                 android:text="@string/sh10108" />
 
@@ -144,6 +152,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10109.equals(`9`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10109(form.sh10109.equals(`9`)?``:`9`)}"
                                 android:text="@string/sh10109" />
 
@@ -152,6 +161,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sh10196.equals(`96`)}"
+                                android:enabled="@{!form.sh101nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSh10196(form.sh10196.equals(`96`)?``:`96`)}"
                                 android:text="@string/sh10196" />
 
@@ -410,6 +420,7 @@
                             android:hint="@string/sh204"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:enabled="@{!form.sh204nr.equals(`999`)}"
                             android:text="@={form.sh204}"
                             app:maxValue="24"
                             app:minValue="1"
@@ -742,6 +753,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/sh401"
+                            android:enabled="@{!form.sh401nr.equals(`999`)}"
                             android:text="@={form.sh401}" />
 
                         <CheckBox

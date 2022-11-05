@@ -465,6 +465,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs10701(String ss10701) {
+        if (this.ss10701.equals(ss10701)) return; // for all checkboxes
         this.ss10701 = ss10701;
         notifyPropertyChanged(BR.ss10701);
     }
@@ -475,6 +476,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs10702(String ss10702) {
+        if (this.ss10702.equals(ss10702)) return; // for all checkboxes
         this.ss10702 = ss10702;
         notifyPropertyChanged(BR.ss10702);
     }
@@ -485,6 +487,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs10703(String ss10703) {
+        if (this.ss10703.equals(ss10703)) return; // for all checkboxes
         this.ss10703 = ss10703;
         notifyPropertyChanged(BR.ss10703);
     }
@@ -495,6 +498,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs10704(String ss10704) {
+        if (this.ss10704.equals(ss10704)) return; // for all checkboxes
         this.ss10704 = ss10704;
         notifyPropertyChanged(BR.ss10704);
     }
@@ -535,7 +539,10 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs201nr(String ss201nr) {
+        if (this.ss201nr.equals(ss201nr)) return; // for all checkboxes
         this.ss201nr = ss201nr;
+        setSs201s(ss201nr.equals("999") ? "" : this.ss201s);
+        setSs201d(ss201nr.equals("999") ? "" : this.ss201d);
         notifyPropertyChanged(BR.ss201nr);
     }
 
@@ -555,7 +562,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs202nr(String ss202nr) {
+        if (this.ss202nr.equals(ss202nr)) return; // for all checkboxes
         this.ss202nr = ss202nr;
+        setSs202(ss202nr.equals("999") ? "" : this.ss202);
         notifyPropertyChanged(BR.ss202nr);
     }
 
@@ -575,7 +584,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs203nr(String ss203nr) {
+        if (this.ss203nr.equals(ss203nr)) return; // for all checkboxes
         this.ss203nr = ss203nr;
+        setSs203(ss203nr.equals("999") ? "" : this.ss203);
         notifyPropertyChanged(BR.ss203nr);
     }
 
@@ -595,7 +606,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs204nr(String ss204nr) {
+        if (this.ss204nr.equals(ss204nr)) return; // for all checkboxes
         this.ss204nr = ss204nr;
+        setSs204(ss204nr.equals("999") ? "" : this.ss204);
         notifyPropertyChanged(BR.ss204nr);
     }
 
@@ -615,7 +628,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs205nr(String ss205nr) {
+        if (this.ss205nr.equals(ss205nr)) return; // for all checkboxes
         this.ss205nr = ss205nr;
+        setSs205(ss205nr.equals("999") ? "" : this.ss205);
         notifyPropertyChanged(BR.ss205nr);
     }
 
@@ -645,7 +660,10 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs300nr(String ss300nr) {
+        if (this.ss300nr.equals(ss300nr)) return; // for all checkboxes
         this.ss300nr = ss300nr;
+        setSs301(ss300nr.equals("999") ? "" : this.ss301);
+        setSs302(ss300nr.equals("999") ? "" : this.ss302);
         notifyPropertyChanged(BR.ss300nr);
     }
 
@@ -665,7 +683,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs303nr(String ss303nr) {
+        if (this.ss303nr.equals(ss303nr)) return; // for all checkboxes
         this.ss303nr = ss303nr;
+        setSs303(ss303nr.equals("999") ? "" : this.ss303);
         notifyPropertyChanged(BR.ss303nr);
     }
 
@@ -685,7 +705,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs304nr(String ss304nr) {
+        if (this.ss304nr.equals(ss304nr)) return; // for all checkboxes
         this.ss304nr = ss304nr;
+        setSs304(ss304nr.equals("999") ? "" : this.ss304);
         notifyPropertyChanged(BR.ss304nr);
     }
 
@@ -705,7 +727,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs401nr(String ss401nr) {
+        if (this.ss401nr.equals(ss401nr)) return; // for all checkboxes
         this.ss401nr = ss401nr;
+        setSs401(ss401nr.equals("999") ? "" : this.ss401);
         notifyPropertyChanged(BR.ss401nr);
     }
 
@@ -755,7 +779,12 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSs5nr(String ss5nr) {
+        if (this.ss5nr.equals(ss5nr)) return; // for all checkboxes
         this.ss5nr = ss5nr;
+        setSs501(ss5nr.equals("999") ? "" : this.ss501);
+        setSs502(ss5nr.equals("999") ? "" : this.ss502);
+        setSs503(ss5nr.equals("999") ? "" : this.ss503);
+        setSs504(ss5nr.equals("999") ? "" : this.ss504);
         notifyPropertyChanged(BR.ss5nr);
     }
 
@@ -785,6 +814,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10101(String sh10101) {
+        if (this.sh10101.equals(sh10101)) return; // for all checkboxes
         this.sh10101 = sh10101;
         notifyPropertyChanged(BR.sh10101);
     }
@@ -795,6 +825,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10102(String sh10102) {
+        if (this.sh10102.equals(sh10102)) return; // for all checkboxes
         this.sh10102 = sh10102;
         notifyPropertyChanged(BR.sh10102);
     }
@@ -805,6 +836,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10103(String sh10103) {
+        if (this.sh10103.equals(sh10103)) return; // for all checkboxes
         this.sh10103 = sh10103;
         notifyPropertyChanged(BR.sh10103);
     }
@@ -815,6 +847,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10104(String sh10104) {
+        if (this.sh10104.equals(sh10104)) return; // for all checkboxes
         this.sh10104 = sh10104;
         notifyPropertyChanged(BR.sh10104);
     }
@@ -825,6 +858,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10105(String sh10105) {
+        if (this.sh10105.equals(sh10105)) return; // for all checkboxes
         this.sh10105 = sh10105;
         notifyPropertyChanged(BR.sh10105);
     }
@@ -835,6 +869,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10106(String sh10106) {
+        if (this.sh10106.equals(sh10106)) return; // for all checkboxes
         this.sh10106 = sh10106;
         notifyPropertyChanged(BR.sh10106);
     }
@@ -845,6 +880,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10107(String sh10107) {
+        if (this.sh10107.equals(sh10107)) return; // for all checkboxes
         this.sh10107 = sh10107;
         notifyPropertyChanged(BR.sh10107);
     }
@@ -855,6 +891,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10108(String sh10108) {
+        if (this.sh10108.equals(sh10108)) return; // for all checkboxes
         this.sh10108 = sh10108;
         notifyPropertyChanged(BR.sh10108);
     }
@@ -865,6 +902,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10109(String sh10109) {
+        if (this.sh10109.equals(sh10109)) return; // for all checkboxes
         this.sh10109 = sh10109;
         notifyPropertyChanged(BR.sh10109);
     }
@@ -875,7 +913,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh10196(String sh10196) {
+        if (this.sh10196.equals(sh10196)) return; // for all checkboxes
         this.sh10196 = sh10196;
+        setSh10196x(sh10196.equals("96") ? this.sh10196x : "");
         notifyPropertyChanged(BR.sh10196);
     }
 
@@ -895,7 +935,18 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh101nr(String sh101nr) {
+        if (this.sh101nr.equals(sh101nr)) return; // for all checkboxes
         this.sh101nr = sh101nr;
+        setSh10101(sh101nr.equals("999") ? "" : this.sh10101);
+        setSh10102(sh101nr.equals("999") ? "" : this.sh10102);
+        setSh10103(sh101nr.equals("999") ? "" : this.sh10103);
+        setSh10104(sh101nr.equals("999") ? "" : this.sh10104);
+        setSh10105(sh101nr.equals("999") ? "" : this.sh10105);
+        setSh10106(sh101nr.equals("999") ? "" : this.sh10106);
+        setSh10107(sh101nr.equals("999") ? "" : this.sh10107);
+        setSh10108(sh101nr.equals("999") ? "" : this.sh10108);
+        setSh10109(sh101nr.equals("999") ? "" : this.sh10109);
+        setSh10196(sh101nr.equals("999") ? "" : this.sh10196);
         notifyPropertyChanged(BR.sh101nr);
     }
 
@@ -945,7 +996,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh204nr(String sh204nr) {
+        if (this.sh204nr.equals(sh204nr)) return; // for all checkboxes
         this.sh204nr = sh204nr;
+        setSh204(sh204nr.equals("999") ? "" : this.sh204);
         notifyPropertyChanged(BR.sh204nr);
     }
 
@@ -1005,7 +1058,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public void setSh401nr(String sh401nr) {
+        if (this.sh401nr.equals(sh401nr)) return; // for all checkboxes
         this.sh401nr = sh401nr;
+        setSh401(sh401nr.equals("999") ? "" : this.sh401);
         notifyPropertyChanged(BR.sh401nr);
     }
 
