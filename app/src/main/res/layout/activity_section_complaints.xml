@@ -69,7 +69,7 @@
                         </LinearLayout>
 
                         <com.google.android.flexbox.FlexboxLayout
-                            android:id="@+id/me203check"
+                            android:id="@+id/pc200check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
