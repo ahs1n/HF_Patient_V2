@@ -46,7 +46,6 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static final String _EMPTY_ = "";
-    public static PatientDetails patientDetails;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;
@@ -64,6 +63,7 @@ public class MainApp extends Application {
     public static int entryType = 0;
 
 
+    public static PatientDetails patientDetails;
     public static PatientDetails pd;
     public static Complaints complaints;
     public static Diagnosis diagnosis;

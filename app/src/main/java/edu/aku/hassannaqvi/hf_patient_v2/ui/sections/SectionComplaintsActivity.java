@@ -80,7 +80,7 @@ public class SectionComplaintsActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue(View view) {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
@@ -90,7 +90,7 @@ public class SectionComplaintsActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd(View view) {
+    public void BtnEnd(View view) {
         finish();
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }

@@ -3,18 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_main.xml" value="0.31328125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_mobile_health_r2.xml" value="0.53125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_complaints.xml" value="0.53125" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_diagnosis.xml" value="0.5578125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_examination.xml" value="0.53125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_history.xml" value="0.53125" />
-        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.39221014492753625" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.505307855626327" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.53125" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_mobile_health_r2.xml" value="0.3078125" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_complaints.xml" value="0.3078125" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_diagnosis.xml" value="0.3078125" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.33" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.36666666666666664" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/view_prescription_1.xml" value="0.3078125" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_vaccination.xml" value="0.53125" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_sync.xml" value="0.5578125" />
       </map>
     </option>
   </component>

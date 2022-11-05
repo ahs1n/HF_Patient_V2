@@ -205,7 +205,7 @@
                                 android:gravity="center"
                                 android:hint="HH:mm"
                                 android:text="@{form.time}"
-                                app:theme="@style/DatePickerStyle" />
+                                app:theme="@style/MyDatePickerDialogTheme" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -1605,7 +1605,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/greenLight"
-                        android:onClick="btnContinue"
+                        android:onClick="BtnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
                 </LinearLayout>

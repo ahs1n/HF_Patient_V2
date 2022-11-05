@@ -56,7 +56,7 @@ public class SectionHistoryActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue(View view) {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();

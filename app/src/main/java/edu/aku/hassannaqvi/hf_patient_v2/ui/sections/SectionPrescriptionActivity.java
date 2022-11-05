@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
-import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 
 import android.content.Intent;
@@ -67,16 +66,16 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         MainApp.prescription.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addPD(patientDetails);
+            rowId = db.addPRES(prescription);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        patientDetails.setId(String.valueOf(rowId));
+        prescription.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            patientDetails.setUid(patientDetails.getDeviceId() + patientDetails.getId());
-            db.updatesPDColumn(PDContract.PDTable.COLUMN_UID, patientDetails.getUid());
+            prescription.setUid(prescription.getDeviceId() + prescription.getId());
+            db.updatesPRESColumn(PDContract.PRESCRIPTIONTable.COLUMN_UID, prescription.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -89,7 +88,7 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesPDColumn(PDContract.PDTable.COLUMN_SPD, patientDetails.sPDtoString());
+            updcount = db.updatesPRESColumn(PDContract.PRESCRIPTIONTable.COLUMN_PRES, prescription.sPREStoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -107,7 +106,7 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue(View view) {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
@@ -117,7 +116,7 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd(View view) {
+    public void BtnEnd(View view) {
         finish();
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }

@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities
+import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity
@@ -364,6 +365,7 @@ class MainActivity : AppCompatActivity() {
         when (v.id) {
             R.id.formA -> {
                 SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
+                MainApp.patientDetails = PatientDetails()
                 gotoActivity(SectionScreeningActivity::class.java)
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidManager::class.java))

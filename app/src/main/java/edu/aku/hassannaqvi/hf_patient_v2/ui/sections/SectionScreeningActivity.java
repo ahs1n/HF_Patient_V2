@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
-import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.pd;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +25,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionScreeningBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 
@@ -40,7 +41,8 @@ public class SectionScreeningActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_screening);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.setForm(pd);
+        bi.setForm(patientDetails);
+        populateSpinner();
 
         bi.date.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
     }
@@ -90,8 +92,8 @@ public class SectionScreeningActivity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        if (!pd.getUid().equals("")) return true;
-        MainApp.pd.populateMeta();
+        if (!patientDetails.getUid().equals("")) return true;
+        MainApp.patientDetails.populateMeta();
         long rowId = 0;
         try {
             rowId = db.addPD(patientDetails);
@@ -134,17 +136,18 @@ public class SectionScreeningActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue(View view) {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
+            complaints = new Complaints();
             startActivity(new Intent(this, SectionComplaintsActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
-    public void btnEnd(View view) {
+    public void BtnEnd(View view) {
         finish();
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
