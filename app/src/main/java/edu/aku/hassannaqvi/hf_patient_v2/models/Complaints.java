@@ -285,6 +285,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc201(String pc201) {
+        if (this.pc201.equals(pc201)) return; // for all checkboxes
         this.pc201 = pc201;
         notifyPropertyChanged(BR.pc201);
     }
@@ -295,6 +296,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc202(String pc202) {
+        if (this.pc202.equals(pc202)) return; // for all checkboxes
         this.pc202 = pc202;
         notifyPropertyChanged(BR.pc202);
     }
@@ -305,6 +307,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc203(String pc203) {
+        if (this.pc203.equals(pc203)) return; // for all checkboxes
         this.pc203 = pc203;
         notifyPropertyChanged(BR.pc203);
     }
@@ -315,6 +318,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc204(String pc204) {
+        if (this.pc204.equals(pc204)) return; // for all checkboxes
         this.pc204 = pc204;
         notifyPropertyChanged(BR.pc204);
     }
@@ -325,6 +329,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc205(String pc205) {
+        if (this.pc205.equals(pc205)) return; // for all checkboxes
         this.pc205 = pc205;
         notifyPropertyChanged(BR.pc205);
     }
@@ -335,6 +340,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc206(String pc206) {
+        if (this.pc206.equals(pc206)) return; // for all checkboxes
         this.pc206 = pc206;
         notifyPropertyChanged(BR.pc206);
     }
@@ -345,6 +351,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc207(String pc207) {
+        if (this.pc207.equals(pc207)) return; // for all checkboxes
         this.pc207 = pc207;
         notifyPropertyChanged(BR.pc207);
     }
@@ -355,6 +362,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc208(String pc208) {
+        if (this.pc208.equals(pc208)) return; // for all checkboxes
         this.pc208 = pc208;
         notifyPropertyChanged(BR.pc208);
     }
@@ -365,6 +373,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc209(String pc209) {
+        if (this.pc209.equals(pc209)) return; // for all checkboxes
         this.pc209 = pc209;
         notifyPropertyChanged(BR.pc209);
     }
@@ -375,6 +384,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc210(String pc210) {
+        if (this.pc210.equals(pc210)) return; // for all checkboxes
         this.pc210 = pc210;
         notifyPropertyChanged(BR.pc210);
     }
@@ -385,6 +395,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc211(String pc211) {
+        if (this.pc211.equals(pc211)) return; // for all checkboxes
         this.pc211 = pc211;
         notifyPropertyChanged(BR.pc211);
     }
@@ -395,6 +406,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc212(String pc212) {
+        if (this.pc212.equals(pc212)) return; // for all checkboxes
         this.pc212 = pc212;
         notifyPropertyChanged(BR.pc212);
     }
@@ -405,6 +417,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc213(String pc213) {
+        if (this.pc213.equals(pc213)) return; // for all checkboxes
         this.pc213 = pc213;
         notifyPropertyChanged(BR.pc213);
     }
@@ -415,6 +428,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc214(String pc214) {
+        if (this.pc214.equals(pc214)) return; // for all checkboxes
         this.pc214 = pc214;
         notifyPropertyChanged(BR.pc214);
     }
@@ -425,6 +439,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc215(String pc215) {
+        if (this.pc215.equals(pc215)) return; // for all checkboxes
         this.pc215 = pc215;
         notifyPropertyChanged(BR.pc215);
     }
@@ -435,6 +450,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc216(String pc216) {
+        if (this.pc216.equals(pc216)) return; // for all checkboxes
         this.pc216 = pc216;
         notifyPropertyChanged(BR.pc216);
     }
@@ -445,6 +461,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc217(String pc217) {
+        if (this.pc217.equals(pc217)) return; // for all checkboxes
         this.pc217 = pc217;
         notifyPropertyChanged(BR.pc217);
     }
@@ -455,6 +472,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc218(String pc218) {
+        if (this.pc218.equals(pc218)) return; // for all checkboxes
         this.pc218 = pc218;
         notifyPropertyChanged(BR.pc218);
     }
@@ -465,6 +483,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc219(String pc219) {
+        if (this.pc219.equals(pc219)) return; // for all checkboxes
         this.pc219 = pc219;
         notifyPropertyChanged(BR.pc219);
     }
@@ -475,6 +494,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc220(String pc220) {
+        if (this.pc220.equals(pc220)) return; // for all checkboxes
         this.pc220 = pc220;
         notifyPropertyChanged(BR.pc220);
     }
@@ -485,6 +505,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc221(String pc221) {
+        if (this.pc221.equals(pc221)) return; // for all checkboxes
         this.pc221 = pc221;
         notifyPropertyChanged(BR.pc221);
     }
@@ -495,6 +516,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc222(String pc222) {
+        if (this.pc222.equals(pc222)) return; // for all checkboxes
         this.pc222 = pc222;
         notifyPropertyChanged(BR.pc222);
     }
@@ -505,6 +527,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc223(String pc223) {
+        if (this.pc223.equals(pc223)) return; // for all checkboxes
         this.pc223 = pc223;
         notifyPropertyChanged(BR.pc223);
     }
@@ -515,6 +538,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc224(String pc224) {
+        if (this.pc224.equals(pc224)) return; // for all checkboxes
         this.pc224 = pc224;
         notifyPropertyChanged(BR.pc224);
     }
@@ -525,6 +549,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc225(String pc225) {
+        if (this.pc225.equals(pc225)) return; // for all checkboxes
         this.pc225 = pc225;
         notifyPropertyChanged(BR.pc225);
     }
@@ -535,6 +560,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc226(String pc226) {
+        if (this.pc226.equals(pc226)) return; // for all checkboxes
         this.pc226 = pc226;
         notifyPropertyChanged(BR.pc226);
     }
@@ -545,6 +571,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc227(String pc227) {
+        if (this.pc227.equals(pc227)) return; // for all checkboxes
         this.pc227 = pc227;
         notifyPropertyChanged(BR.pc227);
     }
@@ -555,6 +582,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc228(String pc228) {
+        if (this.pc228.equals(pc228)) return; // for all checkboxes
         this.pc228 = pc228;
         notifyPropertyChanged(BR.pc228);
     }
@@ -565,6 +593,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc229(String pc229) {
+        if (this.pc229.equals(pc229)) return; // for all checkboxes
         this.pc229 = pc229;
         notifyPropertyChanged(BR.pc229);
     }
@@ -575,6 +604,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc230(String pc230) {
+        if (this.pc230.equals(pc230)) return; // for all checkboxes
         this.pc230 = pc230;
         notifyPropertyChanged(BR.pc230);
     }
@@ -585,6 +615,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc231(String pc231) {
+        if (this.pc231.equals(pc231)) return; // for all checkboxes
         this.pc231 = pc231;
         notifyPropertyChanged(BR.pc231);
     }
@@ -595,6 +626,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc232(String pc232) {
+        if (this.pc232.equals(pc232)) return; // for all checkboxes
         this.pc232 = pc232;
         notifyPropertyChanged(BR.pc232);
     }
@@ -605,6 +637,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc233(String pc233) {
+        if (this.pc233.equals(pc233)) return; // for all checkboxes
         this.pc233 = pc233;
         notifyPropertyChanged(BR.pc233);
     }
@@ -615,6 +648,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc234(String pc234) {
+        if (this.pc234.equals(pc234)) return; // for all checkboxes
         this.pc234 = pc234;
         notifyPropertyChanged(BR.pc234);
     }
@@ -625,6 +659,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc235(String pc235) {
+        if (this.pc235.equals(pc235)) return; // for all checkboxes
         this.pc235 = pc235;
         notifyPropertyChanged(BR.pc235);
     }
@@ -635,6 +670,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc236(String pc236) {
+        if (this.pc236.equals(pc236)) return; // for all checkboxes
         this.pc236 = pc236;
         notifyPropertyChanged(BR.pc236);
     }
@@ -645,6 +681,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc237(String pc237) {
+        if (this.pc237.equals(pc237)) return; // for all checkboxes
         this.pc237 = pc237;
         notifyPropertyChanged(BR.pc237);
     }
@@ -655,6 +692,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc238(String pc238) {
+        if (this.pc238.equals(pc238)) return; // for all checkboxes
         this.pc238 = pc238;
         notifyPropertyChanged(BR.pc238);
     }
@@ -665,6 +703,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc239(String pc239) {
+        if (this.pc239.equals(pc239)) return; // for all checkboxes
         this.pc239 = pc239;
         notifyPropertyChanged(BR.pc239);
     }
@@ -675,6 +714,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc240(String pc240) {
+        if (this.pc240.equals(pc240)) return; // for all checkboxes
         this.pc240 = pc240;
         notifyPropertyChanged(BR.pc240);
     }
@@ -685,6 +725,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc241(String pc241) {
+        if (this.pc241.equals(pc241)) return; // for all checkboxes
         this.pc241 = pc241;
         notifyPropertyChanged(BR.pc241);
     }
@@ -695,6 +736,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc242(String pc242) {
+        if (this.pc242.equals(pc242)) return; // for all checkboxes
         this.pc242 = pc242;
         notifyPropertyChanged(BR.pc242);
     }
@@ -705,6 +747,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc243(String pc243) {
+        if (this.pc243.equals(pc243)) return; // for all checkboxes
         this.pc243 = pc243;
         notifyPropertyChanged(BR.pc243);
     }
@@ -715,6 +758,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc244(String pc244) {
+        if (this.pc244.equals(pc244)) return; // for all checkboxes
         this.pc244 = pc244;
         notifyPropertyChanged(BR.pc244);
     }
@@ -725,6 +769,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc245(String pc245) {
+        if (this.pc245.equals(pc245)) return; // for all checkboxes
         this.pc245 = pc245;
         notifyPropertyChanged(BR.pc245);
     }
@@ -735,6 +780,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc246(String pc246) {
+        if (this.pc246.equals(pc246)) return; // for all checkboxes
         this.pc246 = pc246;
         notifyPropertyChanged(BR.pc246);
     }
@@ -745,6 +791,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc247(String pc247) {
+        if (this.pc247.equals(pc247)) return; // for all checkboxes
         this.pc247 = pc247;
         notifyPropertyChanged(BR.pc247);
     }
@@ -755,6 +802,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc248(String pc248) {
+        if (this.pc248.equals(pc248)) return; // for all checkboxes
         this.pc248 = pc248;
         notifyPropertyChanged(BR.pc248);
     }
@@ -765,6 +813,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc249(String pc249) {
+        if (this.pc249.equals(pc249)) return; // for all checkboxes
         this.pc249 = pc249;
         notifyPropertyChanged(BR.pc249);
     }
@@ -775,6 +824,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc250(String pc250) {
+        if (this.pc250.equals(pc250)) return; // for all checkboxes
         this.pc250 = pc250;
         notifyPropertyChanged(BR.pc250);
     }
@@ -785,6 +835,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc251(String pc251) {
+        if (this.pc251.equals(pc251)) return; // for all checkboxes
         this.pc251 = pc251;
         notifyPropertyChanged(BR.pc251);
     }
@@ -795,6 +846,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc252(String pc252) {
+        if (this.pc252.equals(pc252)) return; // for all checkboxes
         this.pc252 = pc252;
         notifyPropertyChanged(BR.pc252);
     }
@@ -805,6 +857,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc253(String pc253) {
+        if (this.pc253.equals(pc253)) return; // for all checkboxes
         this.pc253 = pc253;
         notifyPropertyChanged(BR.pc253);
     }
@@ -815,6 +868,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc254(String pc254) {
+        if (this.pc254.equals(pc254)) return; // for all checkboxes
         this.pc254 = pc254;
         notifyPropertyChanged(BR.pc254);
     }
@@ -825,6 +879,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc255(String pc255) {
+        if (this.pc255.equals(pc255)) return; // for all checkboxes
         this.pc255 = pc255;
         notifyPropertyChanged(BR.pc255);
     }
@@ -835,6 +890,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc256(String pc256) {
+        if (this.pc256.equals(pc256)) return; // for all checkboxes
         this.pc256 = pc256;
         notifyPropertyChanged(BR.pc256);
     }
@@ -845,6 +901,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc257(String pc257) {
+        if (this.pc257.equals(pc257)) return; // for all checkboxes
         this.pc257 = pc257;
         notifyPropertyChanged(BR.pc257);
     }
@@ -855,6 +912,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc258(String pc258) {
+        if (this.pc258.equals(pc258)) return; // for all checkboxes
         this.pc258 = pc258;
         notifyPropertyChanged(BR.pc258);
     }
@@ -865,6 +923,7 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc259(String pc259) {
+        if (this.pc259.equals(pc259)) return; // for all checkboxes
         this.pc259 = pc259;
         notifyPropertyChanged(BR.pc259);
     }
@@ -875,7 +934,9 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc2961(String pc2961) {
+        if (this.pc2961.equals(pc2961)) return; // for all checkboxes
         this.pc2961 = pc2961;
+        setPc2961x(pc2961.equals("961") ? this.pc2961x : "");
         notifyPropertyChanged(BR.pc2961);
     }
 
@@ -895,7 +956,9 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc2962(String pc2962) {
+        if (this.pc2962.equals(pc2962)) return; // for all checkboxes
         this.pc2962 = pc2962;
+        setPc2962x(pc2962.equals("962") ? this.pc2962x : "");
         notifyPropertyChanged(BR.pc2962);
     }
 
@@ -915,7 +978,9 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc2963(String pc2963) {
+        if (this.pc2963.equals(pc2963)) return; // for all checkboxes
         this.pc2963 = pc2963;
+        setPc2963x(pc2963.equals("963") ? this.pc2963x : "");
         notifyPropertyChanged(BR.pc2963);
     }
 
@@ -935,7 +1000,70 @@ public class Complaints extends BaseObservable implements Observable {
     }
 
     public void setPc200nr(String pc200nr) {
+        if (this.pc200nr.equals(pc200nr)) return; // for all checkboxes
         this.pc200nr = pc200nr;
+        setPc201(pc200nr.equals("999") ? "" : this.pc201);
+        setPc202(pc200nr.equals("999") ? "" : this.pc202);
+        setPc203(pc200nr.equals("999") ? "" : this.pc203);
+        setPc204(pc200nr.equals("999") ? "" : this.pc204);
+        setPc205(pc200nr.equals("999") ? "" : this.pc205);
+        setPc206(pc200nr.equals("999") ? "" : this.pc206);
+        setPc207(pc200nr.equals("999") ? "" : this.pc207);
+        setPc208(pc200nr.equals("999") ? "" : this.pc208);
+        setPc209(pc200nr.equals("999") ? "" : this.pc209);
+        setPc210(pc200nr.equals("999") ? "" : this.pc210);
+        setPc211(pc200nr.equals("999") ? "" : this.pc211);
+        setPc212(pc200nr.equals("999") ? "" : this.pc212);
+        setPc213(pc200nr.equals("999") ? "" : this.pc213);
+        setPc214(pc200nr.equals("999") ? "" : this.pc214);
+        setPc215(pc200nr.equals("999") ? "" : this.pc215);
+        setPc216(pc200nr.equals("999") ? "" : this.pc216);
+        setPc217(pc200nr.equals("999") ? "" : this.pc217);
+        setPc218(pc200nr.equals("999") ? "" : this.pc218);
+        setPc219(pc200nr.equals("999") ? "" : this.pc219);
+        setPc220(pc200nr.equals("999") ? "" : this.pc220);
+        setPc221(pc200nr.equals("999") ? "" : this.pc221);
+        setPc222(pc200nr.equals("999") ? "" : this.pc222);
+        setPc223(pc200nr.equals("999") ? "" : this.pc223);
+        setPc224(pc200nr.equals("999") ? "" : this.pc224);
+        setPc225(pc200nr.equals("999") ? "" : this.pc225);
+        setPc226(pc200nr.equals("999") ? "" : this.pc226);
+        setPc227(pc200nr.equals("999") ? "" : this.pc227);
+        setPc228(pc200nr.equals("999") ? "" : this.pc228);
+        setPc229(pc200nr.equals("999") ? "" : this.pc229);
+        setPc230(pc200nr.equals("999") ? "" : this.pc230);
+        setPc231(pc200nr.equals("999") ? "" : this.pc231);
+        setPc232(pc200nr.equals("999") ? "" : this.pc232);
+        setPc233(pc200nr.equals("999") ? "" : this.pc233);
+        setPc234(pc200nr.equals("999") ? "" : this.pc234);
+        setPc235(pc200nr.equals("999") ? "" : this.pc235);
+        setPc236(pc200nr.equals("999") ? "" : this.pc236);
+        setPc237(pc200nr.equals("999") ? "" : this.pc237);
+        setPc238(pc200nr.equals("999") ? "" : this.pc238);
+        setPc239(pc200nr.equals("999") ? "" : this.pc239);
+        setPc240(pc200nr.equals("999") ? "" : this.pc240);
+        setPc241(pc200nr.equals("999") ? "" : this.pc241);
+        setPc242(pc200nr.equals("999") ? "" : this.pc242);
+        setPc243(pc200nr.equals("999") ? "" : this.pc243);
+        setPc244(pc200nr.equals("999") ? "" : this.pc244);
+        setPc245(pc200nr.equals("999") ? "" : this.pc245);
+        setPc246(pc200nr.equals("999") ? "" : this.pc246);
+        setPc247(pc200nr.equals("999") ? "" : this.pc247);
+        setPc248(pc200nr.equals("999") ? "" : this.pc248);
+        setPc249(pc200nr.equals("999") ? "" : this.pc249);
+        setPc250(pc200nr.equals("999") ? "" : this.pc250);
+        setPc251(pc200nr.equals("999") ? "" : this.pc251);
+        setPc252(pc200nr.equals("999") ? "" : this.pc252);
+        setPc253(pc200nr.equals("999") ? "" : this.pc253);
+        setPc254(pc200nr.equals("999") ? "" : this.pc254);
+        setPc255(pc200nr.equals("999") ? "" : this.pc255);
+        setPc256(pc200nr.equals("999") ? "" : this.pc256);
+        setPc257(pc200nr.equals("999") ? "" : this.pc257);
+        setPc258(pc200nr.equals("999") ? "" : this.pc258);
+        setPc259(pc200nr.equals("999") ? "" : this.pc259);
+        setPc2961(pc200nr.equals("999") ? "" : this.pc2961);
+        setPc2962(pc200nr.equals("999") ? "" : this.pc2962);
+        setPc2963(pc200nr.equals("999") ? "" : this.pc2963);
         notifyPropertyChanged(BR.pc200nr);
     }
 
