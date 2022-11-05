@@ -74,7 +74,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0"
+                            android:tag="-1"
                             app:alignContent="stretch"
                             app:alignItems="stretch"
                             app:flexDirection="row"
@@ -102,7 +102,7 @@
                                 style="@style/sub_labels"
                                 android:layout_width="52dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
+                                android:gravity="start|center_vertical"
                                 android:text="OD" />
 
                             <TextView
@@ -110,7 +110,7 @@
                                 style="@style/sub_labels"
                                 android:layout_width="52dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
+                                android:gravity="start|center_vertical"
                                 android:text="BD" />
 
                             <TextView
@@ -118,7 +118,7 @@
                                 style="@style/sub_labels"
                                 android:layout_width="52dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
+                                android:gravity="start|center_vertical"
                                 android:text="TDS" />
 
                             <TextView
@@ -126,7 +126,7 @@
                                 style="@style/sub_labels"
                                 android:layout_width="52dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
+                                android:gravity="start|center_vertical"
                                 android:text="QID" />
 
                             <TextView
