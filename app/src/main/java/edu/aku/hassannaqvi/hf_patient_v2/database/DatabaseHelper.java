@@ -195,8 +195,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(VACCINATIONTable.COLUMN_SYNCED, vaccination.getSynced());
         values.put(VACCINATIONTable.COLUMN_SYNCED_DATE, vaccination.getSyncDate());
         values.put(VACCINATIONTable.COLUMN_APPVERSION, vaccination.getAppver());
-        values.put(VACCINATIONTable.COLUMN_ISTATUS, vaccination.getiStatus());
-        values.put(VACCINATIONTable.COLUMN_ISTATUS96x, vaccination.getiStatus96x());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -223,8 +221,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DIAGNOSISTable.COLUMN_SYNCED, diagnosis.getSynced());
         values.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, diagnosis.getSyncDate());
         values.put(DIAGNOSISTable.COLUMN_APPVERSION, diagnosis.getAppver());
-        values.put(DIAGNOSISTable.COLUMN_ISTATUS, diagnosis.getiStatus());
-        values.put(DIAGNOSISTable.COLUMN_ISTATUS96x, diagnosis.getiStatus96x());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -251,8 +247,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COMPLAINTSTable.COLUMN_SYNCED, complaints.getSynced());
         values.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, complaints.getSyncDate());
         values.put(COMPLAINTSTable.COLUMN_APPVERSION, complaints.getAppver());
-        values.put(COMPLAINTSTable.COLUMN_ISTATUS, complaints.getiStatus());
-        values.put(COMPLAINTSTable.COLUMN_ISTATUS96x, complaints.getiStatus96x());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -283,8 +277,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRESCRIPTIONTable.COLUMN_SYNCED, prescription.getSynced());
         values.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, prescription.getSyncDate());
         values.put(PRESCRIPTIONTable.COLUMN_APPVERSION, prescription.getAppver());
-        values.put(PRESCRIPTIONTable.COLUMN_ISTATUS, prescription.getiStatus());
-        values.put(PRESCRIPTIONTable.COLUMN_ISTATUS96x, prescription.getiStatus96x());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -1093,7 +1085,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 VACCINATIONTable.COLUMN_APPVERSION,
                 VACCINATIONTable.COLUMN_SYNCED,
                 VACCINATIONTable.COLUMN_SYNCED_DATE,
-                VACCINATIONTable.COLUMN_ISTATUS,
                 VACCINATIONTable.COLUMN_SVAC
         };
 
@@ -1142,7 +1133,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DIAGNOSISTable.COLUMN_APPVERSION,
                 DIAGNOSISTable.COLUMN_SYNCED,
                 DIAGNOSISTable.COLUMN_SYNCED_DATE,
-                DIAGNOSISTable.COLUMN_ISTATUS,
                 DIAGNOSISTable.COLUMN_SDIAG
         };
 
@@ -1185,7 +1175,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COMPLAINTSTable.COLUMN_APPVERSION,
                 COMPLAINTSTable.COLUMN_SYNCED,
                 COMPLAINTSTable.COLUMN_SYNCED_DATE,
-                COMPLAINTSTable.COLUMN_ISTATUS,
                 COMPLAINTSTable.COLUMN_SCOMP
         };
 
@@ -1228,7 +1217,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 PRESCRIPTIONTable.COLUMN_APPVERSION,
                 PRESCRIPTIONTable.COLUMN_SYNCED,
                 PRESCRIPTIONTable.COLUMN_SYNCED_DATE,
-                PRESCRIPTIONTable.COLUMN_ISTATUS,
                 PRESCRIPTIONTable.COLUMN_PRES
         };
 
