@@ -1611,6 +1611,15 @@
                                 android:checked="@{form.ss601.equals(`2`)}"
                                 android:onClick="@{()->form.setSs601(`2`)}"
                                 android:text="@string/ss60102" />
+
+                            <RadioButton
+                                android:id="@+id/ss60103"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.ss601.equals(`3`)}"
+                                android:onClick="@{()->form.setSs601(`3`)}"
+                                android:text="@string/ss60103" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

@@ -136,6 +136,7 @@
     <string name="ss601">Vaccination Status</string>
     <string name="ss60101">Ongoing</string>
     <string name="ss60102">Fully vaccinated</string>
+    <string name="ss60103">Not vaccinated</string>
     <string name="pctitle">SECTION 2: PRESENTING COMPLAINTS</string>
     <string name="pc200">Presenting Complaints</string>
     <string name="pc201">Fever</string>
@@ -347,11 +348,11 @@
     <string name="se412">Receiving maternal nutritional Supplement</string>
     <string name="se41201">Yes</string>
     <string name="se41202">No</string>
-    <string name="se41296">Other (specify):</string>
+    <string name="se41296">If yes, specify</string>
     <string name="se413">Are you using any medicines</string>
     <string name="se41301">Yes</string>
     <string name="se41302">No</string>
-    <string name="se41396">If yes, specify:</string>
+    <string name="se41396">If yes, specify</string>
     <string name="se4title1">Antenatal Care offered to the patient</string>
     <string name="se414">Weighted</string>
     <string name="se41401">Yes</string>
