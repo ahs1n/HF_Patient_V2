@@ -157,6 +157,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PDTable.COLUMN_USERNAME, patientDetails.getUserName());
         values.put(PDTable.COLUMN_SYSDATE, patientDetails.getSysDate());
         values.put(PDTable.COLUMN_SPD, patientDetails.sPDtoString());
+        values.put(PDTable.COLUMN_SHIS, patientDetails.sHIStoString());
+        values.put(PDTable.COLUMN_SEXM, patientDetails.sEXMtoString());
         values.put(PDTable.COLUMN_DEVICEID, patientDetails.getDeviceId());
         values.put(PDTable.COLUMN_DEVICETAGID, patientDetails.getDeviceTag());
         values.put(PDTable.COLUMN_SYNCED, patientDetails.getSynced());
@@ -1041,7 +1043,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 PDTable.COLUMN_SYNCED,
                 PDTable.COLUMN_SYNCED_DATE,
                 PDTable.COLUMN_ISTATUS,
-                PDTable.COLUMN_SPD
+                PDTable.COLUMN_SPD,
+                PDTable.COLUMN_SHIS,
+                PDTable.COLUMN_SEXM
         };
 
         String whereClause;

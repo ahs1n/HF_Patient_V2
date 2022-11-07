@@ -1565,6 +1565,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         //this.sA = cursor.getString(cursor.getColumnIndexOrThrow(MHContract.MHTable.COLUMN_SA));
 
         sPDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SPD)));
+        sHISHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SHIS)));
+        sEXMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SEXM)));
 
         return this;
     }
@@ -1619,6 +1621,14 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.ss504 = json.getString("ss504");
             this.ss5nr = json.getString("ss5nr");
             this.ss601 = json.getString("ss601");
+        }
+    }
+
+    public void sHISHydrate(String string) throws JSONException {
+        Log.d(TAG, "sHISHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.sh101 = json.getString("sh101");
             this.sh10101 = json.getString("sh10101");
             this.sh10102 = json.getString("sh10102");
@@ -1643,6 +1653,14 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.sh304 = json.getString("sh304");
             this.sh401 = json.getString("sh401");
             this.sh401nr = json.getString("sh401nr");
+        }
+    }
+
+    public void sEXMHydrate(String string) throws JSONException {
+        Log.d(TAG, "sEXMHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.se101 = json.getString("se101");
             this.se102 = json.getString("se102");
             this.se103 = json.getString("se103");
@@ -1711,6 +1729,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         json.put(PDContract.PDTable.COLUMN_ISTATUS96x, this.iStatus96x);
 
         json.put(PDContract.PDTable.COLUMN_SPD, new JSONObject(sPDtoString()));
+        json.put(PDContract.PDTable.COLUMN_SHIS, new JSONObject(sHIStoString()));
+        json.put(PDContract.PDTable.COLUMN_SEXM, new JSONObject(sEXMtoString()));
         return json;
     }
 
@@ -1761,8 +1781,14 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss503", ss503)
                 .put("ss504", ss504)
                 .put("ss5nr", ss5nr)
-                .put("ss601", ss601)
-                .put("sh101", sh101)
+                .put("ss601", ss601);
+        return json.toString();
+    }
+
+    public String sHIStoString() throws JSONException {
+        Log.d(TAG, "sHIStoString: ");
+        JSONObject json = new JSONObject();
+        json.put("sh101", sh101)
                 .put("sh10101", sh10101)
                 .put("sh10102", sh10102)
                 .put("sh10103", sh10103)
@@ -1785,8 +1811,14 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("sh302", sh302)
                 .put("sh304", sh304)
                 .put("sh401", sh401)
-                .put("sh401nr", sh401nr)
-                .put("se101", se101)
+                .put("sh401nr", sh401nr);
+        return json.toString();
+    }
+
+    public String sEXMtoString() throws JSONException {
+        Log.d(TAG, "sEXMtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("se101", se101)
                 .put("se102", se102)
                 .put("se103", se103)
                 .put("se104", se104)

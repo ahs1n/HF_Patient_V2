@@ -23,7 +23,9 @@ object CreateTable {
             + PDContract.PDTable.COLUMN_SYNCED + " TEXT,"
             + PDContract.PDTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PDContract.PDTable.COLUMN_APPVERSION + " TEXT,"
-            + PDContract.PDTable.COLUMN_SPD + " TEXT"
+            + PDContract.PDTable.COLUMN_SPD + " TEXT,"
+            + PDContract.PDTable.COLUMN_SHIS + " TEXT,"
+            + PDContract.PDTable.COLUMN_SEXM + " TEXT"
             + " );")
 
     const val SQL_CREATE_VACCINATION = ("CREATE TABLE "

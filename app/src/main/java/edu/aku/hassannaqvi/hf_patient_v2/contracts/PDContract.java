@@ -18,6 +18,8 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SPD = "sPD";
+        public static final String COLUMN_SHIS = "sHIS";
+        public static final String COLUMN_SEXM = "sEXM";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

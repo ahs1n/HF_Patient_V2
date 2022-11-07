@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
-import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.diagnosis;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 
@@ -42,7 +41,7 @@ public class SectionExaminationActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = 0;
         try {
-            updcount = db.updatesCOMPColumn(PDContract.COMPLAINTSTable.COLUMN_SCOMP, complaints.sCOMPtoString());
+            updcount = db.updatesPDColumn(PDContract.PDTable.COLUMN_SEXM, patientDetails.sEXMtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
