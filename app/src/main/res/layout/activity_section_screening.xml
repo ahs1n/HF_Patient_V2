@@ -1046,13 +1046,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="0.2"
-                                android:onCheckedChanged="@{(compoundButton, checked) ->
-                                activity.tempSwitchChanged(compoundButton, checked)}"
-                                android:showText="true"
                                 android:switchMinWidth="100dp"
                                 android:textColor="@color/grayDark"
-                                android:textOff="°F"
-                                android:textOn="°C"
                                 android:theme="@style/CustomSwitch" />
 
                             <TextView

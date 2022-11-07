@@ -31,7 +31,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 
-public class SectionScreeningActivity extends AppCompatActivity {
+public class SectionScreeningActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
     ActivitySectionScreeningBinding bi;
     private DatabaseHelper db;
@@ -47,6 +47,8 @@ public class SectionScreeningActivity extends AppCompatActivity {
         populateSpinner();
 
         bi.date.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
+
+        bi.tempDegreeSwitch.setOnCheckedChangeListener(this);
     }
 
     private void populateSpinner() {
@@ -154,13 +156,15 @@ public class SectionScreeningActivity extends AppCompatActivity {
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
-    public void tempSwitchChanged(CompoundButton compoundButton, boolean isChecked) {
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         if (isChecked) {
+            patientDetails.setSs204a("2");
             bi.tempDegreeTV.setText("°C");
             bi.ss204.setMinvalue(35);
             bi.ss204.setMaxvalue(43);
-//            bi.ss204
         } else {
+            patientDetails.setSs204a("1");
             bi.tempDegreeTV.setText("°F");
             bi.ss204.setMinvalue(95);
             bi.ss204.setMaxvalue(108);
