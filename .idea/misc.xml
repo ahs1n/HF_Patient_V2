@@ -9,7 +9,10 @@
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_history.xml" value="0.53125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.39221014492753625" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.53125" />
+        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable-v24/bottom.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable-v24/ic_settings.xml" value="0.57421875" />
+        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable-v24/options_separator.xml" value="0.45078125" />
+        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_edittext.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_app_color_bordered.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_app_color_dark_filled.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_app_color_filled.xml" value="0.45078125" />
@@ -17,7 +20,7 @@
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_left_top_app_color_filled.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_orange_filled.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_right_top_app_color_filled.xml" value="0.45078125" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_top_app_color_filled.xml" value="0.57421875" />
+        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_top_app_color_filled.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_white.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bottom.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/ic_locked.xml" value="0.45078125" />
@@ -39,7 +42,7 @@
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_examination.xml" value="0.4265625" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_history.xml" value="0.4265625" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.4015625" />
-        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.5" />
+        <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.24784384929641398" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_section_vaccination.xml" value="0.4265625" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_splashscreen.xml" value="0.3078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/layout/activity_sync.xml" value="0.4639468690702087" />
