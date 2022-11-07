@@ -74,6 +74,7 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
 //        if (!prescription.getUid().equals("")) return;
         MainApp.prescription.populateMeta();
+        MainApp.patientDetails.setiStatus("1");
 
         prescription.updatePrescription(medCode, dose, frequency, duration);
         long rowId = 0;
