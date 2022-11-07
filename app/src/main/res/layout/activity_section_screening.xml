@@ -880,6 +880,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss201nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs201nr(form.ss201nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
@@ -939,6 +940,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss202nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs202nr(form.ss202nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
@@ -998,6 +1000,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss203nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs203nr(form.ss203nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
@@ -1060,6 +1063,7 @@
                             android:checked="@{form.ss204nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs204nr(form.ss204nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss204nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1119,6 +1123,7 @@
                             android:checked="@{form.ss205nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs205nr(form.ss205nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss205nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1219,6 +1224,7 @@
                             android:checked="@{form.ss300nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs300nr(form.ss300nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss300nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1278,6 +1284,7 @@
                             android:checked="@{form.ss303nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs303nr(form.ss303nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss303nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1337,6 +1344,7 @@
                             android:checked="@{form.ss304nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs304nr(form.ss304nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss304nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1396,6 +1404,7 @@
                             android:checked="@{form.ss401nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs401nr(form.ss401nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss401nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1544,6 +1553,7 @@
                             android:checked="@{form.ss5nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs5nr(form.ss5nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
+                            android:buttonTint="@color/red"
                             android:text="@string/ss5nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>

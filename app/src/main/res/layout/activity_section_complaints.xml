@@ -649,6 +649,7 @@
                                 android:checked="@{form.pc200nr.equals(`999`)}"
                                 android:onClick="@{()->form.setPc200nr(form.pc200nr.equals(`999`)?``:`999`)}"
                                 android:tag="-1"
+                                android:buttonTint="@color/red"
                                 android:text="@string/pc200nr"
                                 android:textColor="@color/redDark" />
 

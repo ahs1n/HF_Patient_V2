@@ -586,6 +586,7 @@
                                 android:checked="@{form.sd100nr.equals(`999`)}"
                                 android:onClick="@{()->form.setSd100nr(form.sd100nr.equals(`999`)?``:`999`)}"
                                 android:tag="-1"
+                                android:buttonTint="@color/red"
                                 android:text="@string/sd100nr"
                                 android:textColor="@color/redDark" />
                         </com.google.android.flexbox.FlexboxLayout>
