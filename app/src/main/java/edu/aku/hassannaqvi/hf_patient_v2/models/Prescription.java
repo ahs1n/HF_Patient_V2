@@ -446,8 +446,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp103(String mp103) {
         if (this.mp103.equals(mp103)) return; // for all checkboxes
         this.mp103 = mp103;
-        setMp103du(mp103.equals("3") ? this.mp103do : "");
-        setMp103du(mp103.equals("3") ? this.mp103f : "");
+        setMp103do(mp103.equals("3") ? this.mp103do : "");
+        setMp103f(mp103.equals("3") ? this.mp103f : "");
         setMp103du(mp103.equals("3") ? this.mp103du : "");
         notifyPropertyChanged(BR.mp103);
     }
@@ -490,8 +490,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp104(String mp104) {
         if (this.mp104.equals(mp104)) return; // for all checkboxes
         this.mp104 = mp104;
-        setMp104du(mp104.equals("4") ? this.mp104do : "");
-        setMp104du(mp104.equals("4") ? this.mp104f : "");
+        setMp104do(mp104.equals("4") ? this.mp104do : "");
+        setMp104f(mp104.equals("4") ? this.mp104f : "");
         setMp104du(mp104.equals("4") ? this.mp104du : "");
         notifyPropertyChanged(BR.mp104);
     }
@@ -534,8 +534,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp105(String mp105) {
         if (this.mp105.equals(mp105)) return; // for all checkboxes
         this.mp105 = mp105;
-        setMp105du(mp105.equals("5") ? this.mp105do : "");
-        setMp105du(mp105.equals("5") ? this.mp105f : "");
+        setMp105do(mp105.equals("5") ? this.mp105do : "");
+        setMp105f(mp105.equals("5") ? this.mp105f : "");
         setMp105du(mp105.equals("5") ? this.mp105du : "");
         notifyPropertyChanged(BR.mp105);
     }
@@ -578,8 +578,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp106(String mp106) {
         if (this.mp106.equals(mp106)) return; // for all checkboxes
         this.mp106 = mp106;
-        setMp106du(mp106.equals("6") ? this.mp106do : "");
-        setMp106du(mp106.equals("6") ? this.mp106f : "");
+        setMp106do(mp106.equals("6") ? this.mp106do : "");
+        setMp106f(mp106.equals("6") ? this.mp106f : "");
         setMp106du(mp106.equals("6") ? this.mp106du : "");
         notifyPropertyChanged(BR.mp106);
     }
@@ -622,8 +622,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp107(String mp107) {
         if (this.mp107.equals(mp107)) return; // for all checkboxes
         this.mp107 = mp107;
-        setMp107du(mp107.equals("7") ? this.mp107do : "");
-        setMp107du(mp107.equals("7") ? this.mp107f : "");
+        setMp107do(mp107.equals("7") ? this.mp107do : "");
+        setMp107f(mp107.equals("7") ? this.mp107f : "");
         setMp107du(mp107.equals("7") ? this.mp107du : "");
         notifyPropertyChanged(BR.mp107);
     }
@@ -666,8 +666,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp108(String mp108) {
         if (this.mp108.equals(mp108)) return; // for all checkboxes
         this.mp108 = mp108;
-        setMp108du(mp108.equals("8") ? this.mp108do : "");
-        setMp108du(mp108.equals("8") ? this.mp108f : "");
+        setMp108do(mp108.equals("8") ? this.mp108do : "");
+        setMp108f(mp108.equals("8") ? this.mp108f : "");
         setMp108du(mp108.equals("8") ? this.mp108du : "");
         notifyPropertyChanged(BR.mp108);
     }
@@ -710,8 +710,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp109(String mp109) {
         if (this.mp109.equals(mp109)) return; // for all checkboxes
         this.mp109 = mp109;
-        setMp109du(mp109.equals("9") ? this.mp109do : "");
-        setMp109du(mp109.equals("9") ? this.mp109f : "");
+        setMp109do(mp109.equals("9") ? this.mp109do : "");
+        setMp109f(mp109.equals("9") ? this.mp109f : "");
         setMp109du(mp109.equals("9") ? this.mp109du : "");
         notifyPropertyChanged(BR.mp109);
     }
@@ -754,8 +754,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp110(String mp110) {
         if (this.mp110.equals(mp110)) return; // for all checkboxes
         this.mp110 = mp110;
-        setMp110du(mp110.equals("10") ? this.mp110do : "");
-        setMp110du(mp110.equals("10") ? this.mp110f : "");
+        setMp110do(mp110.equals("10") ? this.mp110do : "");
+        setMp110f(mp110.equals("10") ? this.mp110f : "");
         setMp110du(mp110.equals("10") ? this.mp110du : "");
         notifyPropertyChanged(BR.mp110);
     }
@@ -798,8 +798,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp111(String mp111) {
         if (this.mp111.equals(mp111)) return; // for all checkboxes
         this.mp111 = mp111;
-        setMp111du(mp111.equals("11") ? this.mp111do : "");
-        setMp111du(mp111.equals("11") ? this.mp111f : "");
+        setMp111do(mp111.equals("11") ? this.mp111do : "");
+        setMp111f(mp111.equals("11") ? this.mp111f : "");
         setMp111du(mp111.equals("11") ? this.mp111du : "");
         notifyPropertyChanged(BR.mp111);
     }
@@ -842,8 +842,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp112(String mp112) {
         if (this.mp112.equals(mp112)) return; // for all checkboxes
         this.mp112 = mp112;
-        setMp112du(mp112.equals("12") ? this.mp112do : "");
-        setMp112du(mp112.equals("12") ? this.mp112f : "");
+        setMp112do(mp112.equals("12") ? this.mp112do : "");
+        setMp112f(mp112.equals("12") ? this.mp112f : "");
         setMp112du(mp112.equals("12") ? this.mp112du : "");
         notifyPropertyChanged(BR.mp112);
     }
@@ -886,8 +886,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp113(String mp113) {
         if (this.mp113.equals(mp113)) return; // for all checkboxes
         this.mp113 = mp113;
-        setMp113du(mp113.equals("13") ? this.mp113do : "");
-        setMp113du(mp113.equals("13") ? this.mp113f : "");
+        setMp113do(mp113.equals("13") ? this.mp113do : "");
+        setMp113f(mp113.equals("13") ? this.mp113f : "");
         setMp113du(mp113.equals("13") ? this.mp113du : "");
         notifyPropertyChanged(BR.mp113);
     }
@@ -930,8 +930,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp114(String mp114) {
         if (this.mp114.equals(mp114)) return; // for all checkboxes
         this.mp114 = mp114;
-        setMp114du(mp114.equals("14") ? this.mp114do : "");
-        setMp114du(mp114.equals("14") ? this.mp114f : "");
+        setMp114do(mp114.equals("14") ? this.mp114do : "");
+        setMp114f(mp114.equals("14") ? this.mp114f : "");
         setMp114du(mp114.equals("14") ? this.mp114du : "");
         notifyPropertyChanged(BR.mp114);
     }
@@ -974,8 +974,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp115(String mp115) {
         if (this.mp115.equals(mp115)) return; // for all checkboxes
         this.mp115 = mp115;
-        setMp115du(mp115.equals("15") ? this.mp115do : "");
-        setMp115du(mp115.equals("15") ? this.mp115f : "");
+        setMp115do(mp115.equals("15") ? this.mp115do : "");
+        setMp115f(mp115.equals("15") ? this.mp115f : "");
         setMp115du(mp115.equals("15") ? this.mp115du : "");
         notifyPropertyChanged(BR.mp115);
     }
@@ -1018,8 +1018,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp116(String mp116) {
         if (this.mp116.equals(mp116)) return; // for all checkboxes
         this.mp116 = mp116;
-        setMp116du(mp116.equals("16") ? this.mp116do : "");
-        setMp116du(mp116.equals("16") ? this.mp116f : "");
+        setMp116do(mp116.equals("16") ? this.mp116do : "");
+        setMp116f(mp116.equals("16") ? this.mp116f : "");
         setMp116du(mp116.equals("16") ? this.mp116du : "");
         notifyPropertyChanged(BR.mp116);
     }
@@ -1062,8 +1062,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp117(String mp117) {
         if (this.mp117.equals(mp117)) return; // for all checkboxes
         this.mp117 = mp117;
-        setMp117du(mp117.equals("17") ? this.mp117do : "");
-        setMp117du(mp117.equals("17") ? this.mp117f : "");
+        setMp117do(mp117.equals("17") ? this.mp117do : "");
+        setMp117f(mp117.equals("17") ? this.mp117f : "");
         setMp117du(mp117.equals("17") ? this.mp117du : "");
         notifyPropertyChanged(BR.mp117);
     }
@@ -1106,8 +1106,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp118(String mp118) {
         if (this.mp118.equals(mp118)) return; // for all checkboxes
         this.mp118 = mp118;
-        setMp118du(mp118.equals("18") ? this.mp118do : "");
-        setMp118du(mp118.equals("18") ? this.mp118f : "");
+        setMp118do(mp118.equals("18") ? this.mp118do : "");
+        setMp118f(mp118.equals("18") ? this.mp118f : "");
         setMp118du(mp118.equals("18") ? this.mp118du : "");
         notifyPropertyChanged(BR.mp118);
     }
@@ -1150,8 +1150,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp119(String mp119) {
         if (this.mp119.equals(mp119)) return; // for all checkboxes
         this.mp119 = mp119;
-        setMp119du(mp119.equals("19") ? this.mp119do : "");
-        setMp119du(mp119.equals("19") ? this.mp119f : "");
+        setMp119do(mp119.equals("19") ? this.mp119do : "");
+        setMp119f(mp119.equals("19") ? this.mp119f : "");
         setMp119du(mp119.equals("19") ? this.mp119du : "");
         notifyPropertyChanged(BR.mp119);
     }
@@ -1194,8 +1194,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp120(String mp120) {
         if (this.mp120.equals(mp120)) return; // for all checkboxes
         this.mp120 = mp120;
-        setMp120du(mp120.equals("20") ? this.mp120do : "");
-        setMp120du(mp120.equals("20") ? this.mp120f : "");
+        setMp120do(mp120.equals("20") ? this.mp120do : "");
+        setMp120f(mp120.equals("20") ? this.mp120f : "");
         setMp120du(mp120.equals("20") ? this.mp120du : "");
         notifyPropertyChanged(BR.mp120);
     }
@@ -1238,8 +1238,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp121(String mp121) {
         if (this.mp121.equals(mp121)) return; // for all checkboxes
         this.mp121 = mp121;
-        setMp121du(mp121.equals("21") ? this.mp121do : "");
-        setMp121du(mp121.equals("21") ? this.mp121f : "");
+        setMp121do(mp121.equals("21") ? this.mp121do : "");
+        setMp121f(mp121.equals("21") ? this.mp121f : "");
         setMp121du(mp121.equals("21") ? this.mp121du : "");
         notifyPropertyChanged(BR.mp121);
     }
@@ -1282,8 +1282,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp122(String mp122) {
         if (this.mp122.equals(mp122)) return; // for all checkboxes
         this.mp122 = mp122;
-        setMp122du(mp122.equals("22") ? this.mp122do : "");
-        setMp122du(mp122.equals("22") ? this.mp122f : "");
+        setMp122do(mp122.equals("22") ? this.mp122do : "");
+        setMp122f(mp122.equals("22") ? this.mp122f : "");
         setMp122du(mp122.equals("22") ? this.mp122du : "");
         notifyPropertyChanged(BR.mp122);
     }
@@ -1326,8 +1326,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp123(String mp123) {
         if (this.mp123.equals(mp123)) return; // for all checkboxes
         this.mp123 = mp123;
-        setMp123du(mp123.equals("23") ? this.mp123do : "");
-        setMp123du(mp123.equals("23") ? this.mp123f : "");
+        setMp123do(mp123.equals("23") ? this.mp123do : "");
+        setMp123f(mp123.equals("23") ? this.mp123f : "");
         setMp123du(mp123.equals("23") ? this.mp123du : "");
         notifyPropertyChanged(BR.mp123);
     }
@@ -1370,8 +1370,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp124(String mp124) {
         if (this.mp124.equals(mp124)) return; // for all checkboxes
         this.mp124 = mp124;
-        setMp124du(mp124.equals("24") ? this.mp124do : "");
-        setMp124du(mp124.equals("24") ? this.mp124f : "");
+        setMp124do(mp124.equals("24") ? this.mp124do : "");
+        setMp124f(mp124.equals("24") ? this.mp124f : "");
         setMp124du(mp124.equals("24") ? this.mp124du : "");
         notifyPropertyChanged(BR.mp124);
     }
@@ -1414,8 +1414,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp125(String mp125) {
         if (this.mp125.equals(mp125)) return; // for all checkboxes
         this.mp125 = mp125;
-        setMp125du(mp125.equals("25") ? this.mp125do : "");
-        setMp125du(mp125.equals("25") ? this.mp125f : "");
+        setMp125do(mp125.equals("25") ? this.mp125do : "");
+        setMp125f(mp125.equals("25") ? this.mp125f : "");
         setMp125du(mp125.equals("25") ? this.mp125du : "");
         notifyPropertyChanged(BR.mp125);
     }
@@ -1458,8 +1458,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp126(String mp126) {
         if (this.mp126.equals(mp126)) return; // for all checkboxes
         this.mp126 = mp126;
-        setMp126du(mp126.equals("26") ? this.mp126do : "");
-        setMp126du(mp126.equals("26") ? this.mp126f : "");
+        setMp126do(mp126.equals("26") ? this.mp126do : "");
+        setMp126f(mp126.equals("26") ? this.mp126f : "");
         setMp126du(mp126.equals("26") ? this.mp126du : "");
         notifyPropertyChanged(BR.mp126);
     }
@@ -1502,8 +1502,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp127(String mp127) {
         if (this.mp127.equals(mp127)) return; // for all checkboxes
         this.mp127 = mp127;
-        setMp127du(mp127.equals("27") ? this.mp127do : "");
-        setMp127du(mp127.equals("27") ? this.mp127f : "");
+        setMp127do(mp127.equals("27") ? this.mp127do : "");
+        setMp127f(mp127.equals("27") ? this.mp127f : "");
         setMp127du(mp127.equals("27") ? this.mp127du : "");
         notifyPropertyChanged(BR.mp127);
     }
@@ -1546,8 +1546,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp128(String mp128) {
         if (this.mp128.equals(mp128)) return; // for all checkboxes
         this.mp128 = mp128;
-        setMp128du(mp128.equals("28") ? this.mp128do : "");
-        setMp128du(mp128.equals("28") ? this.mp128f : "");
+        setMp128do(mp128.equals("28") ? this.mp128do : "");
+        setMp128f(mp128.equals("28") ? this.mp128f : "");
         setMp128du(mp128.equals("28") ? this.mp128du : "");
         notifyPropertyChanged(BR.mp128);
     }
@@ -1590,8 +1590,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp129(String mp129) {
         if (this.mp129.equals(mp129)) return; // for all checkboxes
         this.mp129 = mp129;
-        setMp129du(mp129.equals("29") ? this.mp129do : "");
-        setMp129du(mp129.equals("29") ? this.mp129f : "");
+        setMp129do(mp129.equals("29") ? this.mp129do : "");
+        setMp129f(mp129.equals("29") ? this.mp129f : "");
         setMp129du(mp129.equals("29") ? this.mp129du : "");
         notifyPropertyChanged(BR.mp129);
     }
@@ -1634,8 +1634,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp130(String mp130) {
         if (this.mp130.equals(mp130)) return; // for all checkboxes
         this.mp130 = mp130;
-        setMp130du(mp130.equals("30") ? this.mp130do : "");
-        setMp130du(mp130.equals("30") ? this.mp130f : "");
+        setMp130do(mp130.equals("30") ? this.mp130do : "");
+        setMp130f(mp130.equals("30") ? this.mp130f : "");
         setMp130du(mp130.equals("30") ? this.mp130du : "");
         notifyPropertyChanged(BR.mp130);
     }
@@ -1678,8 +1678,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp131(String mp131) {
         if (this.mp131.equals(mp131)) return; // for all checkboxes
         this.mp131 = mp131;
-        setMp131du(mp131.equals("31") ? this.mp131do : "");
-        setMp131du(mp131.equals("31") ? this.mp131f : "");
+        setMp131do(mp131.equals("31") ? this.mp131do : "");
+        setMp131f(mp131.equals("31") ? this.mp131f : "");
         setMp131du(mp131.equals("31") ? this.mp131du : "");
         notifyPropertyChanged(BR.mp131);
     }
@@ -1722,8 +1722,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp132(String mp132) {
         if (this.mp132.equals(mp132)) return; // for all checkboxes
         this.mp132 = mp132;
-        setMp132du(mp132.equals("32") ? this.mp132do : "");
-        setMp132du(mp132.equals("32") ? this.mp132f : "");
+        setMp132do(mp132.equals("32") ? this.mp132do : "");
+        setMp132f(mp132.equals("32") ? this.mp132f : "");
         setMp132du(mp132.equals("32") ? this.mp132du : "");
         notifyPropertyChanged(BR.mp132);
     }
@@ -1766,8 +1766,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp133(String mp133) {
         if (this.mp133.equals(mp133)) return; // for all checkboxes
         this.mp133 = mp133;
-        setMp133du(mp133.equals("33") ? this.mp133do : "");
-        setMp133du(mp133.equals("33") ? this.mp133f : "");
+        setMp133do(mp133.equals("33") ? this.mp133do : "");
+        setMp133f(mp133.equals("33") ? this.mp133f : "");
         setMp133du(mp133.equals("33") ? this.mp133du : "");
         notifyPropertyChanged(BR.mp133);
     }
@@ -1810,8 +1810,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp134(String mp134) {
         if (this.mp134.equals(mp134)) return; // for all checkboxes
         this.mp134 = mp134;
-        setMp134du(mp134.equals("34") ? this.mp134do : "");
-        setMp134du(mp134.equals("34") ? this.mp134f : "");
+        setMp134do(mp134.equals("34") ? this.mp134do : "");
+        setMp134f(mp134.equals("34") ? this.mp134f : "");
         setMp134du(mp134.equals("34") ? this.mp134du : "");
         notifyPropertyChanged(BR.mp134);
     }
@@ -1854,8 +1854,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp135(String mp135) {
         if (this.mp135.equals(mp135)) return; // for all checkboxes
         this.mp135 = mp135;
-        setMp135du(mp135.equals("35") ? this.mp135do : "");
-        setMp135du(mp135.equals("35") ? this.mp135f : "");
+        setMp135do(mp135.equals("35") ? this.mp135do : "");
+        setMp135f(mp135.equals("35") ? this.mp135f : "");
         setMp135du(mp135.equals("35") ? this.mp135du : "");
         notifyPropertyChanged(BR.mp135);
     }
@@ -1898,8 +1898,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp136(String mp136) {
         if (this.mp136.equals(mp136)) return; // for all checkboxes
         this.mp136 = mp136;
-        setMp136du(mp136.equals("36") ? this.mp136do : "");
-        setMp136du(mp136.equals("36") ? this.mp136f : "");
+        setMp136do(mp136.equals("36") ? this.mp136do : "");
+        setMp136f(mp136.equals("36") ? this.mp136f : "");
         setMp136du(mp136.equals("36") ? this.mp136du : "");
         notifyPropertyChanged(BR.mp136);
     }
@@ -1942,8 +1942,8 @@ public class Prescription extends BaseObservable implements Observable {
     public void setMp137(String mp137) {
         if (this.mp137.equals(mp137)) return; // for all checkboxes
         this.mp137 = mp137;
-        setMp137du(mp137.equals("37") ? this.mp137do : "");
-        setMp137du(mp137.equals("37") ? this.mp137f : "");
+        setMp137do(mp137.equals("37") ? this.mp137do : "");
+        setMp137f(mp137.equals("37") ? this.mp137f : "");
         setMp137du(mp137.equals("37") ? this.mp137du : "");
         notifyPropertyChanged(BR.mp137);
     }

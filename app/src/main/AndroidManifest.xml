@@ -33,7 +33,7 @@
         <activity
             android:name=".ui.sections.SectionPrescriptionActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"></activity>
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionVaccinationActivity"
             android:screenOrientation="portrait"

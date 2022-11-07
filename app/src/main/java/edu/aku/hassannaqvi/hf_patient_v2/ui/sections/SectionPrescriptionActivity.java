@@ -5,14 +5,21 @@ import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
+import com.google.android.flexbox.FlexboxLayout;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.aku.hassannaqvi.hf_patient_v2.R;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
@@ -76,7 +83,45 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        List<FlexboxLayout> parentLayouts = new ArrayList<>();
+        parentLayouts.add(bi.presStub1.mp100check1);
+        parentLayouts.add(bi.presStub2.mp100check2);
+
+        boolean isChecked = false;
+        for (int i = 0; i < parentLayouts.size(); i++) {
+            FlexboxLayout parentLayout = parentLayouts.get(i);
+            for (int j = 0; j < parentLayout.getChildCount(); j++) {
+                View view = parentLayout.getChildAt(j);
+                if (view instanceof CheckBox) {
+                    CheckBox checkBox = ((CheckBox) view);
+                    if (checkBox.isChecked()) {
+                        isChecked = true;
+                        for (int k = j + 1; k <= j + 3; k++) {
+                            View view1 = parentLayout.getChildAt(k);
+                            if (view1 instanceof EditTextPicker) {
+                                EditTextPicker editText = ((EditTextPicker) view1);
+                                editText.clearFocus();
+                                if (!editText.isEmptyTextBox())
+                                    return false;
+                                else if (!editText.isRangeTextValidate())
+                                    return false;
+
+                            } else if (view1 instanceof RadioGroup) {
+                                RadioGroup radioGroup = ((RadioGroup) view1);
+                                if (!Validator.emptyCheckingContainer(this, radioGroup))
+                                    return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!isChecked) {
+            Toast.makeText(this, getString(R.string.select_medicine), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+//        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
