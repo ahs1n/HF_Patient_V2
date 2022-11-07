@@ -81,7 +81,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.sv101.equals(`1`)}"
-                                android:onClick="@{()->form.setSv101(`1`)}"
+                                android:onClick="@{()->form.setSv101(`1`) + sv102.clearCheck()}"
                                 android:text="@string/sv10101" />
 
                             <RadioButton
@@ -99,7 +99,8 @@
                 <!-- sv102  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsv102"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sv101.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -206,7 +207,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.sv103.equals(`1`)}"
-                                android:onClick="@{()->form.setSv103(`1`)}"
+                                android:onClick="@{()->form.setSv103(`1`) + sv104.clearCheck()}"
                                 android:text="@string/sv10301" />
 
                             <RadioButton
@@ -224,7 +225,8 @@
                 <!-- sv104  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsv104"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sv103.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -262,7 +264,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.sv104.equals(`1`)}"
-                                android:onClick="@{()->form.setSv104(`1`)}"
+                                android:onClick="@{()->form.setSv104(`1`) + sv106.clearCheck()}"
                                 android:text="@string/sv10401" />
 
                             <RadioButton
@@ -280,7 +282,8 @@
                 <!-- sv105  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsv105"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sv103.equals(`1`) || form.sv104.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -319,7 +322,8 @@
                 <!-- sv106  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsv106"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sv104.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

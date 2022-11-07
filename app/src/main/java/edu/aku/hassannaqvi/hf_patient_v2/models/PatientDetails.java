@@ -1311,6 +1311,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSe401(String se401) {
         this.se401 = se401;
+        setSe402(se401.equals("1") ? this.se402 : "");
         notifyPropertyChanged(BR.se401);
     }
 

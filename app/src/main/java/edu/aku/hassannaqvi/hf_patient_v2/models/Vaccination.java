@@ -59,6 +59,7 @@ public class Vaccination extends BaseObservable implements Observable {
     private String projectName = PROJECT_NAME;
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -80,6 +81,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
+        setUuid(MainApp.patientDetails.getUid());
+        setPrno(MainApp.patientDetails.getPrno());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -110,6 +113,14 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUserName() {
@@ -237,6 +248,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setSv101(String sv101) {
         this.sv101 = sv101;
+        setSv102(sv101.equals("1") ? this.sv102 : "");
         notifyPropertyChanged(BR.sv101);
     }
 
@@ -257,6 +269,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setSv103(String sv103) {
         this.sv103 = sv103;
+        setSv104(sv103.equals("2") ? this.sv104 : "");
+        setSv105(sv103.equals("1") ? this.sv105 : "");
         notifyPropertyChanged(BR.sv103);
     }
 
@@ -267,6 +281,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setSv104(String sv104) {
         this.sv104 = sv104;
+        setSv105(sv104.equals("1") ? this.sv105 : "");
+        setSv106(sv104.equals("2") ? this.sv106 : "");
         notifyPropertyChanged(BR.sv104);
     }
 
@@ -504,6 +520,8 @@ public class Vaccination extends BaseObservable implements Observable {
     public Vaccination Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_UUID));
+        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_DEVICEID));
@@ -559,6 +577,8 @@ public class Vaccination extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(VACCINATIONTable.COLUMN_ID, this.id);
         json.put(VACCINATIONTable.COLUMN_UID, this.uid);
+        json.put(VACCINATIONTable.COLUMN_UUID, this.uuid);
+        json.put(VACCINATIONTable.COLUMN_PRNO, this.prno);
         json.put(VACCINATIONTable.COLUMN_USERNAME, this.userName);
         json.put(VACCINATIONTable.COLUMN_SYSDATE, this.sysDate);
         json.put(VACCINATIONTable.COLUMN_DEVICEID, this.deviceId);

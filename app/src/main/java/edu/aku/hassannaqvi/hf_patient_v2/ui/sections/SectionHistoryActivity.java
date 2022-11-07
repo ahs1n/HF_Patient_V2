@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class SectionHistoryActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_history);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        bi.setForm(patientDetails);
     }
 
 

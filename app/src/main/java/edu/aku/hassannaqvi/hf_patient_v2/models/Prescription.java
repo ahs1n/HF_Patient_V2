@@ -174,10 +174,59 @@ public class Prescription extends BaseObservable implements Observable {
     public String mp137do = _EMPTY_;
     public String mp137f = _EMPTY_;
     public String mp137du = _EMPTY_;
+
+    public String medCode = _EMPTY_;
+    public String dose = _EMPTY_;
+    public String frequency = _EMPTY_;
+    public String duration = _EMPTY_;
+    private String uuid = _EMPTY_;
+
+    @Bindable
+    public String getMedCode() {
+        return medCode;
+    }
+
+    public void setMedCode(String medCode) {
+        this.medCode = medCode;
+        notifyPropertyChanged(BR.medCode);
+    }
+
+    @Bindable
+    public String getDose() {
+        return dose;
+    }
+
+    public void setDose(String dose) {
+        this.dose = dose;
+        notifyPropertyChanged(BR.dose);
+    }
+
+    @Bindable
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+        notifyPropertyChanged(BR.frequency);
+    }
+
+    @Bindable
+    public String getDuration() {
+        return duration;
+    }
+
+
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+        notifyPropertyChanged(BR.duration);
+    }
+
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -199,6 +248,8 @@ public class Prescription extends BaseObservable implements Observable {
 
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
+        setUuid(MainApp.patientDetails.getUid());
+        setPrno(MainApp.patientDetails.getPrno());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -229,6 +280,14 @@ public class Prescription extends BaseObservable implements Observable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUserName() {
@@ -1982,6 +2041,8 @@ public class Prescription extends BaseObservable implements Observable {
     public Prescription Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_UUID));
+        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DEVICEID));
@@ -1991,6 +2052,10 @@ public class Prescription extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYNCED_DATE));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS));
         this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS96x));
+        this.medCode = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_MED_CODE));
+        this.dose = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DOSE));
+        this.frequency = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FREQUENCY));
+        this.duration = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DURATION));
 
         sPRESHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRES)));
 
@@ -2159,6 +2224,8 @@ public class Prescription extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(PRESCRIPTIONTable.COLUMN_ID, this.id);
         json.put(PRESCRIPTIONTable.COLUMN_UID, this.uid);
+        json.put(PRESCRIPTIONTable.COLUMN_UUID, this.uuid);
+        json.put(PRESCRIPTIONTable.COLUMN_PRES, this.prno);
         json.put(PRESCRIPTIONTable.COLUMN_USERNAME, this.userName);
         json.put(PRESCRIPTIONTable.COLUMN_SYSDATE, this.sysDate);
         json.put(PRESCRIPTIONTable.COLUMN_DEVICEID, this.deviceId);
@@ -2168,6 +2235,10 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(PRESCRIPTIONTable.COLUMN_ISTATUS, this.iStatus);
         json.put(PRESCRIPTIONTable.COLUMN_ISTATUS96x, this.iStatus96x);
+        json.put(PRESCRIPTIONTable.COLUMN_MED_CODE, this.medCode);
+        json.put(PRESCRIPTIONTable.COLUMN_DOSE, this.dose);
+        json.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, this.frequency);
+        json.put(PRESCRIPTIONTable.COLUMN_DURATION, this.duration);
 
         json.put(PRESCRIPTIONTable.COLUMN_PRES, new JSONObject(sPREStoString()));
         return json;
@@ -2176,7 +2247,7 @@ public class Prescription extends BaseObservable implements Observable {
     public String sPREStoString() throws JSONException {
         Log.d(TAG, "sPREStoString: ");
         JSONObject json = new JSONObject();
-        json.put("mp101", mp101)
+        /*json.put("mp101", mp101)
                 .put("mp101do", mp101do)
                 .put("mp101f", mp101f)
                 .put("mp101du", mp101du)
@@ -2323,8 +2394,16 @@ public class Prescription extends BaseObservable implements Observable {
                 .put("mp137", mp137)
                 .put("mp137do", mp137do)
                 .put("mp137f", mp137f)
-                .put("mp137du", mp137du);
+                .put("mp137du", mp137du);*/
         return json.toString();
+    }
+
+
+    public void updatePrescription(String medCode, String dose, String frequency, String duration) {
+        MainApp.prescription.setMedCode(medCode);
+        MainApp.prescription.setDose(dose);
+        MainApp.prescription.setFrequency(frequency);
+        MainApp.prescription.setDuration(duration);
     }
 
 }

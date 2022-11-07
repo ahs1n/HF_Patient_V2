@@ -97,6 +97,7 @@ public class Complaints extends BaseObservable implements Observable {
     private String projectName = PROJECT_NAME;
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -118,6 +119,8 @@ public class Complaints extends BaseObservable implements Observable {
 
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
+        setUuid(MainApp.patientDetails.getUid());
+        setPrno(MainApp.patientDetails.getPrno());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -148,6 +151,14 @@ public class Complaints extends BaseObservable implements Observable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUserName() {
@@ -1071,6 +1082,8 @@ public class Complaints extends BaseObservable implements Observable {
     public Complaints Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_UUID));
+        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICEID));
@@ -1167,6 +1180,8 @@ public class Complaints extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(COMPLAINTSTable.COLUMN_ID, this.id);
         json.put(COMPLAINTSTable.COLUMN_UID, this.uid);
+        json.put(COMPLAINTSTable.COLUMN_UUID, this.uuid);
+        json.put(COMPLAINTSTable.COLUMN_PRNO, this.prno);
         json.put(COMPLAINTSTable.COLUMN_USERNAME, this.userName);
         json.put(COMPLAINTSTable.COLUMN_SYSDATE, this.sysDate);
         json.put(COMPLAINTSTable.COLUMN_DEVICEID, this.deviceId);

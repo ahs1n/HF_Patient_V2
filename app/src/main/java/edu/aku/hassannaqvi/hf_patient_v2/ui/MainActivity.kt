@@ -33,10 +33,8 @@ import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails
-import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate
-import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionPrescriptionActivity
 import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivityWithNoHistory
@@ -308,7 +306,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.main_menu, menu)
 
         val action_database = menu.findItem(R.id.action_database)
-        action_database.isVisible = MainApp.admin
+//        action_database.isVisible = MainApp.admin
 
         return true
     }

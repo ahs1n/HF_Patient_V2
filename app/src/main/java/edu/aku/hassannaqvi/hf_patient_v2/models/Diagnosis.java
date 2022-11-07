@@ -93,6 +93,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     private String projectName = PROJECT_NAME;
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -114,6 +115,8 @@ public class Diagnosis extends BaseObservable implements Observable {
 
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
+        setUuid(MainApp.patientDetails.getUid());
+        setPrno(MainApp.patientDetails.getPrno());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -144,6 +147,14 @@ public class Diagnosis extends BaseObservable implements Observable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getUserName() {
@@ -1017,6 +1028,8 @@ public class Diagnosis extends BaseObservable implements Observable {
     public Diagnosis Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_UUID));
+        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICEID));
@@ -1109,6 +1122,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(DIAGNOSISTable.COLUMN_ID, this.id);
         json.put(DIAGNOSISTable.COLUMN_UID, this.uid);
+        json.put(DIAGNOSISTable.COLUMN_UUID, this.uuid);
+        json.put(DIAGNOSISTable.COLUMN_PRNO, this.prno);
         json.put(DIAGNOSISTable.COLUMN_USERNAME, this.userName);
         json.put(DIAGNOSISTable.COLUMN_SYSDATE, this.sysDate);
         json.put(DIAGNOSISTable.COLUMN_DEVICEID, this.deviceId);

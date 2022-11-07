@@ -33,6 +33,8 @@ public class PDContract {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PRNO = "prno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SVAC = "sVAC";
@@ -51,6 +53,8 @@ public class PDContract {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PRNO = "prno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SDIAG = "sDIAG";
@@ -69,6 +73,8 @@ public class PDContract {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PRNO = "prno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SCOMP = "sCOMP";
@@ -87,6 +93,8 @@ public class PDContract {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PRNO = "prno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_PRES = "sPRES";
@@ -97,5 +105,9 @@ public class PDContract {
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
+        public static final String COLUMN_MED_CODE = "medCode";
+        public static final String COLUMN_DOSE = "dose";
+        public static final String COLUMN_FREQUENCY = "frequency";
+        public static final String COLUMN_DURATION = "duration";
     }
 }

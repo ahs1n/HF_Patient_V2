@@ -183,6 +183,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(VACCINATIONTable.COLUMN_PROJECT_NAME, vaccination.getProjectName());
         values.put(VACCINATIONTable.COLUMN_UID, vaccination.getUid());
+        values.put(VACCINATIONTable.COLUMN_UUID, vaccination.getUuid());
+        values.put(VACCINATIONTable.COLUMN_PRNO, vaccination.getPrno());
         values.put(VACCINATIONTable.COLUMN_USERNAME, vaccination.getUserName());
         values.put(VACCINATIONTable.COLUMN_SYSDATE, vaccination.getSysDate());
         values.put(VACCINATIONTable.COLUMN_SVAC, vaccination.sVACtoString());
@@ -209,6 +211,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(DIAGNOSISTable.COLUMN_PROJECT_NAME, diagnosis.getProjectName());
         values.put(DIAGNOSISTable.COLUMN_UID, diagnosis.getUid());
+        values.put(DIAGNOSISTable.COLUMN_UUID, diagnosis.getUuid());
+        values.put(DIAGNOSISTable.COLUMN_PRNO, diagnosis.getPrno());
         values.put(DIAGNOSISTable.COLUMN_USERNAME, diagnosis.getUserName());
         values.put(DIAGNOSISTable.COLUMN_SYSDATE, diagnosis.getSysDate());
         values.put(DIAGNOSISTable.COLUMN_SDIAG, diagnosis.sDIAGtoString());
@@ -235,6 +239,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COMPLAINTSTable.COLUMN_PROJECT_NAME, complaints.getProjectName());
         values.put(COMPLAINTSTable.COLUMN_UID, complaints.getUid());
+        values.put(COMPLAINTSTable.COLUMN_UUID, complaints.getUuid());
+        values.put(COMPLAINTSTable.COLUMN_PRNO, complaints.getPrno());
         values.put(COMPLAINTSTable.COLUMN_USERNAME, complaints.getUserName());
         values.put(COMPLAINTSTable.COLUMN_SYSDATE, complaints.getSysDate());
         values.put(COMPLAINTSTable.COLUMN_SCOMP, complaints.sCOMPtoString());
@@ -261,9 +267,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(PRESCRIPTIONTable.COLUMN_PROJECT_NAME, prescription.getProjectName());
         values.put(PRESCRIPTIONTable.COLUMN_UID, prescription.getUid());
+        values.put(PRESCRIPTIONTable.COLUMN_UUID, prescription.getUuid());
+        values.put(PRESCRIPTIONTable.COLUMN_PRNO, prescription.getPrno());
         values.put(PRESCRIPTIONTable.COLUMN_USERNAME, prescription.getUserName());
         values.put(PRESCRIPTIONTable.COLUMN_SYSDATE, prescription.getSysDate());
-        values.put(PRESCRIPTIONTable.COLUMN_PRES, prescription.sPREStoString());
+        //values.put(PRESCRIPTIONTable.COLUMN_PRES, prescription.getsPrescription());
+        values.put(PRESCRIPTIONTable.COLUMN_MED_CODE, prescription.getMedCode());
+        values.put(PRESCRIPTIONTable.COLUMN_DOSE, prescription.getDose());
+        values.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, prescription.getFrequency());
+        values.put(PRESCRIPTIONTable.COLUMN_DURATION, prescription.getDuration());
         values.put(PRESCRIPTIONTable.COLUMN_DEVICEID, prescription.getDeviceId());
         values.put(PRESCRIPTIONTable.COLUMN_DEVICETAGID, prescription.getDeviceTag());
         values.put(PRESCRIPTIONTable.COLUMN_SYNCED, prescription.getSynced());
@@ -275,8 +287,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                COMPLAINTSTable.TABLE_NAME,
-                COMPLAINTSTable.COLUMN_NAME_NULLABLE,
+                PRESCRIPTIONTable.TABLE_NAME,
+                PRESCRIPTIONTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }

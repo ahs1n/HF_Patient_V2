@@ -329,7 +329,7 @@
                             android:id="@+id/ss101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/ss101"
                             android:text="@={form.ss101}" />
                     </LinearLayout>
@@ -357,7 +357,7 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/Q_ss102" />
 
-                            <TextView
+                            <TextViewl
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/ss102" />
@@ -368,7 +368,7 @@
                             android:id="@+id/ss102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/ss102"
                             android:text="@={form.ss102}" />
                     </LinearLayout>
@@ -764,10 +764,7 @@
                             android:hint="@string/ss108"
                             android:inputType="number"
                             android:maxLength="11"
-                            android:text="@={form.ss108}"
-                            app:maxValue="99999999999"
-                            app:minValue="11111111111"
-                            app:type="range" />
+                            android:text="@={form.ss108}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
