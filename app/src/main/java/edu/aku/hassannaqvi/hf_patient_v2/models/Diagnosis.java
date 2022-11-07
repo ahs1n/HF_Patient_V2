@@ -1184,4 +1184,10 @@ public class Diagnosis extends BaseObservable implements Observable {
                 .put("sd100nr", sd100nr);
         return json.toString();
     }
+
+/*
+    public void updateDiagnosis(String diagCode, String otherSpecify) {
+        MainApp.diagnosis.setDiagCode(diagCode);
+        MainApp.diagnosis.setOthers(otherSpecify);
+    }*/
 }

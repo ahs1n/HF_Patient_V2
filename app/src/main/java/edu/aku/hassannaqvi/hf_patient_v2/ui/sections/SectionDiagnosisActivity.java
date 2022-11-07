@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.diagnosis;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.vaccination;
 
 import android.content.Intent;
@@ -20,6 +22,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionDiagnosisBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
 
 public class SectionDiagnosisActivity extends AppCompatActivity {
@@ -87,8 +90,13 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            vaccination = new Vaccination();
-            startActivity(new Intent(this, SectionVaccinationActivity.class));
+            if (patientDetails.ss104y.length() > 0 && Integer.parseInt(patientDetails.ss104y) < 5 && patientDetails.ss10703.equals("3")) {
+                vaccination = new Vaccination();
+                startActivity(new Intent(this, SectionVaccinationActivity.class));
+            } else {
+                prescription = new Prescription();
+                startActivity(new Intent(this, SectionPrescriptionActivity.class));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

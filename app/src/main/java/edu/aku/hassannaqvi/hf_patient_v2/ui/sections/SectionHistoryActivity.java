@@ -66,7 +66,7 @@ public class SectionHistoryActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd(View view) {
+    public void BtnEnd(View view) {
         finish();
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
