@@ -49,6 +49,7 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         bi.date.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -4));
 
         bi.tempDegreeSwitch.setOnCheckedChangeListener(this);
+        patientDetails.setSs204a("1");
     }
 
     private void populateSpinner() {
@@ -157,17 +158,20 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        bi.ss204.setText(null);
         if (isChecked) {
             patientDetails.setSs204a("2");
             bi.tempDegreeTV.setText("°C");
             bi.ss204.setMinvalue(35);
             bi.ss204.setMaxvalue(43);
+            bi.ss204.setHint("##");
         } else {
             patientDetails.setSs204a("1");
             bi.tempDegreeTV.setText("°F");
             bi.ss204.setMinvalue(95);
             bi.ss204.setMaxvalue(108);
+            bi.ss204.setHint("###");
         }
     }
 }

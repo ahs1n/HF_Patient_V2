@@ -620,6 +620,7 @@ public class PatientDetails extends BaseObservable implements Observable {
         if (this.ss204nr.equals(ss204nr)) return; // for all checkboxes
         this.ss204nr = ss204nr;
         setSs204(ss204nr.equals("999") ? "" : this.ss204);
+        setSs204a(ss204nr.equals("999") ? "" : this.ss204a);
         notifyPropertyChanged(BR.ss204nr);
     }
 
