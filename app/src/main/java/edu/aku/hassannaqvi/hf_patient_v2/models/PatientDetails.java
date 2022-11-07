@@ -51,6 +51,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss203 = _EMPTY_;
     public String ss203nr = _EMPTY_;
     public String ss204 = _EMPTY_;
+    public String ss204a = _EMPTY_;
     public String ss204nr = _EMPTY_;
     public String ss205 = _EMPTY_;
     public String ss205nr = _EMPTY_;
@@ -598,6 +599,16 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs204(String ss204) {
         this.ss204 = ss204;
         notifyPropertyChanged(BR.ss204);
+    }
+
+    @Bindable
+    public String getSs204a() {
+        return ss204a;
+    }
+
+    public void setSs204a(String ss204a) {
+        this.ss204a = ss204a;
+        notifyPropertyChanged(BR.ss204a);
     }
 
     @Bindable
@@ -1603,6 +1614,7 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.ss203 = json.getString("ss203");
             this.ss203nr = json.getString("ss203nr");
             this.ss204 = json.getString("ss204");
+            this.ss204a = json.getString("ss204a");
             this.ss204nr = json.getString("ss204nr");
             this.ss205 = json.getString("ss205");
             this.ss205nr = json.getString("ss205nr");
@@ -1763,7 +1775,7 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss202nr", ss202nr)
                 .put("ss203", ss203)
                 .put("ss203nr", ss203nr)
-                .put("ss204", ss204)
+                .put("ss204a", ss204a)
                 .put("ss204nr", ss204nr)
                 .put("ss205", ss205)
                 .put("ss205nr", ss205nr)
