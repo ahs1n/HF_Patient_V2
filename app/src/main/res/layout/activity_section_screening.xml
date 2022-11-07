@@ -6,6 +6,10 @@
         <import type="android.view.View" />
 
         <variable
+            name="activity"
+            type="edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity" />
+
+        <variable
             name="form"
             type="edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails" />
     </data>
@@ -1034,8 +1038,29 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_weight="0.6"
                                 android:text="@string/ss204" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/tempDegreeSwitch"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.2"
+                                android:onCheckedChanged="@{(compoundButton, checked) ->
+                                activity.tempSwitchChanged(compoundButton, checked)}"
+                                android:showText="true"
+                                android:switchMinWidth="100dp"
+                                android:textColor="@color/grayDark"
+                                android:textOff="°F"
+                                android:textOn="°C"
+                                android:theme="@style/CustomSwitch" />
+
+                            <TextView
+                                android:id="@+id/tempDegreeTV"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.2"
+                                android:text="°F" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/ss204"
@@ -1048,9 +1073,11 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={form.ss204}"
-                                app:maxValue="100"
-                                app:minValue="1"
+                                app:maxValue="108"
+                                app:minValue="95"
                                 app:type="range" />
+                            <!--                            app:maxValue="100"-->
+                            <!--                            app:minValue="1"-->
 
                         </LinearLayout>
 
@@ -1060,10 +1087,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss204nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs204nr(form.ss204nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss204nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1120,10 +1147,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss205nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs205nr(form.ss205nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss205nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1221,10 +1248,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss300nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs300nr(form.ss300nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss300nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1281,10 +1308,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss303nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs303nr(form.ss303nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss303nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1341,10 +1368,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss304nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs304nr(form.ss304nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss304nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1401,10 +1428,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss401nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs401nr(form.ss401nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss401nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>
@@ -1550,10 +1577,10 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
                             android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
                             android:checked="@{form.ss5nr.equals(`999`)}"
                             android:onClick="@{()->form.setSs5nr(form.ss5nr.equals(`999`)?``:`999`)}"
                             android:tag="-1"
-                            android:buttonTint="@color/red"
                             android:text="@string/ss5nr"
                             android:textColor="@color/redDark" />
                     </LinearLayout>

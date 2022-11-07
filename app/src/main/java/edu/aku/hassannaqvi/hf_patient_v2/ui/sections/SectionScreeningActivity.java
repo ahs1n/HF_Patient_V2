@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -150,5 +152,18 @@ public class SectionScreeningActivity extends AppCompatActivity {
     public void BtnEnd(View view) {
         finish();
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+    }
+
+    public void tempSwitchChanged(CompoundButton compoundButton, boolean isChecked) {
+        if (isChecked) {
+            bi.tempDegreeTV.setText("°C");
+            bi.ss204.setMinvalue(35);
+            bi.ss204.setMaxvalue(43);
+//            bi.ss204
+        } else {
+            bi.tempDegreeTV.setText("°F");
+            bi.ss204.setMinvalue(95);
+            bi.ss204.setMaxvalue(108);
+        }
     }
 }
