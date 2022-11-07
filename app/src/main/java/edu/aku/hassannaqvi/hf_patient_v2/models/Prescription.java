@@ -233,8 +233,6 @@ public class Prescription extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
@@ -336,22 +334,6 @@ public class Prescription extends BaseObservable implements Observable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
     }
 
     public String getSynced() {
@@ -2050,8 +2032,6 @@ public class Prescription extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYNCED_DATE));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS96x));
         this.medCode = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_MED_CODE));
         this.dose = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DOSE));
         this.frequency = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FREQUENCY));
@@ -2233,8 +2213,6 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_APPVERSION, this.appver);
         json.put(PRESCRIPTIONTable.COLUMN_SYNCED, this.synced);
         json.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(PRESCRIPTIONTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(PRESCRIPTIONTable.COLUMN_ISTATUS96x, this.iStatus96x);
         json.put(PRESCRIPTIONTable.COLUMN_MED_CODE, this.medCode);
         json.put(PRESCRIPTIONTable.COLUMN_DOSE, this.dose);
         json.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, this.frequency);

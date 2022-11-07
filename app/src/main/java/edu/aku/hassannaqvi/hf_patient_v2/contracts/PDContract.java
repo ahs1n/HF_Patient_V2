@@ -45,8 +45,6 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
     }
 
     public static abstract class DIAGNOSISTable implements BaseColumns {
@@ -65,8 +63,6 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
     }
 
     public static abstract class COMPLAINTSTable implements BaseColumns {
@@ -85,8 +81,6 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
     }
 
     public static abstract class PRESCRIPTIONTable implements BaseColumns {
@@ -105,8 +99,6 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-        public static final String COLUMN_ISTATUS96x = "istatus96x";
         public static final String COLUMN_MED_CODE = "medCode";
         public static final String COLUMN_DOSE = "dose";
         public static final String COLUMN_FREQUENCY = "frequency";

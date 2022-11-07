@@ -66,8 +66,6 @@ public class Vaccination extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
@@ -169,22 +167,6 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
     }
 
     public String getSynced() {
@@ -529,8 +511,6 @@ public class Vaccination extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYNCED_DATE));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ISTATUS96x));
 
         sVACHydrate(cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SVAC)));
 
@@ -586,8 +566,6 @@ public class Vaccination extends BaseObservable implements Observable {
         json.put(VACCINATIONTable.COLUMN_APPVERSION, this.appver);
         json.put(VACCINATIONTable.COLUMN_SYNCED, this.synced);
         json.put(VACCINATIONTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(VACCINATIONTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(VACCINATIONTable.COLUMN_ISTATUS96x, this.iStatus96x);
 
         json.put(VACCINATIONTable.COLUMN_SVAC, new JSONObject(sVACtoString()));
         return json;

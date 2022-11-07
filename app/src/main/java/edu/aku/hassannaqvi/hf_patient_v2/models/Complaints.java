@@ -104,8 +104,6 @@ public class Complaints extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
@@ -207,22 +205,6 @@ public class Complaints extends BaseObservable implements Observable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
     }
 
     public String getSynced() {
@@ -1091,8 +1073,6 @@ public class Complaints extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED_DATE));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ISTATUS96x));
 
         sCOMPHydrate(cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SCOMP)));
 
@@ -1189,8 +1169,6 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_APPVERSION, this.appver);
         json.put(COMPLAINTSTable.COLUMN_SYNCED, this.synced);
         json.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(COMPLAINTSTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(COMPLAINTSTable.COLUMN_ISTATUS96x, this.iStatus96x);
 
         json.put(COMPLAINTSTable.COLUMN_SCOMP, new JSONObject(sCOMPtoString()));
         return json;

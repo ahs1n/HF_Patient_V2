@@ -100,8 +100,6 @@ public class Diagnosis extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
@@ -203,22 +201,6 @@ public class Diagnosis extends BaseObservable implements Observable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
     }
 
     public String getSynced() {
@@ -1037,8 +1019,6 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED_DATE));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ISTATUS96x));
 
         sDIAGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SDIAG)));
 
@@ -1131,8 +1111,6 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_APPVERSION, this.appver);
         json.put(DIAGNOSISTable.COLUMN_SYNCED, this.synced);
         json.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(DIAGNOSISTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(DIAGNOSISTable.COLUMN_ISTATUS96x, this.iStatus96x);
 
         json.put(DIAGNOSISTable.COLUMN_SDIAG, new JSONObject(sDIAGtoString()));
         return json;
