@@ -36,6 +36,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -88,29 +89,28 @@
     <style name="labels" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">24dp</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/grayDark</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:elevation">24dp</item>
-        <item name="android:paddingStart">15dp</item>
-        <item name="android:paddingEnd">4dp</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">6dp</item>
-        <item name="android:minHeight">52dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:paddingStart">@dimen/_8sdp</item>
+        <item name="android:paddingEnd">@dimen/_8sdp</item>
+        <!--        <item name="android:paddingTop">@dimen/_3sdp</item>-->
+        <!--        <item name="android:paddingBottom">@dimen/_8sdp</item>-->
+        <!--        <item name="android:minHeight">52dp</item>-->
+        <item name="android:textSize">@dimen/_8ssp</item>
         <item name="android:shadowColor">#7f000000</item>
-        <item name="android:shadowDx">2</item>
-        <item name="android:shadowDy">2</item>
-        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
     </style>
 
     <style name="labelsHead" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">24dp</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center</item>
@@ -120,7 +120,7 @@
         <item name="android:paddingBottom">6dp</item>
         <item name="android:minHeight">52dp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
-        <item name="android:background">@color/colorAccent</item>
+        <item name="android:background">@drawable/bg_rounded_app_color_filled</item>
         <item name="android:shadowColor">#00000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
@@ -219,27 +219,33 @@
     <style name="cardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:padding">6dp</item>
-        <item name="android:background">@color/whiteOverlay</item>
+        <item name="android:layout_margin">@dimen/_4sdp</item>
+        <!--        <item name="android:padding">6dp</item>-->
+        <!--        <item name="android:background">@color/whiteOverlay</item>-->
+        <item name="android:padding">@dimen/_3sdp</item>
+        <item name="android:background">@drawable/bg_rounded_app_color_bordered</item>
         <!-- <item name="android:layout_marginRight">15dp</item>
          <item name="android:layout_marginLeft">15dp</item>-->
-        <item name="cardCornerRadius">28dp</item>
-        <item name="cardElevation">2dp</item>
+        <item name="cardCornerRadius">@dimen/border_radius</item>
+        <!--        <item name="cardElevation">2dp</item>-->
     </style>
 
     <style name="quesNum">
-        <item name="android:background">@color/colorPrimaryLight</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:paddingStart">4dp</item>
-        <item name="android:paddingEnd">4dp</item>
-        <item name="android:minHeight">52dp</item>
-        <item name="android:minWidth">56dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:minHeight">@dimen/_27sdp</item>
+        <item name="android:minWidth">@dimen/_40sdp</item>
         <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
         <item name="android:typeface">sans</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
     </style>
 
     <style name="info">
@@ -260,13 +266,16 @@
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:background">@drawable/sub_labels_separator</item>
         <item name="android:gravity">center</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
         <!--<item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>-->
-        <item name="android:minHeight">16dp</item>
-        <item name="android:layout_height">16dp</item>
+        <item name="android:minHeight">@dimen/_24sdp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:shadowColor">#00000000</item>
         <item name="android:shadowDx">0</item>
@@ -360,15 +369,22 @@
 
     <!-- This configures the styles for the title within the Toolbar  -->
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">20sp</item>
-        <item name="android:letterSpacing">0.15</item>
-        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@null</item>
     </style>
 
-    <style name="Toolbar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
-        <item name="android:textStyle">italic</item>
-        <item name="android:background">@null</item>
+    <!--    <style name="Toolbar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">-->
+    <style name="Toolbar.SubtitleText" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:background">@color/orange</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
     </style>
 
 </resources>

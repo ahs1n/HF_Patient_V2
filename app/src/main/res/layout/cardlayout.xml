@@ -12,18 +12,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_rounded_top_app_color_filled"
-            android:padding="@dimen/_1sdp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/_1sdp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"
                 android:background="@drawable/bg_rounded_left_top_app_color_filled"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:padding="@dimen/_5sdp"
+                android:minHeight="@dimen/_30sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
                 android:text="Facility Information"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_9ssp"
@@ -35,19 +37,19 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="2"
-                android:gravity="center"
                 android:background="@drawable/bg_rounded_right_top_app_color_filled"
-                android:text="@string/mh02"
                 android:backgroundTint="@android:color/white"
+                android:gravity="center"
+                android:text="@string/mh02"
                 android:textColor="@color/grayDark"
                 android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-<!--        <View-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="1dp"-->
-<!--            android:background="@color/gray" />-->
+        <!--        <View-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:background="@color/gray" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,11 +74,11 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/gray" />-->
 
-<!--            <View-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="1dp"-->
-<!--                android:layout_margin="8dp"-->
-<!--                android:background="@color/gray" />-->
+            <!--            <View-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:layout_margin="8dp"-->
+            <!--                android:background="@color/gray" />-->
 
             <TextView
                 android:id="@+id/area1"
@@ -107,8 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UC Name"
-                android:textSize="@dimen/_9ssp"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -131,8 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UC Code"
-                android:textSize="@dimen/_9ssp"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_9ssp"
                 android:textStyle="bold" />
 
             <TextView

@@ -28,7 +28,7 @@
             android:textAlignment="center"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="@android:color/white" />
+            app:titleTextColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/testing"
@@ -87,7 +87,7 @@
                         android:background="@drawable/bg_rounded_top_app_color_filled"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:gravity="center"
-                        android:padding="12dp"
+                        android:padding="@dimen/_8sdp"
                         android:text="Select Health Facility"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_10ssp"

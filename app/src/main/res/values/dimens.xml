@@ -3,6 +3,6 @@
 
     <dimen name="app_bar_height">270sp</dimen>
     <dimen name="app_bar_height_selected_children_list">330sp</dimen>
-    <dimen name="border_radius">@dimen/_5sdp</dimen>
+    <dimen name="border_radius">@dimen/_4sdp</dimen>
 
 </resources>

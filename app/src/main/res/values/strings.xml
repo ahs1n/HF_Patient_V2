@@ -75,7 +75,7 @@
     <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
     <string name="newHHheadname"> Name of new head of the household </string>
     <string name="apptitle">Health Facilities Management Project</string>
-    <string name="title2">Patient Record Sheet</string>
+    <string name="title2">PATIENT RECORD SHEET</string>
     <string name="prno">Patient Record Number</string>
     <string name="facility">Facility Name</string>
     <string name="date">Date</string>
@@ -136,7 +136,7 @@
     <string name="ss601">Vaccination Status</string>
     <string name="ss60101">Ongoing</string>
     <string name="ss60102">Fully vaccinated</string>
-    <string name="pctitle">SECTION 2: Presenting Complaints</string>
+    <string name="pctitle">SECTION 2: PRESENTING COMPLAINTS</string>
     <string name="pc200">Presenting Complaints</string>
     <string name="pc201">Fever</string>
     <string name="pc202">Reluctant to feed</string>

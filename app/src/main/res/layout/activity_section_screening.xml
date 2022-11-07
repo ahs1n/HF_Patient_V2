@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg"
         android:orientation="vertical">
 
         <!-- CUSTOM TOOLBAR -->
@@ -21,14 +22,28 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/orange"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/title2"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/apptitle"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            app:title="@string/title2"
+            app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!--        app:subtitle="@string/title2"-->
+        <!--        app:title="@string/title2"-->
+        <!--        app:titleTextAppearance="@style/Toolbar.TitleText"-->
+        <!--        app:subtitleTextAppearance="@style/Toolbar.SubtitleText"-->
+
+        <!--        <TextView-->
+        <!--            style="@style/Toolbar.SubtitleText"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:gravity="center_horizontal"-->
+        <!--            android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--            android:text="@string/title2" />-->
 
         <ScrollView
             android:layout_width="match_parent"
@@ -45,39 +60,39 @@
                     android:id="@+id/fldGrpCVprno"
                     style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_prno" />
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_prno" />
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="match_parent"
-                                android:text="@string/prno" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/prno" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/prno"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text="@={form.prno}"
-                                app:maxValue="99"
-                                app:minValue="1"
-                                app:type="range" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/prno"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.prno}"
+                            app:maxValue="99"
+                            app:minValue="1"
+                            app:type="range" />
 
-                        </LinearLayout>
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- facility  Input   -->
@@ -150,7 +165,7 @@
                             <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                                 android:id="@+id/date"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
@@ -219,7 +234,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ss0title" />
@@ -274,7 +289,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ss1title" />
@@ -767,7 +782,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ss200" />
@@ -1599,28 +1614,39 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:weightSum="1">
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/redOverlay"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_rounded_white"
+                        android:backgroundTint="@color/redOverlay"
                         android:onClick="BtnEnd"
                         android:text="Cancel"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/greenLight"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_rounded_white"
+                        android:backgroundTint="@color/greenOverlay"
                         android:onClick="BtnContinue"
                         android:text="Save"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
                 </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

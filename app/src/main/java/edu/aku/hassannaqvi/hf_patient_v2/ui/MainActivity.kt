@@ -32,10 +32,12 @@ import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities
+import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionPrescriptionActivity
+import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.gotoActivityWithNoHistory
 import edu.aku.hassannaqvi.hf_patient_v2.utils.extension.obtainViewModel
@@ -365,10 +367,10 @@ class MainActivity : AppCompatActivity() {
         when (v.id) {
             R.id.formA -> {
                 SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
-//                MainApp.patientDetails = PatientDetails()
-//                gotoActivity(SectionScreeningActivity::class.java)
-                MainApp.prescription = Prescription()
-                gotoActivity(SectionPrescriptionActivity::class.java)
+                MainApp.patientDetails = PatientDetails()
+                gotoActivity(SectionScreeningActivity::class.java)
+//                MainApp.prescription = Prescription()
+//                gotoActivity(SectionPrescriptionActivity::class.java)
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidManager::class.java))
             R.id.btn_check_camp -> {

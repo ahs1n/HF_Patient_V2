@@ -51,6 +51,11 @@
     <color name="lightPink1">#7fefd6d6</color>
 
     <color name="orange">#EEDA773B</color>
+    <color name="orangeOverlay">#CCDA773B</color>
     <color name="grayOverlay">#7f7f7f7f</color>
     <color name="red">#990000</color>
+    <color name="greenOverlay">#7f009900</color>
+    <color name="whiteOverlay2">#E6FFFFFF</color>
+    <color name="toolbarColor">#288883</color>
+
 </resources>

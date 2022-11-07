@@ -33,7 +33,8 @@
         <activity
             android:name=".ui.sections.SectionPrescriptionActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.sections.SectionVaccinationActivity"
             android:screenOrientation="portrait"
@@ -87,7 +88,8 @@
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"

@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg"
         android:orientation="vertical">
 
         <!-- CUSTOM TOOLBAR -->
@@ -21,11 +22,14 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/orange"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/se41title"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_6sdp"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/se4title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
@@ -2459,8 +2463,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/se418" />
 
                             <RadioGroup
@@ -2517,8 +2521,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/se419" />
 
                             <RadioGroup
@@ -2593,8 +2597,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/se420" />
 
                             <RadioGroup
@@ -2651,8 +2655,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/se421" />
 
                             <RadioGroup
@@ -2709,8 +2713,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/se422" />
 
                             <RadioGroup
@@ -2744,32 +2748,70 @@
                 </androidx.cardview.widget.CardView>
 
                 <!--EndButton LinearLayout-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="end"-->
+                <!--                    android:layout_marginTop="24dp"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <Button-->
+                <!--                        android:id="@+id/btn_End"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginStart="12dp"-->
+                <!--                        android:background="@color/redOverlay"-->
+                <!--                        android:onClick="BtnEnd"-->
+                <!--                        android:text="Cancel"-->
+                <!--                        android:textColor="@color/white" />-->
+
+                <!--                    <Button-->
+                <!--                        android:id="@+id/btn_Continue"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginStart="12dp"-->
+                <!--                        android:background="@color/greenLight"-->
+                <!--                        android:onClick="BtnContinue"-->
+                <!--                        android:text="Save"-->
+                <!--                        android:textColor="@color/white" />-->
+                <!--                </LinearLayout>-->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:weightSum="1">
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/redOverlay"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_rounded_white"
+                        android:backgroundTint="@color/redOverlay"
                         android:onClick="BtnEnd"
                         android:text="Cancel"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/greenLight"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_rounded_white"
+                        android:backgroundTint="@color/greenOverlay"
                         android:onClick="BtnContinue"
                         android:text="Save"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

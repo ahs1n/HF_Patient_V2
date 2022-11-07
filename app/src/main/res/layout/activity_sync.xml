@@ -39,7 +39,7 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/bg_rounded_app_color_bordered"
-            android:padding="@dimen/_15sdp">
+            android:padding="@dimen/_13sdp">
 
             <LinearLayout
                 android:id="@+id/buttonsLayout"
@@ -47,13 +47,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:weightSum="0.9">
+                android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnSync"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.5"
                     android:background="@drawable/bg_rounded_orange_filled"
                     android:elevation="@dimen/_2sdp"
                     android:onClick="ProcessStart"
@@ -71,8 +71,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.5"
                     android:background="@drawable/bg_rounded_app_color_dark_filled"
                     android:elevation="@dimen/_2sdp"
                     android:onClick="ProcessStart"
@@ -89,6 +88,7 @@
                     android:id="@+id/btnUploadPhotos"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_weight="0.3"
                     android:background="@drawable/bg_rounded_app_color_dark_filled"
                     android:elevation="@dimen/_2sdp"
@@ -101,7 +101,8 @@
                     android:text="Upload Photos"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_9ssp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -136,9 +137,9 @@
                     style="@android:style/Widget.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_below="@+id/mTextViewS"
                     android:layout_centerInParent="true"
                     android:indeterminate="false"
-                    android:layout_below="@+id/mTextViewS"
                     android:progress="1"
                     android:visibility="gone" />
 
