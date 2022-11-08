@@ -135,6 +135,7 @@
                             android:clickable="false"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:focusable="false"
+                            android:gravity="center"
                             android:focusableInTouchMode="false"
                             android:hint="@string/facility"
                             android:inputType="none"
@@ -713,6 +714,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss10702.equals(`2`)}"
+                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
                                 android:onClick="@{()->form.setSs10702(form.ss10702.equals(`2`)?``:`2`)}"
                                 android:text="@string/ss10702" />
 

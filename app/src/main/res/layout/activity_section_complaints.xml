@@ -730,6 +730,7 @@
 
                     <Button
                         android:id="@+id/btn_End"
+                        android:visibility="invisible"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginEnd="@dimen/_3sdp"
