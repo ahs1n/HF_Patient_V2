@@ -9,9 +9,11 @@
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_diagnosis.xml" value="0.525" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_examination.xml" value="0.5089094796863863" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_history.xml" value="0.47631754503002" />
-        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.39221014492753625" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_prescription.xml" value="0.525" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_screening.xml" value="0.53125" />
         <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/activity_section_vaccination.xml" value="0.525" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/view_prescription_1.xml" value="0.525" />
+        <entry key="..\:/Android Office Work/HF_Patient_V2/app/src/main/res/layout/view_prescription_2.xml" value="0.525" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable-v24/ic_settings.xml" value="0.57421875" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_app_color_bordered.xml" value="0.45078125" />
         <entry key="..\:/OmarShoaib/Projects/HF_Patient_V2/app/src/main/res/drawable/bg_rounded_app_color_dark_filled.xml" value="0.45078125" />

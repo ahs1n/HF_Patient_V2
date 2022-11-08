@@ -48,14 +48,16 @@
 
         <RadioGroup
             android:id="@+id/mp101f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp101f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp101f.equals(`1`)}"
                 android:enabled="@{form.mp101.equals(`1`)}"
@@ -63,8 +65,9 @@
 
             <RadioButton
                 android:id="@+id/mp101f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp101f.equals(`2`)}"
                 android:enabled="@{form.mp101.equals(`1`)}"
@@ -72,8 +75,9 @@
 
             <RadioButton
                 android:id="@+id/mp101f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp101f.equals(`3`)}"
                 android:enabled="@{form.mp101.equals(`1`)}"
@@ -81,8 +85,9 @@
 
             <RadioButton
                 android:id="@+id/mp101f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp101f.equals(`4`)}"
                 android:enabled="@{form.mp101.equals(`1`)}"
@@ -127,14 +132,16 @@
 
         <RadioGroup
             android:id="@+id/mp102f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp102f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp102f.equals(`1`)}"
                 android:enabled="@{form.mp102.equals(`2`)}"
@@ -142,8 +149,9 @@
 
             <RadioButton
                 android:id="@+id/mp102f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp102f.equals(`2`)}"
                 android:enabled="@{form.mp102.equals(`2`)}"
@@ -151,8 +159,9 @@
 
             <RadioButton
                 android:id="@+id/mp102f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp102f.equals(`3`)}"
                 android:enabled="@{form.mp102.equals(`2`)}"
@@ -160,8 +169,9 @@
 
             <RadioButton
                 android:id="@+id/mp102f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp102f.equals(`4`)}"
                 android:enabled="@{form.mp102.equals(`2`)}"
@@ -206,14 +216,16 @@
 
         <RadioGroup
             android:id="@+id/mp103f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp103f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp103f.equals(`1`)}"
                 android:enabled="@{form.mp103.equals(`3`)}"
@@ -221,8 +233,9 @@
 
             <RadioButton
                 android:id="@+id/mp103f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp103f.equals(`2`)}"
                 android:enabled="@{form.mp103.equals(`3`)}"
@@ -230,8 +243,9 @@
 
             <RadioButton
                 android:id="@+id/mp103f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp103f.equals(`3`)}"
                 android:enabled="@{form.mp103.equals(`3`)}"
@@ -239,8 +253,9 @@
 
             <RadioButton
                 android:id="@+id/mp103f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp103f.equals(`4`)}"
                 android:enabled="@{form.mp103.equals(`3`)}"
@@ -285,14 +300,16 @@
 
         <RadioGroup
             android:id="@+id/mp104f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp104f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp104f.equals(`1`)}"
                 android:enabled="@{form.mp104.equals(`4`)}"
@@ -300,8 +317,9 @@
 
             <RadioButton
                 android:id="@+id/mp104f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp104f.equals(`2`)}"
                 android:enabled="@{form.mp104.equals(`4`)}"
@@ -309,8 +327,9 @@
 
             <RadioButton
                 android:id="@+id/mp104f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp104f.equals(`3`)}"
                 android:enabled="@{form.mp104.equals(`4`)}"
@@ -318,8 +337,9 @@
 
             <RadioButton
                 android:id="@+id/mp104f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp104f.equals(`4`)}"
                 android:enabled="@{form.mp104.equals(`4`)}"
@@ -364,14 +384,16 @@
 
         <RadioGroup
             android:id="@+id/mp105f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp105f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp105f.equals(`1`)}"
                 android:enabled="@{form.mp105.equals(`5`)}"
@@ -379,8 +401,9 @@
 
             <RadioButton
                 android:id="@+id/mp105f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp105f.equals(`2`)}"
                 android:enabled="@{form.mp105.equals(`5`)}"
@@ -388,8 +411,9 @@
 
             <RadioButton
                 android:id="@+id/mp105f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp105f.equals(`3`)}"
                 android:enabled="@{form.mp105.equals(`5`)}"
@@ -397,8 +421,9 @@
 
             <RadioButton
                 android:id="@+id/mp105f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp105f.equals(`4`)}"
                 android:enabled="@{form.mp105.equals(`5`)}"
@@ -443,14 +468,16 @@
 
         <RadioGroup
             android:id="@+id/mp106f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp106f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp106f.equals(`1`)}"
                 android:enabled="@{form.mp106.equals(`6`)}"
@@ -459,8 +486,9 @@
 
             <RadioButton
                 android:id="@+id/mp106f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp106f.equals(`2`)}"
                 android:enabled="@{form.mp106.equals(`6`)}"
@@ -468,8 +496,9 @@
 
             <RadioButton
                 android:id="@+id/mp106f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp106f.equals(`3`)}"
                 android:enabled="@{form.mp106.equals(`6`)}"
@@ -477,8 +506,9 @@
 
             <RadioButton
                 android:id="@+id/mp106f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp106f.equals(`4`)}"
                 android:enabled="@{form.mp106.equals(`6`)}"
@@ -523,14 +553,16 @@
 
         <RadioGroup
             android:id="@+id/mp107f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp107f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp107f.equals(`1`)}"
                 android:enabled="@{form.mp107.equals(`7`)}"
@@ -538,8 +570,9 @@
 
             <RadioButton
                 android:id="@+id/mp107f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp107f.equals(`2`)}"
                 android:enabled="@{form.mp107.equals(`7`)}"
@@ -547,8 +580,9 @@
 
             <RadioButton
                 android:id="@+id/mp107f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp107f.equals(`3`)}"
                 android:enabled="@{form.mp107.equals(`7`)}"
@@ -556,8 +590,9 @@
 
             <RadioButton
                 android:id="@+id/mp107f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp107f.equals(`4`)}"
                 android:enabled="@{form.mp107.equals(`7`)}"
@@ -602,14 +637,16 @@
 
         <RadioGroup
             android:id="@+id/mp108f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp108f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp108f.equals(`1`)}"
                 android:enabled="@{form.mp108.equals(`8`)}"
@@ -617,8 +654,9 @@
 
             <RadioButton
                 android:id="@+id/mp108f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp108f.equals(`2`)}"
                 android:enabled="@{form.mp108.equals(`8`)}"
@@ -626,8 +664,9 @@
 
             <RadioButton
                 android:id="@+id/mp108f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp108f.equals(`3`)}"
                 android:enabled="@{form.mp108.equals(`8`)}"
@@ -635,8 +674,9 @@
 
             <RadioButton
                 android:id="@+id/mp108f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp108f.equals(`4`)}"
                 android:enabled="@{form.mp108.equals(`8`)}"
@@ -681,14 +721,16 @@
 
         <RadioGroup
             android:id="@+id/mp109f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp109f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp109f.equals(`1`)}"
                 android:enabled="@{form.mp109.equals(`9`)}"
@@ -696,8 +738,9 @@
 
             <RadioButton
                 android:id="@+id/mp109f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp109f.equals(`2`)}"
                 android:enabled="@{form.mp109.equals(`9`)}"
@@ -705,8 +748,9 @@
 
             <RadioButton
                 android:id="@+id/mp109f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp109f.equals(`3`)}"
                 android:enabled="@{form.mp109.equals(`9`)}"
@@ -714,8 +758,9 @@
 
             <RadioButton
                 android:id="@+id/mp109f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp109f.equals(`4`)}"
                 android:enabled="@{form.mp109.equals(`9`)}"
@@ -760,14 +805,16 @@
 
         <RadioGroup
             android:id="@+id/mp110f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp110f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp110f.equals(`1`)}"
                 android:enabled="@{form.mp110.equals(`10`)}"
@@ -775,8 +822,9 @@
 
             <RadioButton
                 android:id="@+id/mp110f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp110f.equals(`2`)}"
                 android:enabled="@{form.mp110.equals(`10`)}"
@@ -784,8 +832,9 @@
 
             <RadioButton
                 android:id="@+id/mp110f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp110f.equals(`3`)}"
                 android:enabled="@{form.mp110.equals(`10`)}"
@@ -793,8 +842,9 @@
 
             <RadioButton
                 android:id="@+id/mp110f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp110f.equals(`4`)}"
                 android:enabled="@{form.mp110.equals(`10`)}"
@@ -839,14 +889,16 @@
 
         <RadioGroup
             android:id="@+id/mp111f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp111f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp111f.equals(`1`)}"
                 android:enabled="@{form.mp111.equals(`11`)}"
@@ -854,8 +906,9 @@
 
             <RadioButton
                 android:id="@+id/mp111f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp111f.equals(`2`)}"
                 android:enabled="@{form.mp111.equals(`11`)}"
@@ -863,8 +916,9 @@
 
             <RadioButton
                 android:id="@+id/mp111f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp111f.equals(`3`)}"
                 android:enabled="@{form.mp111.equals(`11`)}"
@@ -872,8 +926,9 @@
 
             <RadioButton
                 android:id="@+id/mp111f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp111f.equals(`4`)}"
                 android:enabled="@{form.mp111.equals(`11`)}"
@@ -918,14 +973,16 @@
 
         <RadioGroup
             android:id="@+id/mp112f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp112f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp112f.equals(`1`)}"
                 android:enabled="@{form.mp112.equals(`12`)}"
@@ -933,8 +990,9 @@
 
             <RadioButton
                 android:id="@+id/mp112f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp112f.equals(`2`)}"
                 android:enabled="@{form.mp112.equals(`12`)}"
@@ -942,8 +1000,9 @@
 
             <RadioButton
                 android:id="@+id/mp112f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp112f.equals(`3`)}"
                 android:enabled="@{form.mp112.equals(`12`)}"
@@ -951,8 +1010,9 @@
 
             <RadioButton
                 android:id="@+id/mp112f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp112f.equals(`4`)}"
                 android:enabled="@{form.mp112.equals(`12`)}"
@@ -997,14 +1057,16 @@
 
         <RadioGroup
             android:id="@+id/mp113f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp113f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp113f.equals(`1`)}"
                 android:enabled="@{form.mp113.equals(`13`)}"
@@ -1012,8 +1074,9 @@
 
             <RadioButton
                 android:id="@+id/mp113f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp113f.equals(`2`)}"
                 android:enabled="@{form.mp113.equals(`13`)}"
@@ -1021,8 +1084,9 @@
 
             <RadioButton
                 android:id="@+id/mp113f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp113f.equals(`3`)}"
                 android:enabled="@{form.mp113.equals(`13`)}"
@@ -1030,8 +1094,9 @@
 
             <RadioButton
                 android:id="@+id/mp113f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp113f.equals(`4`)}"
                 android:enabled="@{form.mp113.equals(`13`)}"
@@ -1076,14 +1141,16 @@
 
         <RadioGroup
             android:id="@+id/mp114f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp114f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp114f.equals(`1`)}"
                 android:enabled="@{form.mp114.equals(`14`)}"
@@ -1091,8 +1158,9 @@
 
             <RadioButton
                 android:id="@+id/mp114f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp114f.equals(`2`)}"
                 android:enabled="@{form.mp114.equals(`14`)}"
@@ -1100,8 +1168,9 @@
 
             <RadioButton
                 android:id="@+id/mp114f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp114f.equals(`3`)}"
                 android:enabled="@{form.mp114.equals(`14`)}"
@@ -1109,8 +1178,9 @@
 
             <RadioButton
                 android:id="@+id/mp114f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp114f.equals(`4`)}"
                 android:enabled="@{form.mp114.equals(`14`)}"
@@ -1155,14 +1225,16 @@
 
         <RadioGroup
             android:id="@+id/mp115f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp115f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp115f.equals(`1`)}"
                 android:enabled="@{form.mp115.equals(`15`)}"
@@ -1170,8 +1242,9 @@
 
             <RadioButton
                 android:id="@+id/mp115f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp115f.equals(`2`)}"
                 android:enabled="@{form.mp115.equals(`15`)}"
@@ -1179,8 +1252,9 @@
 
             <RadioButton
                 android:id="@+id/mp115f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp115f.equals(`3`)}"
                 android:enabled="@{form.mp115.equals(`15`)}"
@@ -1188,8 +1262,9 @@
 
             <RadioButton
                 android:id="@+id/mp115f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp115f.equals(`4`)}"
                 android:enabled="@{form.mp115.equals(`15`)}"
@@ -1234,14 +1309,16 @@
 
         <RadioGroup
             android:id="@+id/mp116f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp116f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp116f.equals(`1`)}"
                 android:enabled="@{form.mp116.equals(`16`)}"
@@ -1249,8 +1326,9 @@
 
             <RadioButton
                 android:id="@+id/mp116f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp116f.equals(`2`)}"
                 android:enabled="@{form.mp116.equals(`16`)}"
@@ -1258,8 +1336,9 @@
 
             <RadioButton
                 android:id="@+id/mp116f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp116f.equals(`3`)}"
                 android:enabled="@{form.mp116.equals(`16`)}"
@@ -1267,8 +1346,9 @@
 
             <RadioButton
                 android:id="@+id/mp116f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp116f.equals(`4`)}"
                 android:enabled="@{form.mp116.equals(`16`)}"
@@ -1313,14 +1393,16 @@
 
         <RadioGroup
             android:id="@+id/mp117f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp117f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp117f.equals(`1`)}"
                 android:enabled="@{form.mp117.equals(`17`)}"
@@ -1328,8 +1410,9 @@
 
             <RadioButton
                 android:id="@+id/mp117f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp117f.equals(`2`)}"
                 android:enabled="@{form.mp117.equals(`17`)}"
@@ -1337,8 +1420,9 @@
 
             <RadioButton
                 android:id="@+id/mp117f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp117f.equals(`3`)}"
                 android:enabled="@{form.mp117.equals(`17`)}"
@@ -1346,8 +1430,9 @@
 
             <RadioButton
                 android:id="@+id/mp117f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp117f.equals(`4`)}"
                 android:enabled="@{form.mp117.equals(`17`)}"
@@ -1392,14 +1477,16 @@
 
         <RadioGroup
             android:id="@+id/mp118f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp118f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp118f.equals(`1`)}"
                 android:enabled="@{form.mp118.equals(`18`)}"
@@ -1407,8 +1494,9 @@
 
             <RadioButton
                 android:id="@+id/mp118f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp118f.equals(`2`)}"
                 android:enabled="@{form.mp118.equals(`18`)}"
@@ -1416,8 +1504,9 @@
 
             <RadioButton
                 android:id="@+id/mp118f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp118f.equals(`3`)}"
                 android:enabled="@{form.mp118.equals(`18`)}"
@@ -1425,8 +1514,9 @@
 
             <RadioButton
                 android:id="@+id/mp118f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp118f.equals(`4`)}"
                 android:enabled="@{form.mp118.equals(`18`)}"
@@ -1471,14 +1561,16 @@
 
         <RadioGroup
             android:id="@+id/mp119f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp119f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp119f.equals(`1`)}"
                 android:enabled="@{form.mp119.equals(`19`)}"
@@ -1486,8 +1578,9 @@
 
             <RadioButton
                 android:id="@+id/mp119f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp119f.equals(`2`)}"
                 android:enabled="@{form.mp119.equals(`19`)}"
@@ -1495,8 +1588,9 @@
 
             <RadioButton
                 android:id="@+id/mp119f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp119f.equals(`3`)}"
                 android:enabled="@{form.mp119.equals(`19`)}"
@@ -1504,8 +1598,9 @@
 
             <RadioButton
                 android:id="@+id/mp119f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp119f.equals(`4`)}"
                 android:enabled="@{form.mp119.equals(`19`)}"
@@ -1550,14 +1645,16 @@
 
         <RadioGroup
             android:id="@+id/mp120f"
-            android:layout_width="220dp"
+            android:layout_width="208dp"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mp120f1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp120f.equals(`1`)}"
                 android:enabled="@{form.mp120.equals(`20`)}"
@@ -1565,8 +1662,9 @@
 
             <RadioButton
                 android:id="@+id/mp120f2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp120f.equals(`2`)}"
                 android:enabled="@{form.mp120.equals(`20`)}"
@@ -1574,8 +1672,9 @@
 
             <RadioButton
                 android:id="@+id/mp120f3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp120f.equals(`3`)}"
                 android:enabled="@{form.mp120.equals(`20`)}"
@@ -1583,8 +1682,9 @@
 
             <RadioButton
                 android:id="@+id/mp120f4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="@{form.mp120f.equals(`4`)}"
                 android:enabled="@{form.mp120.equals(`20`)}"
