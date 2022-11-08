@@ -13,7 +13,7 @@
         <item name="fontFamily">@font/roboto</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="android:spinnerStyle">@style/spinner</item>
         <item name="spinnerStyle">@style/spinner</item>
         <item name="android:actionBarStyle">@style/ToolbarTheme</item>
