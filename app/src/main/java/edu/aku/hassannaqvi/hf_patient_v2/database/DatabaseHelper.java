@@ -216,6 +216,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DIAGNOSISTable.COLUMN_USERNAME, diagnosis.getUserName());
         values.put(DIAGNOSISTable.COLUMN_SYSDATE, diagnosis.getSysDate());
         values.put(DIAGNOSISTable.COLUMN_SDIAG, diagnosis.sDIAGtoString());
+        values.put(DIAGNOSISTable.COLUMN_DIAG_CODE, diagnosis.getDiagCode());
+        values.put(DIAGNOSISTable.COLUMN_DIAG_OTHER, diagnosis.getDiagOther());
         values.put(DIAGNOSISTable.COLUMN_DEVICEID, diagnosis.getDeviceId());
         values.put(DIAGNOSISTable.COLUMN_DEVICETAGID, diagnosis.getDeviceTag());
         values.put(DIAGNOSISTable.COLUMN_SYNCED, diagnosis.getSynced());
@@ -242,6 +244,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COMPLAINTSTable.COLUMN_USERNAME, complaints.getUserName());
         values.put(COMPLAINTSTable.COLUMN_SYSDATE, complaints.getSysDate());
         values.put(COMPLAINTSTable.COLUMN_SCOMP, complaints.sCOMPtoString());
+        values.put(COMPLAINTSTable.COLUMN_COMP_CODE, complaints.getCompCode());
+        values.put(COMPLAINTSTable.COLUMN_COMP_OTHER, complaints.getCompOther());
         values.put(COMPLAINTSTable.COLUMN_DEVICEID, complaints.getDeviceId());
         values.put(COMPLAINTSTable.COLUMN_DEVICETAGID, complaints.getDeviceTag());
         values.put(COMPLAINTSTable.COLUMN_SYNCED, complaints.getSynced());
@@ -1133,7 +1137,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DIAGNOSISTable.COLUMN_APPVERSION,
                 DIAGNOSISTable.COLUMN_SYNCED,
                 DIAGNOSISTable.COLUMN_SYNCED_DATE,
-                DIAGNOSISTable.COLUMN_SDIAG
+                DIAGNOSISTable.COLUMN_SDIAG,
+                DIAGNOSISTable.COLUMN_DIAG_CODE,
+                DIAGNOSISTable.COLUMN_DIAG_OTHER
         };
 
         String whereClause = DIAGNOSISTable.COLUMN_SYNCED + " is null ";
@@ -1175,7 +1181,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COMPLAINTSTable.COLUMN_APPVERSION,
                 COMPLAINTSTable.COLUMN_SYNCED,
                 COMPLAINTSTable.COLUMN_SYNCED_DATE,
-                COMPLAINTSTable.COLUMN_SCOMP
+                COMPLAINTSTable.COLUMN_SCOMP,
+                COMPLAINTSTable.COLUMN_COMP_CODE,
+                COMPLAINTSTable.COLUMN_COMP_OTHER
         };
 
         String whereClause = COMPLAINTSTable.COLUMN_SYNCED + " is null ";

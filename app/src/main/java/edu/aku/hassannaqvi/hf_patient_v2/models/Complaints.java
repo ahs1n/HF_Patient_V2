@@ -109,6 +109,8 @@ public class Complaints extends BaseObservable implements Observable {
     private String entryType = _EMPTY_;
     // SECTION VARIABLE = _EMPTY_;
     private String sComplaints = _EMPTY_;
+    private String compCode = _EMPTY_;
+    private String compOther = _EMPTY_;
 
     public Complaints() {
     }
@@ -240,6 +242,26 @@ public class Complaints extends BaseObservable implements Observable {
     public void setsComplaints(String sComplaints) {
         this.sComplaints = sComplaints;
         notifyPropertyChanged(BR.sComplaints);
+    }
+
+    @Bindable
+    public String getCompCode() {
+        return compCode;
+    }
+
+    public void setCompCode(String compCode) {
+        this.compCode = compCode;
+        notifyPropertyChanged(BR.compCode);
+    }
+
+    @Bindable
+    public String getCompOther() {
+        return compOther;
+    }
+
+    public void setCompOther(String compOther) {
+        this.compOther = compOther;
+        notifyPropertyChanged(BR.compOther);
     }
 
     @Bindable
@@ -1073,6 +1095,8 @@ public class Complaints extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED_DATE));
+        this.compCode = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_COMP_CODE));
+        this.compOther = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_COMP_OTHER));
 
         sCOMPHydrate(cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SCOMP)));
 
@@ -1169,6 +1193,8 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_APPVERSION, this.appver);
         json.put(COMPLAINTSTable.COLUMN_SYNCED, this.synced);
         json.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(COMPLAINTSTable.COLUMN_COMP_CODE, this.compCode);
+        json.put(COMPLAINTSTable.COLUMN_COMP_OTHER, this.compOther);
 
         json.put(COMPLAINTSTable.COLUMN_SCOMP, new JSONObject(sCOMPtoString()));
         return json;
@@ -1177,7 +1203,7 @@ public class Complaints extends BaseObservable implements Observable {
     public String sCOMPtoString() throws JSONException {
         Log.d(TAG, "sCOMPtoString: ");
         JSONObject json = new JSONObject();
-        json.put("pc200", pc200)
+        /*json.put("pc200", pc200)
                 .put("pc201", pc201)
                 .put("pc202", pc202)
                 .put("pc203", pc203)
@@ -1243,8 +1269,13 @@ public class Complaints extends BaseObservable implements Observable {
                 .put("pc2962x", pc2962x)
                 .put("pc2963", pc2963)
                 .put("pc2963x", pc2963x)
-                .put("pc200nr", pc200nr);
+                .put("pc200nr", pc200nr);*/
         return json.toString();
+    }
+
+    public void updateComplaints(String compCode, String otherSpecify) {
+        MainApp.complaints.setCompCode(compCode);
+        MainApp.complaints.setCompOther(otherSpecify);
     }
 
 }

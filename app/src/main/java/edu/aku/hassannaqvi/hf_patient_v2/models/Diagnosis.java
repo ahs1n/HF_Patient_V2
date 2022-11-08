@@ -105,6 +105,8 @@ public class Diagnosis extends BaseObservable implements Observable {
     private String entryType = _EMPTY_;
     // SECTION VARIABLE = _EMPTY_;
     private String sDiagnosis = _EMPTY_;
+    private String diagCode = _EMPTY_;
+    private String diagOther = _EMPTY_;
 
     public Diagnosis() {
     }
@@ -237,6 +239,28 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.sDiagnosis = sDiagnosis;
         notifyPropertyChanged(BR.sDiagnosis);
     }
+
+
+    @Bindable
+    public String getDiagCode() {
+        return diagCode;
+    }
+
+    public void setDiagCode(String diagCode) {
+        this.diagCode = diagCode;
+        notifyPropertyChanged(BR.diagCode);
+    }
+
+    @Bindable
+    public String getDiagOther() {
+        return diagOther;
+    }
+
+    public void setDiagOther(String diagOther) {
+        this.diagOther = diagOther;
+        notifyPropertyChanged(BR.diagOther);
+    }
+
 
     @Bindable
     public String getPrno() {
@@ -1019,6 +1043,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED_DATE));
+        this.diagCode = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DIAG_CODE));
+        this.diagOther = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DIAG_OTHER));
 
         sDIAGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SDIAG)));
 
@@ -1111,6 +1137,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_APPVERSION, this.appver);
         json.put(DIAGNOSISTable.COLUMN_SYNCED, this.synced);
         json.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(DIAGNOSISTable.COLUMN_DIAG_CODE, this.diagCode);
+        json.put(DIAGNOSISTable.COLUMN_DIAG_OTHER, this.diagOther);
 
         json.put(DIAGNOSISTable.COLUMN_SDIAG, new JSONObject(sDIAGtoString()));
         return json;
@@ -1119,7 +1147,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     public String sDIAGtoString() throws JSONException {
         Log.d(TAG, "sDIAGtoString: ");
         JSONObject json = new JSONObject();
-        json.put("sd100", sd100)
+        /*json.put("sd100", sd100)
                 .put("sd101", sd101)
                 .put("sd102", sd102)
                 .put("sd103", sd103)
@@ -1181,13 +1209,12 @@ public class Diagnosis extends BaseObservable implements Observable {
                 .put("sd965x", sd965x)
                 .put("sd966", sd966)
                 .put("sd966x", sd966x)
-                .put("sd100nr", sd100nr);
+                .put("sd100nr", sd100nr);*/
         return json.toString();
     }
 
-/*
     public void updateDiagnosis(String diagCode, String otherSpecify) {
         MainApp.diagnosis.setDiagCode(diagCode);
-        MainApp.diagnosis.setOthers(otherSpecify);
-    }*/
+        MainApp.diagnosis.setDiagOther(otherSpecify);
+    }
 }

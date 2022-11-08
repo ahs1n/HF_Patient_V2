@@ -58,6 +58,8 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SDIAG = "sDIAG";
+        public static final String COLUMN_DIAG_CODE = "diagnosis";
+        public static final String COLUMN_DIAG_OTHER = "other";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
@@ -76,6 +78,8 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SCOMP = "sCOMP";
+        public static final String COLUMN_COMP_CODE = "complaints";
+        public static final String COLUMN_COMP_OTHER = "other";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

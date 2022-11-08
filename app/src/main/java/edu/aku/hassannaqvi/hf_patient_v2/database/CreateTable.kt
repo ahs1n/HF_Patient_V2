@@ -59,7 +59,9 @@ object CreateTable {
             + PDContract.DIAGNOSISTable.COLUMN_SYNCED + " TEXT,"
             + PDContract.DIAGNOSISTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PDContract.DIAGNOSISTable.COLUMN_APPVERSION + " TEXT,"
-            + PDContract.DIAGNOSISTable.COLUMN_SDIAG + " TEXT"
+            + PDContract.DIAGNOSISTable.COLUMN_SDIAG + " TEXT,"
+            + PDContract.DIAGNOSISTable.COLUMN_DIAG_CODE + " TEXT,"
+            + PDContract.DIAGNOSISTable.COLUMN_DIAG_OTHER + " TEXT"
             + " );")
 
     const val SQL_CREATE_COMPLAINTS = ("CREATE TABLE "
@@ -76,7 +78,9 @@ object CreateTable {
             + PDContract.COMPLAINTSTable.COLUMN_SYNCED + " TEXT,"
             + PDContract.COMPLAINTSTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PDContract.COMPLAINTSTable.COLUMN_APPVERSION + " TEXT,"
-            + PDContract.COMPLAINTSTable.COLUMN_SCOMP + " TEXT"
+            + PDContract.COMPLAINTSTable.COLUMN_SCOMP + " TEXT,"
+            + PDContract.COMPLAINTSTable.COLUMN_COMP_CODE + " TEXT,"
+            + PDContract.COMPLAINTSTable.COLUMN_COMP_OTHER + " TEXT"
             + " );")
 
     const val SQL_CREATE_PRESCRIPTION = ("CREATE TABLE "

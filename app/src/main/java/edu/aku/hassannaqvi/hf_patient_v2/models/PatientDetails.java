@@ -1776,6 +1776,7 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss202nr", ss202nr)
                 .put("ss203", ss203)
                 .put("ss203nr", ss203nr)
+                .put("ss204", ss204)
                 .put("ss204a", ss204a)
                 .put("ss204nr", ss204nr)
                 .put("ss205", ss205)

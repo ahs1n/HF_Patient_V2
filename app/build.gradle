@@ -100,7 +100,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_hf_patient.db", "password")
+            resValue("string", "DB_PASSWORD_hf_patient.db", "VaLu@b1ePeRcE!V3")
         }
     }
     compileOptions {
@@ -225,6 +225,6 @@ dependencies {
     annotationProcessor "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1"
 
     // Android Database Browser
-    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+    implementation 'com.github.amitshekhariitbhu.Android-Debug-Database:debug-db:v1.0.6'
 
 }
