@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.gson.Gson;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -27,9 +28,11 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionScreeningBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Camps;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
+import edu.aku.hassannaqvi.hf_patient_v2.utils.shared.SharedStorage;
 
 public class SectionScreeningActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
@@ -50,6 +53,10 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
 
         bi.tempDegreeSwitch.setOnCheckedChangeListener(this);
         patientDetails.setSs204a("1");
+        Camps camp = new Gson().fromJson(SharedStorage.INSTANCE.getSelectedFacilityData(this), Camps.class);
+        String selectedFacilityName = camp.getFacilityName();
+        bi.facility.setText(selectedFacilityName);
+        patientDetails.facility = selectedFacilityName;
     }
 
     private void populateSpinner() {

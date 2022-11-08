@@ -132,9 +132,14 @@
                             android:id="@+id/facility"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:clickable="false"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
                             android:hint="@string/facility"
-                            android:text="@={form.facility}" />
+                            android:inputType="none"
+                            android:longClickable="false" />
+                        <!--                        android:text="@={form.facility}"-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
