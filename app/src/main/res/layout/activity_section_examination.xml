@@ -1624,23 +1624,26 @@
                                     android:text="@string/Q_se403" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/se403" />
 
-                            </LinearLayout>
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/se403"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.se403}"
+                                    app:maxValue="30"
+                                    app:minValue="0"
+                                    app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/se403"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/se403"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={form.se403}"
-                                app:maxValue="30"
-                                app:minValue="0"
-                                app:type="range" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -1667,23 +1670,26 @@
                                     android:text="@string/Q_se404" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/se404" />
 
-                            </LinearLayout>
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/se404"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.se404}"
+                                    app:maxValue="42"
+                                    app:minValue="4"
+                                    app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/se404"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/se404"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={form.se404}"
-                                app:maxValue="42"
-                                app:minValue="4"
-                                app:type="range" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -2792,7 +2798,6 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:visibility="invisible"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginEnd="@dimen/_3sdp"
@@ -2803,7 +2808,8 @@
                         android:onClick="BtnEnd"
                         android:text="Cancel"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp" />
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="invisible" />
 
                     <Button
                         android:id="@+id/btn_Continue"

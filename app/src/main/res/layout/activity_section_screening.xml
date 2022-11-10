@@ -88,11 +88,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:hint="##"
+                            android:hint="####"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="4"
                             android:text="@={form.prno}"
-                            app:maxValue="99"
+                            app:maxValue="9999"
                             app:minValue="1"
                             app:type="range" />
 
@@ -122,24 +122,26 @@
                                 android:text="@string/Q_facility" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/facility" />
 
-                        </LinearLayout>
+                            <EditText
+                                android:id="@+id/facility"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:clickable="false"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:gravity="center"
+                                android:hint="@string/facility"
+                                android:inputType="none"
+                                android:longClickable="false" />
 
-                        <EditText
-                            android:id="@+id/facility"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:clickable="false"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:focusableInTouchMode="false"
-                            android:hint="@string/facility"
-                            android:inputType="none"
-                            android:longClickable="false" />
+                        </LinearLayout>
                         <!--                        android:text="@={form.facility}"-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -515,8 +517,9 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.ss104y}"
+                                android:onCheckedChanged="@{ss105.clearCheck()}"
                                 app:maxValue="99"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -530,7 +533,7 @@
                                 android:maxLength="2"
                                 android:text="@={form.ss104m}"
                                 app:maxValue="11"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -543,8 +546,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.ss104d}"
-                                app:maxValue="30"
-                                app:minValue="1"
+                                app:maxValue="29"
+                                app:minValue="0"
                                 app:type="range" />
                         </LinearLayout>
                     </LinearLayout>
@@ -553,7 +556,8 @@
                 <!-- ss105  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss105"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -733,6 +737,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss10704.equals(`4`)}"
+                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
                                 android:onClick="@{()->form.setSs10704(form.ss10704.equals(`4`)?``:`4`)}"
                                 android:text="@string/ss10704" />
                         </LinearLayout>
@@ -1592,7 +1597,8 @@
                 <!-- ss601  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss601"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &lt; 5 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

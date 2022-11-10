@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionExaminationBinding;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
+import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 
 public class SectionExaminationActivity extends AppCompatActivity {
 
@@ -34,6 +35,9 @@ public class SectionExaminationActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(patientDetails);
+
+        //setMaxDate
+        bi.se406.setMaxDate(DateUtils.getMonthsBack("dd/MM/yyyy", 9));
     }
 
 

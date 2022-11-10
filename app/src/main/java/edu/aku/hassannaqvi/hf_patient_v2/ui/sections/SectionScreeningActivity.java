@@ -12,7 +12,6 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.google.gson.Gson;
@@ -144,7 +143,14 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        int total = Integer.parseInt(patientDetails.ss104d) + Integer.parseInt(patientDetails.ss104m) + Integer.parseInt(patientDetails.ss104y);
+        if (total == 0)
+            return Validator.emptyCustomTextBox(this, bi.ss104y, "Age cannot be 0");
+
+        return true;
     }
 
 
