@@ -26,7 +26,6 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionPrescriptionBinding;
-import edu.aku.hassannaqvi.hf_patient_v2.ui.MainActivity;
 
 public class SectionPrescriptionActivity extends AppCompatActivity {
 
@@ -312,7 +311,7 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, SectionScreeningActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

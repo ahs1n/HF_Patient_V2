@@ -30,6 +30,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionScreeningBin
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
+import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.shared.SharedStorage;
 
@@ -45,6 +46,7 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_screening);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        patientDetails = new PatientDetails();
         bi.setForm(patientDetails);
         populateSpinner();
 

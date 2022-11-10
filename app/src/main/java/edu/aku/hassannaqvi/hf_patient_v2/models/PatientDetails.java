@@ -422,6 +422,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs104y(String ss104y) {
         this.ss104y = ss104y;
         setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
+        setSs10703(ss104y.length() > 0 && Integer.parseInt(ss104y) < 5 ? this.ss10703 : "");
         setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
         setSs105(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 ? this.ss105 : "");
         setSs601(ss104y.length() > 0 && Integer.parseInt(ss104y) < 5 ? this.ss601 : "");
