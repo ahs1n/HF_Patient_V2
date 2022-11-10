@@ -505,6 +505,15 @@
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sh3Skip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`) ? View.VISIBLE : View.GONE}">
+
 
                     <!-- sh33title  Title   -->
                     <androidx.cardview.widget.CardView
@@ -824,7 +833,6 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:visibility="invisible"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginEnd="@dimen/_3sdp"
@@ -835,7 +843,8 @@
                         android:onClick="BtnEnd"
                         android:text="Cancel"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp" />
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="invisible" />
 
                     <Button
                         android:id="@+id/btn_Continue"

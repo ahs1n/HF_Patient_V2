@@ -37,6 +37,7 @@ public class SectionExaminationActivity extends AppCompatActivity {
         bi.setForm(patientDetails);
 
         //setMaxDate
+        bi.se405.setMaxDate(DateUtils.getMonthsBack("dd/MM/yyyy", 10));
         bi.se406.setMaxDate(DateUtils.getMonthsBack("dd/MM/yyyy", 9));
     }
 

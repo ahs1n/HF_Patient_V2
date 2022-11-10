@@ -43,6 +43,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss10703 = _EMPTY_;
     public String ss10704 = _EMPTY_;
     public String ss108 = _EMPTY_;
+    public String ss10899 = _EMPTY_;
     public String ss201s = _EMPTY_;
     public String ss201d = _EMPTY_;
     public String ss201nr = _EMPTY_;
@@ -520,6 +521,18 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs108(String ss108) {
         this.ss108 = ss108;
         notifyPropertyChanged(BR.ss108);
+    }
+
+    @Bindable
+    public String getSs10899() {
+        return ss10899;
+    }
+
+    public void setSs10899(String ss10899) {
+        if (this.ss10899.equals(ss10899)) return; // for all checkboxes
+        this.ss10899 = ss10899;
+        setSs108(ss10899.equals("999") ? "" : this.ss108);
+        notifyPropertyChanged(BR.ss10899);
     }
 
     @Bindable
@@ -1615,6 +1628,7 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.ss10703 = json.getString("ss10703");
             this.ss10704 = json.getString("ss10704");
             this.ss108 = json.getString("ss108");
+            this.ss10899 = json.getString("ss10899");
             this.ss201s = json.getString("ss201s");
             this.ss201d = json.getString("ss201d");
             this.ss201nr = json.getString("ss201nr");
@@ -1777,6 +1791,7 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss10703", ss10703)
                 .put("ss10704", ss10704)
                 .put("ss108", ss108)
+                .put("ss10899", ss10899)
                 .put("ss201s", ss201s)
                 .put("ss201d", ss201d)
                 .put("ss201nr", ss201nr)
