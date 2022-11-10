@@ -1574,7 +1574,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <!-- se44title  Title   -->
                     <androidx.cardview.widget.CardView

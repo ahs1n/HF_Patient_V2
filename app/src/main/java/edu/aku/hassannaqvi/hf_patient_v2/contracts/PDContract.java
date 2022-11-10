@@ -42,6 +42,7 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";
+        public static final String COLUMN_VDATE = "vdate";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SVAC = "sVAC";
         public static final String COLUMN_DEVICEID = "deviceid";
@@ -62,6 +63,7 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";
+        public static final String COLUMN_VDATE = "vdate";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SDIAG = "sDIAG";
         public static final String COLUMN_DIAG_CODE = "diagnosis";
@@ -84,6 +86,7 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";
+        public static final String COLUMN_VDATE = "vdate";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SCOMP = "sCOMP";
         public static final String COLUMN_COMP_CODE = "complaints";
@@ -106,6 +109,7 @@ public class PDContract {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";
+        public static final String COLUMN_VDATE = "vdate";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_PRES = "sPRES";
         public static final String COLUMN_DEVICEID = "deviceid";

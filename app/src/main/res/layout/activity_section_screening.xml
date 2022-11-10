@@ -178,7 +178,7 @@
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
                                 android:inputType="number"
-                                android:text="@{form.date}"
+                                android:text="@={form.vdate}"
                                 app:dateFormat="yyyy-MM-dd"
                                 app:maxDate="CR_DATE"
                                 app:minDate="CR_DATE"
@@ -224,7 +224,7 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
-                                android:text="@{form.time}"
+                                android:text="@{form.vtime}"
                                 app:theme="@style/MyDatePickerDialogTheme" />
 
                         </LinearLayout>
@@ -553,7 +553,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss105"
                     style="@style/cardView"
-                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -714,7 +714,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss10702.equals(`2`)}"
-                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
+                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
                                 android:onClick="@{()->form.setSs10702(form.ss10702.equals(`2`)?``:`2`)}"
                                 android:text="@string/ss10702" />
 
@@ -734,7 +734,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss10704.equals(`4`)}"
-                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 14 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
+                                android:enabled="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`)}"
                                 android:onClick="@{()->form.setSs10704(form.ss10704.equals(`4`)?``:`4`)}"
                                 android:text="@string/ss10704" />
                         </LinearLayout>

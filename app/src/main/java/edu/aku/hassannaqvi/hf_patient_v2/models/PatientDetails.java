@@ -27,8 +27,8 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
     public String facilityCode = _EMPTY_;
-    public String date = _EMPTY_;
-    public String time = _EMPTY_;
+    public String vdate = _EMPTY_;
+    public String vtime = _EMPTY_;
     public String ss100 = _EMPTY_;
     public String ss101 = _EMPTY_;
     public String ss102 = _EMPTY_;
@@ -353,23 +353,23 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getDate() {
-        return date;
+    public String getVdate() {
+        return vdate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-        notifyPropertyChanged(BR.date);
+    public void setVdate(String vdate) {
+        this.vdate = vdate;
+        notifyPropertyChanged(BR.vdate);
     }
 
     @Bindable
-    public String getTime() {
-        return time;
+    public String getVtime() {
+        return vtime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-        notifyPropertyChanged(BR.time);
+    public void setVtime(String vtime) {
+        this.vtime = vtime;
+        notifyPropertyChanged(BR.vtime);
     }
 
     @Bindable
@@ -409,8 +409,8 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSs103(String ss103) {
         this.ss103 = ss103;
-        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
-        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
+        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
+        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
         notifyPropertyChanged(BR.ss103);
     }
 
@@ -421,10 +421,10 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSs104y(String ss104y) {
         this.ss104y = ss104y;
-        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
+        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
         setSs10703(ss104y.length() > 0 && Integer.parseInt(ss104y) < 5 ? this.ss10703 : "");
-        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
-        setSs105(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 ? this.ss105 : "");
+        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
+        setSs105(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 ? this.ss105 : "");
         setSs601(ss104y.length() > 0 && Integer.parseInt(ss104y) < 5 ? this.ss601 : "");
         notifyPropertyChanged(BR.ss104y);
     }
@@ -456,8 +456,8 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSs105(String ss105) {
         this.ss105 = ss105;
-        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
-        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 14 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
+        setSs10702(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10702 : "");
+        setSs10704(ss104y.length() > 0 && Integer.parseInt(ss104y) > 13 && ss103.equals("2") && ss105.equals("3") ? this.ss10704 : "");
         notifyPropertyChanged(BR.ss105);
     }
 
@@ -1598,6 +1598,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_USERNAME));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PROJECT_NAME));
+        this.facility = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY));
+        this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_DEVICETAGID));
@@ -1623,8 +1625,8 @@ public class PatientDetails extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.prno = json.getString("prno");
-            this.date = json.getString("date");
-            this.time = json.getString("time");
+            this.vdate = json.getString("vdate");
+            this.vtime = json.getString("vtime");
             this.ss100 = json.getString("ss100");
             this.ss101 = json.getString("ss101");
             this.ss102 = json.getString("ss102");
@@ -1788,8 +1790,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         Log.d(TAG, "sPDtoString: ");
         JSONObject json = new JSONObject();
         json.put("prno", prno)
-                .put("date", date)
-                .put("time", time)
+                .put("vdate", vdate)
+                .put("vtime", vtime)
                 .put("ss100", ss100)
                 .put("ss101", ss101)
                 .put("ss102", ss102)

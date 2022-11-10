@@ -27,6 +27,7 @@ public class Vaccination extends BaseObservable implements Observable {
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
     public String facilityCode = _EMPTY_;
+    public String vdate = _EMPTY_;
     public String sv101 = _EMPTY_;
     public String sv102 = _EMPTY_;
     public String sv103 = _EMPTY_;
@@ -84,6 +85,7 @@ public class Vaccination extends BaseObservable implements Observable {
         setPrno(MainApp.patientDetails.getPrno());
         setFacility(MainApp.patientDetails.getFacility());
         setFacilityCode(MainApp.patientDetails.getFacilityCode());
+        setVdate(MainApp.patientDetails.getVdate());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -234,6 +236,16 @@ public class Vaccination extends BaseObservable implements Observable {
     public void setFacilityCode(String facilityCode) {
         this.facilityCode = facilityCode;
         notifyPropertyChanged(BR.facilityCode);
+    }
+
+    @Bindable
+    public String getVdate() {
+        return vdate;
+    }
+
+    public void setVdate(String vdate) {
+        this.vdate = vdate;
+        notifyPropertyChanged(BR.vdate);
     }
 
     @Bindable
@@ -521,6 +533,7 @@ public class Vaccination extends BaseObservable implements Observable {
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY_CODE));
+        this.vdate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_VDATE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_DEVICETAGID));
@@ -579,6 +592,7 @@ public class Vaccination extends BaseObservable implements Observable {
         json.put(VACCINATIONTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(VACCINATIONTable.COLUMN_FACILITY, this.facility);
         json.put(VACCINATIONTable.COLUMN_FACILITY_CODE, this.facilityCode);
+        json.put(VACCINATIONTable.COLUMN_VDATE, this.vdate);
         json.put(VACCINATIONTable.COLUMN_SYSDATE, this.sysDate);
         json.put(VACCINATIONTable.COLUMN_DEVICEID, this.deviceId);
         json.put(VACCINATIONTable.COLUMN_DEVICETAGID, this.deviceTag);

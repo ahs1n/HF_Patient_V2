@@ -192,6 +192,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(VACCINATIONTable.COLUMN_USERNAME, vaccination.getUserName());
         values.put(VACCINATIONTable.COLUMN_FACILITY, vaccination.getFacility());
         values.put(VACCINATIONTable.COLUMN_FACILITY_CODE, vaccination.getFacilityCode());
+        values.put(VACCINATIONTable.COLUMN_VDATE, vaccination.getVdate());
         values.put(VACCINATIONTable.COLUMN_SYSDATE, vaccination.getSysDate());
         values.put(VACCINATIONTable.COLUMN_SVAC, vaccination.sVACtoString());
         values.put(VACCINATIONTable.COLUMN_DEVICEID, vaccination.getDeviceId());
@@ -220,6 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DIAGNOSISTable.COLUMN_USERNAME, diagnosis.getUserName());
         values.put(DIAGNOSISTable.COLUMN_FACILITY, diagnosis.getFacility());
         values.put(DIAGNOSISTable.COLUMN_FACILITY_CODE, diagnosis.getFacilityCode());
+        values.put(DIAGNOSISTable.COLUMN_VDATE, diagnosis.getVdate());
         values.put(DIAGNOSISTable.COLUMN_SYSDATE, diagnosis.getSysDate());
         values.put(DIAGNOSISTable.COLUMN_SDIAG, diagnosis.sDIAGtoString());
         values.put(DIAGNOSISTable.COLUMN_DIAG_CODE, diagnosis.getDiagCode());
@@ -250,6 +252,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COMPLAINTSTable.COLUMN_USERNAME, complaints.getUserName());
         values.put(COMPLAINTSTable.COLUMN_FACILITY, complaints.getFacility());
         values.put(COMPLAINTSTable.COLUMN_FACILITY_CODE, complaints.getFacilityCode());
+        values.put(COMPLAINTSTable.COLUMN_VDATE, complaints.getVdate());
         values.put(COMPLAINTSTable.COLUMN_SYSDATE, complaints.getSysDate());
         values.put(COMPLAINTSTable.COLUMN_SCOMP, complaints.sCOMPtoString());
         values.put(COMPLAINTSTable.COLUMN_COMP_CODE, complaints.getCompCode());
@@ -280,6 +283,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRESCRIPTIONTable.COLUMN_USERNAME, prescription.getUserName());
         values.put(PRESCRIPTIONTable.COLUMN_FACILITY, prescription.getFacility());
         values.put(PRESCRIPTIONTable.COLUMN_FACILITY_CODE, prescription.getFacilityCode());
+        values.put(PRESCRIPTIONTable.COLUMN_VDATE, prescription.getVdate());
         values.put(PRESCRIPTIONTable.COLUMN_SYSDATE, prescription.getSysDate());
         //values.put(PRESCRIPTIONTable.COLUMN_PRES, prescription.getsPrescription());
         values.put(PRESCRIPTIONTable.COLUMN_MED_CODE, prescription.getMedCode());

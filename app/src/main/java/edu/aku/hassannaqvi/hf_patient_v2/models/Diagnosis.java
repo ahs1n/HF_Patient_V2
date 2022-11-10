@@ -27,6 +27,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
     public String facilityCode = _EMPTY_;
+    public String vdate = _EMPTY_;
     public String sd100 = _EMPTY_;
     public String sd101 = _EMPTY_;
     public String sd102 = _EMPTY_;
@@ -120,6 +121,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         setPrno(MainApp.patientDetails.getPrno());
         setFacility(MainApp.patientDetails.getFacility());
         setFacilityCode(MainApp.patientDetails.getFacilityCode());
+        setVdate(MainApp.patientDetails.getVdate());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -293,6 +295,16 @@ public class Diagnosis extends BaseObservable implements Observable {
     public void setFacilityCode(String facilityCode) {
         this.facilityCode = facilityCode;
         notifyPropertyChanged(BR.facilityCode);
+    }
+
+    @Bindable
+    public String getVdate() {
+        return vdate;
+    }
+
+    public void setVdate(String vdate) {
+        this.vdate = vdate;
+        notifyPropertyChanged(BR.vdate);
     }
 
     @Bindable
@@ -1053,6 +1065,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY_CODE));
+        this.vdate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_VDATE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICETAGID));
@@ -1150,6 +1163,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(DIAGNOSISTable.COLUMN_FACILITY, this.facility);
         json.put(DIAGNOSISTable.COLUMN_FACILITY_CODE, this.facilityCode);
+        json.put(DIAGNOSISTable.COLUMN_VDATE, this.vdate);
         json.put(DIAGNOSISTable.COLUMN_SYSDATE, this.sysDate);
         json.put(DIAGNOSISTable.COLUMN_DEVICEID, this.deviceId);
         json.put(DIAGNOSISTable.COLUMN_DEVICETAGID, this.deviceTag);

@@ -27,6 +27,7 @@ public class Complaints extends BaseObservable implements Observable {
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
     public String facilityCode = _EMPTY_;
+    public String vdate = _EMPTY_;
     public String pc200 = _EMPTY_;
     public String pc201 = _EMPTY_;
     public String pc202 = _EMPTY_;
@@ -124,6 +125,7 @@ public class Complaints extends BaseObservable implements Observable {
         setPrno(MainApp.patientDetails.getPrno());
         setFacility(MainApp.patientDetails.getFacility());
         setFacilityCode(MainApp.patientDetails.getFacilityCode());
+        setVdate(MainApp.patientDetails.getVdate());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -295,6 +297,16 @@ public class Complaints extends BaseObservable implements Observable {
     public void setFacilityCode(String facilityCode) {
         this.facilityCode = facilityCode;
         notifyPropertyChanged(BR.facilityCode);
+    }
+
+    @Bindable
+    public String getVdate() {
+        return vdate;
+    }
+
+    public void setVdate(String vdate) {
+        this.vdate = vdate;
+        notifyPropertyChanged(BR.vdate);
     }
 
     @Bindable
@@ -1105,6 +1117,7 @@ public class Complaints extends BaseObservable implements Observable {
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY_CODE));
+        this.vdate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_VDATE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICETAGID));
@@ -1206,6 +1219,7 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(COMPLAINTSTable.COLUMN_FACILITY, this.facility);
         json.put(COMPLAINTSTable.COLUMN_FACILITY_CODE, this.facilityCode);
+        json.put(COMPLAINTSTable.COLUMN_VDATE, this.vdate);
         json.put(COMPLAINTSTable.COLUMN_SYSDATE, this.sysDate);
         json.put(COMPLAINTSTable.COLUMN_DEVICEID, this.deviceId);
         json.put(COMPLAINTSTable.COLUMN_DEVICETAGID, this.deviceTag);
