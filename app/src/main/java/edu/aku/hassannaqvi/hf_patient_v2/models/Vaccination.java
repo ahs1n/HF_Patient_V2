@@ -518,6 +518,7 @@ public class Vaccination extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_USERNAME));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYSDATE));
@@ -575,6 +576,7 @@ public class Vaccination extends BaseObservable implements Observable {
         json.put(VACCINATIONTable.COLUMN_UUID, this.uuid);
         json.put(VACCINATIONTable.COLUMN_PRNO, this.prno);
         json.put(VACCINATIONTable.COLUMN_USERNAME, this.userName);
+        json.put(VACCINATIONTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(VACCINATIONTable.COLUMN_FACILITY, this.facility);
         json.put(VACCINATIONTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(VACCINATIONTable.COLUMN_SYSDATE, this.sysDate);

@@ -2039,6 +2039,7 @@ public class Prescription extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_USERNAME));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYSDATE));
@@ -2223,6 +2224,7 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_UUID, this.uuid);
         json.put(PRESCRIPTIONTable.COLUMN_PRES, this.prno);
         json.put(PRESCRIPTIONTable.COLUMN_USERNAME, this.userName);
+        json.put(PRESCRIPTIONTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(PRESCRIPTIONTable.COLUMN_FACILITY, this.facility);
         json.put(PRESCRIPTIONTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(PRESCRIPTIONTable.COLUMN_SYSDATE, this.sysDate);

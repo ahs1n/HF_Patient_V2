@@ -1596,6 +1596,7 @@ public class PatientDetails extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_USERNAME));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PROJECT_NAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_DEVICETAGID));
@@ -1764,6 +1765,7 @@ public class PatientDetails extends BaseObservable implements Observable {
         json.put(PDContract.PDTable.COLUMN_ID, this.id);
         json.put(PDContract.PDTable.COLUMN_UID, this.uid);
         json.put(PDContract.PDTable.COLUMN_USERNAME, this.userName);
+        json.put(PDContract.PDTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(PDContract.PDTable.COLUMN_FACILITY, this.facility);
         json.put(PDContract.PDTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(PDContract.PDTable.COLUMN_SYSDATE, this.sysDate);

@@ -1102,6 +1102,7 @@ public class Complaints extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_USERNAME));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYSDATE));
@@ -1202,6 +1203,7 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_UUID, this.uuid);
         json.put(COMPLAINTSTable.COLUMN_PRNO, this.prno);
         json.put(COMPLAINTSTable.COLUMN_USERNAME, this.userName);
+        json.put(COMPLAINTSTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(COMPLAINTSTable.COLUMN_FACILITY, this.facility);
         json.put(COMPLAINTSTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(COMPLAINTSTable.COLUMN_SYSDATE, this.sysDate);

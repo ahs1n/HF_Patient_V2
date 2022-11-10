@@ -1050,6 +1050,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_USERNAME));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_PROJECT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYSDATE));
@@ -1146,6 +1147,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_UUID, this.uuid);
         json.put(DIAGNOSISTable.COLUMN_PRNO, this.prno);
         json.put(DIAGNOSISTable.COLUMN_USERNAME, this.userName);
+        json.put(DIAGNOSISTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(DIAGNOSISTable.COLUMN_FACILITY, this.facility);
         json.put(DIAGNOSISTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(DIAGNOSISTable.COLUMN_SYSDATE, this.sysDate);
