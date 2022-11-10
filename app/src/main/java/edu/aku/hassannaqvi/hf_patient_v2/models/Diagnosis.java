@@ -23,9 +23,10 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Diagnosis extends BaseObservable implements Observable {
 
-    private final String TAG = "PatientDetails";
+    private final String TAG = "Diagnosis";
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
+    public String facilityCode = _EMPTY_;
     public String sd100 = _EMPTY_;
     public String sd101 = _EMPTY_;
     public String sd102 = _EMPTY_;
@@ -117,6 +118,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setUuid(MainApp.patientDetails.getUid());
         setPrno(MainApp.patientDetails.getPrno());
+        setFacility(MainApp.patientDetails.getFacility());
+        setFacilityCode(MainApp.patientDetails.getFacilityCode());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -280,6 +283,16 @@ public class Diagnosis extends BaseObservable implements Observable {
     public void setFacility(String facility) {
         this.facility = facility;
         notifyPropertyChanged(BR.facility);
+    }
+
+    @Bindable
+    public String getFacilityCode() {
+        return facilityCode;
+    }
+
+    public void setFacilityCode(String facilityCode) {
+        this.facilityCode = facilityCode;
+        notifyPropertyChanged(BR.facilityCode);
     }
 
     @Bindable
@@ -1037,6 +1050,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_USERNAME));
+        this.facility = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY));
+        this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DEVICETAGID));
@@ -1056,69 +1071,69 @@ public class Diagnosis extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.sd100 = json.getString("sd100");
-            this.sd101 = json.getString("sd101");
-            this.sd102 = json.getString("sd102");
-            this.sd103 = json.getString("sd103");
-            this.sd104 = json.getString("sd104");
-            this.sd105 = json.getString("sd105");
-            this.sd106 = json.getString("sd106");
-            this.sd107 = json.getString("sd107");
-            this.sd108 = json.getString("sd108");
-            this.sd109 = json.getString("sd109");
-            this.sd110 = json.getString("sd110");
-            this.sd111 = json.getString("sd111");
-            this.sd112 = json.getString("sd112");
-            this.sd113 = json.getString("sd113");
-            this.sd114 = json.getString("sd114");
-            this.sd115 = json.getString("sd115");
-            this.sd116 = json.getString("sd116");
-            this.sd117 = json.getString("sd117");
-            this.sd118 = json.getString("sd118");
-            this.sd119 = json.getString("sd119");
-            this.sd120 = json.getString("sd120");
-            this.sd121 = json.getString("sd121");
-            this.sd122 = json.getString("sd122");
-            this.sd123 = json.getString("sd123");
-            this.sd124 = json.getString("sd124");
-            this.sd125 = json.getString("sd125");
-            this.sd126 = json.getString("sd126");
-            this.sd127 = json.getString("sd127");
-            this.sd128 = json.getString("sd128");
-            this.sd129 = json.getString("sd129");
-            this.sd130 = json.getString("sd130");
-            this.sd131 = json.getString("sd131");
-            this.sd132 = json.getString("sd132");
-            this.sd133 = json.getString("sd133");
-            this.sd134 = json.getString("sd134");
-            this.sd135 = json.getString("sd135");
-            this.sd136 = json.getString("sd136");
-            this.sd137 = json.getString("sd137");
-            this.sd138 = json.getString("sd138");
-            this.sd139 = json.getString("sd139");
-            this.sd140 = json.getString("sd140");
-            this.sd141 = json.getString("sd141");
-            this.sd142 = json.getString("sd142");
-            this.sd143 = json.getString("sd143");
-            this.sd144 = json.getString("sd144");
-            this.sd145 = json.getString("sd145");
-            this.sd146 = json.getString("sd146");
-            this.sd147 = json.getString("sd147");
-            this.sd148 = json.getString("sd148");
-            this.sd149 = json.getString("sd149");
-            this.sd961 = json.getString("sd961");
-            this.sd961x = json.getString("sd961x");
-            this.sd962 = json.getString("sd962");
-            this.sd962x = json.getString("sd962x");
-            this.sd963 = json.getString("sd963");
-            this.sd963x = json.getString("sd963x");
-            this.sd964 = json.getString("sd964");
-            this.sd964x = json.getString("sd964x");
-            this.sd965 = json.getString("sd965");
-            this.sd965x = json.getString("sd965x");
-            this.sd966 = json.getString("sd966");
-            this.sd966x = json.getString("sd966x");
-            this.sd100nr = json.getString("sd100nr");
+            this.sd100 = json.has("sd100") ? json.getString("sd100") : "";
+            this.sd101 = json.has("sd101") ? json.getString("sd101") : "";
+            this.sd102 = json.has("sd102") ? json.getString("sd102") : "";
+            this.sd103 = json.has("sd103") ? json.getString("sd103") : "";
+            this.sd104 = json.has("sd104") ? json.getString("sd104") : "";
+            this.sd105 = json.has("sd105") ? json.getString("sd105") : "";
+            this.sd106 = json.has("sd106") ? json.getString("sd106") : "";
+            this.sd107 = json.has("sd107") ? json.getString("sd107") : "";
+            this.sd108 = json.has("sd108") ? json.getString("sd108") : "";
+            this.sd109 = json.has("sd109") ? json.getString("sd109") : "";
+            this.sd110 = json.has("sd110") ? json.getString("sd110") : "";
+            this.sd111 = json.has("sd111") ? json.getString("sd111") : "";
+            this.sd112 = json.has("sd112") ? json.getString("sd112") : "";
+            this.sd113 = json.has("sd113") ? json.getString("sd113") : "";
+            this.sd114 = json.has("sd114") ? json.getString("sd114") : "";
+            this.sd115 = json.has("sd115") ? json.getString("sd115") : "";
+            this.sd116 = json.has("sd116") ? json.getString("sd116") : "";
+            this.sd117 = json.has("sd117") ? json.getString("sd117") : "";
+            this.sd118 = json.has("sd118") ? json.getString("sd118") : "";
+            this.sd119 = json.has("sd119") ? json.getString("sd119") : "";
+            this.sd120 = json.has("sd120") ? json.getString("sd120") : "";
+            this.sd121 = json.has("sd121") ? json.getString("sd121") : "";
+            this.sd122 = json.has("sd122") ? json.getString("sd122") : "";
+            this.sd123 = json.has("sd123") ? json.getString("sd123") : "";
+            this.sd124 = json.has("sd124") ? json.getString("sd124") : "";
+            this.sd125 = json.has("sd125") ? json.getString("sd125") : "";
+            this.sd126 = json.has("sd126") ? json.getString("sd126") : "";
+            this.sd127 = json.has("sd127") ? json.getString("sd127") : "";
+            this.sd128 = json.has("sd128") ? json.getString("sd128") : "";
+            this.sd129 = json.has("sd129") ? json.getString("sd129") : "";
+            this.sd130 = json.has("sd130") ? json.getString("sd130") : "";
+            this.sd131 = json.has("sd131") ? json.getString("sd131") : "";
+            this.sd132 = json.has("sd132") ? json.getString("sd132") : "";
+            this.sd133 = json.has("sd133") ? json.getString("sd133") : "";
+            this.sd134 = json.has("sd134") ? json.getString("sd134") : "";
+            this.sd135 = json.has("sd135") ? json.getString("sd135") : "";
+            this.sd136 = json.has("sd136") ? json.getString("sd136") : "";
+            this.sd137 = json.has("sd137") ? json.getString("sd137") : "";
+            this.sd138 = json.has("sd138") ? json.getString("sd138") : "";
+            this.sd139 = json.has("sd139") ? json.getString("sd139") : "";
+            this.sd140 = json.has("sd140") ? json.getString("sd140") : "";
+            this.sd141 = json.has("sd141") ? json.getString("sd141") : "";
+            this.sd142 = json.has("sd142") ? json.getString("sd142") : "";
+            this.sd143 = json.has("sd143") ? json.getString("sd143") : "";
+            this.sd144 = json.has("sd144") ? json.getString("sd144") : "";
+            this.sd145 = json.has("sd145") ? json.getString("sd145") : "";
+            this.sd146 = json.has("sd146") ? json.getString("sd146") : "";
+            this.sd147 = json.has("sd147") ? json.getString("sd147") : "";
+            this.sd148 = json.has("sd148") ? json.getString("sd148") : "";
+            this.sd149 = json.has("sd149") ? json.getString("sd149") : "";
+            this.sd961 = json.has("sd961") ? json.getString("sd961") : "";
+            this.sd961x = json.has("") ? json.getString("sd961x") : "";
+            this.sd962 = json.has("sd962") ? json.getString("sd962") : "";
+            this.sd962x = json.has("sd962x") ? json.getString("sd962x") : "";
+            this.sd963 = json.has("sd963") ? json.getString("sd963") : "";
+            this.sd963x = json.has("sd963x") ? json.getString("sd963x") : "";
+            this.sd964 = json.has("sd964") ? json.getString("sd964") : "";
+            this.sd964x = json.has("sd964x") ? json.getString("sd964x") : "";
+            this.sd965 = json.has("sd965") ? json.getString("sd965") : "";
+            this.sd965x = json.has("sd965x") ? json.getString("sd965x") : "";
+            this.sd966 = json.has("sd966") ? json.getString("sd966") : "";
+            this.sd966x = json.has("sd966x") ? json.getString("sd966x") : "";
+            this.sd100nr = json.has("sd100nr") ? json.getString("sd100nr") : "";
 
         }
     }
@@ -1131,6 +1146,8 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_UUID, this.uuid);
         json.put(DIAGNOSISTable.COLUMN_PRNO, this.prno);
         json.put(DIAGNOSISTable.COLUMN_USERNAME, this.userName);
+        json.put(DIAGNOSISTable.COLUMN_FACILITY, this.facility);
+        json.put(DIAGNOSISTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(DIAGNOSISTable.COLUMN_SYSDATE, this.sysDate);
         json.put(DIAGNOSISTable.COLUMN_DEVICEID, this.deviceId);
         json.put(DIAGNOSISTable.COLUMN_DEVICETAGID, this.deviceTag);

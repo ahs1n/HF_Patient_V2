@@ -23,9 +23,10 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Vaccination extends BaseObservable implements Observable {
 
-    private final String TAG = "PatientDetails";
+    private final String TAG = "Vaccination";
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
+    public String facilityCode = _EMPTY_;
     public String sv101 = _EMPTY_;
     public String sv102 = _EMPTY_;
     public String sv103 = _EMPTY_;
@@ -81,6 +82,8 @@ public class Vaccination extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setUuid(MainApp.patientDetails.getUid());
         setPrno(MainApp.patientDetails.getPrno());
+        setFacility(MainApp.patientDetails.getFacility());
+        setFacilityCode(MainApp.patientDetails.getFacilityCode());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -221,6 +224,16 @@ public class Vaccination extends BaseObservable implements Observable {
     public void setFacility(String facility) {
         this.facility = facility;
         notifyPropertyChanged(BR.facility);
+    }
+
+    @Bindable
+    public String getFacilityCode() {
+        return facilityCode;
+    }
+
+    public void setFacilityCode(String facilityCode) {
+        this.facilityCode = facilityCode;
+        notifyPropertyChanged(BR.facilityCode);
     }
 
     @Bindable
@@ -505,6 +518,8 @@ public class Vaccination extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_USERNAME));
+        this.facility = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY));
+        this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_DEVICETAGID));
@@ -560,6 +575,8 @@ public class Vaccination extends BaseObservable implements Observable {
         json.put(VACCINATIONTable.COLUMN_UUID, this.uuid);
         json.put(VACCINATIONTable.COLUMN_PRNO, this.prno);
         json.put(VACCINATIONTable.COLUMN_USERNAME, this.userName);
+        json.put(VACCINATIONTable.COLUMN_FACILITY, this.facility);
+        json.put(VACCINATIONTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(VACCINATIONTable.COLUMN_SYSDATE, this.sysDate);
         json.put(VACCINATIONTable.COLUMN_DEVICEID, this.deviceId);
         json.put(VACCINATIONTable.COLUMN_DEVICETAGID, this.deviceTag);

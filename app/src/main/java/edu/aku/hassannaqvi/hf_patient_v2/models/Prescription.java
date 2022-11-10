@@ -23,9 +23,10 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
 public class Prescription extends BaseObservable implements Observable {
 
-    private final String TAG = "PatientDetails";
+    private final String TAG = "Prescription";
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
+    public String facilityCode = _EMPTY_;
     public String mp101 = _EMPTY_;
     public String mp101do = _EMPTY_;
     public String mp101f = _EMPTY_;
@@ -181,41 +182,6 @@ public class Prescription extends BaseObservable implements Observable {
     public String duration = _EMPTY_;
     private String uuid = _EMPTY_;
 
-    @Bindable
-    public String getMedCode() {
-        return medCode;
-    }
-
-    public void setMedCode(String medCode) {
-        this.medCode = medCode;
-        notifyPropertyChanged(BR.medCode);
-    }
-
-    @Bindable
-    public String getDose() {
-        return dose;
-    }
-
-    public void setDose(String dose) {
-        this.dose = dose;
-        notifyPropertyChanged(BR.dose);
-    }
-
-    @Bindable
-    public String getFrequency() {
-        return frequency;
-    }
-
-    public void setFrequency(String frequency) {
-        this.frequency = frequency;
-        notifyPropertyChanged(BR.frequency);
-    }
-
-    @Bindable
-    public String getDuration() {
-        return duration;
-    }
-
 
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
@@ -248,6 +214,8 @@ public class Prescription extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setUuid(MainApp.patientDetails.getUid());
         setPrno(MainApp.patientDetails.getPrno());
+        setFacility(MainApp.patientDetails.getFacility());
+        setFacilityCode(MainApp.patientDetails.getFacilityCode());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -372,6 +340,41 @@ public class Prescription extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getMedCode() {
+        return medCode;
+    }
+
+    public void setMedCode(String medCode) {
+        this.medCode = medCode;
+        notifyPropertyChanged(BR.medCode);
+    }
+
+    @Bindable
+    public String getDose() {
+        return dose;
+    }
+
+    public void setDose(String dose) {
+        this.dose = dose;
+        notifyPropertyChanged(BR.dose);
+    }
+
+    @Bindable
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+        notifyPropertyChanged(BR.frequency);
+    }
+
+    @Bindable
+    public String getDuration() {
+        return duration;
+    }
+
+    @Bindable
     public String getPrno() {
         return prno;
     }
@@ -389,6 +392,16 @@ public class Prescription extends BaseObservable implements Observable {
     public void setFacility(String facility) {
         this.facility = facility;
         notifyPropertyChanged(BR.facility);
+    }
+
+    @Bindable
+    public String getFacilityCode() {
+        return facilityCode;
+    }
+
+    public void setFacilityCode(String facilityCode) {
+        this.facilityCode = facilityCode;
+        notifyPropertyChanged(BR.facilityCode);
     }
 
     @Bindable
@@ -2026,6 +2039,8 @@ public class Prescription extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_USERNAME));
+        this.facility = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FACILITY));
+        this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DEVICETAGID));
@@ -2047,154 +2062,155 @@ public class Prescription extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.mp101 = json.getString("mp101");
-            this.mp101do = json.getString("mp101do");
-            this.mp101f = json.getString("mp101f");
-            this.mp101du = json.getString("mp101du");
-            this.mp102 = json.getString("mp102");
-            this.mp102do = json.getString("mp102do");
-            this.mp102f = json.getString("mp102f");
-            this.mp102du = json.getString("mp102du");
-            this.mp103 = json.getString("mp103");
-            this.mp103do = json.getString("mp103do");
-            this.mp103f = json.getString("mp103f");
-            this.mp103du = json.getString("mp103du");
-            this.mp104 = json.getString("mp104");
-            this.mp104do = json.getString("mp104do");
-            this.mp104f = json.getString("mp104f");
-            this.mp104du = json.getString("mp104du");
-            this.mp105 = json.getString("mp105");
-            this.mp105do = json.getString("mp105do");
-            this.mp105f = json.getString("mp105f");
-            this.mp105du = json.getString("mp105du");
-            this.mp106 = json.getString("mp106");
-            this.mp106do = json.getString("mp106do");
-            this.mp106f = json.getString("mp106f");
-            this.mp106du = json.getString("mp106du");
-            this.mp107 = json.getString("mp107");
-            this.mp107do = json.getString("mp107do");
-            this.mp107f = json.getString("mp107f");
-            this.mp107du = json.getString("mp107du");
-            this.mp108 = json.getString("mp108");
-            this.mp108do = json.getString("mp108do");
-            this.mp108f = json.getString("mp108f");
-            this.mp108du = json.getString("mp108du");
-            this.mp109 = json.getString("mp109");
-            this.mp109do = json.getString("mp109do");
-            this.mp109f = json.getString("mp109f");
-            this.mp109du = json.getString("mp109du");
-            this.mp110 = json.getString("mp110");
-            this.mp110do = json.getString("mp110do");
-            this.mp110f = json.getString("mp110f");
-            this.mp110du = json.getString("mp110du");
-            this.mp111 = json.getString("mp111");
-            this.mp111do = json.getString("mp111do");
-            this.mp111f = json.getString("mp111f");
-            this.mp111du = json.getString("mp111du");
-            this.mp112 = json.getString("mp112");
-            this.mp112do = json.getString("mp112do");
-            this.mp112f = json.getString("mp112f");
-            this.mp112du = json.getString("mp112du");
-            this.mp113 = json.getString("mp113");
-            this.mp113do = json.getString("mp113do");
-            this.mp113f = json.getString("mp113f");
-            this.mp113du = json.getString("mp113du");
-            this.mp114 = json.getString("mp114");
-            this.mp114do = json.getString("mp114do");
-            this.mp114f = json.getString("mp114f");
-            this.mp114du = json.getString("mp114du");
-            this.mp115 = json.getString("mp115");
-            this.mp115do = json.getString("mp115do");
-            this.mp115f = json.getString("mp115f");
-            this.mp115du = json.getString("mp115du");
-            this.mp116 = json.getString("mp116");
-            this.mp116do = json.getString("mp116do");
-            this.mp116f = json.getString("mp116f");
-            this.mp116du = json.getString("mp116du");
-            this.mp117 = json.getString("mp117");
-            this.mp117do = json.getString("mp117do");
-            this.mp117f = json.getString("mp117f");
-            this.mp117du = json.getString("mp117du");
-            this.mp118 = json.getString("mp118");
-            this.mp118do = json.getString("mp118do");
-            this.mp118f = json.getString("mp118f");
-            this.mp118du = json.getString("mp118du");
-            this.mp119 = json.getString("mp119");
-            this.mp119do = json.getString("mp119do");
-            this.mp119f = json.getString("mp119f");
-            this.mp119du = json.getString("mp119du");
-            this.mp120 = json.getString("mp120");
-            this.mp120do = json.getString("mp120do");
-            this.mp120f = json.getString("mp120f");
-            this.mp120du = json.getString("mp120du");
-            this.mp121 = json.getString("mp121");
-            this.mp121do = json.getString("mp121do");
-            this.mp121f = json.getString("mp121f");
-            this.mp121du = json.getString("mp121du");
-            this.mp122 = json.getString("mp122");
-            this.mp122do = json.getString("mp122do");
-            this.mp122f = json.getString("mp122f");
-            this.mp122du = json.getString("mp122du");
-            this.mp123 = json.getString("mp123");
-            this.mp123do = json.getString("mp123do");
-            this.mp123f = json.getString("mp123f");
-            this.mp123du = json.getString("mp123du");
-            this.mp124 = json.getString("mp124");
-            this.mp124do = json.getString("mp124do");
-            this.mp124f = json.getString("mp124f");
-            this.mp124du = json.getString("mp124du");
-            this.mp125 = json.getString("mp125");
-            this.mp125do = json.getString("mp125do");
-            this.mp125f = json.getString("mp125f");
-            this.mp125du = json.getString("mp125du");
-            this.mp126 = json.getString("mp126");
-            this.mp126do = json.getString("mp126do");
-            this.mp126f = json.getString("mp126f");
-            this.mp126du = json.getString("mp126du");
-            this.mp127 = json.getString("mp127");
-            this.mp127do = json.getString("mp127do");
-            this.mp127f = json.getString("mp127f");
-            this.mp127du = json.getString("mp127du");
-            this.mp128 = json.getString("mp128");
-            this.mp128do = json.getString("mp128do");
-            this.mp128f = json.getString("mp128f");
-            this.mp128du = json.getString("mp128du");
-            this.mp129 = json.getString("mp129");
-            this.mp129do = json.getString("mp129do");
-            this.mp129f = json.getString("mp129f");
-            this.mp129du = json.getString("mp129du");
-            this.mp130 = json.getString("mp130");
-            this.mp130do = json.getString("mp130do");
-            this.mp130f = json.getString("mp130f");
-            this.mp130du = json.getString("mp130du");
-            this.mp131 = json.getString("mp131");
-            this.mp131do = json.getString("mp131do");
-            this.mp131f = json.getString("mp131f");
-            this.mp131du = json.getString("mp131du");
-            this.mp132 = json.getString("mp132");
-            this.mp132do = json.getString("mp132do");
-            this.mp132f = json.getString("mp132f");
-            this.mp132du = json.getString("mp132du");
-            this.mp133 = json.getString("mp133");
-            this.mp133do = json.getString("mp133do");
-            this.mp133f = json.getString("mp133f");
-            this.mp133du = json.getString("mp133du");
-            this.mp134 = json.getString("mp134");
-            this.mp134do = json.getString("mp134do");
-            this.mp134f = json.getString("mp134f");
-            this.mp134du = json.getString("mp134du");
-            this.mp135 = json.getString("mp135");
-            this.mp135do = json.getString("mp135do");
-            this.mp135f = json.getString("mp135f");
-            this.mp135du = json.getString("mp135du");
-            this.mp136 = json.getString("mp136");
-            this.mp136do = json.getString("mp136do");
-            this.mp136f = json.getString("mp136f");
-            this.mp136du = json.getString("mp136du");
-            this.mp137 = json.getString("mp137");
-            this.mp137do = json.getString("mp137do");
-            this.mp137f = json.getString("mp137f");
-            this.mp137du = json.getString("mp137du");
+            this.mp101 = json.has("mp101") ? json.getString("mp101") : "";
+            this.mp101do = json.has("mp101do") ? json.getString("mp101do") : "";
+            this.mp101f = json.has("mp101f") ? json.getString("mp101f") : "";
+            this.mp101du = json.has("mp101du") ? json.getString("mp101du") : "";
+            this.mp102 = json.has("mp102") ? json.getString("mp102") : "";
+            this.mp102do = json.has("mp102do") ? json.getString("mp102do") : "";
+            this.mp102f = json.has("mp102f") ? json.getString("mp102f") : "";
+            this.mp102du = json.has("mp102du") ? json.getString("mp102du") : "";
+            this.mp103 = json.has("mp103") ? json.getString("mp103") : "";
+            this.mp103do = json.has("mp103do") ? json.getString("mp103do") : "";
+            this.mp103f = json.has("mp103f") ? json.getString("mp103f") : "";
+            this.mp103du = json.has("mp103du") ? json.getString("mp103du") : "";
+            this.mp104 = json.has("mp104") ? json.getString("mp104") : "";
+            this.mp104do = json.has("mp104do") ? json.getString("mp104do") : "";
+            this.mp104f = json.has("mp104f") ? json.getString("mp104f") : "";
+            this.mp104du = json.has("mp104du") ? json.getString("mp104du") : "";
+            this.mp105 = json.has("mp105") ? json.getString("mp105") : "";
+            this.mp105do = json.has("mp105do") ? json.getString("mp105do") : "";
+            this.mp105f = json.has("mp105f") ? json.getString("mp105f") : "";
+            this.mp105du = json.has("mp105du") ? json.getString("mp105du") : "";
+            this.mp106 = json.has("mp106") ? json.getString("mp106") : "";
+            this.mp106do = json.has("mp106do") ? json.getString("mp106do") : "";
+            this.mp106f = json.has("mp106f") ? json.getString("mp106f") : "";
+            this.mp106du = json.has("mp106du") ? json.getString("mp106du") : "";
+            this.mp107 = json.has("mp107") ? json.getString("mp107") : "";
+            this.mp107do = json.has("mp107do") ? json.getString("mp107do") : "";
+            this.mp107f = json.has("mp107f") ? json.getString("mp107f") : "";
+            this.mp107du = json.has("mp107du") ? json.getString("mp107du") : "";
+            this.mp108 = json.has("mp108") ? json.getString("mp108") : "";
+            this.mp108do = json.has("mp108do") ? json.getString("mp108do") : "";
+            this.mp108f = json.has("mp108f") ? json.getString("mp108f") : "";
+            this.mp108du = json.has("mp108du") ? json.getString("mp108du") : "";
+            this.mp109 = json.has("mp109") ? json.getString("mp109") : "";
+            this.mp109do = json.has("mp109do") ? json.getString("mp109do") : "";
+            this.mp109f = json.has("mp109f") ? json.getString("mp109f") : "";
+            this.mp109du = json.has("mp109du") ? json.getString("mp109du") : "";
+            this.mp110 = json.has("mp110") ? json.getString("mp110") : "";
+            this.mp110do = json.has("mp110do") ? json.getString("mp110do") : "";
+            this.mp110f = json.has("mp110f") ? json.getString("mp110f") : "";
+            this.mp110du = json.has("mp110du") ? json.getString("mp110du") : "";
+            this.mp111 = json.has("mp111") ? json.getString("mp111") : "";
+            this.mp111do = json.has("mp111do") ? json.getString("mp111do") : "";
+            this.mp111f = json.has("mp111f") ? json.getString("mp111f") : "";
+            this.mp111du = json.has("mp111du") ? json.getString("mp111du") : "";
+            this.mp112 = json.has("mp112") ? json.getString("mp112") : "";
+            this.mp112do = json.has("mp112do") ? json.getString("mp112do") : "";
+            this.mp112f = json.has("mp112f") ? json.getString("mp112f") : "";
+            this.mp112du = json.has("mp112du") ? json.getString("mp112du") : "";
+            this.mp113 = json.has("mp113") ? json.getString("mp113") : "";
+            this.mp113do = json.has("mp113do") ? json.getString("mp113do") : "";
+            this.mp113f = json.has("mp113f") ? json.getString("mp113f") : "";
+            this.mp113du = json.has("mp113du") ? json.getString("mp113du") : "";
+            this.mp114 = json.has("mp114") ? json.getString("mp114") : "";
+            this.mp114do = json.has("mp114do") ? json.getString("mp114do") : "";
+            this.mp114f = json.has("mp114f") ? json.getString("mp114f") : "";
+            this.mp114du = json.has("mp114du") ? json.getString("mp114du") : "";
+            this.mp115 = json.has("mp115") ? json.getString("mp115") : "";
+            this.mp115do = json.has("mp115do") ? json.getString("mp115do") : "";
+            this.mp115f = json.has("mp115f") ? json.getString("mp115f") : "";
+            this.mp115du = json.has("mp115du") ? json.getString("mp115du") : "";
+            this.mp116 = json.has("mp116") ? json.getString("mp116") : "";
+            this.mp116do = json.has("mp116do") ? json.getString("mp116do") : "";
+            this.mp116f = json.has("mp116f") ? json.getString("mp116f") : "";
+            this.mp116du = json.has("mp116du") ? json.getString("mp116du") : "";
+            this.mp117 = json.has("mp117") ? json.getString("mp117") : "";
+            this.mp117do = json.has("mp117do") ? json.getString("mp117do") : "";
+            this.mp117f = json.has("mp117f") ? json.getString("mp117f") : "";
+            this.mp117du = json.has("mp117du") ? json.getString("mp117du") : "";
+            this.mp118 = json.has("mp118") ? json.getString("mp118") : "";
+            this.mp118do = json.has("mp118do") ? json.getString("mp118do") : "";
+            this.mp118f = json.has("mp118f") ? json.getString("mp118f") : "";
+            this.mp118du = json.has("mp118du") ? json.getString("mp118du") : "";
+            this.mp119 = json.has("mp119") ? json.getString("mp119") : "";
+            this.mp119do = json.has("mp119do") ? json.getString("mp119do") : "";
+            this.mp119f = json.has("mp119f") ? json.getString("mp119f") : "";
+            this.mp119du = json.has("mp119du") ? json.getString("mp119du") : "";
+            this.mp120 = json.has("mp120") ? json.getString("mp120") : "";
+            this.mp120do = json.has("mp120do") ? json.getString("mp120do") : "";
+            this.mp120f = json.has("mp120f") ? json.getString("mp120f") : "";
+            this.mp120du = json.has("mp120du") ? json.getString("mp120du") : "";
+            this.mp121 = json.has("mp121") ? json.getString("mp121") : "";
+            this.mp121do = json.has("mp121do") ? json.getString("mp121do") : "";
+            this.mp121f = json.has("mp121f") ? json.getString("mp121f") : "";
+            this.mp121du = json.has("mp121du") ? json.getString("mp121du") : "";
+            this.mp122 = json.has("mp122") ? json.getString("mp122") : "";
+            this.mp122do = json.has("mp122do") ? json.getString("mp122do") : "";
+            this.mp122f = json.has("mp122f") ? json.getString("mp122f") : "";
+            this.mp122du = json.has("mp122du") ? json.getString("mp122du") : "";
+            this.mp123 = json.has("mp123") ? json.getString("mp123") : "";
+            this.mp123do = json.has("mp123do") ? json.getString("mp123do") : "";
+            this.mp123f = json.has("mp123f") ? json.getString("mp123f") : "";
+            this.mp123du = json.has("mp123du") ? json.getString("mp123du") : "";
+            this.mp124 = json.has("mp124") ? json.getString("mp124") : "";
+            this.mp124do = json.has("mp124do") ? json.getString("mp124do") : "";
+            this.mp124f = json.has("mp124f") ? json.getString("mp124f") : "";
+            this.mp124du = json.has("mp124du") ? json.getString("mp124du") : "";
+            this.mp125 = json.has("mp125") ? json.getString("mp125") : "";
+            this.mp125do = json.has("mp125do") ? json.getString("mp125do") : "";
+            this.mp125f = json.has("mp125f") ? json.getString("mp125f") : "";
+            this.mp125du = json.has("mp125du") ? json.getString("mp125du") : "";
+            this.mp126 = json.has("mp126") ? json.getString("mp126") : "";
+            this.mp126do = json.has("mp126do") ? json.getString("mp126do") : "";
+            this.mp126f = json.has("mp126f") ? json.getString("mp126f") : "";
+            this.mp126du = json.has("mp126du") ? json.getString("mp126du") : "";
+            this.mp127 = json.has("mp127") ? json.getString("mp127") : "";
+            this.mp127do = json.has("mp127do") ? json.getString("mp127do") : "";
+            this.mp127f = json.has("mp127f") ? json.getString("mp127f") : "";
+            this.mp127du = json.has("mp127du") ? json.getString("mp127du") : "";
+            this.mp128 = json.has("mp128") ? json.getString("mp128") : "";
+            this.mp128do = json.has("mp128do") ? json.getString("mp128do") : "";
+            this.mp128f = json.has("mp128f") ? json.getString("mp128f") : "";
+            this.mp128du = json.has("mp128du") ? json.getString("mp128du") : "";
+            this.mp129 = json.has("mp129") ? json.getString("mp129") : "";
+            this.mp129do = json.has("mp129do") ? json.getString("mp129do") : "";
+            this.mp129f = json.has("mp129f") ? json.getString("mp129f") : "";
+            this.mp129du = json.has("mp129du") ? json.getString("mp129du") : "";
+            this.mp130 = json.has("mp130") ? json.getString("mp130") : "";
+            this.mp130do = json.has("mp130do") ? json.getString("mp130do") : "";
+            this.mp130f = json.has("mp130f") ? json.getString("mp130f") : "";
+            this.mp130du = json.has("mp130du") ? json.getString("mp130du") : "";
+            this.mp131 = json.has("mp131") ? json.getString("mp131") : "";
+            this.mp131do = json.has("mp131do") ? json.getString("mp131do") : "";
+            this.mp131f = json.has("mp131f") ? json.getString("mp131f") : "";
+            this.mp131du = json.has("mp131du") ? json.getString("mp131du") : "";
+            this.mp132 = json.has("mp132") ? json.getString("mp132") : "";
+            this.mp132do = json.has("mp132do") ? json.getString("mp132do") : "";
+            this.mp132f = json.has("mp132f") ? json.getString("mp132f") : "";
+            this.mp132du = json.has("mp132du") ? json.getString("mp132du") : "";
+            this.mp133 = json.has("mp133") ? json.getString("mp133") : "";
+            this.mp133do = json.has("mp133do") ? json.getString("mp133do") : "";
+            this.mp133f = json.has("mp133f") ? json.getString("mp133f") : "";
+            this.mp133du = json.has("mp133du") ? json.getString("mp133du") : "";
+            this.mp134 = json.has("mp134") ? json.getString("mp134") : "";
+            this.mp134do = json.has("mp134do") ? json.getString("mp134do") : "";
+            this.mp134f = json.has("mp134f") ? json.getString("mp134f") : "";
+            this.mp134du = json.has("mp134du") ? json.getString("mp134du") : "";
+            this.mp135 = json.has("mp135") ? json.getString("mp135") : "";
+            this.mp135do = json.has("mp135do") ? json.getString("mp135do") : "";
+            this.mp135f = json.has("mp135f") ? json.getString("mp135f") : "";
+            this.mp135du = json.has("mp135du") ? json.getString("mp135du") : "";
+            this.mp136 = json.has("mp136") ? json.getString("mp136") : "";
+            this.mp136do = json.has("mp136do") ? json.getString("mp136do") : "";
+            this.mp136f = json.has("mp136f") ? json.getString("mp136f") : "";
+            this.mp136du = json.has("mp136du") ? json.getString("mp136du") : "";
+            this.mp137 = json.has("mp137") ? json.getString("mp137") : "";
+            this.mp137do = json.has("mp137do") ? json.getString("mp137do") : "";
+            this.mp137f = json.has("mp137f") ? json.getString("mp137f") : "";
+            this.mp137du = json.has("mp137du") ? json.getString("mp137du") : "";
+            this.mp137du = json.has("mp101") ? json.getString("mp137du") : "";
 
         }
     }
@@ -2207,6 +2223,8 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_UUID, this.uuid);
         json.put(PRESCRIPTIONTable.COLUMN_PRES, this.prno);
         json.put(PRESCRIPTIONTable.COLUMN_USERNAME, this.userName);
+        json.put(PRESCRIPTIONTable.COLUMN_FACILITY, this.facility);
+        json.put(PRESCRIPTIONTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(PRESCRIPTIONTable.COLUMN_SYSDATE, this.sysDate);
         json.put(PRESCRIPTIONTable.COLUMN_DEVICEID, this.deviceId);
         json.put(PRESCRIPTIONTable.COLUMN_DEVICETAGID, this.deviceTag);

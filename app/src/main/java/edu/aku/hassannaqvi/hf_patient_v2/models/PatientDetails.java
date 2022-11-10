@@ -26,6 +26,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     private final String TAG = "PatientDetails";
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
+    public String facilityCode = _EMPTY_;
     public String date = _EMPTY_;
     public String time = _EMPTY_;
     public String ss100 = _EMPTY_;
@@ -339,6 +340,16 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setFacility(String facility) {
         this.facility = facility;
         notifyPropertyChanged(BR.facility);
+    }
+
+    @Bindable
+    public String getFacilityCode() {
+        return facilityCode;
+    }
+
+    public void setFacilityCode(String facilityCode) {
+        this.facilityCode = facilityCode;
+        notifyPropertyChanged(BR.facilityCode);
     }
 
     @Bindable
@@ -1610,7 +1621,6 @@ public class PatientDetails extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.prno = json.getString("prno");
-            this.facility = json.getString("facility");
             this.date = json.getString("date");
             this.time = json.getString("time");
             this.ss100 = json.getString("ss100");
@@ -1754,6 +1764,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         json.put(PDContract.PDTable.COLUMN_ID, this.id);
         json.put(PDContract.PDTable.COLUMN_UID, this.uid);
         json.put(PDContract.PDTable.COLUMN_USERNAME, this.userName);
+        json.put(PDContract.PDTable.COLUMN_FACILITY, this.facility);
+        json.put(PDContract.PDTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(PDContract.PDTable.COLUMN_SYSDATE, this.sysDate);
         json.put(PDContract.PDTable.COLUMN_DEVICEID, this.deviceId);
         json.put(PDContract.PDTable.COLUMN_DEVICETAGID, this.deviceTag);
@@ -1773,7 +1785,6 @@ public class PatientDetails extends BaseObservable implements Observable {
         Log.d(TAG, "sPDtoString: ");
         JSONObject json = new JSONObject();
         json.put("prno", prno)
-                .put("facility", facility)
                 .put("date", date)
                 .put("time", time)
                 .put("ss100", ss100)

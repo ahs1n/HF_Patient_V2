@@ -26,6 +26,7 @@ public class Complaints extends BaseObservable implements Observable {
     private final String TAG = "Complaints";
     public String prno = _EMPTY_;
     public String facility = _EMPTY_;
+    public String facilityCode = _EMPTY_;
     public String pc200 = _EMPTY_;
     public String pc201 = _EMPTY_;
     public String pc202 = _EMPTY_;
@@ -121,6 +122,8 @@ public class Complaints extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setUuid(MainApp.patientDetails.getUid());
         setPrno(MainApp.patientDetails.getPrno());
+        setFacility(MainApp.patientDetails.getFacility());
+        setFacilityCode(MainApp.patientDetails.getFacilityCode());
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -282,6 +285,16 @@ public class Complaints extends BaseObservable implements Observable {
     public void setFacility(String facility) {
         this.facility = facility;
         notifyPropertyChanged(BR.facility);
+    }
+
+    @Bindable
+    public String getFacilityCode() {
+        return facilityCode;
+    }
+
+    public void setFacilityCode(String facilityCode) {
+        this.facilityCode = facilityCode;
+        notifyPropertyChanged(BR.facilityCode);
     }
 
     @Bindable
@@ -1089,6 +1102,8 @@ public class Complaints extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_UUID));
         this.prno = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_PRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_USERNAME));
+        this.facility = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY));
+        this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_DEVICETAGID));
@@ -1108,73 +1123,73 @@ public class Complaints extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.pc200 = json.getString("pc200");
-            this.pc201 = json.getString("pc201");
-            this.pc202 = json.getString("pc202");
-            this.pc203 = json.getString("pc203");
-            this.pc204 = json.getString("pc204");
-            this.pc205 = json.getString("pc205");
-            this.pc206 = json.getString("pc206");
-            this.pc207 = json.getString("pc207");
-            this.pc208 = json.getString("pc208");
-            this.pc209 = json.getString("pc209");
-            this.pc210 = json.getString("pc210");
-            this.pc211 = json.getString("pc211");
-            this.pc212 = json.getString("pc212");
-            this.pc213 = json.getString("pc213");
-            this.pc214 = json.getString("pc214");
-            this.pc215 = json.getString("pc215");
-            this.pc216 = json.getString("pc216");
-            this.pc217 = json.getString("pc217");
-            this.pc218 = json.getString("pc218");
-            this.pc219 = json.getString("pc219");
-            this.pc220 = json.getString("pc220");
-            this.pc221 = json.getString("pc221");
-            this.pc222 = json.getString("pc222");
-            this.pc223 = json.getString("pc223");
-            this.pc224 = json.getString("pc224");
-            this.pc225 = json.getString("pc225");
-            this.pc226 = json.getString("pc226");
-            this.pc227 = json.getString("pc227");
-            this.pc228 = json.getString("pc228");
-            this.pc229 = json.getString("pc229");
-            this.pc230 = json.getString("pc230");
-            this.pc231 = json.getString("pc231");
-            this.pc232 = json.getString("pc232");
-            this.pc233 = json.getString("pc233");
-            this.pc234 = json.getString("pc234");
-            this.pc235 = json.getString("pc235");
-            this.pc236 = json.getString("pc236");
-            this.pc237 = json.getString("pc237");
-            this.pc238 = json.getString("pc238");
-            this.pc239 = json.getString("pc239");
-            this.pc240 = json.getString("pc240");
-            this.pc241 = json.getString("pc241");
-            this.pc242 = json.getString("pc242");
-            this.pc243 = json.getString("pc243");
-            this.pc244 = json.getString("pc244");
-            this.pc245 = json.getString("pc245");
-            this.pc246 = json.getString("pc246");
-            this.pc247 = json.getString("pc247");
-            this.pc248 = json.getString("pc248");
-            this.pc249 = json.getString("pc249");
-            this.pc250 = json.getString("pc250");
-            this.pc251 = json.getString("pc251");
-            this.pc252 = json.getString("pc252");
-            this.pc253 = json.getString("pc253");
-            this.pc254 = json.getString("pc254");
-            this.pc255 = json.getString("pc255");
-            this.pc256 = json.getString("pc256");
-            this.pc257 = json.getString("pc257");
-            this.pc258 = json.getString("pc258");
-            this.pc259 = json.getString("pc259");
-            this.pc2961 = json.getString("pc2961");
-            this.pc2961x = json.getString("pc2961x");
-            this.pc2962 = json.getString("pc2962");
-            this.pc2962x = json.getString("pc2962x");
-            this.pc2963 = json.getString("pc2963");
-            this.pc2963x = json.getString("pc2963x");
-            this.pc200nr = json.getString("pc200nr");
+            this.pc200 = json.has("pc200") ? json.getString("pc200") : "";
+            this.pc201 = json.has("pc201") ? json.getString("pc201") : "";
+            this.pc202 = json.has("pc202") ? json.getString("pc202") : "";
+            this.pc203 = json.has("pc203") ? json.getString("pc203") : "";
+            this.pc204 = json.has("pc204") ? json.getString("pc204") : "";
+            this.pc205 = json.has("pc205") ? json.getString("pc205") : "";
+            this.pc206 = json.has("pc206") ? json.getString("pc206") : "";
+            this.pc207 = json.has("pc207") ? json.getString("pc207") : "";
+            this.pc208 = json.has("pc208") ? json.getString("pc208") : "";
+            this.pc209 = json.has("pc209") ? json.getString("pc209") : "";
+            this.pc210 = json.has("pc210") ? json.getString("pc210") : "";
+            this.pc211 = json.has("pc211") ? json.getString("pc211") : "";
+            this.pc212 = json.has("pc212") ? json.getString("pc212") : "";
+            this.pc213 = json.has("pc213") ? json.getString("pc213") : "";
+            this.pc214 = json.has("pc214") ? json.getString("pc214") : "";
+            this.pc215 = json.has("pc215") ? json.getString("pc215") : "";
+            this.pc216 = json.has("pc216") ? json.getString("pc216") : "";
+            this.pc217 = json.has("pc217") ? json.getString("pc217") : "";
+            this.pc218 = json.has("pc218") ? json.getString("pc218") : "";
+            this.pc219 = json.has("pc219") ? json.getString("pc219") : "";
+            this.pc220 = json.has("pc220") ? json.getString("pc220") : "";
+            this.pc221 = json.has("pc221") ? json.getString("pc221") : "";
+            this.pc222 = json.has("pc222") ? json.getString("pc222") : "";
+            this.pc223 = json.has("pc223") ? json.getString("pc223") : "";
+            this.pc224 = json.has("pc224") ? json.getString("pc224") : "";
+            this.pc225 = json.has("pc225") ? json.getString("pc225") : "";
+            this.pc226 = json.has("pc226") ? json.getString("pc226") : "";
+            this.pc227 = json.has("pc227") ? json.getString("pc227") : "";
+            this.pc228 = json.has("pc228") ? json.getString("pc228") : "";
+            this.pc229 = json.has("pc229") ? json.getString("pc229") : "";
+            this.pc230 = json.has("pc230") ? json.getString("pc230") : "";
+            this.pc231 = json.has("pc231") ? json.getString("pc231") : "";
+            this.pc232 = json.has("pc232") ? json.getString("pc232") : "";
+            this.pc233 = json.has("pc233") ? json.getString("pc233") : "";
+            this.pc234 = json.has("pc234") ? json.getString("pc234") : "";
+            this.pc235 = json.has("pc235") ? json.getString("pc235") : "";
+            this.pc236 = json.has("pc236") ? json.getString("pc236") : "";
+            this.pc237 = json.has("pc237") ? json.getString("pc237") : "";
+            this.pc238 = json.has("pc238") ? json.getString("pc238") : "";
+            this.pc239 = json.has("pc239") ? json.getString("pc239") : "";
+            this.pc240 = json.has("pc240") ? json.getString("pc240") : "";
+            this.pc241 = json.has("pc241") ? json.getString("pc241") : "";
+            this.pc242 = json.has("pc242") ? json.getString("pc242") : "";
+            this.pc243 = json.has("pc243") ? json.getString("pc243") : "";
+            this.pc244 = json.has("pc244") ? json.getString("pc244") : "";
+            this.pc245 = json.has("pc245") ? json.getString("pc245") : "";
+            this.pc246 = json.has("pc246") ? json.getString("pc246") : "";
+            this.pc247 = json.has("pc247") ? json.getString("pc247") : "";
+            this.pc248 = json.has("pc248") ? json.getString("pc248") : "";
+            this.pc249 = json.has("pc249") ? json.getString("pc249") : "";
+            this.pc250 = json.has("pc250") ? json.getString("pc250") : "";
+            this.pc251 = json.has("pc251") ? json.getString("pc251") : "";
+            this.pc252 = json.has("pc252") ? json.getString("pc252") : "";
+            this.pc253 = json.has("pc253") ? json.getString("pc253") : "";
+            this.pc254 = json.has("pc254") ? json.getString("pc254") : "";
+            this.pc255 = json.has("pc255") ? json.getString("pc255") : "";
+            this.pc256 = json.has("pc256") ? json.getString("pc256") : "";
+            this.pc257 = json.has("pc257") ? json.getString("pc257") : "";
+            this.pc258 = json.has("pc258") ? json.getString("pc258") : "";
+            this.pc259 = json.has("pc259") ? json.getString("pc259") : "";
+            this.pc2961 = json.has("pc2961") ? json.getString("pc2961") : "";
+            this.pc2961x = json.has("pc2961x") ? json.getString("pc2961x") : "";
+            this.pc2962 = json.has("pc2962") ? json.getString("pc2962") : "";
+            this.pc2962x = json.has("pc2962x") ? json.getString("pc2962x") : "";
+            this.pc2963 = json.has("pc2963") ? json.getString("pc2963") : "";
+            this.pc2963x = json.has("pc2963x") ? json.getString("pc2963x") : "";
+            this.pc200nr = json.has("pc200nr") ? json.getString("pc200nr") : "";
 
         }
     }
@@ -1187,6 +1202,8 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_UUID, this.uuid);
         json.put(COMPLAINTSTable.COLUMN_PRNO, this.prno);
         json.put(COMPLAINTSTable.COLUMN_USERNAME, this.userName);
+        json.put(COMPLAINTSTable.COLUMN_FACILITY, this.facility);
+        json.put(COMPLAINTSTable.COLUMN_FACILITY_CODE, this.facilityCode);
         json.put(COMPLAINTSTable.COLUMN_SYSDATE, this.sysDate);
         json.put(COMPLAINTSTable.COLUMN_DEVICEID, this.deviceId);
         json.put(COMPLAINTSTable.COLUMN_DEVICETAGID, this.deviceTag);

@@ -54,8 +54,10 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         patientDetails.setSs204a("1");
         Camps camp = new Gson().fromJson(SharedStorage.INSTANCE.getSelectedFacilityData(this), Camps.class);
         String selectedFacilityName = camp.getFacilityName();
+        String selectedFacilityCode = camp.getFacilityCode();
         bi.facility.setText(selectedFacilityName);
         patientDetails.facility = selectedFacilityName;
+        patientDetails.setFacilityCode(selectedFacilityCode);
     }
 
     private void populateSpinner() {
