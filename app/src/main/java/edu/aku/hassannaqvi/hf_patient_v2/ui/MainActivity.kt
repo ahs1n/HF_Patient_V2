@@ -333,7 +333,7 @@ class MainActivity : AppCompatActivity() {
 
         // Get Total Forms
         val totalFormsList: ArrayList<PatientDetails> =
-            db.getTodayForms(sysdateToday) as ArrayList<PatientDetails>
+            db.getTodayForms(null) as ArrayList<PatientDetails>
         if (totalFormsList.isNotEmpty()) {
             val totalForms: Int = totalFormsList.count()
             val _unSyncedTotal: ArrayList<PatientDetails> = ArrayList()
