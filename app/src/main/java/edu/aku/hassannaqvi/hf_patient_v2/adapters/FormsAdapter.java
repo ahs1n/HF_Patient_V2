@@ -120,15 +120,15 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         if (fc.get(position).getSs10702().equals(""))
             holder.visit.setText("");
-        else holder.visit.setText(" | Antenatal ");
+        else holder.visit.setText(holder.visit.length() > 0 ? " | Antenatal " : "Antenatal");
 
         if (fc.get(position).getSs10703().equals(""))
             holder.visit.setText("");
-        else holder.visit.setText(" | Vaccination ");
+        else holder.visit.setText(holder.visit.length() > 0 ? " | Vaccination " : "Vaccination");
 
         if (fc.get(position).getSs10704().equals(""))
             holder.visit.setText("");
-        else holder.visit.setText(" | Post-Natal ");
+        else holder.visit.setText(holder.visit.length() > 0 ? " | Post-Natal " : "Post-Natal");
 
 //        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
         holder.status.setBackgroundColor(iColor);

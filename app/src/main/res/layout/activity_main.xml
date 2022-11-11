@@ -70,7 +70,8 @@
                     android:id="@+id/statisticLayout"
                     layout="@layout/statistic_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    app:callback="@{callback}"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
