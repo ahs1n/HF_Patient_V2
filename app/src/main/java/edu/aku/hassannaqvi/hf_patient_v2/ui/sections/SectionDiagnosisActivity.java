@@ -347,7 +347,7 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
 
         if (updateDB()) {
             finish();
-            if (patientDetails.ss104y.length() > 0 && Integer.parseInt(patientDetails.ss104y) < 5 && patientDetails.ss10703.equals("3")) {
+            if (patientDetails.ss104y.length() > 0 && Integer.parseInt(patientDetails.ss104y) < 5) {
                 vaccination = new Vaccination();
                 startActivity(new Intent(this, SectionVaccinationActivity.class));
             } else {
