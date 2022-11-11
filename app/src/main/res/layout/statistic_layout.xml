@@ -276,14 +276,14 @@
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
                         android:paddingBottom="@dimen/_3sdp"
-                        android:text="Today's ANC/PNC"
+                        android:text="Total Forms"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_9ssp"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />
 
                     <TextView
-                        android:id="@+id/ap"
+                        android:id="@+id/totalF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
@@ -343,7 +343,7 @@
                         android:weightSum="1">
 
                         <TextView
-                            android:id="@+id/apSynced"
+                            android:id="@+id/totalFSynced"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.5"
@@ -356,7 +356,7 @@
 
 
                         <TextView
-                            android:id="@+id/apUnSynced"
+                            android:id="@+id/totalFUnSynced"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.5"

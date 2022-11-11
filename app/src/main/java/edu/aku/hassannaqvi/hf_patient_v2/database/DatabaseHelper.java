@@ -1513,8 +1513,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         };
-        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
-        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
+//        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+
+        String whereClause;
+        String[] whereArgs;
+
+        if (sysdate != null) {
+            whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
+            whereArgs = new String[]{"%" + sysdate + " %"};
+        } else {
+            whereClause = null;
+            whereArgs = null;
+        }
+
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;

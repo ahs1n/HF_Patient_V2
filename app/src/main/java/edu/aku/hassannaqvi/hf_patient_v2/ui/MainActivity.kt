@@ -296,13 +296,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initSummary() {
         // Get All Patient Details
-        val _todayForms: ArrayList<PatientDetails> =
+        val todayForms: ArrayList<PatientDetails> =
             db.getTodayForms(sysdateToday) as ArrayList<PatientDetails>
-        if (_todayForms.isNotEmpty()) {
-            val totalTodayForms: Int = _todayForms.count()
+        if (todayForms.isNotEmpty()) {
+            val totalTodayForms: Int = todayForms.count()
             val _unSyncedForms: ArrayList<PatientDetails> = ArrayList()
             val _syncedForms: ArrayList<PatientDetails> = ArrayList()
-            _todayForms.forEach {
+            todayForms.forEach {
                 if (it.synced.isEmpty())
                     _unSyncedForms.add(it)
                 else
@@ -314,13 +314,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Get All Vaccination
-        val _todayVacc: ArrayList<Vaccination> =
+        val todayVacc: ArrayList<Vaccination> =
             db.getTodayVacc(sysdateToday) as ArrayList<Vaccination>
-        if (_todayVacc.isNotEmpty()) {
-            val totalTodayVacc: Int = _todayVacc.count()
+        if (todayVacc.isNotEmpty()) {
+            val totalTodayVacc: Int = todayVacc.count()
             val _unSyncedVacc: ArrayList<Vaccination> = ArrayList()
             val _syncedVacc: ArrayList<Vaccination> = ArrayList()
-            _todayVacc.forEach {
+            todayVacc.forEach {
                 if (it.synced.isEmpty())
                     _unSyncedVacc.add(it)
                 else
@@ -329,6 +329,24 @@ class MainActivity : AppCompatActivity() {
             bi.statisticLayout.tv.text = totalTodayVacc.toString()
             tvUnSynced.text = _unSyncedVacc.count().toString()
             tvSynced.text = _syncedVacc.count().toString()
+        }
+
+        // Get Total Forms
+        val totalFormsList: ArrayList<PatientDetails> =
+            db.getTodayForms(sysdateToday) as ArrayList<PatientDetails>
+        if (totalFormsList.isNotEmpty()) {
+            val totalForms: Int = totalFormsList.count()
+            val _unSyncedTotal: ArrayList<PatientDetails> = ArrayList()
+            val _syncedTotal: ArrayList<PatientDetails> = ArrayList()
+            totalFormsList.forEach {
+                if (it.synced.isEmpty())
+                    _unSyncedTotal.add(it)
+                else
+                    _syncedTotal.add(it)
+            }
+            bi.statisticLayout.totalF.text = totalForms.toString()
+            totalFUnSynced.text = _unSyncedTotal.count().toString()
+            totalFSynced.text = _syncedTotal.count().toString()
         }
     }
 

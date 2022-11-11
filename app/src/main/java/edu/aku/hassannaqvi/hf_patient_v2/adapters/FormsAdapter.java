@@ -114,21 +114,36 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.istatus.setText(fc.get(position).getiStatus());
 //        holder.visit.setText(fc.get(position).getSs10701() + " | " + fc.get(position).getSs10702() + " | " + fc.get(position).getSs10703() + " | " + fc.get(position).getSs10704());
 
-        if (fc.get(position).getSs10701().equals(""))
-            holder.visit.setText("");
-        else holder.visit.setText("OPD");
+        String visit = "";
+        if (!fc.get(position).getSs10701().equals(""))
+            visit += "OPD";
 
-        if (fc.get(position).getSs10702().equals(""))
-            holder.visit.setText("");
-        else holder.visit.setText(holder.visit.length() > 0 ? " | Antenatal " : "Antenatal");
+        if (!fc.get(position).getSs10702().equals(""))
+            visit += !visit.isEmpty() ? " | Antenatal " : "Antenatal";
 
-        if (fc.get(position).getSs10703().equals(""))
-            holder.visit.setText("");
-        else holder.visit.setText(holder.visit.length() > 0 ? " | Vaccination " : "Vaccination");
+        if (!fc.get(position).getSs10703().equals(""))
+            visit += !visit.isEmpty() ? " | Vaccination " : "Vaccination";
 
-        if (fc.get(position).getSs10704().equals(""))
-            holder.visit.setText("");
-        else holder.visit.setText(holder.visit.length() > 0 ? " | Post-Natal " : "Post-Natal");
+        if (!fc.get(position).getSs10704().equals(""))
+            visit += !visit.isEmpty() ? " | Post-Natal " : "Post-Natal";
+
+        holder.visit.setText(visit);
+
+//        if (fc.get(position).getSs10701().equals(""))
+//            holder.visit.setText("");
+//        else holder.visit.setText("OPD");
+//
+//        if (fc.get(position).getSs10702().equals(""))
+//            holder.visit.setText("");
+//        else holder.visit.setText(holder.visit.length() > 0 ? " | Antenatal " : "Antenatal");
+//
+//        if (fc.get(position).getSs10703().equals(""))
+//            holder.visit.setText("");
+//        else holder.visit.setText(holder.visit.length() > 0 ? " | Vaccination " : "Vaccination");
+//
+//        if (fc.get(position).getSs10704().equals(""))
+//            holder.visit.setText("");
+//        else holder.visit.setText(holder.visit.length() > 0 ? " | Post-Natal " : "Post-Natal");
 
 //        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
         holder.status.setBackgroundColor(iColor);
