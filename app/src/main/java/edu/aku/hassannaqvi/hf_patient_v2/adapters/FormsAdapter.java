@@ -108,10 +108,28 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         }*/
 
-        holder.hhno.setText(fc.get(position).getSs102() + "\t\t\t | \t\t\t" + fc.get(position).getSysDate());
-        holder.father.setText(" ( " + fc.get(position).getSs108() + " )");
-        holder.cluster.setText(fc.get(position).getSs107());
-        holder.istatus.setText(fc.get(position).getSs106());
+        holder.prno.setText(fc.get(position).getPrno() + "\t\t\t | \t\t\t" + fc.get(position).getSysDate());
+        holder.father.setText(" ( " + fc.get(position).getSs102() + " )");
+        holder.pName.setText(fc.get(position).getSs101());
+        holder.istatus.setText(fc.get(position).getiStatus());
+//        holder.visit.setText(fc.get(position).getSs10701() + " | " + fc.get(position).getSs10702() + " | " + fc.get(position).getSs10703() + " | " + fc.get(position).getSs10704());
+
+        if (fc.get(position).getSs10701().equals(""))
+            holder.visit.setText("");
+        else holder.visit.setText("OPD");
+
+        if (fc.get(position).getSs10702().equals(""))
+            holder.visit.setText("");
+        else holder.visit.setText(" | Antenatal ");
+
+        if (fc.get(position).getSs10703().equals(""))
+            holder.visit.setText("");
+        else holder.visit.setText(" | Vaccination ");
+
+        if (fc.get(position).getSs10704().equals(""))
+            holder.visit.setText("");
+        else holder.visit.setText(" | Post-Natal ");
+
 //        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
         holder.status.setBackgroundColor(iColor);
 
@@ -130,9 +148,9 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public RecyclerView rv;
-        public TextView sysdate;
-        public TextView cluster;
-        public TextView hhno;
+        public TextView visit;
+        public TextView pName;
+        public TextView prno;
         public TextView istatus;
         public ImageView status;
         public TextView father;
@@ -141,9 +159,9 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public ViewHolder(View v) {
             super(v);
 //            rv = v.findViewById(R.id.FormsList);
-            sysdate = v.findViewById(R.id.sysdate);
-            cluster = v.findViewById(R.id.cluster);
-            hhno = v.findViewById(R.id.hhno);
+            visit = v.findViewById(R.id.visit);
+            pName = v.findViewById(R.id.pName);
+            prno = v.findViewById(R.id.prno);
             istatus = v.findViewById(R.id.istatus);
             status = v.findViewById(R.id.status);
             father = v.findViewById(R.id.fathername);

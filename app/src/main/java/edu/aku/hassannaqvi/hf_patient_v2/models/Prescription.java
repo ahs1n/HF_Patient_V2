@@ -176,6 +176,7 @@ public class Prescription extends BaseObservable implements Observable {
     public String mp137do = _EMPTY_;
     public String mp137f = _EMPTY_;
     public String mp137du = _EMPTY_;
+    public String mpnr = _EMPTY_;
 
     public String medCode = _EMPTY_;
     public String dose = _EMPTY_;
@@ -2044,6 +2045,54 @@ public class Prescription extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.mp137du);
     }
 
+    @Bindable
+    public String getMpnr() {
+        return mpnr;
+    }
+
+    public void setMpnr(String mpnr) {
+        if (this.mpnr.equals(mpnr)) return; // for all checkboxes
+        this.mpnr = mpnr;
+        setMp101(mpnr.equals("999") ? "" : this.mp101);
+        setMp102(mpnr.equals("999") ? "" : this.mp102);
+        setMp103(mpnr.equals("999") ? "" : this.mp103);
+        setMp104(mpnr.equals("999") ? "" : this.mp104);
+        setMp105(mpnr.equals("999") ? "" : this.mp105);
+        setMp106(mpnr.equals("999") ? "" : this.mp106);
+        setMp107(mpnr.equals("999") ? "" : this.mp107);
+        setMp108(mpnr.equals("999") ? "" : this.mp108);
+        setMp109(mpnr.equals("999") ? "" : this.mp109);
+        setMp110(mpnr.equals("999") ? "" : this.mp110);
+        setMp111(mpnr.equals("999") ? "" : this.mp111);
+        setMp112(mpnr.equals("999") ? "" : this.mp112);
+        setMp113(mpnr.equals("999") ? "" : this.mp113);
+        setMp114(mpnr.equals("999") ? "" : this.mp114);
+        setMp115(mpnr.equals("999") ? "" : this.mp115);
+        setMp116(mpnr.equals("999") ? "" : this.mp116);
+        setMp117(mpnr.equals("999") ? "" : this.mp117);
+        setMp118(mpnr.equals("999") ? "" : this.mp118);
+        setMp119(mpnr.equals("999") ? "" : this.mp119);
+        setMp120(mpnr.equals("999") ? "" : this.mp120);
+        setMp121(mpnr.equals("999") ? "" : this.mp121);
+        setMp122(mpnr.equals("999") ? "" : this.mp122);
+        setMp123(mpnr.equals("999") ? "" : this.mp123);
+        setMp124(mpnr.equals("999") ? "" : this.mp124);
+        setMp125(mpnr.equals("999") ? "" : this.mp125);
+        setMp126(mpnr.equals("999") ? "" : this.mp126);
+        setMp127(mpnr.equals("999") ? "" : this.mp127);
+        setMp128(mpnr.equals("999") ? "" : this.mp128);
+        setMp129(mpnr.equals("999") ? "" : this.mp129);
+        setMp130(mpnr.equals("999") ? "" : this.mp130);
+        setMp131(mpnr.equals("999") ? "" : this.mp131);
+        setMp132(mpnr.equals("999") ? "" : this.mp132);
+        setMp133(mpnr.equals("999") ? "" : this.mp133);
+        setMp134(mpnr.equals("999") ? "" : this.mp134);
+        setMp135(mpnr.equals("999") ? "" : this.mp135);
+        setMp136(mpnr.equals("999") ? "" : this.mp136);
+        setMp137(mpnr.equals("999") ? "" : this.mp137);
+        notifyPropertyChanged(BR.mpnr);
+    }
+
 
     public Prescription Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ID));
@@ -2224,7 +2273,7 @@ public class Prescription extends BaseObservable implements Observable {
             this.mp137do = json.has("mp137do") ? json.getString("mp137do") : "";
             this.mp137f = json.has("mp137f") ? json.getString("mp137f") : "";
             this.mp137du = json.has("mp137du") ? json.getString("mp137du") : "";
-            this.mp137du = json.has("mp101") ? json.getString("mp137du") : "";
+            this.mpnr = json.has("mpnr") ? json.getString("mpnr") : "";
 
         }
     }
@@ -2406,7 +2455,8 @@ public class Prescription extends BaseObservable implements Observable {
                 .put("mp137", mp137)
                 .put("mp137do", mp137do)
                 .put("mp137f", mp137f)
-                .put("mp137du", mp137du);*/
+                .put("mp137du", mp137du)
+                .put("mpnr", mpnr);*/
         return json.toString();
     }
 

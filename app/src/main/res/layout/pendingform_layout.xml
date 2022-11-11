@@ -46,11 +46,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/cluster"
+                            android:id="@+id/pName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="0dp"
-                            android:text="CLUSTER NO:"
+                            android:text="Patient Name:"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -67,36 +67,32 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/hhno"
+                        android:id="@+id/prno"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:padding="0dp"
-                        android:text="HHNO NO:"
+                        android:text="PR NO:"
                         android:textAlignment="center"
                         android:textColor="@color/gray"
                         android:textSize="16sp"
-                        android:textStyle="normal"
-
-                        />
+                        android:textStyle="normal" />
 
 
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/sysdate"
+                    android:id="@+id/visit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/grayLight"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:text="Husband"
+                    android:text="Purpose of visit"
                     android:textColor="@color/colorAccent"
                     android:textSize="14sp"
-                    android:textStyle="normal"
-
-                    />
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <TextView

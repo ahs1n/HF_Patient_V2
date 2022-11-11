@@ -28,6 +28,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp121.equals(`21`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp121(form.mp121.equals(`21`)?``:`21`) + mp121f.clearCheck()}"
             android:text="@string/mp121" />
 
@@ -112,6 +113,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp122.equals(`22`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp122(form.mp122.equals(`22`)?``:`22`) + mp122f.clearCheck()}"
             android:text="@string/mp122" />
 
@@ -196,6 +198,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp123.equals(`23`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp123(form.mp123.equals(`23`)?``:`23`) + mp123f.clearCheck()}"
             android:text="@string/mp123" />
 
@@ -280,6 +283,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp124.equals(`24`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp124(form.mp124.equals(`24`)?``:`24`) + mp124f.clearCheck()}"
             android:text="@string/mp124" />
 
@@ -364,6 +368,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp125.equals(`25`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp125(form.mp125.equals(`25`)?``:`25`) + mp125f.clearCheck()}"
             android:text="@string/mp125" />
 
@@ -448,6 +453,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp126.equals(`26`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp126(form.mp126.equals(`26`)?``:`26`) + mp126f.clearCheck()}"
             android:text="@string/mp126" />
 
@@ -532,6 +538,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp127.equals(`27`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp127(form.mp127.equals(`27`)?``:`27`) + mp127f.clearCheck()}"
             android:text="@string/mp127" />
 
@@ -616,6 +623,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp128.equals(`28`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp128(form.mp128.equals(`28`)?``:`28`) + mp128f.clearCheck()}"
             android:text="@string/mp128" />
 
@@ -700,6 +708,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp129.equals(`29`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp129(form.mp129.equals(`29`)?``:`29`) + mp129f.clearCheck()}"
             android:text="@string/mp129" />
 
@@ -784,6 +793,7 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp130.equals(`30`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp130(form.mp130.equals(`30`)?``:`30`) + mp130f.clearCheck()}"
             android:text="@string/mp130" />
 
@@ -868,6 +878,7 @@
             android:layout_width="231dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp131.equals(`31`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp131(form.mp131.equals(`31`)?``:`31`) + mp131f.clearCheck()}"
             android:text="@string/mp131" />
 
@@ -952,6 +963,7 @@
             android:layout_width="232dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp132.equals(`32`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp132(form.mp132.equals(`32`)?``:`32`) + mp132f.clearCheck()}"
             android:text="@string/mp132" />
 
@@ -1036,6 +1048,7 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp133.equals(`33`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp133(form.mp133.equals(`33`)?``:`33`) + mp133f.clearCheck()}"
             android:text="@string/mp133" />
 
@@ -1120,6 +1133,7 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp134.equals(`34`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp134(form.mp134.equals(`34`)?``:`34`) + mp134f.clearCheck()}"
             android:text="@string/mp134" />
 
@@ -1204,6 +1218,7 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp135.equals(`35`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp135(form.mp135.equals(`35`)?``:`35`) + mp135f.clearCheck()}"
             android:text="@string/mp135" />
 
@@ -1288,6 +1303,7 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp136.equals(`36`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp136(form.mp136.equals(`36`)?``:`36`) + mp136f.clearCheck()}"
             android:text="@string/mp136" />
 
@@ -1372,6 +1388,7 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:checked="@{form.mp137.equals(`37`)}"
+            android:enabled="@{!form.mpnr.equals(`999`)}"
             android:onClick="@{()->form.setMp137(form.mp137.equals(`37`)?``:`37`) + mp137f.clearCheck()}"
             android:text="@string/mp137" />
 
@@ -1450,6 +1467,19 @@
             app:maxValue="37"
             app:minValue="1"
             app:type="range" />
+
+        <CheckBox
+            android:id="@+id/mpnr"
+            android:layout_width="233dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#7fefd6d6"
+            android:buttonTint="@color/red"
+            android:checked="@{form.mpnr.equals(`999`)}"
+            android:onClick="@{()->form.setMpnr(form.mpnr.equals(`999`)?``:`999`)}"
+            android:tag="-1"
+            android:text="@string/mpnr"
+            android:textColor="@color/redDark" />
 
     </com.google.android.flexbox.FlexboxLayout>
 

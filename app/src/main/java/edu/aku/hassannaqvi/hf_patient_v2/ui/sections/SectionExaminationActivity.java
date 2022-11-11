@@ -36,8 +36,9 @@ public class SectionExaminationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         bi.setForm(patientDetails);
 
+        //setMinDate
+        bi.se405.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -10));
         //setMaxDate
-        bi.se405.setMaxDate(DateUtils.getMonthsBack("dd/MM/yyyy", 10));
         bi.se406.setMaxDate(DateUtils.getMonthsBack("dd/MM/yyyy", 9));
     }
 

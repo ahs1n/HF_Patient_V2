@@ -898,6 +898,7 @@
                                 android:checked="@{form.se201.equals(`999`)}"
                                 android:onClick="@{()->form.setSe201(`999`)}"
                                 android:text="@string/se20199"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -965,6 +966,7 @@
                                 android:checked="@{form.se202.equals(`999`)}"
                                 android:onClick="@{()->form.setSe202(`999`)}"
                                 android:text="@string/se20299"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1050,6 +1052,7 @@
                                 android:checked="@{form.se203.equals(`999`)}"
                                 android:onClick="@{()->form.setSe203(`999`)}"
                                 android:text="@string/se20399"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1117,6 +1120,7 @@
                                 android:checked="@{form.se204.equals(`999`)}"
                                 android:onClick="@{()->form.setSe204(`999`)}"
                                 android:text="@string/se20499"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1184,6 +1188,7 @@
                                 android:checked="@{form.se205.equals(`999`)}"
                                 android:onClick="@{()->form.setSe205(`999`)}"
                                 android:text="@string/se20599"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1269,6 +1274,7 @@
                                 android:checked="@{form.se206.equals(`999`)}"
                                 android:onClick="@{()->form.setSe206(`999`)}"
                                 android:text="@string/se20699"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1336,6 +1342,7 @@
                                 android:checked="@{form.se207.equals(`999`)}"
                                 android:onClick="@{()->form.setSe207(`999`)}"
                                 android:text="@string/se20799"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1403,6 +1410,7 @@
                                 android:checked="@{form.se208.equals(`999`)}"
                                 android:onClick="@{()->form.setSe208(`999`)}"
                                 android:text="@string/se20899"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1497,6 +1505,7 @@
                                 android:checked="@{form.se301.equals(`999`)}"
                                 android:onClick="@{()->form.setSe301(`999`)}"
                                 android:text="@string/se30199"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1564,6 +1573,7 @@
                                 android:checked="@{form.se302.equals(`999`)}"
                                 android:onClick="@{()->form.setSe302(`999`)}"
                                 android:text="@string/se30299"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>

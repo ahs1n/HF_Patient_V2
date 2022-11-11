@@ -308,6 +308,10 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
             insertMedicineRecord(prescription.getMp137(), prescription.getMp137do(), prescription.getMp137f(), prescription.getMp137du());
         }
 
+        if (prescription.mpnr.equals("999")) {
+            insertMedicineRecord(prescription.getMpnr(), "999", "999", "999");
+        }
+
         if (updateDB()) {
             finish();
             Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();

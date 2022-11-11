@@ -1686,6 +1686,7 @@
                                 android:checked="@{form.ss501.equals(`999`)}"
                                 android:onClick="@{()->form.setSs501(`999`)}"
                                 android:text="@string/ss50199"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1753,6 +1754,7 @@
                                 android:checked="@{form.ss502.equals(`999`)}"
                                 android:onClick="@{()->form.setSs502(`999`)}"
                                 android:text="@string/ss50299"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1866,6 +1868,7 @@
                                 android:checked="@{form.ss504.equals(`999`)}"
                                 android:onClick="@{()->form.setSs504(`999`)}"
                                 android:text="@string/ss50499"
+                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
