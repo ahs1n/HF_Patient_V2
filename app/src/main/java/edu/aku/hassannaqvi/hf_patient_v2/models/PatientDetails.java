@@ -109,7 +109,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String se111 = _EMPTY_;
     public String se112 = _EMPTY_;
     public String se113 = _EMPTY_;
-    public String se42title = _EMPTY_;
     public String se201 = _EMPTY_;
     public String se202 = _EMPTY_;
     public String se203 = _EMPTY_;
@@ -1240,16 +1239,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getSe42title() {
-        return se42title;
-    }
-
-    public void setSe42title(String se42title) {
-        this.se42title = se42title;
-        notifyPropertyChanged(BR.se42title);
-    }
-
-    @Bindable
     public String getSe201() {
         return se201;
     }
@@ -1723,7 +1712,6 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.se111 = json.getString("se111");
             this.se112 = json.getString("se112");
             this.se113 = json.getString("se113");
-            this.se42title = json.getString("se42title");
             this.se201 = json.getString("se201");
             this.se202 = json.getString("se202");
             this.se203 = json.getString("se203");
@@ -1884,7 +1872,6 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("se111", se111)
                 .put("se112", se112)
                 .put("se113", se113)
-                .put("se42title", se42title)
                 .put("se201", se201)
                 .put("se202", se202)
                 .put("se203", se203)

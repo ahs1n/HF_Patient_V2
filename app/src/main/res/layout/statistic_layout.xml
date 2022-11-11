@@ -41,7 +41,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_rounded_top_app_color_filled"
+                        android:background="@drawable/bg_rounded_left_top_app_color_filled"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
@@ -143,7 +143,6 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_weight="0.005"
                     android:background="@color/colorPrimaryDark" />
 
@@ -156,8 +155,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_rounded_top_app_color_filled"
-                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:background="@color/colorPrimaryDark"
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
                         android:paddingBottom="@dimen/_3sdp"
@@ -258,7 +256,6 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_weight="0.005"
                     android:background="@color/colorPrimaryDark" />
 
@@ -271,7 +268,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_rounded_top_app_color_filled"
+                        android:background="@drawable/bg_rounded_right_top_app_color_filled"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
