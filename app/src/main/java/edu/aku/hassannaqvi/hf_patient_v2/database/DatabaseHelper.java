@@ -1549,6 +1549,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
+    public Collection<Vaccination> getTodayVacc(String sysdate) throws JSONException {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {
+                VACCINATIONTable.COLUMN_ID,
+                VACCINATIONTable.COLUMN_UID,
+                VACCINATIONTable.COLUMN_SYSDATE,
+                VACCINATIONTable.COLUMN_SVAC,
+                VACCINATIONTable.COLUMN_SYNCED,
+
+
+        };
+        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
+        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PDTable.COLUMN_ID + " DESC";
+
+        Collection<Vaccination> allVC = new ArrayList<>();
+        try {
+            c = db.query(
+                    VACCINATIONTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Vaccination vc = new Vaccination();
+                vc.setId(c.getString(c.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ID)));
+                vc.setUid(c.getString(c.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_UID)));
+                vc.setSysDate(c.getString(c.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYSDATE)));
+                vc.sVACHydrate(c.getString(c.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SVAC)));
+                vc.setSynced(c.getString(c.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYNCED)));
+                allVC.add(vc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return allVC;
+    }
+
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase(DATABASE_PASSWORD);

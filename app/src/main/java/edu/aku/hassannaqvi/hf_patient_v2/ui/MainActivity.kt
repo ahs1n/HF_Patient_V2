@@ -33,6 +33,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.hf_patient_v2.models.Camps
 import edu.aku.hassannaqvi.hf_patient_v2.models.HealthFacilities
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails
+import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bi: ActivityMainBinding
     lateinit var viewModel: MainViewModel
     private var exit = false
-    private var sysdateToday = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).format(Date())
+    private var sysdateToday = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(Date())
     private lateinit var camp: Camps
     private lateinit var facility: HealthFacilities
     private var facilityNames = mutableListOf("....")
@@ -109,111 +110,111 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-            /*
-            * Calling viewmodel facility data function
-            * Fetch facility result response
-            * */
+        /*
+        * Calling viewmodel facility data function
+        * Fetch facility result response
+        * */
 
-            viewModel.healthFacilitiesResponse.observe(this) {
-                it?.let {
-                    when (it.status) {
-                        ResponseStatus.SUCCESS -> {
-                            lifecycleScope.launch {
-                                facilityNames.clear()
-                                facilityCodes.clear()
-                                ucNames.clear()
-                                ucCodes.clear()
-                                facilityNames.add("....")
-                                facilityCodes.add("....")
-                                ucNames.add("....")
-                                ucCodes.add("....")
-                                it.data?.forEach { item ->
-                                    facilityNames.add(item.facilityName)
-                                    facilityCodes.add(item.facilityCode)
-                                    ucNames.add(item.ucName)
-                                    ucCodes.add(item.ucCode)
-
-                                    facility = item
-                                    bi.cam.campno.text = facility.facilityName
-                                    bi.cam.uc2.text = facility.ucName
-                                    bi.cam.uc4.text = facility.ucCode
-                                    bi.cam.area2.text = facility.facilityCode
-                                }
-                                facilityAdapter.notifyDataSetChanged()
-                            }
-                        }
-                        ResponseStatus.ERROR -> {
-                        }
-                        ResponseStatus.LOADING -> {
-                        }
-
-                    }
-                }
-            }
-
-
-            /*
-            * Calling viewmodel district data function
-            * Fetch district result response
-            * */
-            viewModel.campsResponse.observe(this) {
-                it?.let {
-                    when (it.status) {
-                        ResponseStatus.SUCCESS -> {
-                            lifecycleScope.launch {
-                                it.data?.let { item ->
-                                    bi.btnSection.visibility = View.VISIBLE
-                                    bi.cam.root.visibility = View.VISIBLE
-                                    camp = item
-
-                                    //TODO: CardToPopulate
-                                    //openWarningDialog(item.camp_no, item.district, item.ucName)
-                                    bi.cam.campno.text = camp.facilityName
-                                    bi.cam.uc2.text = camp.ucName
-                                    bi.cam.area2.text = camp.area_name
-                                }
-                                bi.btnCheckCamp.visibility = View.VISIBLE
-                                bi.btnSearchCampProgress.visibility = View.GONE
-                            }
-                        }
-                        ResponseStatus.ERROR -> {
-                            bi.btnCheckCamp.visibility = View.VISIBLE
-                            bi.btnSearchCampProgress.visibility = View.GONE
-                            Validator.emptyCustomTextBox(this, bi.camps, "CAMP NOT FOUND", false)
-                        }
-                        ResponseStatus.LOADING -> {
-                            lifecycleScope.launch {
-                                bi.btnSearchCampProgress.visibility = View.VISIBLE
-                                bi.btnCheckCamp.visibility = View.GONE
-                                bi.btnSection.visibility = View.GONE
-                                bi.cam.root.visibility = View.GONE
-                                delay(2000)
-                            }
-                        }
-                    }
-                }
-            }
-
-            viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
-
-            /*
-            * Get Today's form from DB
-            * If it's null then return 0 otherwise return count
-            * Show loading while data is fetching
-            * */
-            viewModel.todayForms.observe(this) {
+        viewModel.healthFacilitiesResponse.observe(this) {
+            it?.let {
                 when (it.status) {
                     ResponseStatus.SUCCESS -> {
-                        Log.d("Today's form count:", it.data.toString())
-                        bi.statisticLayout.tf.text = it.data.toString()
+                        lifecycleScope.launch {
+                            facilityNames.clear()
+                            facilityCodes.clear()
+                            ucNames.clear()
+                            ucCodes.clear()
+                            facilityNames.add("....")
+                            facilityCodes.add("....")
+                            ucNames.add("....")
+                            ucCodes.add("....")
+                            it.data?.forEach { item ->
+                                facilityNames.add(item.facilityName)
+                                facilityCodes.add(item.facilityCode)
+                                ucNames.add(item.ucName)
+                                ucCodes.add(item.ucCode)
+
+                                facility = item
+                                bi.cam.campno.text = facility.facilityName
+                                bi.cam.uc2.text = facility.ucName
+                                bi.cam.uc4.text = facility.ucCode
+                                bi.cam.area2.text = facility.facilityCode
+                            }
+                            facilityAdapter.notifyDataSetChanged()
+                        }
                     }
                     ResponseStatus.ERROR -> {
                     }
                     ResponseStatus.LOADING -> {
-                        lifecycleScope.launch { delay(1000) }
+                    }
+
+                }
+            }
+        }
+
+
+        /*
+        * Calling viewmodel district data function
+        * Fetch district result response
+        * */
+        viewModel.campsResponse.observe(this) {
+            it?.let {
+                when (it.status) {
+                    ResponseStatus.SUCCESS -> {
+                        lifecycleScope.launch {
+                            it.data?.let { item ->
+                                bi.btnSection.visibility = View.VISIBLE
+                                bi.cam.root.visibility = View.VISIBLE
+                                camp = item
+
+                                //TODO: CardToPopulate
+                                //openWarningDialog(item.camp_no, item.district, item.ucName)
+                                bi.cam.campno.text = camp.facilityName
+                                bi.cam.uc2.text = camp.ucName
+                                bi.cam.area2.text = camp.area_name
+                            }
+                            bi.btnCheckCamp.visibility = View.VISIBLE
+                            bi.btnSearchCampProgress.visibility = View.GONE
+                        }
+                    }
+                    ResponseStatus.ERROR -> {
+                        bi.btnCheckCamp.visibility = View.VISIBLE
+                        bi.btnSearchCampProgress.visibility = View.GONE
+                        Validator.emptyCustomTextBox(this, bi.camps, "CAMP NOT FOUND", false)
+                    }
+                    ResponseStatus.LOADING -> {
+                        lifecycleScope.launch {
+                            bi.btnSearchCampProgress.visibility = View.VISIBLE
+                            bi.btnCheckCamp.visibility = View.GONE
+                            bi.btnSection.visibility = View.GONE
+                            bi.cam.root.visibility = View.GONE
+                            delay(2000)
+                        }
                     }
                 }
             }
+        }
+
+        viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
+
+        /*
+        * Get Today's form from DB
+        * If it's null then return 0 otherwise return count
+        * Show loading while data is fetching
+        * */
+        viewModel.todayForms.observe(this) {
+            when (it.status) {
+                ResponseStatus.SUCCESS -> {
+                    Log.d("Today's form count:", it.data.toString())
+                    bi.statisticLayout.tf.text = it.data.toString()
+                }
+                ResponseStatus.ERROR -> {
+                }
+                ResponseStatus.LOADING -> {
+                    lifecycleScope.launch { delay(1000) }
+                }
+            }
+        }
 
 //        /*
 //        * Get Form status from DB
@@ -267,155 +268,181 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
-            bi.camps.addTextChangedListener(object : TextWatcher {
-                override fun beforeTextChanged(
-                    s: CharSequence,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                }
-
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-                override fun afterTextChanged(s: Editable) {
-                    if (s.toString().isEmpty()) return
-                    bi.cam.root.visibility = View.GONE
-                    bi.btnSection.visibility = View.GONE
-                }
-            })
-
-            bi.camps.setOnEditorActionListener { _, actionId, _ ->
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    populateCampDetails()
-                }
-                true
+        bi.camps.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(
+                s: CharSequence,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {
             }
 
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                if (s.toString().isEmpty()) return
+                bi.cam.root.visibility = View.GONE
+                bi.btnSection.visibility = View.GONE
+            }
+        })
+
+        bi.camps.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                populateCampDetails()
+            }
+            true
         }
 
+    }
+
     private fun initSummary() {
-        val _todayForms: ArrayList<PatientDetails> = db.getTodayForms(sysdateToday) as ArrayList<PatientDetails>
+        // Get All Patient Details
+        val _todayForms: ArrayList<PatientDetails> =
+            db.getTodayForms(sysdateToday) as ArrayList<PatientDetails>
         if (_todayForms.isNotEmpty()) {
             val totalTodayForms: Int = _todayForms.count()
-//                val _UnSyncedForms: ArrayList<PatientDetails> = db.unsyncedForms(sysdateToday) as ArrayList<PatientDetails>
-//                val totalSyncedForms: Int = it.data as Int
+            val _unSyncedForms: ArrayList<PatientDetails> = ArrayList()
+            val _syncedForms: ArrayList<PatientDetails> = ArrayList()
+            _todayForms.forEach {
+                if (it.synced.isEmpty())
+                    _unSyncedForms.add(it)
+                else
+                    _syncedForms.add(it)
+            }
             bi.statisticLayout.tf.text = totalTodayForms.toString()
-//                tfSynced.text = it.data.toString()
-//                tfUnSynced.text = (totalTodayForms - totalSyncedForms).toString()
+            tfUnSynced.text = _unSyncedForms.count().toString()
+            tfSynced.text = _syncedForms.count().toString()
+        }
+
+        // Get All Vaccination
+        val _todayVacc: ArrayList<Vaccination> =
+            db.getTodayVacc(sysdateToday) as ArrayList<Vaccination>
+        if (_todayVacc.isNotEmpty()) {
+            val totalTodayVacc: Int = _todayVacc.count()
+            val _unSyncedVacc: ArrayList<Vaccination> = ArrayList()
+            val _syncedVacc: ArrayList<Vaccination> = ArrayList()
+            _todayVacc.forEach {
+                if (it.synced.isEmpty())
+                    _unSyncedVacc.add(it)
+                else
+                    _syncedVacc.add(it)
+            }
+            bi.statisticLayout.tv.text = totalTodayVacc.toString()
+            tvUnSynced.text = _unSyncedVacc.count().toString()
+            tvSynced.text = _syncedVacc.count().toString()
         }
     }
 
-        /*
-        * Back press button that will route to login activity after pressing -
-        * back button two times
-        * */
-        override fun onBackPressed() {
-            if (exit) {
-                gotoActivityWithNoHistory(LoginActivity::class.java)
-            } else {
-                Toast.makeText(
-                    this, "Press back again to exit",
-                    Toast.LENGTH_SHORT
-                ).show()
-                exit = true
-                Handler(Looper.getMainLooper()).postDelayed({ exit = false }, 3000)
+    /*
+    * Back press button that will route to login activity after pressing -
+    * back button two times
+    * */
+    override fun onBackPressed() {
+        if (exit) {
+            gotoActivityWithNoHistory(LoginActivity::class.java)
+        } else {
+            Toast.makeText(
+                this, "Press back again to exit",
+                Toast.LENGTH_SHORT
+            ).show()
+            exit = true
+            Handler(Looper.getMainLooper()).postDelayed({ exit = false }, 3000)
+        }
+    }
+
+    /*
+    * Inflate menu on current activity
+    * */
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+
+        val action_database = menu.findItem(R.id.action_database)
+        action_database.isVisible = MainApp.admin
+
+        return true
+    }
+
+    /*
+    * Menu items selection
+    * */
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_data_sync -> {
+                if (isNetworkConnected(this)) {
+                    gotoActivity(SyncActivity::class.java)
+
+                } else
+                    Toast.makeText(
+                        this,
+                        "Network connection not available!",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+
+                return true
+            }
+            R.id.changePassword -> {
+                gotoActivity(ChangePasswordActivity::class.java)
+                return true
+            }
+            R.id.formsReportDate -> {
+                gotoActivity(FormsReportDate::class.java)
+                return true
+            }
+
+            R.id.formsReportCluster -> {
+                gotoActivity(FormsReportCluster::class.java)
+                return true
+            }
+            R.id.action_database -> {
+                gotoActivity(AndroidManager::class.java)
+                return true
             }
         }
-
-        /*
-        * Inflate menu on current activity
-        * */
-        override fun onCreateOptionsMenu(menu: Menu): Boolean {
-            menuInflater.inflate(R.menu.main_menu, menu)
-
-            val action_database = menu.findItem(R.id.action_database)
-            action_database.isVisible = MainApp.admin
-
-            return true
-        }
-
-        /*
-        * Menu items selection
-        * */
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            when (item.itemId) {
-                R.id.action_data_sync -> {
-                    if (isNetworkConnected(this)) {
-                        gotoActivity(SyncActivity::class.java)
-
-                    } else
-                        Toast.makeText(
-                            this,
-                            "Network connection not available!",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
-
-                    return true
-                }
-                R.id.changePassword -> {
-                    gotoActivity(ChangePasswordActivity::class.java)
-                    return true
-                }
-                R.id.formsReportDate -> {
-                    gotoActivity(FormsReportDate::class.java)
-                    return true
-                }
-
-                R.id.formsReportCluster -> {
-                    gotoActivity(FormsReportCluster::class.java)
-                    return true
-                }
-                R.id.action_database -> {
-                    gotoActivity(AndroidManager::class.java)
-                    return true
-                }
-            }
-            return super.onOptionsItemSelected(item)
-        }
+        return super.onOptionsItemSelected(item)
+    }
 
 
-        override fun onResume() {
-            super.onResume()
+    override fun onResume() {
+        super.onResume()
 
 //        animateFadeIn()
-            viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
-            viewModel.getFormsStatusUploadStatus(sysdateToday)
-//            initSummary()
-        }
+        viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
+        viewModel.getFormsStatusUploadStatus(sysdateToday)
+        initSummary()
+    }
 
 
-        /*
-        * Route to specific activity according to selection
-        * For uploading/downloading data, the network needs to work
-        * */
-        fun openSpecificActivity(v: View) {
-            when (v.id) {
-                R.id.formA -> {
-                    SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
-                    MainApp.patientDetails = PatientDetails()
-                    gotoActivity(SectionScreeningActivity::class.java)
+    /*
+    * Route to specific activity according to selection
+    * For uploading/downloading data, the network needs to work
+    * */
+    fun openSpecificActivity(v: View) {
+        when (v.id) {
+            R.id.formA -> {
+                SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
+                MainApp.patientDetails = PatientDetails()
+                gotoActivity(SectionScreeningActivity::class.java)
 //                MainApp.prescription = Prescription()
 //                gotoActivity(SectionPrescriptionActivity::class.java)
-                }
-                R.id.databaseBtn -> startActivity(Intent(this, AndroidManager::class.java))
-                R.id.btn_check_camp -> {
-                    populateCampDetails()
-                }
+            }
+            R.id.databaseBtn -> startActivity(Intent(this, AndroidManager::class.java))
+            R.id.btn_check_camp -> {
+                populateCampDetails()
             }
         }
+    }
 
 
-        fun populateCampDetails() {
+    fun populateCampDetails() {
 //        if (!Validator.emptyTextBox(this, bi.camps)) return
 //        viewModel.getCampFromDB(bi.camps.text.toString(), MainApp.user.dist_id)
-            if (!Validator.emptySpinner(this, bi.facility)) return
-            viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
-        }
+        if (!Validator.emptySpinner(this, bi.facility)) return
+        viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
+    }
 
-        /*
-    //    * Stop animation on statistic Layout
-    //    * */
+    /*
+//    * Stop animation on statistic Layout
+//    * */
 //    private fun animateFadeOut() {
 //        val shortAnimationDuration = 2000
 //        /*
@@ -457,4 +484,4 @@ class MainActivity : AppCompatActivity() {
 //    }
 
 
-    }
+}
