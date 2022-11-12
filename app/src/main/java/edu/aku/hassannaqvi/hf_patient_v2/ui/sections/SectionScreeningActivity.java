@@ -94,7 +94,8 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
 
                 if (position != 0) {
                     MainApp.selectedDoctorName = (doctorNames.get(bi.ss100.getSelectedItemPosition()));
-//                    mobileHealth.setSs100(MainApp.selectedDoctorName);
+                    if (patientDetails != null)
+                        patientDetails.setSs100(MainApp.selectedDoctorName);
                 }
             }
 

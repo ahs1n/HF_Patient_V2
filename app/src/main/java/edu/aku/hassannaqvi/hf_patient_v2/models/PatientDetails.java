@@ -72,7 +72,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss504 = _EMPTY_;
     public String ss5nr = _EMPTY_;
     public String ss601 = _EMPTY_;
-    public String sh101 = _EMPTY_;
     public String sh10101 = _EMPTY_;
     public String sh10102 = _EMPTY_;
     public String sh10103 = _EMPTY_;
@@ -840,16 +839,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs601(String ss601) {
         this.ss601 = ss601;
         notifyPropertyChanged(BR.ss601);
-    }
-
-    @Bindable
-    public String getSh101() {
-        return sh101;
-    }
-
-    public void setSh101(String sh101) {
-        this.sh101 = sh101;
-        notifyPropertyChanged(BR.sh101);
     }
 
     @Bindable
@@ -1667,7 +1656,6 @@ public class PatientDetails extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.sh101 = json.getString("sh101");
             this.sh10101 = json.getString("sh10101");
             this.sh10102 = json.getString("sh10102");
             this.sh10103 = json.getString("sh10103");
@@ -1789,7 +1777,7 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss104d", ss104d)
                 .put("ss105", ss105)
                 .put("ss106", ss106)
-                .put("ss107", ss107)
+//                .put("ss107", ss107)
                 .put("ss10701", ss10701)
                 .put("ss10702", ss10702)
                 .put("ss10703", ss10703)
@@ -1829,8 +1817,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String sHIStoString() throws JSONException {
         Log.d(TAG, "sHIStoString: ");
         JSONObject json = new JSONObject();
-        json.put("sh101", sh101)
-                .put("sh10101", sh10101)
+        json.put("sh10101", sh10101)
                 .put("sh10102", sh10102)
                 .put("sh10103", sh10103)
                 .put("sh10104", sh10104)

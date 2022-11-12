@@ -114,35 +114,35 @@ public class SectionComplaintsActivity extends AppCompatActivity {
             insertComplaintsRecord(complaints.getPc201(), "");
         }
 
-        if (complaints.pc202.equals("02")) {
+        if (complaints.pc202.equals("2")) {
             insertComplaintsRecord(complaints.getPc202(), "");
         }
 
-        if (complaints.pc203.equals("03")) {
+        if (complaints.pc203.equals("3")) {
             insertComplaintsRecord(complaints.getPc203(), "");
         }
 
-        if (complaints.pc204.equals("04")) {
+        if (complaints.pc204.equals("4")) {
             insertComplaintsRecord(complaints.getPc204(), "");
         }
 
-        if (complaints.pc205.equals("05")) {
+        if (complaints.pc205.equals("5")) {
             insertComplaintsRecord(complaints.getPc205(), "");
         }
 
-        if (complaints.pc206.equals("06")) {
+        if (complaints.pc206.equals("6")) {
             insertComplaintsRecord(complaints.getPc206(), "");
         }
 
-        if (complaints.pc207.equals("07")) {
+        if (complaints.pc207.equals("7")) {
             insertComplaintsRecord(complaints.getPc207(), "");
         }
 
-        if (complaints.pc208.equals("08")) {
+        if (complaints.pc208.equals("8")) {
             insertComplaintsRecord(complaints.getPc208(), "");
         }
 
-        if (complaints.pc209.equals("09")) {
+        if (complaints.pc209.equals("9")) {
             insertComplaintsRecord(complaints.getPc209(), "");
         }
 

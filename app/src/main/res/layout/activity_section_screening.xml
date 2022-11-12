@@ -224,7 +224,7 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
-                                android:text="@{form.vtime}"
+                                android:text="@={form.vtime}"
                                 app:theme="@style/MyDatePickerDialogTheme" />
 
                         </LinearLayout>
