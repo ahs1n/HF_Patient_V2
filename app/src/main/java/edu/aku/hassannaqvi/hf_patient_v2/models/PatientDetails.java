@@ -38,7 +38,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss104d = _EMPTY_;
     public String ss105 = _EMPTY_;
     public String ss106 = _EMPTY_;
-    public String ss107 = _EMPTY_;
     public String ss10701 = _EMPTY_;
     public String ss10702 = _EMPTY_;
     public String ss10703 = _EMPTY_;
@@ -467,16 +466,6 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs106(String ss106) {
         this.ss106 = ss106;
         notifyPropertyChanged(BR.ss106);
-    }
-
-    @Bindable
-    public String getSs107() {
-        return ss107;
-    }
-
-    public void setSs107(String ss107) {
-        this.ss107 = ss107;
-        notifyPropertyChanged(BR.ss107);
     }
 
     @Bindable
@@ -1614,7 +1603,6 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.ss104d = json.getString("ss104d");
             this.ss105 = json.getString("ss105");
             this.ss106 = json.getString("ss106");
-            this.ss107 = json.getString("ss107");
             this.ss10701 = json.getString("ss10701");
             this.ss10702 = json.getString("ss10702");
             this.ss10703 = json.getString("ss10703");
@@ -1777,7 +1765,6 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss104d", ss104d)
                 .put("ss105", ss105)
                 .put("ss106", ss106)
-//                .put("ss107", ss107)
                 .put("ss10701", ss10701)
                 .put("ss10702", ss10702)
                 .put("ss10703", ss10703)
