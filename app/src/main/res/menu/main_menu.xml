@@ -29,6 +29,7 @@
                 android:titleCondensed="List of all forms by date"
                 app:showAsAction="collapseActionView" />
             <item
+                android:visible="false"
                 android:id="@+id/formsReportCluster"
                 android:title="Patient Report by Camp"
                 android:titleCondensed="List of all forms by date"
