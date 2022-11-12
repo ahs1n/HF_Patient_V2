@@ -59,7 +59,10 @@
             android:id="@+id/activity_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/_15sdp">
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_10sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
