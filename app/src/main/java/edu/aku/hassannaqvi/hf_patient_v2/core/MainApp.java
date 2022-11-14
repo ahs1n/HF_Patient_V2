@@ -3,11 +3,16 @@ package edu.aku.hassannaqvi.hf_patient_v2.core;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper.DATABASE_NAME;
 import static edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper.DATABASE_PASSWORD;
 
+import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +33,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Users;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
+import edu.aku.hassannaqvi.hf_patient_v2.ui.LockActivity;
 
 public class MainApp extends Application {
 
@@ -69,6 +75,8 @@ public class MainApp extends Application {
     public static Diagnosis diagnosis;
     public static Prescription prescription;
     public static Vaccination vaccination;
+    public static CountDownTimer timer;
+    static ToneGenerator toneGen1;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
@@ -84,6 +92,44 @@ public class MainApp extends Application {
                         // Hide the nav bar and status bar
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+    public static void lockScreen(Context c) {
+
+        if (timer != null) {
+            timer.cancel();
+        }
+
+        //   Context mContext = c;
+        Activity activity = (Activity) c;
+
+
+        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+            //timer = new CountDownTimer(30 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+                //bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+                if ((millisUntilFinished / 1000) < 14) {
+                    toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
+                }
+
+            }
+
+            public void onFinish() {
+                //Logout
+                //
+                //   finish();
+                // lockScreen();
+                Intent intent = new Intent();
+                intent.setClass(c, LockActivity.class);
+                c.startActivity(intent);
+                timer.cancel();
+                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
+            }
+        };
+        timer.start();
+
     }
 
     @Override

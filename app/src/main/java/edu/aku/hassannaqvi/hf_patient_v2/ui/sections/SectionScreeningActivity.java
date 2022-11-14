@@ -192,4 +192,10 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
             bi.ss204.setHint("###");
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
 }

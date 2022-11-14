@@ -375,6 +375,12 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 //        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
 
     @Override
     public void onBackPressed() {

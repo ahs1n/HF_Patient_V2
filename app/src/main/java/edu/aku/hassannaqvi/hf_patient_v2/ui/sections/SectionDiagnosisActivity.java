@@ -357,6 +357,12 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
 
     public void BtnEnd(View view) {
         finish();
