@@ -1797,12 +1797,26 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
+                                android:enabled="@{!form.ss503nr.equals(`999`)}"
                                 android:text="@={form.ss503}"
                                 app:maxValue="500"
                                 app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/ss503nr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:background="#7fefd6d6"
+                            android:buttonTint="@color/red"
+                            android:checked="@{form.ss503nr.equals(`999`)}"
+                            android:onClick="@{()->form.setSs503nr(form.ss503nr.equals(`999`)?``:`999`)}"
+                            android:tag="-1"
+                            android:text="@string/nr"
+                            android:textColor="@color/redDark" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
