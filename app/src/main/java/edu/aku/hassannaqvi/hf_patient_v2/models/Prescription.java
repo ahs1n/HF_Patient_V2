@@ -2284,7 +2284,7 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_ID, this.id);
         json.put(PRESCRIPTIONTable.COLUMN_UID, this.uid);
         json.put(PRESCRIPTIONTable.COLUMN_UUID, this.uuid);
-        json.put(PRESCRIPTIONTable.COLUMN_PRES, this.prno);
+        json.put(PRESCRIPTIONTable.COLUMN_PRNO, this.prno);
         json.put(PRESCRIPTIONTable.COLUMN_USERNAME, this.userName);
         json.put(PRESCRIPTIONTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(PRESCRIPTIONTable.COLUMN_FACILITY, this.facility);
