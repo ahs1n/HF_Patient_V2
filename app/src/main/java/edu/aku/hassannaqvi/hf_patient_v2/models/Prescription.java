@@ -178,10 +178,27 @@ public class Prescription extends BaseObservable implements Observable {
     public String mp137du = _EMPTY_;
     public String mpnr = _EMPTY_;
 
+    public String mp961 = _EMPTY_;
+    public String mp961do = _EMPTY_;
+    public String mp961f = _EMPTY_;
+    public String mp961du = _EMPTY_;
+    public String mp961x = _EMPTY_;
+    public String mp962 = _EMPTY_;
+    public String mp962do = _EMPTY_;
+    public String mp962f = _EMPTY_;
+    public String mp962du = _EMPTY_;
+    public String mp962x = _EMPTY_;
+    public String mp963 = _EMPTY_;
+    public String mp963do = _EMPTY_;
+    public String mp963f = _EMPTY_;
+    public String mp963du = _EMPTY_;
+    public String mp963x = _EMPTY_;
+
     public String medCode = _EMPTY_;
     public String dose = _EMPTY_;
     public String frequency = _EMPTY_;
     public String duration = _EMPTY_;
+    public String other = _EMPTY_;
     private String uuid = _EMPTY_;
 
 
@@ -189,11 +206,6 @@ public class Prescription extends BaseObservable implements Observable {
     private String projectName = PROJECT_NAME;
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-        notifyPropertyChanged(BR.duration);
-    }
 
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
@@ -375,6 +387,21 @@ public class Prescription extends BaseObservable implements Observable {
     @Bindable
     public String getDuration() {
         return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+        notifyPropertyChanged(BR.duration);
+    }
+
+    @Bindable
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+        notifyPropertyChanged(BR.other);
     }
 
     @Bindable
@@ -2046,6 +2073,171 @@ public class Prescription extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getMp961() {
+        return mp961;
+    }
+
+    public void setMp961(String mp961) {
+        if (this.mp961.equals(mp961)) return; // for all checkboxes
+        this.mp961 = mp961;
+        setMp961do(mp961.equals("961") ? this.mp961do : "");
+        setMp961f(mp961.equals("961") ? this.mp961f : "");
+        setMp961du(mp961.equals("961") ? this.mp961du : "");
+        setMp961x(mp961.equals("961") ? this.mp961x : "");
+        notifyPropertyChanged(BR.mp961);
+    }
+
+    @Bindable
+    public String getMp961do() {
+        return mp961do;
+    }
+
+    public void setMp961do(String mp961do) {
+        this.mp961do = mp961do;
+        notifyPropertyChanged(BR.mp961do);
+    }
+
+    @Bindable
+    public String getMp961f() {
+        return mp961f;
+    }
+
+    public void setMp961f(String mp961f) {
+        this.mp961f = mp961f;
+        notifyPropertyChanged(BR.mp961f);
+    }
+
+    @Bindable
+    public String getMp961du() {
+        return mp961du;
+    }
+
+    public void setMp961du(String mp961du) {
+        this.mp961du = mp961du;
+        notifyPropertyChanged(BR.mp961du);
+    }
+
+    @Bindable
+    public String getMp961x() {
+        return mp961x;
+    }
+
+    public void setMp961x(String mp961x) {
+        this.mp961x = mp961x;
+        notifyPropertyChanged(BR.mp961x);
+    }
+
+    @Bindable
+    public String getMp962() {
+        return mp962;
+    }
+
+    public void setMp962(String mp962) {
+        if (this.mp962.equals(mp962)) return; // for all checkboxes
+        this.mp962 = mp962;
+        setMp962do(mp962.equals("962") ? this.mp962do : "");
+        setMp962f(mp962.equals("962") ? this.mp962f : "");
+        setMp962du(mp962.equals("962") ? this.mp962du : "");
+        setMp962x(mp962.equals("962") ? this.mp962x : "");
+        notifyPropertyChanged(BR.mp962);
+    }
+
+    @Bindable
+    public String getMp962do() {
+        return mp962do;
+    }
+
+    public void setMp962do(String mp962do) {
+        this.mp962do = mp962do;
+        notifyPropertyChanged(BR.mp962do);
+    }
+
+    @Bindable
+    public String getMp962f() {
+        return mp962f;
+    }
+
+    public void setMp962f(String mp962f) {
+        this.mp962f = mp962f;
+        notifyPropertyChanged(BR.mp962f);
+    }
+
+    @Bindable
+    public String getMp962du() {
+        return mp962du;
+    }
+
+    public void setMp962du(String mp962du) {
+        this.mp962du = mp962du;
+        notifyPropertyChanged(BR.mp962du);
+    }
+
+    @Bindable
+    public String getMp962x() {
+        return mp962x;
+    }
+
+    public void setMp962x(String mp962x) {
+        this.mp962x = mp962x;
+        notifyPropertyChanged(BR.mp962x);
+    }
+
+    @Bindable
+    public String getMp963() {
+        return mp963;
+    }
+
+    public void setMp963(String mp963) {
+        if (this.mp963.equals(mp963)) return; // for all checkboxes
+        this.mp963 = mp963;
+        setMp963do(mp963.equals("963") ? this.mp963do : "");
+        setMp963f(mp963.equals("963") ? this.mp963f : "");
+        setMp963du(mp963.equals("963") ? this.mp963du : "");
+        setMp963x(mp963.equals("963") ? this.mp963x : "");
+        notifyPropertyChanged(BR.mp963);
+    }
+
+    @Bindable
+    public String getMp963do() {
+        return mp963do;
+    }
+
+    public void setMp963do(String mp963do) {
+        this.mp963do = mp963do;
+        notifyPropertyChanged(BR.mp963do);
+    }
+
+    @Bindable
+    public String getMp963f() {
+        return mp963f;
+    }
+
+    public void setMp963f(String mp963f) {
+        this.mp963f = mp963f;
+        notifyPropertyChanged(BR.mp963f);
+    }
+
+    @Bindable
+    public String getMp963du() {
+        return mp963du;
+    }
+
+    public void setMp963du(String mp963du) {
+        this.mp963du = mp963du;
+        notifyPropertyChanged(BR.mp963du);
+    }
+
+    @Bindable
+    public String getMp963x() {
+        return mp963x;
+    }
+
+    public void setMp963x(String mp963x) {
+        this.mp963x = mp963x;
+        notifyPropertyChanged(BR.mp963x);
+    }
+
+    @Bindable
     public String getMpnr() {
         return mpnr;
     }
@@ -2090,6 +2282,9 @@ public class Prescription extends BaseObservable implements Observable {
         setMp135(mpnr.equals("999") ? "" : this.mp135);
         setMp136(mpnr.equals("999") ? "" : this.mp136);
         setMp137(mpnr.equals("999") ? "" : this.mp137);
+        setMp961(mpnr.equals("999") ? "" : this.mp961);
+        setMp962(mpnr.equals("999") ? "" : this.mp962);
+        setMp963(mpnr.equals("999") ? "" : this.mp963);
         notifyPropertyChanged(BR.mpnr);
     }
 
@@ -2114,6 +2309,7 @@ public class Prescription extends BaseObservable implements Observable {
         this.dose = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DOSE));
         this.frequency = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FREQUENCY));
         this.duration = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DURATION));
+        this.other = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_OTHER));
 
         sPRESHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRES)));
 
@@ -2274,6 +2470,21 @@ public class Prescription extends BaseObservable implements Observable {
             this.mp137f = json.has("mp137f") ? json.getString("mp137f") : "";
             this.mp137du = json.has("mp137du") ? json.getString("mp137du") : "";
             this.mpnr = json.has("mpnr") ? json.getString("mpnr") : "";
+            this.mp961 = json.has("mp961") ? json.getString("mp961") : "";
+            this.mp961do = json.has("mp961do") ? json.getString("mp961do") : "";
+            this.mp961f = json.has("mp961f") ? json.getString("mp961f") : "";
+            this.mp961du = json.has("mp961du") ? json.getString("mp961du") : "";
+            this.mp961x = json.has("mp961x") ? json.getString("mp961x") : "";
+            this.mp962 = json.has("mp962") ? json.getString("mp962") : "";
+            this.mp962do = json.has("mp962do") ? json.getString("mp962do") : "";
+            this.mp962f = json.has("mp962f") ? json.getString("mp962f") : "";
+            this.mp962du = json.has("mp962du") ? json.getString("mp962du") : "";
+            this.mp962x = json.has("mp962x") ? json.getString("mp962x") : "";
+            this.mp963 = json.has("mp963") ? json.getString("mp963") : "";
+            this.mp963do = json.has("mp963do") ? json.getString("mp963do") : "";
+            this.mp963f = json.has("mp963f") ? json.getString("mp963f") : "";
+            this.mp963du = json.has("mp963du") ? json.getString("mp963du") : "";
+            this.mp963x = json.has("mp963x") ? json.getString("mp963x") : "";
 
         }
     }
@@ -2300,6 +2511,7 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_DOSE, this.dose);
         json.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, this.frequency);
         json.put(PRESCRIPTIONTable.COLUMN_DURATION, this.duration);
+        json.put(PRESCRIPTIONTable.COLUMN_OTHER, this.other);
 
         json.put(PRESCRIPTIONTable.COLUMN_PRES, new JSONObject(sPREStoString()));
         return json;
@@ -2461,11 +2673,12 @@ public class Prescription extends BaseObservable implements Observable {
     }
 
 
-    public void updatePrescription(String medCode, String dose, String frequency, String duration) {
+    public void updatePrescription(String medCode, String dose, String frequency, String duration, String other) {
         MainApp.prescription.setMedCode(medCode);
         MainApp.prescription.setDose(dose);
         MainApp.prescription.setFrequency(frequency);
         MainApp.prescription.setDuration(duration);
+        MainApp.prescription.setOther(other);
     }
 
 }

@@ -115,6 +115,7 @@ object CreateTable {
             + PDContract.PRESCRIPTIONTable.COLUMN_DOSE + " TEXT,"
             + PDContract.PRESCRIPTIONTable.COLUMN_FREQUENCY + " TEXT,"
             + PDContract.PRESCRIPTIONTable.COLUMN_DURATION + " TEXT,"
+            + PDContract.PRESCRIPTIONTable.COLUMN_OTHER + " TEXT,"
             + PDContract.PRESCRIPTIONTable.COLUMN_PRES + " TEXT"
             + " );")
 

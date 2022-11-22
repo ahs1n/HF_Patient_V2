@@ -290,6 +290,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRESCRIPTIONTable.COLUMN_DOSE, prescription.getDose());
         values.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, prescription.getFrequency());
         values.put(PRESCRIPTIONTable.COLUMN_DURATION, prescription.getDuration());
+        values.put(PRESCRIPTIONTable.COLUMN_OTHER, prescription.getOther());
         values.put(PRESCRIPTIONTable.COLUMN_DEVICEID, prescription.getDeviceId());
         values.put(PRESCRIPTIONTable.COLUMN_DEVICETAGID, prescription.getDeviceTag());
         values.put(PRESCRIPTIONTable.COLUMN_SYNCED, prescription.getSynced());

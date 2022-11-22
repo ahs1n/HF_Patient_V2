@@ -121,5 +121,6 @@ public class PDContract {
         public static final String COLUMN_DOSE = "dose";
         public static final String COLUMN_FREQUENCY = "frequency";
         public static final String COLUMN_DURATION = "duration";
+        public static final String COLUMN_OTHER = "other";
     }
 }
