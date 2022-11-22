@@ -1654,7 +1654,7 @@
                     android:layout_height="wrap_content"
                     android:checked="@{form.mp963.equals(`963`)}"
                     android:enabled="@{!form.mpnr.equals(`999`)}"
-                    android:onClick="@{()->form.setMp961(form.mp961.equals(`963`)?``:`963`) + mp963f.clearCheck()}"
+                    android:onClick="@{()->form.setMp963(form.mp961.equals(`963`)?``:`963`) + mp963f.clearCheck()}"
                     android:text="@string/mp963" />
 
                 <com.edittextpicker.aliazaz.EditTextPicker

@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.vaccination;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -51,6 +53,31 @@ public class SectionVaccinationActivity extends AppCompatActivity {
         setTags(bi.ipv, new View[]{bi.bcg, bi.penta, bi.measles, bi.opv, bi.pcv, bi.rota, bi.dpt, bi.hepb, bi.tcv});
         setTags(bi.hepb, new View[]{bi.bcg, bi.penta, bi.measles, bi.opv, bi.pcv, bi.rota, bi.dpt, bi.ipv, bi.tcv});
         setTags(bi.tcv, new View[]{bi.bcg, bi.penta, bi.measles, bi.opv, bi.pcv, bi.rota, bi.dpt, bi.ipv, bi.hepb});
+
+        bi.svcheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+
+                if (isChecked) {
+                    bi.fldGrpCVsvskip.setVisibility(View.GONE);
+                    Clear.clearAllFields(bi.fldGrpCVsvskip);
+                    bi.bcg.setTag(null);
+                    bi.penta.setTag(null);
+                    bi.measles.setTag(null);
+                    bi.dpt.setTag(null);
+                    bi.opv.setTag(null);
+                    bi.pcv.setTag(null);
+                    bi.rota.setTag(null);
+                    bi.hepb.setTag(null);
+                    bi.tcv.setTag(null);
+                    bi.ipv.setTag(null);
+                    bi.bcg.setChecked(false);
+                    bi.dpt.setChecked(false);
+                    bi.hepb.setChecked(false);
+                    bi.tcv.setChecked(false);
+                }
+            }
+        });
 
     }
 

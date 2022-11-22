@@ -1947,9 +1947,12 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:background="#7fefd6d6"
                                 android:checked="@{form.ss601.equals(`3`)}"
                                 android:onClick="@{()->form.setSs601(`3`)}"
-                                android:text="@string/ss60103" />
+                                android:buttonTint="@color/red"
+                                android:text="@string/ss60103"
+                                android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

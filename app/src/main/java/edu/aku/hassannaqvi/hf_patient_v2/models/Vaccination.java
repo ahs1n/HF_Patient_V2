@@ -55,6 +55,7 @@ public class Vaccination extends BaseObservable implements Observable {
     public String rota2 = _EMPTY_;
     public String ipv1 = _EMPTY_;
     public String ipv2 = _EMPTY_;
+    public String svcheck = _EMPTY_;
 
 
     // APP VARIABLES
@@ -523,6 +524,42 @@ public class Vaccination extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ipv2);
     }
 
+    @Bindable
+    public String getSvcheck() {
+        return svcheck;
+    }
+
+    public void setSvcheck(String svcheck) {
+        if (this.svcheck.equals(svcheck)) return; // for all checkboxes
+        this.svcheck = svcheck;
+        setSv101(svcheck.equals("999") ? "" : this.sv101);
+        setSv102(svcheck.equals("999") ? "" : this.sv102);
+        setSv103(svcheck.equals("999") ? "" : this.sv103);
+        setSv104(svcheck.equals("999") ? "" : this.sv104);
+        setSv105(svcheck.equals("999") ? "" : this.sv105);
+        setSv106(svcheck.equals("999") ? "" : this.sv106);
+        setBcg(svcheck.equals("999") ? "" : this.bcg);
+        setPenta1(svcheck.equals("999") ? "" : this.penta1);
+        setPenta2(svcheck.equals("999") ? "" : this.penta2);
+        setPenta3(svcheck.equals("999") ? "" : this.penta3);
+        setMeasles1(svcheck.equals("999") ? "" : this.measles1);
+        setMeasles2(svcheck.equals("999") ? "" : this.measles2);
+        setDpt(svcheck.equals("999") ? "" : this.dpt);
+        setOpv0(svcheck.equals("999") ? "" : this.opv0);
+        setOpv1(svcheck.equals("999") ? "" : this.opv1);
+        setOpv2(svcheck.equals("999") ? "" : this.opv2);
+        setOpv3(svcheck.equals("999") ? "" : this.opv3);
+        setTcv(svcheck.equals("999") ? "" : this.tcv);
+        setPcv1(svcheck.equals("999") ? "" : this.pcv1);
+        setPcv2(svcheck.equals("999") ? "" : this.pcv2);
+        setPcv3(svcheck.equals("999") ? "" : this.pcv3);
+        setHepb(svcheck.equals("999") ? "" : this.hepb);
+        setRota1(svcheck.equals("999") ? "" : this.rota1);
+        setRota2(svcheck.equals("999") ? "" : this.rota2);
+        setIpv1(svcheck.equals("999") ? "" : this.ipv1);
+        setIpv2(svcheck.equals("999") ? "" : this.ipv2);
+        notifyPropertyChanged(BR.svcheck);
+    }
 
     public Vaccination Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ID));
@@ -578,6 +615,7 @@ public class Vaccination extends BaseObservable implements Observable {
             this.rota2 = json.has("rota2") ? json.getString("rota2") : "";
             this.ipv1 = json.has("ipv1") ? json.getString("ipv1") : "";
             this.ipv2 = json.has("ipv2") ? json.getString("ipv2") : "";
+            this.svcheck = json.has("svcheck") ? json.getString("svcheck") : "";
         }
     }
 
@@ -633,7 +671,8 @@ public class Vaccination extends BaseObservable implements Observable {
                 .put("rota1", rota1)
                 .put("rota2", rota2)
                 .put("ipv1", ipv1)
-                .put("ipv2", ipv2);
+                .put("ipv2", ipv2)
+                .put("svcheck", svcheck);
         return json.toString();
     }
 }

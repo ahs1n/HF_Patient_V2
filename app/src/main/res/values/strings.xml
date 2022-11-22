@@ -462,6 +462,7 @@
     <string name="sd966">Others (Please Specify)</string>
     <string name="sd100nr">Not Reported</string>
     <string name="svtitle">SECTION 6: VACCINATION</string>
+    <string name="svcheck">Not Applicable / Not Reported</string>
     <string name="sv101">Referral Slip available?</string>
     <string name="sv10101">Yes</string>
     <string name="sv10102">No</string>
