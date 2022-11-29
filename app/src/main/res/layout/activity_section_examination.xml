@@ -2336,7 +2336,7 @@
                                 <RadioButton
                                     android:id="@+id/se41201"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.se412.equals(`1`)}"
                                     android:onClick="@{()->form.setSe412(`1`)}"
@@ -2350,13 +2350,13 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:enabled="@{form.se412.equals(`1`)}"
                                     android:hint="@string/se41296"
-                                    android:tag="se41296"
+                                    android:tag="se41201"
                                     android:text="@={form.se41296x}" />
 
                                 <RadioButton
                                     android:id="@+id/se41202"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.se412.equals(`2`)}"
                                     android:onClick="@{()->form.setSe412(`2`)}"
@@ -2403,7 +2403,7 @@
                                 <RadioButton
                                     android:id="@+id/se41301"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.se413.equals(`1`)}"
                                     android:onClick="@{()->form.setSe413(`1`)}"
@@ -2417,13 +2417,13 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:enabled="@{form.se413.equals(`1`)}"
                                     android:hint="@string/se41396"
-                                    android:tag="se41396"
+                                    android:tag="se41301"
                                     android:text="@={form.se41396x}" />
 
                                 <RadioButton
                                     android:id="@+id/se41302"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.se413.equals(`2`)}"
                                     android:onClick="@{()->form.setSe413(`2`)}"
