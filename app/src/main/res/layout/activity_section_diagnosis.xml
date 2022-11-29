@@ -88,7 +88,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sd101.equals(`1`)}"
                                 android:enabled="@{!form.sd100nr.equals(`999`)}"
-                                android:onClick="@{()->form.setSd101(form.sd101.equals(`1`)?``:`1`)}"
+                                android:onClick="@{()->form.setSd101(form.sd101.equals(`1`) ? `` :`1`)}"
                                 android:text="@string/sd101" />
 
                             <CheckBox

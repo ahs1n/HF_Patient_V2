@@ -5,6 +5,7 @@ import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +15,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.List;
+
 import edu.aku.hassannaqvi.hf_patient_v2.R;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionComplaintsBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 
 public class SectionComplaintsActivity extends AppCompatActivity {
 
@@ -31,7 +35,215 @@ public class SectionComplaintsActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_complaints);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
+
         bi.setForm(complaints);
+
+        if (MainApp.PATIENT_DETAIL_EDIT != null)
+            presetFields(db.getComplaintsByUUID(MainApp.PATIENT_DETAIL_EDIT.getUid()));
+    }
+
+    private void presetFields(List<Complaints> complaintsList) {
+        for (int i = 0; i < complaintsList.size(); i++) {
+            Complaints _complaints = complaintsList.get(i);
+
+            switch (_complaints.getCompCode()) {
+                case "1":
+                    complaints.setPc201(_complaints.getCompCode());
+                    break;
+                case "2":
+                    complaints.setPc202(_complaints.getCompCode());
+                    break;
+                case "3":
+                    complaints.setPc203(_complaints.getCompCode());
+                    break;
+                case "4":
+                    complaints.setPc204(_complaints.getCompCode());
+                    break;
+                case "5":
+                    complaints.setPc205(_complaints.getCompCode());
+                    break;
+                case "6":
+                    complaints.setPc206(_complaints.getCompCode());
+                    break;
+                case "7":
+                    complaints.setPc207(_complaints.getCompCode());
+                    break;
+                case "8":
+                    complaints.setPc208(_complaints.getCompCode());
+                    break;
+                case "9":
+                    complaints.setPc209(_complaints.getCompCode());
+                    break;
+                case "10":
+                    complaints.setPc210(_complaints.getCompCode());
+                    break;
+                case "11":
+                    complaints.setPc211(_complaints.getCompCode());
+                    break;
+                case "12":
+                    complaints.setPc212(_complaints.getCompCode());
+                    break;
+                case "13":
+                    complaints.setPc213(_complaints.getCompCode());
+                    break;
+                case "14":
+                    complaints.setPc214(_complaints.getCompCode());
+                    break;
+                case "15":
+                    complaints.setPc215(_complaints.getCompCode());
+                    break;
+                case "16":
+                    complaints.setPc216(_complaints.getCompCode());
+                    break;
+                case "17":
+                    complaints.setPc217(_complaints.getCompCode());
+                    break;
+                case "18":
+                    complaints.setPc218(_complaints.getCompCode());
+                    break;
+                case "19":
+                    complaints.setPc219(_complaints.getCompCode());
+                    break;
+                case "20":
+                    complaints.setPc220(_complaints.getCompCode());
+                    break;
+                case "21":
+                    complaints.setPc221(_complaints.getCompCode());
+                    break;
+                case "22":
+                    complaints.setPc222(_complaints.getCompCode());
+                    break;
+                case "23":
+                    complaints.setPc223(_complaints.getCompCode());
+                    break;
+                case "24":
+                    complaints.setPc224(_complaints.getCompCode());
+                    break;
+                case "25":
+                    complaints.setPc225(_complaints.getCompCode());
+                    break;
+                case "26":
+                    complaints.setPc226(_complaints.getCompCode());
+                    break;
+                case "27":
+                    complaints.setPc227(_complaints.getCompCode());
+                    break;
+                case "28":
+                    complaints.setPc228(_complaints.getCompCode());
+                    break;
+                case "29":
+                    complaints.setPc229(_complaints.getCompCode());
+                    break;
+                case "30":
+                    complaints.setPc230(_complaints.getCompCode());
+                    break;
+                case "31":
+                    complaints.setPc231(_complaints.getCompCode());
+                    break;
+                case "32":
+                    complaints.setPc232(_complaints.getCompCode());
+                    break;
+                case "33":
+                    complaints.setPc233(_complaints.getCompCode());
+                    break;
+                case "34":
+                    complaints.setPc234(_complaints.getCompCode());
+                    break;
+                case "35":
+                    complaints.setPc235(_complaints.getCompCode());
+                    break;
+                case "36":
+                    complaints.setPc236(_complaints.getCompCode());
+                    break;
+                case "37":
+                    complaints.setPc237(_complaints.getCompCode());
+                    break;
+                case "38":
+                    complaints.setPc238(_complaints.getCompCode());
+                    break;
+                case "39":
+                    complaints.setPc239(_complaints.getCompCode());
+                    break;
+                case "40":
+                    complaints.setPc240(_complaints.getCompCode());
+                    break;
+                case "41":
+                    complaints.setPc241(_complaints.getCompCode());
+                    break;
+                case "42":
+                    complaints.setPc242(_complaints.getCompCode());
+                    break;
+                case "43":
+                    complaints.setPc243(_complaints.getCompCode());
+                    break;
+                case "44":
+                    complaints.setPc244(_complaints.getCompCode());
+                    break;
+                case "45":
+                    complaints.setPc245(_complaints.getCompCode());
+                    break;
+                case "46":
+                    complaints.setPc246(_complaints.getCompCode());
+                    break;
+                case "47":
+                    complaints.setPc247(_complaints.getCompCode());
+                    break;
+                case "48":
+                    complaints.setPc248(_complaints.getCompCode());
+                    break;
+                case "49":
+                    complaints.setPc249(_complaints.getCompCode());
+                    break;
+                case "50":
+                    complaints.setPc250(_complaints.getCompCode());
+                    break;
+                case "51":
+                    complaints.setPc251(_complaints.getCompCode());
+                    break;
+                case "52":
+                    complaints.setPc252(_complaints.getCompCode());
+                    break;
+                case "53":
+                    complaints.setPc253(_complaints.getCompCode());
+                    break;
+                case "54":
+                    complaints.setPc254(_complaints.getCompCode());
+                    break;
+                case "55":
+                    complaints.setPc255(_complaints.getCompCode());
+                    break;
+                case "56":
+                    complaints.setPc256(_complaints.getCompCode());
+                    break;
+                case "57":
+                    complaints.setPc257(_complaints.getCompCode());
+                    break;
+                case "58":
+                    complaints.setPc258(_complaints.getCompCode());
+                    break;
+                case "59":
+                    complaints.setPc259(_complaints.getCompCode());
+                    break;
+                case "961":
+                    complaints.setPc2961(_complaints.getCompCode());
+                    complaints.setPc2961x(_complaints.getCompOther());
+                    break;
+                case "962":
+                    complaints.setPc2962(_complaints.getCompCode());
+                    complaints.setPc2962x(_complaints.getCompOther());
+                    break;
+                case "963":
+                    complaints.setPc2963(_complaints.getCompCode());
+                    complaints.setPc2963x(_complaints.getCompOther());
+                    break;
+                case "999":
+                    complaints.setPc200nr(_complaints.getCompCode());
+                    break;
+            }
+
+//            bi.setForm(complaints);
+        }
     }
 
 

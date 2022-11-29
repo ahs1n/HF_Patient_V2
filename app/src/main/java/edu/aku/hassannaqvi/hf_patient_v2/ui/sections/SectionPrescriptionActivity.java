@@ -26,6 +26,9 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionPrescriptionBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
+import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate;
 
 public class SectionPrescriptionActivity extends AppCompatActivity {
 
@@ -39,8 +42,268 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(prescription);
+
+        if (MainApp.PATIENT_DETAIL_EDIT != null)
+            presetFields(db.getPrescriptionByUUID(MainApp.PATIENT_DETAIL_EDIT.getUid()));
+
         setupSkips();
 
+    }
+
+    private void presetFields(List<Prescription> prescriptionList) {
+        for (int i = 0; i < prescriptionList.size(); i++) {
+            Prescription _prescription = prescriptionList.get(i);
+            switch (_prescription.getMedCode()) {
+                case "1":
+                    prescription.setMp101(_prescription.getMedCode());
+                    prescription.setMp101do(_prescription.getDose());
+                    prescription.setMp101f(_prescription.getFrequency());
+                    prescription.setMp101du(_prescription.getDuration());
+                    break;
+                case "2":
+                    prescription.setMp102(_prescription.getMedCode());
+                    prescription.setMp102do(_prescription.getDose());
+                    prescription.setMp102f(_prescription.getFrequency());
+                    prescription.setMp102du(_prescription.getDuration());
+                    break;
+                case "3":
+                    prescription.setMp103(_prescription.getMedCode());
+                    prescription.setMp103do(_prescription.getDose());
+                    prescription.setMp103f(_prescription.getFrequency());
+                    prescription.setMp103du(_prescription.getDuration());
+                    break;
+                case "4":
+                    prescription.setMp104(_prescription.getMedCode());
+                    prescription.setMp104do(_prescription.getDose());
+                    prescription.setMp104f(_prescription.getFrequency());
+                    prescription.setMp104du(_prescription.getDuration());
+                    break;
+                case "5":
+                    prescription.setMp105(_prescription.getMedCode());
+                    prescription.setMp105do(_prescription.getDose());
+                    prescription.setMp105f(_prescription.getFrequency());
+                    prescription.setMp105du(_prescription.getDuration());
+                    break;
+                case "6":
+                    prescription.setMp106(_prescription.getMedCode());
+                    prescription.setMp106do(_prescription.getDose());
+                    prescription.setMp106f(_prescription.getFrequency());
+                    prescription.setMp106du(_prescription.getDuration());
+                    break;
+                case "7":
+                    prescription.setMp107(_prescription.getMedCode());
+                    prescription.setMp107do(_prescription.getDose());
+                    prescription.setMp107f(_prescription.getFrequency());
+                    prescription.setMp107du(_prescription.getDuration());
+                    break;
+                case "8":
+                    prescription.setMp108(_prescription.getMedCode());
+                    prescription.setMp108do(_prescription.getDose());
+                    prescription.setMp108f(_prescription.getFrequency());
+                    prescription.setMp108du(_prescription.getDuration());
+                    break;
+                case "9":
+                    prescription.setMp109(_prescription.getMedCode());
+                    prescription.setMp109do(_prescription.getDose());
+                    prescription.setMp109f(_prescription.getFrequency());
+                    prescription.setMp109du(_prescription.getDuration());
+                    break;
+                case "10":
+                    prescription.setMp110(_prescription.getMedCode());
+                    prescription.setMp110do(_prescription.getDose());
+                    prescription.setMp110f(_prescription.getFrequency());
+                    prescription.setMp110du(_prescription.getDuration());
+                    break;
+                case "11":
+                    prescription.setMp111(_prescription.getMedCode());
+                    prescription.setMp111do(_prescription.getDose());
+                    prescription.setMp111f(_prescription.getFrequency());
+                    prescription.setMp111du(_prescription.getDuration());
+                    break;
+                case "12":
+                    prescription.setMp112(_prescription.getMedCode());
+                    prescription.setMp112do(_prescription.getDose());
+                    prescription.setMp112f(_prescription.getFrequency());
+                    prescription.setMp112du(_prescription.getDuration());
+                    break;
+                case "13":
+                    prescription.setMp113(_prescription.getMedCode());
+                    prescription.setMp113do(_prescription.getDose());
+                    prescription.setMp113f(_prescription.getFrequency());
+                    prescription.setMp113du(_prescription.getDuration());
+                    break;
+                case "14":
+                    prescription.setMp114(_prescription.getMedCode());
+                    prescription.setMp114do(_prescription.getDose());
+                    prescription.setMp114f(_prescription.getFrequency());
+                    prescription.setMp114du(_prescription.getDuration());
+                    break;
+                case "15":
+                    prescription.setMp115(_prescription.getMedCode());
+                    prescription.setMp115do(_prescription.getDose());
+                    prescription.setMp115f(_prescription.getFrequency());
+                    prescription.setMp115du(_prescription.getDuration());
+                    break;
+                case "16":
+                    prescription.setMp116(_prescription.getMedCode());
+                    prescription.setMp116do(_prescription.getDose());
+                    prescription.setMp116f(_prescription.getFrequency());
+                    prescription.setMp116du(_prescription.getDuration());
+                    break;
+                case "17":
+                    prescription.setMp117(_prescription.getMedCode());
+                    prescription.setMp117do(_prescription.getDose());
+                    prescription.setMp117f(_prescription.getFrequency());
+                    prescription.setMp117du(_prescription.getDuration());
+                    break;
+                case "18":
+                    prescription.setMp118(_prescription.getMedCode());
+                    prescription.setMp118do(_prescription.getDose());
+                    prescription.setMp118f(_prescription.getFrequency());
+                    prescription.setMp118du(_prescription.getDuration());
+                    break;
+                case "19":
+                    prescription.setMp119(_prescription.getMedCode());
+                    prescription.setMp119do(_prescription.getDose());
+                    prescription.setMp119f(_prescription.getFrequency());
+                    prescription.setMp119du(_prescription.getDuration());
+                    break;
+                case "20":
+                    prescription.setMp120(_prescription.getMedCode());
+                    prescription.setMp120do(_prescription.getDose());
+                    prescription.setMp120f(_prescription.getFrequency());
+                    prescription.setMp120du(_prescription.getDuration());
+                    break;
+                case "21":
+                    prescription.setMp121(_prescription.getMedCode());
+                    prescription.setMp121do(_prescription.getDose());
+                    prescription.setMp121f(_prescription.getFrequency());
+                    prescription.setMp121du(_prescription.getDuration());
+                    break;
+                case "22":
+                    prescription.setMp122(_prescription.getMedCode());
+                    prescription.setMp122do(_prescription.getDose());
+                    prescription.setMp122f(_prescription.getFrequency());
+                    prescription.setMp122du(_prescription.getDuration());
+                    break;
+                case "23":
+                    prescription.setMp123(_prescription.getMedCode());
+                    prescription.setMp123do(_prescription.getDose());
+                    prescription.setMp123f(_prescription.getFrequency());
+                    prescription.setMp123du(_prescription.getDuration());
+                    break;
+                case "24":
+                    prescription.setMp124(_prescription.getMedCode());
+                    prescription.setMp124do(_prescription.getDose());
+                    prescription.setMp124f(_prescription.getFrequency());
+                    prescription.setMp124du(_prescription.getDuration());
+                    break;
+                case "25":
+                    prescription.setMp125(_prescription.getMedCode());
+                    prescription.setMp125do(_prescription.getDose());
+                    prescription.setMp125f(_prescription.getFrequency());
+                    prescription.setMp125du(_prescription.getDuration());
+                    break;
+                case "26":
+                    prescription.setMp126(_prescription.getMedCode());
+                    prescription.setMp126do(_prescription.getDose());
+                    prescription.setMp126f(_prescription.getFrequency());
+                    prescription.setMp126du(_prescription.getDuration());
+                    break;
+                case "27":
+                    prescription.setMp127(_prescription.getMedCode());
+                    prescription.setMp127do(_prescription.getDose());
+                    prescription.setMp127f(_prescription.getFrequency());
+                    prescription.setMp127du(_prescription.getDuration());
+                    break;
+                case "28":
+                    prescription.setMp128(_prescription.getMedCode());
+                    prescription.setMp128do(_prescription.getDose());
+                    prescription.setMp128f(_prescription.getFrequency());
+                    prescription.setMp128du(_prescription.getDuration());
+                    break;
+                case "29":
+                    prescription.setMp129(_prescription.getMedCode());
+                    prescription.setMp129do(_prescription.getDose());
+                    prescription.setMp129f(_prescription.getFrequency());
+                    prescription.setMp129du(_prescription.getDuration());
+                    break;
+                case "30":
+                    prescription.setMp130(_prescription.getMedCode());
+                    prescription.setMp130do(_prescription.getDose());
+                    prescription.setMp130f(_prescription.getFrequency());
+                    prescription.setMp130du(_prescription.getDuration());
+                    break;
+                case "31":
+                    prescription.setMp131(_prescription.getMedCode());
+                    prescription.setMp131do(_prescription.getDose());
+                    prescription.setMp131f(_prescription.getFrequency());
+                    prescription.setMp131du(_prescription.getDuration());
+                    break;
+                case "32":
+                    prescription.setMp132(_prescription.getMedCode());
+                    prescription.setMp132do(_prescription.getDose());
+                    prescription.setMp132f(_prescription.getFrequency());
+                    prescription.setMp132du(_prescription.getDuration());
+                    break;
+                case "33":
+                    prescription.setMp133(_prescription.getMedCode());
+                    prescription.setMp133do(_prescription.getDose());
+                    prescription.setMp133f(_prescription.getFrequency());
+                    prescription.setMp133du(_prescription.getDuration());
+                    break;
+                case "34":
+                    prescription.setMp134(_prescription.getMedCode());
+                    prescription.setMp134do(_prescription.getDose());
+                    prescription.setMp134f(_prescription.getFrequency());
+                    prescription.setMp134du(_prescription.getDuration());
+                    break;
+                case "35":
+                    prescription.setMp135(_prescription.getMedCode());
+                    prescription.setMp135do(_prescription.getDose());
+                    prescription.setMp135f(_prescription.getFrequency());
+                    prescription.setMp135du(_prescription.getDuration());
+                    break;
+                case "36":
+                    prescription.setMp136(_prescription.getMedCode());
+                    prescription.setMp136do(_prescription.getDose());
+                    prescription.setMp136f(_prescription.getFrequency());
+                    prescription.setMp136du(_prescription.getDuration());
+                    break;
+                case "37":
+                    prescription.setMp137(_prescription.getMedCode());
+                    prescription.setMp137do(_prescription.getDose());
+                    prescription.setMp137f(_prescription.getFrequency());
+                    prescription.setMp137du(_prescription.getDuration());
+                    break;
+                case "961":
+                    prescription.setMp961(_prescription.getMedCode());
+                    prescription.setMp961do(_prescription.getDose());
+                    prescription.setMp961f(_prescription.getFrequency());
+                    prescription.setMp961du(_prescription.getDuration());
+                    prescription.setMp961x(_prescription.getOther());
+                    break;
+                case "962":
+                    prescription.setMp962(_prescription.getMedCode());
+                    prescription.setMp962do(_prescription.getDose());
+                    prescription.setMp962f(_prescription.getFrequency());
+                    prescription.setMp962du(_prescription.getDuration());
+                    prescription.setMp962x(_prescription.getOther());
+                    break;
+                case "963":
+                    prescription.setMp963(_prescription.getMedCode());
+                    prescription.setMp963do(_prescription.getDose());
+                    prescription.setMp963f(_prescription.getFrequency());
+                    prescription.setMp963du(_prescription.getDuration());
+                    prescription.setMp963x(_prescription.getOther());
+                    break;
+                case "999":
+                    prescription.setMpnr(_prescription.getMedCode());
+                    break;
+
+
+            }
+        }
     }
 
     private void setupSkips() {
@@ -326,8 +589,20 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
         if (updateDB()) {
             finish();
-            Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, SectionScreeningActivity.class));
+//            Intent intent;
+            if (MainApp.PATIENT_DETAIL_EDIT != null) {
+                MainApp.PATIENT_DETAIL_EDIT = null;
+//                intent = new Intent(this, FormsReportDate.class);
+                Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
+            } else {
+                startActivity(new Intent(this, SectionScreeningActivity.class));
+                Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
+            }
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//                startActivity(new Intent(this, SectionScreeningActivity.class));
+
+
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

@@ -59,7 +59,7 @@ public class FormsReportCluster extends AppCompatActivity {
         }
 
         // specify an adapter (see also next example)
-        formsAdapter = new FormsAdapter((List<PatientDetails>) fc, this);
+        formsAdapter = new FormsAdapter((List<PatientDetails>) fc, this, null);
         recyclerView.setAdapter(formsAdapter);
     }
 
@@ -75,7 +75,7 @@ public class FormsReportCluster extends AppCompatActivity {
         if (fc.size() > 0) {
             recyclerView.setVisibility(View.VISIBLE);
             noresult.setVisibility(View.GONE);
-            formsAdapter = new FormsAdapter((List<PatientDetails>) fc, this);
+            formsAdapter = new FormsAdapter((List<PatientDetails>) fc, this, null);
             formsAdapter.notifyDataSetChanged();
             recyclerView.setAdapter(formsAdapter);
         } else {

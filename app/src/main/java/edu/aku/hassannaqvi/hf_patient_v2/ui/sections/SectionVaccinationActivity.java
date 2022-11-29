@@ -1,11 +1,13 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.vaccination;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,6 +39,8 @@ public class SectionVaccinationActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_vaccination);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        if (MainApp.PATIENT_DETAIL_EDIT != null)
+            vaccination = db.getVaccinationByUUID(MainApp.PATIENT_DETAIL_EDIT.getUid());
         bi.setForm(vaccination);
         setupSkips();
     }
@@ -89,6 +93,12 @@ public class SectionVaccinationActivity extends AppCompatActivity {
 
     public void setTags(RadioButton rb, View[] views) {
         rb.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) for (View view : views) view.setTag("-1");
+        });
+    }
+
+    public void setTags(CheckBox cb, View[] views) {
+        cb.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b) for (View view : views) view.setTag("-1");
         });
     }

@@ -34,6 +34,8 @@ public class SectionExaminationActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_examination);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        if (MainApp.PATIENT_DETAIL_EDIT != null)
+            patientDetails = MainApp.PATIENT_DETAIL_EDIT;
         bi.setForm(patientDetails);
 
         //setMinDate

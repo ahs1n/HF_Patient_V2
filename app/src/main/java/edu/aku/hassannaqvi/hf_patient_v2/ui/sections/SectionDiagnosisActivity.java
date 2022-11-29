@@ -17,11 +17,15 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.List;
+
 import edu.aku.hassannaqvi.hf_patient_v2.R;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionDiagnosisBinding;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
 
@@ -37,6 +41,193 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(diagnosis);
+
+        if (MainApp.PATIENT_DETAIL_EDIT != null)
+            presetFields(db.getDiagnosisByUUID(MainApp.PATIENT_DETAIL_EDIT.getUid()));
+    }
+
+    private void presetFields(List<Diagnosis> diagnosisList) {
+        for (int i = 0; i < diagnosisList.size(); i++) {
+            Diagnosis _diagnosis = diagnosisList.get(i);
+            switch (_diagnosis.getDiagCode()) {
+                case "1":
+                    diagnosis.setSd101(_diagnosis.getDiagCode());
+                    break;
+                case "2":
+                    diagnosis.setSd102(_diagnosis.getDiagCode());
+                    break;
+                case "3":
+                    diagnosis.setSd103(_diagnosis.getDiagCode());
+                    break;
+                case "4":
+                    diagnosis.setSd104(_diagnosis.getDiagCode());
+                    break;
+                case "5":
+                    diagnosis.setSd105(_diagnosis.getDiagCode());
+                    break;
+                case "6":
+                    diagnosis.setSd106(_diagnosis.getDiagCode());
+                    break;
+                case "7":
+                    diagnosis.setSd107(_diagnosis.getDiagCode());
+                    break;
+                case "8":
+                    diagnosis.setSd108(_diagnosis.getDiagCode());
+                    break;
+                case "9":
+                    diagnosis.setSd109(_diagnosis.getDiagCode());
+                    break;
+                case "10":
+                    diagnosis.setSd110(_diagnosis.getDiagCode());
+                    break;
+                case "11":
+                    diagnosis.setSd111(_diagnosis.getDiagCode());
+                    break;
+                case "12":
+                    diagnosis.setSd112(_diagnosis.getDiagCode());
+                    break;
+                case "13":
+                    diagnosis.setSd113(_diagnosis.getDiagCode());
+                    break;
+                case "14":
+                    diagnosis.setSd114(_diagnosis.getDiagCode());
+                    break;
+                case "15":
+                    diagnosis.setSd115(_diagnosis.getDiagCode());
+                    break;
+                case "16":
+                    diagnosis.setSd116(_diagnosis.getDiagCode());
+                    break;
+                case "17":
+                    diagnosis.setSd117(_diagnosis.getDiagCode());
+                    break;
+                case "18":
+                    diagnosis.setSd118(_diagnosis.getDiagCode());
+                    break;
+                case "19":
+                    diagnosis.setSd119(_diagnosis.getDiagCode());
+                    break;
+                case "20":
+                    diagnosis.setSd120(_diagnosis.getDiagCode());
+                    break;
+                case "21":
+                    diagnosis.setSd121(_diagnosis.getDiagCode());
+                    break;
+                case "22":
+                    diagnosis.setSd122(_diagnosis.getDiagCode());
+                    break;
+                case "23":
+                    diagnosis.setSd123(_diagnosis.getDiagCode());
+                    break;
+                case "24":
+                    diagnosis.setSd124(_diagnosis.getDiagCode());
+                    break;
+                case "25":
+                    diagnosis.setSd125(_diagnosis.getDiagCode());
+                    break;
+                case "26":
+                    diagnosis.setSd126(_diagnosis.getDiagCode());
+                    break;
+                case "27":
+                    diagnosis.setSd127(_diagnosis.getDiagCode());
+                    break;
+                case "28":
+                    diagnosis.setSd128(_diagnosis.getDiagCode());
+                    break;
+                case "29":
+                    diagnosis.setSd129(_diagnosis.getDiagCode());
+                    break;
+                case "30":
+                    diagnosis.setSd130(_diagnosis.getDiagCode());
+                    break;
+                case "31":
+                    diagnosis.setSd131(_diagnosis.getDiagCode());
+                    break;
+                case "32":
+                    diagnosis.setSd132(_diagnosis.getDiagCode());
+                    break;
+                case "33":
+                    diagnosis.setSd133(_diagnosis.getDiagCode());
+                    break;
+                case "34":
+                    diagnosis.setSd134(_diagnosis.getDiagCode());
+                    break;
+                case "35":
+                    diagnosis.setSd135(_diagnosis.getDiagCode());
+                    break;
+                case "36":
+                    diagnosis.setSd136(_diagnosis.getDiagCode());
+                    break;
+                case "37":
+                    diagnosis.setSd137(_diagnosis.getDiagCode());
+                    break;
+                case "38":
+                    diagnosis.setSd138(_diagnosis.getDiagCode());
+                    break;
+                case "39":
+                    diagnosis.setSd139(_diagnosis.getDiagCode());
+                    break;
+                case "40":
+                    diagnosis.setSd140(_diagnosis.getDiagCode());
+                    break;
+                case "41":
+                    diagnosis.setSd141(_diagnosis.getDiagCode());
+                    break;
+                case "42":
+                    diagnosis.setSd142(_diagnosis.getDiagCode());
+                    break;
+                case "43":
+                    diagnosis.setSd143(_diagnosis.getDiagCode());
+                    break;
+                case "44":
+                    diagnosis.setSd144(_diagnosis.getDiagCode());
+                    break;
+                case "45":
+                    diagnosis.setSd145(_diagnosis.getDiagCode());
+                    break;
+                case "46":
+                    diagnosis.setSd146(_diagnosis.getDiagCode());
+                    break;
+                case "47":
+                    diagnosis.setSd147(_diagnosis.getDiagCode());
+                    break;
+                case "48":
+                    diagnosis.setSd148(_diagnosis.getDiagCode());
+                    break;
+                case "49":
+                    diagnosis.setSd149(_diagnosis.getDiagCode());
+                    break;
+                case "999":
+                    diagnosis.setSd100nr(_diagnosis.getDiagCode());
+                    break;
+                case "961":
+                    diagnosis.setSd961(_diagnosis.getDiagCode());
+                    diagnosis.setSd961x(_diagnosis.getDiagOther());
+                    break;
+                case "962":
+                    diagnosis.setSd962(_diagnosis.getDiagCode());
+                    diagnosis.setSd962x(_diagnosis.getDiagOther());
+                    break;
+                case "963":
+                    diagnosis.setSd963(_diagnosis.getDiagCode());
+                    diagnosis.setSd963x(_diagnosis.getDiagOther());
+                    break;
+                case "964":
+                    diagnosis.setSd964(_diagnosis.getDiagCode());
+                    diagnosis.setSd964x(_diagnosis.getDiagOther());
+                    break;
+                case "965":
+                    diagnosis.setSd965(_diagnosis.getDiagCode());
+                    diagnosis.setSd965x(_diagnosis.getDiagOther());
+                    break;
+                case "966":
+                    diagnosis.setSd966(_diagnosis.getDiagCode());
+                    diagnosis.setSd966x(_diagnosis.getDiagOther());
+                    break;
+
+
+            }
+        }
     }
 
 
@@ -60,6 +251,10 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
+
+    private void presetFields() {
+
     }
 
 

@@ -100,7 +100,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_hf_patient.db", "VaLu@b1ePeRcE!V3")
+            resValue("string", "DB_PASSWORD_hf_patient_v2.db", "VaLu@b1ePeRcE!V3")
         }
     }
     compileOptions {

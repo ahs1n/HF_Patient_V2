@@ -521,12 +521,20 @@
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
 
-                                            <RadioButton
+                                            <!--                                            <RadioButton-->
+                                            <!--                                                android:id="@+id/bcg"-->
+                                            <!--                                                android:layout_width="120dp"-->
+                                            <!--                                                android:layout_height="wrap_content"-->
+                                            <!--                                                android:checked="@{form.bcg.equals(`1`)}"-->
+                                            <!--                                                android:onClick="@{()->form.setBcg(`1`)}"-->
+                                            <!--                                                android:text="@string/bcg" />-->
+
+                                            <CheckBox
                                                 android:id="@+id/bcg"
                                                 android:layout_width="120dp"
                                                 android:layout_height="wrap_content"
                                                 android:checked="@{form.bcg.equals(`1`)}"
-                                                android:onClick="@{()->form.setBcg(`1`)}"
+                                                android:onClick="@{()->form.setBcg(form.bcg.equals(`1`)?``:`1`)}"
                                                 android:text="@string/bcg" />
 
                                             <RadioGroup
@@ -585,12 +593,20 @@
 
                                             </RadioGroup>
 
-                                            <RadioButton
+                                            <!--                                            <RadioButton-->
+                                            <!--                                                android:id="@+id/dpt"-->
+                                            <!--                                                android:layout_width="120dp"-->
+                                            <!--                                                android:layout_height="match_parent"-->
+                                            <!--                                                android:checked="@{form.dpt.equals(`1`)}"-->
+                                            <!--                                                android:onClick="@{()->form.setDpt(`1`)}"-->
+                                            <!--                                                android:text="@string/dpt" />-->
+
+                                            <CheckBox
                                                 android:id="@+id/dpt"
                                                 android:layout_width="120dp"
                                                 android:layout_height="match_parent"
                                                 android:checked="@{form.dpt.equals(`1`)}"
-                                                android:onClick="@{()->form.setDpt(`1`)}"
+                                                android:onClick="@{()->form.setDpt(form.dpt.equals(`1`)?``:`1`)}"
                                                 android:text="@string/dpt" />
 
                                         </LinearLayout>
@@ -646,12 +662,20 @@
 
                                             </RadioGroup>
 
-                                            <RadioButton
+                                            <!--                                            <RadioButton-->
+                                            <!--                                                android:id="@+id/tcv"-->
+                                            <!--                                                android:layout_width="120dp"-->
+                                            <!--                                                android:layout_height="wrap_content"-->
+                                            <!--                                                android:checked="@{form.tcv.equals(`1`)}"-->
+                                            <!--                                                android:onClick="@{()->form.setTcv(`1`)}"-->
+                                            <!--                                                android:text="@string/tcv" />-->
+
+                                            <CheckBox
                                                 android:id="@+id/tcv"
                                                 android:layout_width="120dp"
                                                 android:layout_height="wrap_content"
                                                 android:checked="@{form.tcv.equals(`1`)}"
-                                                android:onClick="@{()->form.setTcv(`1`)}"
+                                                android:onClick="@{()->form.setTcv(form.tcv.equals(`1`)?``:`1`)}"
                                                 android:text="@string/tcv" />
 
                                             <View
@@ -723,12 +747,20 @@
                                             android:background="@color/lightPink1"
                                             android:orientation="horizontal">
 
-                                            <RadioButton
+                                            <!--                                            <RadioButton-->
+                                            <!--                                                android:id="@+id/hepb"-->
+                                            <!--                                                android:layout_width="120dp"-->
+                                            <!--                                                android:layout_height="wrap_content"-->
+                                            <!--                                                android:checked="@{form.hepb.equals(`1`)}"-->
+                                            <!--                                                android:onClick="@{()->form.setHepb(`1`)}"-->
+                                            <!--                                                android:text="@string/hepb" />-->
+
+                                            <CheckBox
                                                 android:id="@+id/hepb"
                                                 android:layout_width="120dp"
                                                 android:layout_height="wrap_content"
                                                 android:checked="@{form.hepb.equals(`1`)}"
-                                                android:onClick="@{()->form.setHepb(`1`)}"
+                                                android:onClick="@{()->form.setHepb(form.hepb.equals(`1`)?``:`1`)}"
                                                 android:text="@string/hepb" />
 
                                             <RadioGroup

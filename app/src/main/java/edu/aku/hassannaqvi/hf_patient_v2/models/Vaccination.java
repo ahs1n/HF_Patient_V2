@@ -341,6 +341,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPenta1(String penta1) {
         this.penta1 = penta1;
+        this.penta2 = "-1";
+        this.penta3 = "-1";
         notifyPropertyChanged(BR.penta1);
     }
 
@@ -351,6 +353,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPenta2(String penta2) {
         this.penta2 = penta2;
+        this.penta1 = "-1";
+        this.penta3 = "-1";
         notifyPropertyChanged(BR.penta2);
     }
 
@@ -361,6 +365,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPenta3(String penta3) {
         this.penta3 = penta3;
+        this.penta1 = "-1";
+        this.penta2 = "-1";
         notifyPropertyChanged(BR.penta3);
     }
 
@@ -371,6 +377,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setMeasles1(String measles1) {
         this.measles1 = measles1;
+        this.measles2 = "-1";
         notifyPropertyChanged(BR.measles1);
     }
 
@@ -381,6 +388,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setMeasles2(String measles2) {
         this.measles2 = measles2;
+        this.measles1 = "-1";
         notifyPropertyChanged(BR.measles2);
     }
 
@@ -401,6 +409,9 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setOpv0(String opv0) {
         this.opv0 = opv0;
+        this.opv1 = "-1";
+        this.opv2 = "-1";
+        this.opv3 = "-1";
         notifyPropertyChanged(BR.opv0);
     }
 
@@ -411,6 +422,9 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setOpv1(String opv1) {
         this.opv1 = opv1;
+        this.opv0 = "-1";
+        this.opv2 = "-1";
+        this.opv3 = "-1";
         notifyPropertyChanged(BR.opv1);
     }
 
@@ -421,6 +435,9 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setOpv2(String opv2) {
         this.opv2 = opv2;
+        this.opv0 = "-1";
+        this.opv1 = "-1";
+        this.opv3 = "-1";
         notifyPropertyChanged(BR.opv2);
     }
 
@@ -431,6 +448,9 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setOpv3(String opv3) {
         this.opv3 = opv3;
+        this.opv0 = "-1";
+        this.opv1 = "-1";
+        this.opv2 = "-1";
         notifyPropertyChanged(BR.opv3);
     }
 
@@ -451,6 +471,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPcv1(String pcv1) {
         this.pcv1 = pcv1;
+        this.pcv2 = "-1";
+        this.pcv3 = "-1";
         notifyPropertyChanged(BR.pcv1);
     }
 
@@ -461,6 +483,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPcv2(String pcv2) {
         this.pcv2 = pcv2;
+        this.pcv1 = "-1";
+        this.pcv3 = "-1";
         notifyPropertyChanged(BR.pcv2);
     }
 
@@ -471,6 +495,8 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setPcv3(String pcv3) {
         this.pcv3 = pcv3;
+        this.pcv1 = "-1";
+        this.pcv2 = "-1";
         notifyPropertyChanged(BR.pcv3);
     }
 
@@ -491,6 +517,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setRota1(String rota1) {
         this.rota1 = rota1;
+        this.rota2 = "-1";
         notifyPropertyChanged(BR.rota1);
     }
 
@@ -501,6 +528,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setRota2(String rota2) {
         this.rota2 = rota2;
+        this.rota1 = "-1";
         notifyPropertyChanged(BR.rota2);
     }
 
@@ -511,6 +539,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setIpv1(String ipv1) {
         this.ipv1 = ipv1;
+        this.ipv2 = "-1";
         notifyPropertyChanged(BR.ipv1);
     }
 
@@ -521,6 +550,7 @@ public class Vaccination extends BaseObservable implements Observable {
 
     public void setIpv2(String ipv2) {
         this.ipv2 = ipv2;
+        this.ipv1 = "-1";
         notifyPropertyChanged(BR.ipv2);
     }
 

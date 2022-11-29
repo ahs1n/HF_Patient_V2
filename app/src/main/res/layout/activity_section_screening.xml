@@ -1207,73 +1207,204 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
-                            <TextView
-                                style="@style/sub_labels"
+                            <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/ss301" />
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="0.5">
 
-                            <TextView
-                                style="@style/sub_labels"
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ss301" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/ss301"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="@{!form.ss301nr.equals(`999`)}"
+                                    android:gravity="center"
+                                    android:hint="###.#"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:text="@={form.ss301}"
+                                    app:mask="###.#"
+                                    app:maxValue="200.0"
+                                    app:minValue="001.0"
+                                    app:type="range" />
+                                <!--                            android:enabled="@{!form.ss300nr.equals(`999`)}"-->
+
+                                <CheckBox
+                                    android:id="@+id/ss301nr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:background="#7fefd6d6"
+                                    android:buttonTint="@color/red"
+                                    android:checked="@{form.ss301nr.equals(`999`)}"
+                                    android:onClick="@{()->form.setSs301nr(form.ss301nr.equals(`999`)?``:`999`)}"
+                                    android:tag="-1"
+                                    android:text="@string/ss300nr"
+                                    android:textColor="@color/redDark" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/ss302" />
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="0.5">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ss302" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/ss302"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="@{!form.ss302nr.equals(`999`)}"
+                                    android:gravity="center"
+                                    android:hint="###"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:text="@={form.ss302}"
+                                    app:maxValue="200"
+                                    app:minValue="45"
+                                    app:type="range" />
+                                <!--                            android:enabled="@{!form.ss300nr.equals(`999`)}"-->
+
+                                <CheckBox
+                                    android:id="@+id/ss302nr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:background="#7fefd6d6"
+                                    android:buttonTint="@color/red"
+                                    android:checked="@{form.ss302nr.equals(`999`)}"
+                                    android:onClick="@{()->form.setSs302nr(form.ss302nr.equals(`999`)?``:`999`)}"
+                                    android:tag="-1"
+                                    android:text="@string/ss300nr"
+                                    android:textColor="@color/redDark" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/ss301"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:enabled="@{!form.ss300nr.equals(`999`)}"
-                                android:gravity="center"
-                                android:hint="###.#"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                android:text="@={form.ss301}"
-                                app:mask="###.#"
-                                app:maxValue="200.0"
-                                app:minValue="001.0"
-                                app:type="range" />
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal">-->
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/ss302"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:enabled="@{!form.ss300nr.equals(`999`)}"
-                                android:gravity="center"
-                                android:hint="###"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                android:text="@={form.ss302}"
-                                app:maxValue="200"
-                                app:minValue="45"
-                                app:type="range" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                style="@style/sub_labels"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:text="@string/ss301" />-->
 
-                        <CheckBox
-                            android:id="@+id/ss300nr"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="end"
-                            android:background="#7fefd6d6"
-                            android:buttonTint="@color/red"
-                            android:checked="@{form.ss300nr.equals(`999`)}"
-                            android:onClick="@{()->form.setSs300nr(form.ss300nr.equals(`999`)?``:`999`)}"
-                            android:tag="-1"
-                            android:text="@string/ss300nr"
-                            android:textColor="@color/redDark" />
+<!--                            <TextView-->
+<!--                                style="@style/sub_labels"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:text="@string/ss302" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal">-->
+
+<!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+<!--                                android:id="@+id/ss301"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:enabled="@{!form.ss301nr.equals(`999`)}"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="###.#"-->
+<!--                                android:inputType="number"-->
+<!--                                android:maxLength="3"-->
+<!--                                android:text="@={form.ss301}"-->
+<!--                                app:mask="###.#"-->
+<!--                                app:maxValue="200.0"-->
+<!--                                app:minValue="001.0"-->
+<!--                                app:type="range" />-->
+<!--                            &lt;!&ndash;                            android:enabled="@{!form.ss300nr.equals(`999`)}"&ndash;&gt;-->
+
+<!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
+<!--                                android:id="@+id/ss302"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:enabled="@{!form.ss302nr.equals(`999`)}"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="###"-->
+<!--                                android:inputType="number"-->
+<!--                                android:maxLength="3"-->
+<!--                                android:text="@={form.ss302}"-->
+<!--                                app:maxValue="200"-->
+<!--                                app:minValue="45"-->
+<!--                                app:type="range" />-->
+<!--                            &lt;!&ndash;                            android:enabled="@{!form.ss300nr.equals(`999`)}"&ndash;&gt;-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:weightSum="1">-->
+
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/ss301nr"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_gravity="end"-->
+<!--                                android:layout_weight="0.5"-->
+<!--                                android:background="#7fefd6d6"-->
+<!--                                android:buttonTint="@color/red"-->
+<!--                                android:checked="@{form.ss301nr.equals(`999`)}"-->
+<!--                                android:onClick="@{()->form.setSs301nr(form.ss301nr.equals(`999`)?``:`999`)}"-->
+<!--                                android:tag="-1"-->
+<!--                                android:text="@string/ss300nr"-->
+<!--                                android:textColor="@color/redDark" />-->
+
+<!--                            <CheckBox-->
+<!--                                android:id="@+id/ss302nr"-->
+<!--                                android:layout_width="0dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_gravity="end"-->
+<!--                                android:layout_weight="0.5"-->
+<!--                                android:background="#7fefd6d6"-->
+<!--                                android:buttonTint="@color/red"-->
+<!--                                android:checked="@{form.ss302nr.equals(`999`)}"-->
+<!--                                android:onClick="@{()->form.setSs302nr(form.ss302nr.equals(`999`)?``:`999`)}"-->
+<!--                                android:tag="-1"-->
+<!--                                android:text="@string/ss300nr"-->
+<!--                                android:textColor="@color/redDark" />-->
+<!--                        </LinearLayout>-->
+
+                        <!--                        <CheckBox-->
+                        <!--                            android:id="@+id/ss300nr"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="match_parent"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:background="#7fefd6d6"-->
+                        <!--                            android:buttonTint="@color/red"-->
+                        <!--                            android:checked="@{form.ss300nr.equals(`999`)}"-->
+                        <!--                            android:onClick="@{()->form.setSs300nr(form.ss300nr.equals(`999`)?``:`999`)}"-->
+                        <!--                            android:tag="-1"-->
+                        <!--                            android:text="@string/ss300nr"-->
+                        <!--                            android:textColor="@color/redDark" />-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1683,10 +1814,10 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#7fefd6d6"
+                                android:buttonTint="@color/red"
                                 android:checked="@{form.ss501.equals(`999`)}"
                                 android:onClick="@{()->form.setSs501(`999`)}"
                                 android:text="@string/ss50199"
-                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1751,10 +1882,10 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#7fefd6d6"
+                                android:buttonTint="@color/red"
                                 android:checked="@{form.ss502.equals(`999`)}"
                                 android:onClick="@{()->form.setSs502(`999`)}"
                                 android:text="@string/ss50299"
-                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1793,11 +1924,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!form.ss503nr.equals(`999`)}"
                                 android:gravity="center"
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:enabled="@{!form.ss503nr.equals(`999`)}"
                                 android:text="@={form.ss503}"
                                 app:maxValue="500"
                                 app:minValue="0"
@@ -1879,10 +2010,10 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#7fefd6d6"
+                                android:buttonTint="@color/red"
                                 android:checked="@{form.ss504.equals(`999`)}"
                                 android:onClick="@{()->form.setSs504(`999`)}"
                                 android:text="@string/ss50499"
-                                android:buttonTint="@color/red"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1948,9 +2079,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="#7fefd6d6"
+                                android:buttonTint="@color/red"
                                 android:checked="@{form.ss601.equals(`3`)}"
                                 android:onClick="@{()->form.setSs601(`3`)}"
-                                android:buttonTint="@color/red"
                                 android:text="@string/ss60103"
                                 android:textColor="@color/redDark" />
                         </RadioGroup>

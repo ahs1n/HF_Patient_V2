@@ -68,6 +68,8 @@ public class MainApp extends Application {
     public static boolean permissionCheck = false;
     public static int entryType = 0;
 
+    // For edit mode
+    public static PatientDetails PATIENT_DETAIL_EDIT;
 
     public static PatientDetails patientDetails;
     public static PatientDetails pd;

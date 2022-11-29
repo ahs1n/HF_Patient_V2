@@ -26,6 +26,7 @@ import static edu.aku.hassannaqvi.hf_patient_v2.database.CreateTable.SQL_CREATE_
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.MatrixCursor;
 import android.database.SQLException;
 import android.util.Log;
@@ -1742,4 +1743,203 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return doctors;
     }
+
+    public PatientDetails getPatientDetailsByUID(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = PDTable.COLUMN_UID + " = ? ";
+        String[] whereArgs = {uid};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                COMPLAINTSTable.COLUMN_ID + " ASC";
+        PatientDetails pd = null;
+        try {
+            c = db.query(
+                    PDTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+
+            );
+            while (c.moveToNext()) {
+                pd = new PatientDetails();
+                pd.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
+                pd.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
+                pd.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+                pd.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
+                pd.sHISHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SHIS)));
+                pd.sEXMHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SEXM)));
+                pd.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return pd;
+    }
+
+    public List<Complaints> getComplaintsByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = COMPLAINTSTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                COMPLAINTSTable.COLUMN_ID + " ASC";
+
+        List<Complaints> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    COMPLAINTSTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+
+            );
+            while (c.moveToNext()) {
+                allFC.add(new Complaints().Hydrate(c));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return allFC;
+    }
+
+    public List<Diagnosis> getDiagnosisByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = DIAGNOSISTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                DIAGNOSISTable.COLUMN_ID + " ASC";
+
+        List<Diagnosis> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    DIAGNOSISTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+
+            );
+            while (c.moveToNext()) {
+                allFC.add(new Diagnosis().Hydrate(c));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Vaccination getVaccinationByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = VACCINATIONTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                VACCINATIONTable.COLUMN_ID + " ASC";
+
+        Vaccination fc = null;
+        try {
+            c = db.query(
+                    VACCINATIONTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+
+            );
+            while (c.moveToNext()) {
+                fc = new Vaccination().Hydrate(c);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return fc;
+    }
+
+    public List<Prescription> getPrescriptionByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = PRESCRIPTIONTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                PRESCRIPTIONTable.COLUMN_ID + " ASC";
+
+        List<Prescription> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    PRESCRIPTIONTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+
+            );
+            while (c.moveToNext()) {
+                allFC.add(new Prescription().Hydrate(c));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+        }
+        return allFC;
+    }
+
+
 }

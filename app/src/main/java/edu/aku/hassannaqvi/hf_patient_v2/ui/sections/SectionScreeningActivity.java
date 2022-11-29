@@ -46,7 +46,12 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_screening);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        patientDetails = new PatientDetails();
+        patientDetails = MainApp.PATIENT_DETAIL_EDIT;
+        if (patientDetails != null) {
+            presetFields();
+        } else {
+            patientDetails = new PatientDetails();
+        }
         bi.setForm(patientDetails);
         populateSpinner();
 
@@ -60,6 +65,10 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         bi.facility.setText(selectedFacilityName);
         patientDetails.facility = selectedFacilityName;
         patientDetails.setFacilityCode(selectedFacilityCode);
+    }
+
+    private void presetFields() {
+
     }
 
     private void populateSpinner() {
@@ -86,7 +95,8 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
             doctorCodes.add("003");
         }
         // Apply the adapter to the spinner
-        bi.ss100.setAdapter(new ArrayAdapter<>(SectionScreeningActivity.this, R.layout.custom_spinner, doctorNames));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(SectionScreeningActivity.this, R.layout.custom_spinner, doctorNames);
+        bi.ss100.setAdapter(adapter);
 
         bi.ss100.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -104,6 +114,11 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
             }
 
         });
+
+        // Preselect value on edit mode
+        if (MainApp.PATIENT_DETAIL_EDIT != null) {
+            bi.ss100.setSelection(adapter.getPosition(patientDetails.ss100));
+        }
     }
 
 

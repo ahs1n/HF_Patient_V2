@@ -58,7 +58,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss205nr = _EMPTY_;
     public String ss301 = _EMPTY_;
     public String ss302 = _EMPTY_;
-    public String ss300nr = _EMPTY_;
+//    public String ss300nr = _EMPTY_;
+    public String ss301nr = _EMPTY_;
+    public String ss302nr = _EMPTY_;
     public String ss303 = _EMPTY_;
     public String ss303nr = _EMPTY_;
     public String ss304 = _EMPTY_;
@@ -687,17 +689,43 @@ public class PatientDetails extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss302);
     }
 
+//    @Bindable
+//    public String getSs300nr() {
+//        return ss300nr;
+//    }
+//
+//    public void setSs300nr(String ss300nr) {
+//        if (this.ss300nr.equals(ss300nr)) return; // for all checkboxes
+//        this.ss300nr = ss300nr;
+//        setSs301(ss300nr.equals("999") ? "" : this.ss301);
+//        setSs302(ss300nr.equals("999") ? "" : this.ss302);
+//        notifyPropertyChanged(BR.ss300nr);
+//    }
+
     @Bindable
-    public String getSs300nr() {
-        return ss300nr;
+    public String getSs301nr() {
+        return ss301nr;
     }
 
-    public void setSs300nr(String ss300nr) {
-        if (this.ss300nr.equals(ss300nr)) return; // for all checkboxes
-        this.ss300nr = ss300nr;
-        setSs301(ss300nr.equals("999") ? "" : this.ss301);
-        setSs302(ss300nr.equals("999") ? "" : this.ss302);
-        notifyPropertyChanged(BR.ss300nr);
+    public void setSs301nr(String ss301nr) {
+        if (this.ss301nr.equals(ss301nr)) return; // for all checkboxes
+        this.ss301nr = ss301nr;
+        setSs301(ss301nr.equals("999") ? "" : this.ss301);
+        notifyPropertyChanged(BR.ss301nr);
+    }
+
+
+
+    @Bindable
+    public String getSs302nr() {
+        return ss302nr;
+    }
+
+    public void setSs302nr(String ss302nr) {
+        if (this.ss302nr.equals(ss302nr)) return; // for all checkboxes
+        this.ss302nr = ss302nr;
+        setSs302(ss302nr.equals("999") ? "" : this.ss302);
+        notifyPropertyChanged(BR.ss302nr);
     }
 
     @Bindable
@@ -1636,7 +1664,9 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.ss205nr = json.has("ss205nr") ? json.getString("ss205nr") : "";
             this.ss301 = json.getString("ss301");
             this.ss302 = json.getString("ss302");
-            this.ss300nr = json.has("ss300nr") ? json.getString("ss300nr") : "";
+//            this.ss300nr = json.has("ss300nr") ? json.getString("ss300nr") : "";
+            this.ss301nr = json.has("ss301nr") ? json.getString("ss301nr") : "";
+            this.ss302nr = json.has("ss302nr") ? json.getString("ss302nr") : "";
             this.ss303 = json.getString("ss303");
             this.ss303nr = json.has("ss303nr") ? json.getString("ss303nr") : "";
             this.ss304 = json.getString("ss304");
@@ -1799,7 +1829,9 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("ss205nr", ss205nr)
                 .put("ss301", ss301)
                 .put("ss302", ss302)
-                .put("ss300nr", ss300nr)
+//                .put("ss300nr", ss300nr)
+                .put("ss301nr", ss301nr)
+                .put("ss302nr", ss302nr)
                 .put("ss303", ss303)
                 .put("ss303nr", ss303nr)
                 .put("ss304", ss304)

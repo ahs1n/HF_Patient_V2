@@ -26,10 +26,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     DatabaseHelper db;
     private List<PatientDetails> fc = Collections.emptyList();
 
+    private IOnRVItemClickListener iOnRVItemClickListener;
+
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FormsAdapter(List<PatientDetails> fc, Context c) {
+    public FormsAdapter(List<PatientDetails> fc, Context c, IOnRVItemClickListener iOnRVItemClickListener) {
         this.fc = fc;
         this.c = c;
+        this.iOnRVItemClickListener = iOnRVItemClickListener;
         Log.d("TAG:count", String.valueOf(getItemCount()));
     }
 
@@ -59,7 +62,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         int cardChild = 0;
         cardChild = db.getChildrenCardCheck(fc.get(position).getUid());*/
 
-
+        holder.itemView.setTag(position);
         String Status = "Status  Unknown";
         int iColor = 0;
         switch (fc.get(position).getSs108()) {
@@ -161,7 +164,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public RecyclerView rv;
         public TextView visit;
         public TextView pName;
@@ -181,8 +184,21 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             status = v.findViewById(R.id.status);
             father = v.findViewById(R.id.fathername);
 
+            if (iOnRVItemClickListener != null) {
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int pos = (int) view.getTag();
+                        iOnRVItemClickListener.onItemClick(fc.get(pos), pos);
+                    }
+                });
+            }
         }
 
 
+    }
+
+    public interface IOnRVItemClickListener {
+        void onItemClick(Object obj, int position);
     }
 }
