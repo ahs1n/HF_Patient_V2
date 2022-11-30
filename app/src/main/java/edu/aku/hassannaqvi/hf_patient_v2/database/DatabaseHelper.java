@@ -156,6 +156,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PDTable.COLUMN_PROJECT_NAME, patientDetails.getProjectName());
         values.put(PDTable.COLUMN_UID, patientDetails.getUid());
         values.put(PDTable.COLUMN_USERNAME, patientDetails.getUserName());
+//        values.put(PDTable.COLUMN_PR_NO, patientDetails.getPrno());
+//        values.put(PDTable.COLUMN_PATIENT_NAME, patientDetails.getSs101());
         values.put(PDTable.COLUMN_FACILITY, patientDetails.getFacility());
         values.put(PDTable.COLUMN_FACILITY_CODE, patientDetails.getFacilityCode());
         values.put(PDTable.COLUMN_SYSDATE, patientDetails.getSysDate());
@@ -1045,7 +1047,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = PDTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = PDTable.COLUMN_SYNCED + " = '' AND " + PDTable.COLUMN_ISTATUS + " != ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1077,7 +1079,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = VACCINATIONTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = VACCINATIONTable.COLUMN_SYNCED + " = '' AND " + VACCINATIONTable.COLUMN_ISTATUS + " != ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1110,7 +1112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = DIAGNOSISTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = DIAGNOSISTable.COLUMN_SYNCED + " = '' AND " + DIAGNOSISTable.COLUMN_ISTATUS + " != ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1142,7 +1144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = COMPLAINTSTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = COMPLAINTSTable.COLUMN_SYNCED + " = '' AND " + COMPLAINTSTable.COLUMN_ISTATUS + " != ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1174,7 +1176,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = PRESCRIPTIONTable.COLUMN_SYNCED + " = '' ";
+        String whereClause = PRESCRIPTIONTable.COLUMN_SYNCED + " = '' AND " + PRESCRIPTIONTable.COLUMN_ISTATUS + " != ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1509,6 +1511,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 PDTable.COLUMN_ID,
                 PDTable.COLUMN_UID,
+//                PDTable.COLUMN_PATIENT_NAME,
+//                PDTable.COLUMN_PR_NO,
+                PDTable.COLUMN_ISTATUS,
                 PDTable.COLUMN_SYSDATE,
                 PDTable.COLUMN_SPD,
                 PDTable.COLUMN_SYNCED,
@@ -1551,6 +1556,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+//                fc.setPatientName(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PATIENT_NAME)));
+//                fc.setPrno(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PR_NO)));
+                fc.setiStatus(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ISTATUS)));
                 fc.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
                 fc.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
                 allFC.add(fc);
@@ -1562,6 +1570,143 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
+
+//    public Collection<PatientDetails> getFormsByName(String name) throws JSONException {
+//
+//        // String sysdate =  spDateT.substring(0, 8).trim()
+//        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+//        Cursor c = null;
+//        String[] columns = {
+//                PDTable.COLUMN_ID,
+//                PDTable.COLUMN_UID,
+//                PDTable.COLUMN_PATIENT_NAME,
+//                PDTable.COLUMN_PR_NO,
+//                PDTable.COLUMN_ISTATUS,
+//                PDTable.COLUMN_SYSDATE,
+//                PDTable.COLUMN_SPD,
+//                PDTable.COLUMN_SYNCED,
+//
+//
+//        };
+////        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
+////        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//
+//        String whereClause;
+//        String[] whereArgs;
+//
+//        if (name != null && !name.equals("")) {
+//            whereClause = PDTable.COLUMN_PATIENT_NAME + " Like ? ";
+//            whereArgs = new String[]{"%" + name + " %"};
+//        } else {
+//            whereClause = null;
+//            whereArgs = null;
+//        }
+//
+////        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+//        String groupBy = null;
+//        String having = null;
+//
+//        String orderBy = PDTable.COLUMN_ID + " DESC";
+//
+//        Collection<PatientDetails> allFC = new ArrayList<>();
+//        try {
+//            c = db.query(
+//                    PDTable.TABLE_NAME,  // The table to query
+//                    columns,                   // The columns to return
+//                    whereClause,               // The columns for the WHERE clause
+//                    whereArgs,                 // The values for the WHERE clause
+//                    groupBy,                   // don't group the rows
+//                    having,                    // don't filter by row groups
+//                    orderBy                    // The sort order
+//            );
+//            while (c.moveToNext()) {
+//                PatientDetails fc = new PatientDetails();
+//                fc.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
+//                fc.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
+//                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+//                fc.setPatientName(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PATIENT_NAME)));
+//                fc.setPrno(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PR_NO)));
+//                fc.setiStatus(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ISTATUS)));
+//                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+//                fc.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
+//                fc.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
+//                allFC.add(fc);
+//            }
+//        } finally {
+//            if (c != null) {
+//                c.close();
+//            }
+//        }
+//        return allFC;
+//    }
+//
+//    public Collection<PatientDetails> getFormsByPRNo(String prno) throws JSONException {
+//
+//        // String sysdate =  spDateT.substring(0, 8).trim()
+//        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+//        Cursor c = null;
+//        String[] columns = {
+//                PDTable.COLUMN_ID,
+//                PDTable.COLUMN_UID,
+//                PDTable.COLUMN_PATIENT_NAME,
+//                PDTable.COLUMN_PR_NO,
+//                PDTable.COLUMN_ISTATUS,
+//                PDTable.COLUMN_SYSDATE,
+//                PDTable.COLUMN_SPD,
+//                PDTable.COLUMN_SYNCED,
+//
+//
+//        };
+////        String whereClause = PDTable.COLUMN_SYSDATE + " Like ? ";
+////        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//
+//        String whereClause;
+//        String[] whereArgs;
+//
+//        if (prno != null && !prno.equals("")) {
+//            whereClause = PDTable.COLUMN_PR_NO + " Like ? ";
+//            whereArgs = new String[]{"%" + prno + " %"};
+//        } else {
+//            whereClause = null;
+//            whereArgs = null;
+//        }
+//
+////        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+//        String groupBy = null;
+//        String having = null;
+//
+//        String orderBy = PDTable.COLUMN_ID + " DESC";
+//
+//        Collection<PatientDetails> allFC = new ArrayList<>();
+//        try {
+//            c = db.query(
+//                    PDTable.TABLE_NAME,  // The table to query
+//                    columns,                   // The columns to return
+//                    whereClause,               // The columns for the WHERE clause
+//                    whereArgs,                 // The values for the WHERE clause
+//                    groupBy,                   // don't group the rows
+//                    having,                    // don't filter by row groups
+//                    orderBy                    // The sort order
+//            );
+//            while (c.moveToNext()) {
+//                PatientDetails fc = new PatientDetails();
+//                fc.setId(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ID)));
+//                fc.setUid(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_UID)));
+//                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYSDATE)));
+//                fc.setPatientName(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PATIENT_NAME)));
+//                fc.setPrno(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_PR_NO)));
+//                fc.setiStatus(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_ISTATUS)));
+//                fc.sPDHydrate(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SPD)));
+//                fc.setSynced(c.getString(c.getColumnIndexOrThrow(PDTable.COLUMN_SYNCED)));
+//                allFC.add(fc);
+//            }
+//        } finally {
+//            if (c != null) {
+//                c.close();
+//            }
+//        }
+//        return allFC;
+//    }
 
     public Collection<Vaccination> getTodayVacc(String sysdate) throws JSONException {
 
@@ -1939,6 +2084,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allFC;
+    }
+
+    public int setIStatus(String table, String statusColumn, String whereColumn, String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(statusColumn, "1");
+
+        String selection = whereColumn + " =? ";
+        String[] selectionArgs = {String.valueOf(uuid)};
+        int rowId = db.update(table,
+                values,
+                selection,
+                selectionArgs);
+        return rowId;
     }
 
 

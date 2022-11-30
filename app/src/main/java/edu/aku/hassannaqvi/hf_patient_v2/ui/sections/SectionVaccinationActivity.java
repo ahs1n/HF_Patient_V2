@@ -27,6 +27,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionVaccinationBinding;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
+import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
 
 public class SectionVaccinationActivity extends AppCompatActivity {
 
@@ -41,6 +42,7 @@ public class SectionVaccinationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         if (MainApp.PATIENT_DETAIL_EDIT != null)
             vaccination = db.getVaccinationByUUID(MainApp.PATIENT_DETAIL_EDIT.getUid());
+        if (vaccination == null) vaccination = new Vaccination();
         bi.setForm(vaccination);
         setupSkips();
     }
@@ -153,7 +155,7 @@ public class SectionVaccinationActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
-            finish();
+//            finish();
             prescription = new Prescription();
             startActivity(new Intent(this, SectionPrescriptionActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
@@ -174,8 +176,9 @@ public class SectionVaccinationActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
-//        finish();
+        super.onBackPressed();
+//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+//        setResult(RESULT_CANCELED);
+        finish();
     }
 }

@@ -16,6 +16,8 @@ public class PDContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
+//        public static final String COLUMN_PR_NO = "prNo";
+//        public static final String COLUMN_PATIENT_NAME = "patientName";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";
         public static final String COLUMN_SYSDATE = "sysdate";
@@ -50,6 +52,7 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
     }
 
     public static abstract class DIAGNOSISTable implements BaseColumns {
@@ -73,6 +76,7 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
     }
 
     public static abstract class COMPLAINTSTable implements BaseColumns {
@@ -96,6 +100,7 @@ public class PDContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
     }
 
     public static abstract class PRESCRIPTIONTable implements BaseColumns {
@@ -122,5 +127,6 @@ public class PDContract {
         public static final String COLUMN_FREQUENCY = "frequency";
         public static final String COLUMN_DURATION = "duration";
         public static final String COLUMN_OTHER = "other";
+        public static final String COLUMN_ISTATUS = "istatus";
     }
 }

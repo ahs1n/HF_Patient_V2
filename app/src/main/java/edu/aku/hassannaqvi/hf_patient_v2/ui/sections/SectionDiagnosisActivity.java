@@ -541,7 +541,7 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
 
 
         if (updateDB()) {
-            finish();
+//            finish();
             if (patientDetails.ss104y.length() > 0 && Integer.parseInt(patientDetails.ss104y) < 5) {
                 vaccination = new Vaccination();
                 startActivity(new Intent(this, SectionVaccinationActivity.class));
@@ -567,8 +567,9 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
-//        finish();
+        super.onBackPressed();
+//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+//        setResult(RESULT_CANCELED);
+        finish();
     }
 }

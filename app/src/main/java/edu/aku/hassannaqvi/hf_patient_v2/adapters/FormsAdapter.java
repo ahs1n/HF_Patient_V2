@@ -1,6 +1,9 @@
 package edu.aku.hassannaqvi.hf_patient_v2.adapters;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Collections;
@@ -63,7 +67,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         cardChild = db.getChildrenCardCheck(fc.get(position).getUid());*/
 
         holder.itemView.setTag(position);
-        String Status = "Status  Unknown";
+//        String Status = "Status  Unknown";
         int iColor = 0;
         switch (fc.get(position).getSs108()) {
             case "1":
@@ -132,6 +136,24 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         holder.visit.setText(visit);
 
+        String iStatus = fc.get(position).getiStatus();
+        String synced = fc.get(position).getSynced();
+
+//        int formStatusIcon;
+        if (synced.equals("1")) {
+            // Locked
+            iColor = Color.GREEN;
+//            formStatusIcon = R.drawable.ic_locked;
+        } else if (iStatus.equals("1") && synced.equals("")) {
+            // Fully Filled and Not Synced - Opened
+            iColor = Color.YELLOW;
+//            formStatusIcon = R.drawable.ic_check;
+        } else {
+            // Not Synced and Not Fully Filled Opened
+            iColor = Color.RED;
+//            formStatusIcon = R.drawable.ic_warning;
+        }
+
 //        if (fc.get(position).getSs10701().equals(""))
 //            holder.visit.setText("");
 //        else holder.visit.setText("OPD");
@@ -149,6 +171,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 //        else holder.visit.setText(holder.visit.length() > 0 ? " | Post-Natal " : "Post-Natal");
 
 //        holder.sysdate.setText(fc.get(position).getSs107y() + "y \t\t\t " + (fc.get(position).getSs108().equals("1") ? "Male" : "Female"));
+//        holder.formStatusIV.setBackgroundResource(formStatusIcon);
+//        holder.formStatusIV.setBackgroundTintList(ColorStateList.valueOf(iColor));
         holder.status.setBackgroundColor(iColor);
 
 
@@ -169,7 +193,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public TextView visit;
         public TextView pName;
         public TextView prno;
-        public TextView istatus;
+        public TextView istatus;    // Not in use
+        public ImageView formStatusIV;
         public ImageView status;
         public TextView father;
         // each data item is just a string in this case
@@ -181,6 +206,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             pName = v.findViewById(R.id.pName);
             prno = v.findViewById(R.id.prno);
             istatus = v.findViewById(R.id.istatus);
+//            formStatusIV = v.findViewById(R.id.formStatusIV);
             status = v.findViewById(R.id.status);
             father = v.findViewById(R.id.fathername);
 

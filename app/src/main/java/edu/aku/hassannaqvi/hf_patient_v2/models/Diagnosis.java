@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.DIAGNOSISTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
@@ -109,6 +110,7 @@ public class Diagnosis extends BaseObservable implements Observable {
     private String sDiagnosis = _EMPTY_;
     private String diagCode = _EMPTY_;
     private String diagOther = _EMPTY_;
+    private String iStatus = _EMPTY_;
 
     public Diagnosis() {
     }
@@ -266,6 +268,13 @@ public class Diagnosis extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.diagOther);
     }
 
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
 
     @Bindable
     public String getPrno() {
@@ -1074,6 +1083,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SYNCED_DATE));
         this.diagCode = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DIAG_CODE));
         this.diagOther = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_DIAG_OTHER));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_ISTATUS));
 
         sDIAGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(DIAGNOSISTable.COLUMN_SDIAG)));
 
@@ -1172,6 +1182,7 @@ public class Diagnosis extends BaseObservable implements Observable {
         json.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(DIAGNOSISTable.COLUMN_DIAG_CODE, this.diagCode);
         json.put(DIAGNOSISTable.COLUMN_DIAG_OTHER, this.diagOther);
+        json.put(DIAGNOSISTable.COLUMN_ISTATUS, this.iStatus);
 
         json.put(DIAGNOSISTable.COLUMN_SDIAG, new JSONObject(sDIAGtoString()));
         return json;

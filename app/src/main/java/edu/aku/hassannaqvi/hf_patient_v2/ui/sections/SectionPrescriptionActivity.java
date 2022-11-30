@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 
 import android.content.Intent;
@@ -589,21 +590,35 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
         if (updateDB()) {
             finish();
-//            Intent intent;
-            if (MainApp.PATIENT_DETAIL_EDIT != null) {
-                MainApp.PATIENT_DETAIL_EDIT = null;
-//                intent = new Intent(this, FormsReportDate.class);
+            setIStatuses();
+            MainApp.PATIENT_DETAIL_EDIT = null;
+            Intent intent;
+            if (MainApp.isUpdate) {
+                MainApp.isUpdate = false;
+                intent = new Intent(this, FormsReportDate.class);
                 Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
             } else {
-                startActivity(new Intent(this, SectionScreeningActivity.class));
+                intent = new Intent(this, SectionScreeningActivity.class);
+//                startActivity(new Intent(this, SectionScreeningActivity.class));
                 Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
             }
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
 //                startActivity(new Intent(this, SectionScreeningActivity.class));
 
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+    }
+
+    private void setIStatuses() {
+        String uuid = MainApp.patientDetails.getUid();
+        db.setIStatus(PDContract.PDTable.TABLE_NAME, PDContract.PDTable.COLUMN_ISTATUS, PDContract.PDTable.COLUMN_UID, uuid);
+        db.setIStatus(PDContract.COMPLAINTSTable.TABLE_NAME, PDContract.COMPLAINTSTable.COLUMN_ISTATUS, PDContract.COMPLAINTSTable.COLUMN_UUID, uuid);
+        db.setIStatus(PDContract.DIAGNOSISTable.TABLE_NAME, PDContract.DIAGNOSISTable.COLUMN_ISTATUS, PDContract.DIAGNOSISTable.COLUMN_UUID, uuid);
+        db.setIStatus(PDContract.PRESCRIPTIONTable.TABLE_NAME, PDContract.PRESCRIPTIONTable.COLUMN_ISTATUS, PDContract.PRESCRIPTIONTable.COLUMN_UUID, uuid);
+
+//        if (MainApp.patientDetails.ss104y.length() > 0 && Integer.parseInt(MainApp.patientDetails.ss104y) < 5)
+        db.setIStatus(PDContract.VACCINATIONTable.TABLE_NAME, PDContract.VACCINATIONTable.COLUMN_ISTATUS, PDContract.VACCINATIONTable.COLUMN_UUID, uuid);
     }
 
 
@@ -621,8 +636,9 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
-//        finish();
+        super.onBackPressed();
+//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+//        setResult(RESULT_CANCELED);
+        finish();
     }
 }

@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.COMPLAINTSTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
@@ -113,6 +114,7 @@ public class Complaints extends BaseObservable implements Observable {
     private String sComplaints = _EMPTY_;
     private String compCode = _EMPTY_;
     private String compOther = _EMPTY_;
+    private String iStatus = _EMPTY_;
 
     public Complaints() {
     }
@@ -267,6 +269,14 @@ public class Complaints extends BaseObservable implements Observable {
     public void setCompOther(String compOther) {
         this.compOther = compOther;
         notifyPropertyChanged(BR.compOther);
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
     }
 
     @Bindable
@@ -1126,6 +1136,7 @@ public class Complaints extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SYNCED_DATE));
         this.compCode = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_COMP_CODE));
         this.compOther = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_COMP_OTHER));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_ISTATUS));
 
         sCOMPHydrate(cursor.getString(cursor.getColumnIndexOrThrow(COMPLAINTSTable.COLUMN_SCOMP)));
 
@@ -1228,6 +1239,8 @@ public class Complaints extends BaseObservable implements Observable {
         json.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(COMPLAINTSTable.COLUMN_COMP_CODE, this.compCode);
         json.put(COMPLAINTSTable.COLUMN_COMP_OTHER, this.compOther);
+        json.put(COMPLAINTSTable.COLUMN_ISTATUS, this.iStatus);
+
 
         json.put(COMPLAINTSTable.COLUMN_SCOMP, new JSONObject(sCOMPtoString()));
         return json;

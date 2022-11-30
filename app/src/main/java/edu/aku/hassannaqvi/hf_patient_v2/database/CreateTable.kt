@@ -15,6 +15,8 @@ object CreateTable {
             + PDContract.PDTable.COLUMN_PROJECT_NAME + " TEXT,"
             + PDContract.PDTable.COLUMN_UID + " TEXT,"
             + PDContract.PDTable.COLUMN_USERNAME + " TEXT,"
+//            + PDContract.PDTable.COLUMN_PR_NO + " TEXT,"
+//            + PDContract.PDTable.COLUMN_PATIENT_NAME + " TEXT,"
             + PDContract.PDTable.COLUMN_FACILITY + " TEXT,"
             + PDContract.PDTable.COLUMN_FACILITY_CODE + " TEXT,"
             + PDContract.PDTable.COLUMN_SYSDATE + " TEXT,"
@@ -47,7 +49,8 @@ object CreateTable {
             + PDContract.VACCINATIONTable.COLUMN_SYNCED + " TEXT,"
             + PDContract.VACCINATIONTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PDContract.VACCINATIONTable.COLUMN_APPVERSION + " TEXT,"
-            + PDContract.VACCINATIONTable.COLUMN_SVAC + " TEXT"
+            + PDContract.VACCINATIONTable.COLUMN_SVAC + " TEXT,"
+            + PDContract.VACCINATIONTable.COLUMN_ISTATUS + " TEXT"
             + " );")
 
     const val SQL_CREATE_DIAGNOSIS = ("CREATE TABLE "
@@ -69,7 +72,8 @@ object CreateTable {
             + PDContract.DIAGNOSISTable.COLUMN_APPVERSION + " TEXT,"
             + PDContract.DIAGNOSISTable.COLUMN_SDIAG + " TEXT,"
             + PDContract.DIAGNOSISTable.COLUMN_DIAG_CODE + " TEXT,"
-            + PDContract.DIAGNOSISTable.COLUMN_DIAG_OTHER + " TEXT"
+            + PDContract.DIAGNOSISTable.COLUMN_DIAG_OTHER + " TEXT,"
+            + PDContract.DIAGNOSISTable.COLUMN_ISTATUS + " TEXT"
             + " );")
 
     const val SQL_CREATE_COMPLAINTS = ("CREATE TABLE "
@@ -91,7 +95,8 @@ object CreateTable {
             + PDContract.COMPLAINTSTable.COLUMN_APPVERSION + " TEXT,"
             + PDContract.COMPLAINTSTable.COLUMN_SCOMP + " TEXT,"
             + PDContract.COMPLAINTSTable.COLUMN_COMP_CODE + " TEXT,"
-            + PDContract.COMPLAINTSTable.COLUMN_COMP_OTHER + " TEXT"
+            + PDContract.COMPLAINTSTable.COLUMN_COMP_OTHER + " TEXT,"
+            + PDContract.COMPLAINTSTable.COLUMN_ISTATUS + " TEXT"
             + " );")
 
     const val SQL_CREATE_PRESCRIPTION = ("CREATE TABLE "
@@ -116,7 +121,8 @@ object CreateTable {
             + PDContract.PRESCRIPTIONTable.COLUMN_FREQUENCY + " TEXT,"
             + PDContract.PRESCRIPTIONTable.COLUMN_DURATION + " TEXT,"
             + PDContract.PRESCRIPTIONTable.COLUMN_OTHER + " TEXT,"
-            + PDContract.PRESCRIPTIONTable.COLUMN_PRES + " TEXT"
+            + PDContract.PRESCRIPTIONTable.COLUMN_PRES + " TEXT,"
+            + PDContract.PRESCRIPTIONTable.COLUMN_ISTATUS + " TEXT"
             + " );")
 
     const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("

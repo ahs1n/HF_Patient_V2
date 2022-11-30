@@ -576,7 +576,7 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
 
         if (updateDB()) {
-            finish();
+//            finish();
             startActivity(new Intent(this, SectionHistoryActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
@@ -596,8 +596,11 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
+        super.onBackPressed();
+        startActivity(new Intent(this, SectionScreeningActivity.class));
+        finish();
+//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+//        setResult(RESULT_CANCELED);
 //        finish();
     }
 }

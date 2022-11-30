@@ -74,6 +74,7 @@ public class Vaccination extends BaseObservable implements Observable {
     private String entryType = _EMPTY_;
     // SECTION VARIABLE = _EMPTY_;
     private String sVaccination = _EMPTY_;
+    private String iStatus = _EMPTY_;
 
     public Vaccination() {
     }
@@ -207,6 +208,14 @@ public class Vaccination extends BaseObservable implements Observable {
     public void setsVaccination(String sVaccination) {
         this.sVaccination = sVaccination;
         notifyPropertyChanged(BR.sVaccination);
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
     }
 
     @Bindable
@@ -607,6 +616,7 @@ public class Vaccination extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SYNCED_DATE));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_ISTATUS));
 
         sVACHydrate(cursor.getString(cursor.getColumnIndexOrThrow(VACCINATIONTable.COLUMN_SVAC)));
 
@@ -667,6 +677,7 @@ public class Vaccination extends BaseObservable implements Observable {
         json.put(VACCINATIONTable.COLUMN_APPVERSION, this.appver);
         json.put(VACCINATIONTable.COLUMN_SYNCED, this.synced);
         json.put(VACCINATIONTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(VACCINATIONTable.COLUMN_ISTATUS, this.iStatus);
 
         json.put(VACCINATIONTable.COLUMN_SVAC, new JSONObject(sVACtoString()));
         return json;

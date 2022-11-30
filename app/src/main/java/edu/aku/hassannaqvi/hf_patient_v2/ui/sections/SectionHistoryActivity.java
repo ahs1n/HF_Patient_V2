@@ -62,7 +62,7 @@ public class SectionHistoryActivity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            finish();
+//            finish();
             startActivity(new Intent(this, SectionExaminationActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
@@ -82,8 +82,9 @@ public class SectionHistoryActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
-//        finish();
+        super.onBackPressed();
+//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+//        setResult(RESULT_CANCELED);
+        finish();
     }
 }

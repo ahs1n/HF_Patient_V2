@@ -423,6 +423,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         MainApp.PATIENT_DETAIL_EDIT = null;
+        MainApp.isUpdate = false;
 //        animateFadeIn()
         viewModel.getFacilitiesByUCFromDB(MainApp.user.ucCode)
         viewModel.getFormsStatusUploadStatus(sysdateToday)

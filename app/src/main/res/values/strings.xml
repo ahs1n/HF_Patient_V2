@@ -1770,6 +1770,6 @@
     <string name="downloadDataDesc">Please download the data before login</string>
     <string name="data_sync_activity">Data Sync Screen</string>
     <string name="select_medicine">Please select medicine</string>
-
+    <string name="prno_short">PR Number</string>
 
 </resources>

@@ -5,6 +5,7 @@ import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -179,6 +180,7 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
+            MainApp.PATIENT_DETAIL_EDIT = patientDetails;
             complaints = new Complaints();
             startActivity(new Intent(this, SectionComplaintsActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
@@ -212,5 +214,20 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
+    }
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 }

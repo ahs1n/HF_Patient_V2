@@ -58,7 +58,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String ss205nr = _EMPTY_;
     public String ss301 = _EMPTY_;
     public String ss302 = _EMPTY_;
-//    public String ss300nr = _EMPTY_;
+    //    public String ss300nr = _EMPTY_;
     public String ss301nr = _EMPTY_;
     public String ss302nr = _EMPTY_;
     public String ss303 = _EMPTY_;
@@ -163,6 +163,19 @@ public class PatientDetails extends BaseObservable implements Observable {
     private String sScreening = _EMPTY_;
     private String sHistory = _EMPTY_;
     private String sExamination = _EMPTY_;
+
+    /*For Search*/
+//    public String patientName = _EMPTY_;
+
+//    @Bindable
+//    public String getPatientName() {
+//        return patientName;
+//    }
+//
+//    public void setPatientName(String patientName) {
+//        this.patientName = patientName;
+//        notifyPropertyChanged(BR.patientName);
+//    }
 
     public PatientDetails() {
     }
@@ -389,6 +402,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSs101(String ss101) {
         this.ss101 = ss101;
+//        setPatientName(this.ss101);
         notifyPropertyChanged(BR.ss101);
     }
 
@@ -490,6 +504,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs10702(String ss10702) {
         if (this.ss10702.equals(ss10702)) return; // for all checkboxes
         this.ss10702 = ss10702;
+        setSs10704(ss10702.equals("2") ? "" : this.ss10704);
         notifyPropertyChanged(BR.ss10702);
     }
 
@@ -512,6 +527,7 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs10704(String ss10704) {
         if (this.ss10704.equals(ss10704)) return; // for all checkboxes
         this.ss10704 = ss10704;
+        setSs10702(ss10704.equals("4") ? "" : this.ss10702);
         notifyPropertyChanged(BR.ss10704);
     }
 
@@ -713,7 +729,6 @@ public class PatientDetails extends BaseObservable implements Observable {
         setSs301(ss301nr.equals("999") ? "" : this.ss301);
         notifyPropertyChanged(BR.ss301nr);
     }
-
 
 
     @Bindable
@@ -1082,6 +1097,16 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSh301(String sh301) {
         this.sh301 = sh301;
+        setSh302(sh301.equals("2") ? "" : this.sh302);
+        setSh304(sh301.equals("2") ? "" : this.sh304);
+        setSh401(sh301.equals("2") ? "" : this.sh401);
+        setSh401nr(sh301.equals("2") ? "" : this.sh401nr);
+/*        if (sh301.equals("2")) {
+            setSh302("");
+            setSh304("");
+            setSh401("");
+            setSh401nr("");
+        }*/
         notifyPropertyChanged(BR.sh301);
     }
 
@@ -1606,6 +1631,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_USERNAME));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PROJECT_NAME));
+//        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PR_NO));
+//        this.patientName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PATIENT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SYSDATE));
@@ -1779,6 +1806,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         json.put(PDContract.PDTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(PDContract.PDTable.COLUMN_FACILITY, this.facility);
         json.put(PDContract.PDTable.COLUMN_FACILITY_CODE, this.facilityCode);
+//        json.put(PDContract.PDTable.COLUMN_PR_NO, this.prno);
+//        json.put(PDContract.PDTable.COLUMN_PATIENT_NAME, this.patientName);
         json.put(PDContract.PDTable.COLUMN_SYSDATE, this.sysDate);
         json.put(PDContract.PDTable.COLUMN_DEVICEID, this.deviceId);
         json.put(PDContract.PDTable.COLUMN_DEVICETAGID, this.deviceTag);
@@ -1928,6 +1957,14 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("se421", se421)
                 .put("se422", se422);
         return json.toString();
+    }
+
+    public boolean checkANC() {
+        if (this.getSh301().isEmpty() && this.getSh302().isEmpty() && this.getSh304().isEmpty()
+                && this.getSh401().isEmpty() && this.getSh401nr().isEmpty())
+            return true;
+        else
+            return false;
     }
 
 }

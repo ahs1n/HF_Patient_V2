@@ -70,6 +70,8 @@ public class MainApp extends Application {
 
     // For edit mode
     public static PatientDetails PATIENT_DETAIL_EDIT;
+    // To open form in edit mode from FormsReportDate
+    public static boolean isUpdate;
 
     public static PatientDetails patientDetails;
     public static PatientDetails pd;

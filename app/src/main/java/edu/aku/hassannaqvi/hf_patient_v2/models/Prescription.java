@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.hf_patient_v2.BR;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.PRESCRIPTIONTable;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 
@@ -218,6 +219,7 @@ public class Prescription extends BaseObservable implements Observable {
     private String entryType = _EMPTY_;
     // SECTION VARIABLE = _EMPTY_;
     private String sPrescription = _EMPTY_;
+    private String iStatus = _EMPTY_;
 
     public Prescription() {
     }
@@ -352,6 +354,14 @@ public class Prescription extends BaseObservable implements Observable {
     public void setsPrescription(String sPrescription) {
         this.sPrescription = sPrescription;
         notifyPropertyChanged(BR.sPrescription);
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
     }
 
     @Bindable
@@ -2310,6 +2320,7 @@ public class Prescription extends BaseObservable implements Observable {
         this.frequency = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_FREQUENCY));
         this.duration = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_DURATION));
         this.other = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_OTHER));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_ISTATUS));
 
         sPRESHydrate(cursor.getString(cursor.getColumnIndexOrThrow(PRESCRIPTIONTable.COLUMN_PRES)));
 
@@ -2512,6 +2523,7 @@ public class Prescription extends BaseObservable implements Observable {
         json.put(PRESCRIPTIONTable.COLUMN_FREQUENCY, this.frequency);
         json.put(PRESCRIPTIONTable.COLUMN_DURATION, this.duration);
         json.put(PRESCRIPTIONTable.COLUMN_OTHER, this.other);
+        json.put(PRESCRIPTIONTable.COLUMN_ISTATUS, this.iStatus);
 
         json.put(PRESCRIPTIONTable.COLUMN_PRES, new JSONObject(sPREStoString()));
         return json;

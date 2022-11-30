@@ -512,7 +512,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss104y.length() &gt; 0 &amp;&amp; Integer.parseInt(form.ss104y) &gt; 13 &amp;&amp; form.ss103.equals(`2`) &amp;&amp; form.ss105.equals(`3`) &amp;&amp; (form.ss10702.equals(`2`) || form.ss10704.equals(`4`))? View.VISIBLE : View.GONE}">
 
 
                     <!-- sh33title  Title   -->
@@ -536,7 +536,8 @@
                     <!-- sh301  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVsh301"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.ss10702.equals(`2`)?View.VISIBLE:View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -583,7 +584,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.sh301.equals(`2`)}"
-                                    android:onClick="@{()->form.setSh301(`2`)}"
+                                    android:onClick="@{()->form.setSh301(`2`) + sh302.clearCheck() + sh304.clearCheck()}"
                                     android:text="@string/sh30102" />
                             </RadioGroup>
                         </LinearLayout>
@@ -592,7 +593,8 @@
                     <!-- sh302  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVsh302"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.ss10702.equals(`2`) &amp;&amp; form.sh301.equals(`1`) ? View.VISIBLE:View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -657,7 +659,8 @@
                     <!-- sh304  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVsh304"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.sh301.equals(`1`) || form.ss10704.equals(`4`)? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -740,7 +743,8 @@
                     <!-- sh401  Input   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVsh401"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.sh301.equals(`1`) || form.ss10704.equals(`4`)? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
