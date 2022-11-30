@@ -736,6 +736,18 @@
                                     android:checked="@{form.sh304.equals(`5`)}"
                                     android:onClick="@{()->form.setSh304(`5`)}"
                                     android:text="@string/sh30405" />
+
+                                <RadioButton
+                                    android:id="@+id/sh304nr"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2.5"
+                                    android:background="#7fefd6d6"
+                                    android:buttonTint="@color/red"
+                                    android:checked="@{form.sh304.equals(`999`)}"
+                                    android:onClick="@{()->form.setSh304(`999`)}"
+                                    android:text="@string/sh304nr"
+                                    android:textColor="@color/redDark" />
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

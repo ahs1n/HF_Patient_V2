@@ -72,6 +72,8 @@ public class MainApp extends Application {
     public static PatientDetails PATIENT_DETAIL_EDIT;
     // To open form in edit mode from FormsReportDate
     public static boolean isUpdate;
+    // To back from Add Form
+    public static boolean isClearStack;
 
     public static PatientDetails patientDetails;
     public static PatientDetails pd;

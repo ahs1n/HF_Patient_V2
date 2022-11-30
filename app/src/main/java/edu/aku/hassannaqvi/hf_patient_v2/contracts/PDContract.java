@@ -16,7 +16,7 @@ public class PDContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
-        public static final String COLUMN_PR_NO = "prNo";
+        public static final String COLUMN_PR_NO = "patientID";
         public static final String COLUMN_PATIENT_NAME = "patientName";
         public static final String COLUMN_FACILITY = "facility";
         public static final String COLUMN_FACILITY_CODE = "facilityCode";

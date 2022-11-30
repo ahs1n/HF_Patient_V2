@@ -403,6 +403,7 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.formsReportDate -> {
+                MainApp.isClearStack = false;
                 gotoActivity(FormsReportDate::class.java)
                 return true
             }
@@ -438,6 +439,7 @@ class MainActivity : AppCompatActivity() {
     fun openSpecificActivity(v: View) {
         when (v.id) {
             R.id.formA -> {
+                MainApp.isClearStack = false;
                 SharedStorage.setSelectedFacilityData(this, Gson().toJson(facility))
                 MainApp.patientDetails = PatientDetails()
                 gotoActivity(SectionScreeningActivity::class.java)

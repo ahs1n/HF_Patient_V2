@@ -28,6 +28,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.adapters.FormsAdapter;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
+import edu.aku.hassannaqvi.hf_patient_v2.ui.MainActivity;
 import edu.aku.hassannaqvi.hf_patient_v2.ui.sections.SectionScreeningActivity;
 
 
@@ -167,5 +168,14 @@ public class FormsReportDate extends AppCompatActivity implements RadioGroup.OnC
 
         prnoFilter.setText(null);
         prnoFilter.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (MainApp.isClearStack) {
+            MainApp.isClearStack = false;
+            startActivity(new Intent(this, MainActivity.class));
+        } else
+            super.onBackPressed();
     }
 }

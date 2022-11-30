@@ -256,6 +256,7 @@
     <string name="sh30403">3</string>
     <string name="sh30404">4</string>
     <string name="sh30405">5</string>
+    <string name="sh304nr">Not Administered</string>
     <string name="sh401">Any immediate complication:</string>
     <string name="sh401nr">Not Reported</string>
     <string name="se4title">SECTION 4: EXAMINATION</string>

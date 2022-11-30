@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.models.Camps;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Doctor;
 import edu.aku.hassannaqvi.hf_patient_v2.models.PatientDetails;
+import edu.aku.hassannaqvi.hf_patient_v2.ui.MainActivity;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.DateUtils;
 import edu.aku.hassannaqvi.hf_patient_v2.utils.shared.SharedStorage;
 
@@ -221,7 +222,11 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
+            if (MainApp.isClearStack) {
+                MainApp.isClearStack = false;
+                startActivity(new Intent(this, MainActivity.class));
+            } else
+                super.onBackPressed();
             return;
         }
 

@@ -91,12 +91,12 @@
                         android:layout_weight="0.3"
                         android:text="Search by PR No." />
 
-                    <!--                    <ImageView-->
-                    <!--                        android:layout_width="0dp"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:layout_weight="0.1"-->
-                    <!--                        android:onClick="filterForms"-->
-                    <!--                        android:src="@drawable/search" />-->
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:onClick="filterForms"
+                        android:src="@drawable/search" />
                 </RadioGroup>
 
                 <LinearLayout
@@ -116,8 +116,8 @@
                             android:id="@+id/dtFilter"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:backgroundTint="@color/colorPrimary"
                             android:hint="@string/date"
                             android:visibility="gone"
@@ -128,8 +128,8 @@
                             android:id="@+id/nameFilter"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:hint="@string/name"
                             android:inputType="textPersonName"
                             android:visibility="gone" />
@@ -146,11 +146,11 @@
 
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="@dimen/_70sdp"
-                        android:layout_height="wrap_content"
-                        android:onClick="filterForms"
-                        android:src="@drawable/search" />
+                    <!--                    <ImageView-->
+                    <!--                        android:layout_width="@dimen/_70sdp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:onClick="filterForms"-->
+                    <!--                        android:src="@drawable/search" />-->
 
                 </LinearLayout>
 

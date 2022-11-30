@@ -589,21 +589,23 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         }
 
         if (updateDB()) {
-            finish();
             setIStatuses();
             MainApp.PATIENT_DETAIL_EDIT = null;
+            MainApp.isClearStack = true;
             Intent intent;
             if (MainApp.isUpdate) {
                 MainApp.isUpdate = false;
                 intent = new Intent(this, FormsReportDate.class);
                 Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
             } else {
+//                intent = new Intent(this, SectionScreeningActivity.class);
                 intent = new Intent(this, SectionScreeningActivity.class);
 //                startActivity(new Intent(this, SectionScreeningActivity.class));
                 Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
             }
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
 //                startActivity(new Intent(this, SectionScreeningActivity.class));
 
 
