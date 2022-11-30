@@ -165,17 +165,28 @@ public class PatientDetails extends BaseObservable implements Observable {
     private String sExamination = _EMPTY_;
 
     /*For Search*/
-//    public String patientName = _EMPTY_;
+    public String patientName = _EMPTY_;
+    public String prNo = _EMPTY_;
 
-//    @Bindable
-//    public String getPatientName() {
-//        return patientName;
-//    }
-//
-//    public void setPatientName(String patientName) {
-//        this.patientName = patientName;
-//        notifyPropertyChanged(BR.patientName);
-//    }
+    @Bindable
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+        notifyPropertyChanged(BR.patientName);
+    }
+
+    @Bindable
+    public String getPrNo() {
+        return prNo;
+    }
+
+    public void setPrNo(String prNo) {
+        this.prNo = prNo;
+        notifyPropertyChanged(BR.prNo);
+    }
 
     public PatientDetails() {
     }
@@ -342,6 +353,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setPrno(String prno) {
         this.prno = prno;
+        setPrNo(prno);
         notifyPropertyChanged(BR.prno);
     }
 
@@ -402,7 +414,7 @@ public class PatientDetails extends BaseObservable implements Observable {
 
     public void setSs101(String ss101) {
         this.ss101 = ss101;
-//        setPatientName(this.ss101);
+        setPatientName(ss101);
         notifyPropertyChanged(BR.ss101);
     }
 
@@ -1631,8 +1643,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_USERNAME));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PROJECT_NAME));
-//        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PR_NO));
-//        this.patientName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PATIENT_NAME));
+        this.prno = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PR_NO));
+        this.patientName = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_PATIENT_NAME));
         this.facility = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY));
         this.facilityCode = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_FACILITY_CODE));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PDContract.PDTable.COLUMN_SYSDATE));
@@ -1806,8 +1818,8 @@ public class PatientDetails extends BaseObservable implements Observable {
         json.put(PDContract.PDTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(PDContract.PDTable.COLUMN_FACILITY, this.facility);
         json.put(PDContract.PDTable.COLUMN_FACILITY_CODE, this.facilityCode);
-//        json.put(PDContract.PDTable.COLUMN_PR_NO, this.prno);
-//        json.put(PDContract.PDTable.COLUMN_PATIENT_NAME, this.patientName);
+        json.put(PDContract.PDTable.COLUMN_PR_NO, this.prno);
+        json.put(PDContract.PDTable.COLUMN_PATIENT_NAME, this.patientName);
         json.put(PDContract.PDTable.COLUMN_SYSDATE, this.sysDate);
         json.put(PDContract.PDTable.COLUMN_DEVICEID, this.deviceId);
         json.put(PDContract.PDTable.COLUMN_DEVICETAGID, this.deviceTag);
@@ -1960,11 +1972,8 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     public boolean checkANC() {
-        if (this.getSh301().isEmpty() && this.getSh302().isEmpty() && this.getSh304().isEmpty()
-                && this.getSh401().isEmpty() && this.getSh401nr().isEmpty())
-            return true;
-        else
-            return false;
+        return this.getSh301().isEmpty() && this.getSh302().isEmpty() && this.getSh304().isEmpty()
+                && this.getSh401().isEmpty() && this.getSh401nr().isEmpty();
     }
 
 }

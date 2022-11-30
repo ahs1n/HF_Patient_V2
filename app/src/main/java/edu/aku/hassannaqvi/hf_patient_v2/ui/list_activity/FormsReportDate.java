@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -15,8 +14,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 
@@ -92,15 +89,15 @@ public class FormsReportDate extends AppCompatActivity implements RadioGroup.OnC
 
     public void filterForms(View view) {
         try {
-//            if (!dtFilter.getText().toString().isEmpty())
+            if (!dtFilter.getText().toString().isEmpty())
                 fc = db.getTodayForms(dtFilter.getText().toString());
-//            else if (!nameFilter.getText().toString().isEmpty())
-//                fc = db.getFormsByName(nameFilter.getText().toString());
-//            else if (!prnoFilter.getText().toString().isEmpty())
-//                fc = db.getFormsByPRNo(prnoFilter.getText().toString());
-//            else
-//                // Get all records
-//                fc = db.getTodayForms(null);
+            else if (!nameFilter.getText().toString().isEmpty())
+                fc = db.getFormsByName(nameFilter.getText().toString());
+            else if (!prnoFilter.getText().toString().isEmpty())
+                fc = db.getFormsByPRNo(prnoFilter.getText().toString());
+            else
+                // Get all records
+                fc = db.getTodayForms(null);
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, "filterForms(getTodayForms): " + e.getMessage());

@@ -26,7 +26,7 @@
                 app:showAsAction="collapseActionView" />
             <item
                 android:id="@+id/formsReportDate"
-                android:title="Patient Report by Date"
+                android:title="Patient Reports"
                 android:titleCondensed="List of all forms by date"
                 app:showAsAction="collapseActionView" />
             <item
