@@ -109,7 +109,7 @@ public class MainApp extends Application {
         Activity activity = (Activity) c;
 
 
-        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+        timer = new CountDownTimer(/*15 * 60 **/ 10000, 1000) {
             //timer = new CountDownTimer(30 * 1000, 1000) {
 
             public void onTick(long millisUntilFinished) {
