@@ -1243,7 +1243,7 @@
                                     android:enabled="@{!form.ss301nr.equals(`999`)}"
                                     android:gravity="center"
                                     android:hint="###.#"
-                                    android:inputType="number"
+                                    android:inputType="numberDecimal"
                                     android:maxLength="3"
                                     android:text="@={form.ss301}"
                                     app:mask="###.#"
@@ -1255,7 +1255,7 @@
                                 <CheckBox
                                     android:id="@+id/ss301nr"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="end"
                                     android:background="#7fefd6d6"
                                     android:buttonTint="@color/red"
@@ -1285,19 +1285,20 @@
                                     android:layout_height="wrap_content"
                                     android:enabled="@{!form.ss302nr.equals(`999`)}"
                                     android:gravity="center"
-                                    android:hint="###"
-                                    android:inputType="number"
+                                    android:hint="###.#"
+                                    android:inputType="numberDecimal"
                                     android:maxLength="3"
                                     android:text="@={form.ss302}"
-                                    app:maxValue="200"
-                                    app:minValue="45"
+                                    app:mask="###.#"
+                                    app:maxValue="200.0"
+                                    app:minValue="45.0"
                                     app:type="range" />
                                 <!--                            android:enabled="@{!form.ss300nr.equals(`999`)}"-->
 
                                 <CheckBox
                                     android:id="@+id/ss302nr"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="end"
                                     android:background="#7fefd6d6"
                                     android:buttonTint="@color/red"

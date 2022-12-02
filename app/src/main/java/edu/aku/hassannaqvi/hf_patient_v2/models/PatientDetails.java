@@ -125,8 +125,11 @@ public class PatientDetails extends BaseObservable implements Observable {
     public String se403 = _EMPTY_;
     public String se404 = _EMPTY_;
     public String se405 = _EMPTY_;
+    public String se405nr = _EMPTY_;
     public String se406 = _EMPTY_;
+    public String se406nr = _EMPTY_;
     public String se407 = _EMPTY_;
+    public String se407nr = _EMPTY_;
     public String se408 = _EMPTY_;
     public String se409 = _EMPTY_;
     public String se410 = _EMPTY_;
@@ -1446,6 +1449,18 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getSe405nr() {
+        return se405nr;
+    }
+
+    public void setSe405nr(String se405nr) {
+        if (this.se405nr.equals(se405nr)) return; // for all checkboxes
+        this.se405nr = se405nr;
+        setSe405(se405nr.equals("999") ? "" : this.se405);
+        notifyPropertyChanged(BR.se405nr);
+    }
+
+    @Bindable
     public String getSe406() {
         return se406;
     }
@@ -1456,6 +1471,18 @@ public class PatientDetails extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getSe406nr() {
+        return se406nr;
+    }
+
+    public void setSe406nr(String se406nr) {
+        if (this.se406nr.equals(se406nr)) return; // for all checkboxes
+        this.se406nr = se406nr;
+        setSe406(se406nr.equals("999") ? "" : this.se406);
+        notifyPropertyChanged(BR.se406nr);
+    }
+
+    @Bindable
     public String getSe407() {
         return se407;
     }
@@ -1463,6 +1490,18 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSe407(String se407) {
         this.se407 = se407;
         notifyPropertyChanged(BR.se407);
+    }
+
+    @Bindable
+    public String getSe407nr() {
+        return se407nr;
+    }
+
+    public void setSe407nr(String se407nr) {
+        if (this.se407nr.equals(se407nr)) return; // for all checkboxes
+        this.se407nr = se407nr;
+        setSe407(se407nr.equals("999") ? "" : this.se407);
+        notifyPropertyChanged(BR.se407nr);
     }
 
     @Bindable
@@ -1786,8 +1825,11 @@ public class PatientDetails extends BaseObservable implements Observable {
             this.se403 = json.getString("se403");
             this.se404 = json.getString("se404");
             this.se405 = json.getString("se405");
+            this.se405nr = json.has("se405nr") ? json.getString("se405nr") : "";
             this.se406 = json.getString("se406");
+            this.se406nr = json.has("se406nr") ? json.getString("se406nr") : "";
             this.se407 = json.getString("se407");
+            this.se407nr = json.has("se407nr") ? json.getString("se407nr") : "";
             this.se408 = json.getString("se408");
             this.se409 = json.getString("se409");
             this.se410 = json.getString("se410");
@@ -1949,8 +1991,11 @@ public class PatientDetails extends BaseObservable implements Observable {
                 .put("se403", se403)
                 .put("se404", se404)
                 .put("se405", se405)
+                .put("se405nr", se405nr)
                 .put("se406", se406)
+                .put("se406nr", se406nr)
                 .put("se407", se407)
+                .put("se407nr", se407nr)
                 .put("se408", se408)
                 .put("se409", se409)
                 .put("se410", se410)
