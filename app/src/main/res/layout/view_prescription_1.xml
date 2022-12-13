@@ -1230,12 +1230,14 @@
             android:layout_height="wrap_content"
             android:enabled="@{form.mp115.equals(`15`)}"
             android:gravity="center"
-            android:hint="##"
-            android:inputType="numberDecimal"
+            android:hint="#.#"
+            android:inputType="number"
             android:maxLength="3"
             android:text="@={form.mp115do}"
             app:maxValue="25"
             app:minValue="1"
+            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+            app:mask="#.#"
             app:type="range" />
 
         <RadioGroup
@@ -1400,12 +1402,14 @@
             android:layout_height="wrap_content"
             android:enabled="@{form.mp117.equals(`17`)}"
             android:gravity="center"
-            android:hint="##"
-            android:inputType="numberDecimal"
+            android:hint="#.#"
+            android:inputType="number"
             android:maxLength="3"
             android:text="@={form.mp117do}"
             app:maxValue="25"
             app:minValue="1"
+            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+            app:mask="#.#"
             app:type="range" />
 
         <RadioGroup
@@ -1485,12 +1489,14 @@
             android:layout_height="wrap_content"
             android:enabled="@{form.mp118.equals(`18`)}"
             android:gravity="center"
-            android:hint="##"
-            android:inputType="numberDecimal"
+            android:hint="#.#"
+            android:inputType="number"
             android:maxLength="3"
             android:text="@={form.mp118do}"
             app:maxValue="25"
             app:minValue="1"
+            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+            app:mask="#.#"
             app:type="range" />
 
         <RadioGroup
@@ -1570,12 +1576,14 @@
             android:layout_height="wrap_content"
             android:enabled="@{form.mp119.equals(`19`)}"
             android:gravity="center"
-            android:hint="##"
-            android:inputType="numberDecimal"
+            android:hint="#.#"
+            android:inputType="number"
             android:maxLength="3"
             android:text="@={form.mp119do}"
             app:maxValue="25"
             app:minValue="1"
+            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+            app:mask="#.#"
             app:type="range" />
 
         <RadioGroup
@@ -1655,12 +1663,14 @@
             android:layout_height="wrap_content"
             android:enabled="@{form.mp120.equals(`20`)}"
             android:gravity="center"
-            android:hint="##"
-            android:inputType="numberDecimal"
+            android:hint="#.#"
+            android:inputType="number"
             android:maxLength="3"
             android:text="@={form.mp120do}"
             app:maxValue="25"
             app:minValue="1"
+            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+            app:mask="#.#"
             app:type="range" />
 
         <RadioGroup

@@ -310,6 +310,9 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
         if (!formValidation()) return;
 //        if (!insertNewRecord()) return;
 
+        // Delete records if already exists to avoid redundancy and data messing up
+        db.deleteDiagnosisByUUID(patientDetails.getUid());
+
         if (diagnosis.sd101.equals("1")) {
             insertDiagnosisRecord(diagnosis.getSd101(), "");
         }

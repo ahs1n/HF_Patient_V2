@@ -1243,12 +1243,13 @@
                                     android:enabled="@{!form.ss301nr.equals(`999`)}"
                                     android:gravity="center"
                                     android:hint="###.#"
-                                    android:inputType="numberDecimal"
-                                    android:maxLength="3"
+                                    android:inputType="number"
+                                    android:maxLength="4"
                                     android:text="@={form.ss301}"
                                     app:mask="###.#"
                                     app:maxValue="200.0"
                                     app:minValue="001.0"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
                                 <!--                            android:enabled="@{!form.ss300nr.equals(`999`)}"-->
 
@@ -1286,12 +1287,13 @@
                                     android:enabled="@{!form.ss302nr.equals(`999`)}"
                                     android:gravity="center"
                                     android:hint="###.#"
-                                    android:inputType="numberDecimal"
-                                    android:maxLength="3"
+                                    android:inputType="number"
+                                    android:maxLength="4"
                                     android:text="@={form.ss302}"
                                     app:mask="###.#"
                                     app:maxValue="200.0"
                                     app:minValue="45.0"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
                                 <!--                            android:enabled="@{!form.ss300nr.equals(`999`)}"-->
 

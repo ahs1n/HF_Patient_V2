@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 
@@ -423,6 +424,9 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
         //if (!insertNewRecord()) return;
+
+        // Delete records if already exists to avoid redundancy and data messing up
+        db.deletePrescriptionByUUID(patientDetails.getUid());
 
         if (prescription.mp101.equals("1")) {
             insertMedicineRecord(prescription.getMp101(), prescription.getMp101do(), prescription.getMp101f(), prescription.getMp101du(), "");

@@ -50,6 +50,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.ChildInformationContract.Chil
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.EntryLog.EntryLogTable;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.FormsContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.COMPLAINTSTable;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.DIAGNOSISTable;
 import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract.PDTable;
@@ -234,8 +235,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DIAGNOSISTable.COLUMN_SYNCED_DATE, diagnosis.getSyncDate());
         values.put(DIAGNOSISTable.COLUMN_APPVERSION, diagnosis.getAppver());
 
-        // Insert the new row, returning the primary key value of the new row
+        // Insert or update the new row, returning the primary key value of the new row
         long newRowId;
+//        String where = PDContract.DIAGNOSISTable._ID + " =? ";
+//        String[] selectionArgs = {String.valueOf(diagnosis.getId())};
+//        newRowId = db.update(
+//                DIAGNOSISTable.TABLE_NAME,
+//                values, where, selectionArgs);
+//        if (newRowId == 0) {
+//            newRowId = (int) db.insertWithOnConflict(PDContract.DIAGNOSISTable.TABLE_NAME,
+//                    DIAGNOSISTable.COLUMN_NAME_NULLABLE, values, SQLiteDatabase.CONFLICT_IGNORE);
+//        }
         newRowId = db.insert(
                 DIAGNOSISTable.TABLE_NAME,
                 DIAGNOSISTable.COLUMN_NAME_NULLABLE,
@@ -265,8 +275,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COMPLAINTSTable.COLUMN_SYNCED_DATE, complaints.getSyncDate());
         values.put(COMPLAINTSTable.COLUMN_APPVERSION, complaints.getAppver());
 
-        // Insert the new row, returning the primary key value of the new row
+        // Insert or update the new row, returning the primary key value of the new row
         long newRowId;
+//        String where = COMPLAINTSTable._ID + " =? ";
+//        String[] selectionArgs = {String.valueOf(complaints.getId())};
+//        newRowId = db.update(
+//                COMPLAINTSTable.TABLE_NAME,
+//                values, where, selectionArgs);
+//        if (newRowId == 0) {
+//            newRowId = (int) db.insertWithOnConflict(COMPLAINTSTable.TABLE_NAME,
+//                    COMPLAINTSTable.COLUMN_NAME_NULLABLE, values, SQLiteDatabase.CONFLICT_IGNORE);
+//        }
         newRowId = db.insert(
                 COMPLAINTSTable.TABLE_NAME,
                 COMPLAINTSTable.COLUMN_NAME_NULLABLE,
@@ -299,8 +318,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PRESCRIPTIONTable.COLUMN_SYNCED_DATE, prescription.getSyncDate());
         values.put(PRESCRIPTIONTable.COLUMN_APPVERSION, prescription.getAppver());
 
-        // Insert the new row, returning the primary key value of the new row
+        // Insert or update the new row, returning the primary key value of the new row
         long newRowId;
+//        String where = PRESCRIPTIONTable._ID + " =? ";
+//        String[] selectionArgs = {String.valueOf(prescription.getId())};
+//        newRowId = db.update(
+//                PRESCRIPTIONTable.TABLE_NAME,
+//                values, where, selectionArgs);
+//        if (newRowId == 0) {
+//            newRowId = (int) db.insertWithOnConflict(PRESCRIPTIONTable.TABLE_NAME,
+//                    PRESCRIPTIONTable.COLUMN_NAME_NULLABLE, values, SQLiteDatabase.CONFLICT_IGNORE);
+//        }
         newRowId = db.insert(
                 PRESCRIPTIONTable.TABLE_NAME,
                 PRESCRIPTIONTable.COLUMN_NAME_NULLABLE,
@@ -2042,6 +2070,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
+    public void deleteComplaintsByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        String whereClause = COMPLAINTSTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        db.delete(COMPLAINTSTable.TABLE_NAME, whereClause, whereArgs);
+    }
+
     public List<Diagnosis> getDiagnosisByUUID(String uuid) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -2078,6 +2113,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allFC;
+    }
+
+    public void deleteDiagnosisByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        String whereClause = DIAGNOSISTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        db.delete(DIAGNOSISTable.TABLE_NAME, whereClause, whereArgs);
     }
 
     public Vaccination getVaccinationByUUID(String uuid) {
@@ -2154,6 +2196,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allFC;
+    }
+
+    public void deletePrescriptionByUUID(String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        String whereClause = PRESCRIPTIONTable.COLUMN_UUID + " = ? ";
+        String[] whereArgs = {uuid};
+        db.delete(PRESCRIPTIONTable.TABLE_NAME, whereClause, whereArgs);
     }
 
     public int setIStatus(String table, String statusColumn, String whereColumn, String uuid) {

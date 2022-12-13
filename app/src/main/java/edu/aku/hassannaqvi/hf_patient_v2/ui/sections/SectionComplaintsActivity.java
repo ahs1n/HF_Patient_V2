@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.diagnosis;
+import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -321,6 +323,9 @@ public class SectionComplaintsActivity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
 //        if (!insertNewRecord()) return;
+
+        // Delete records if already exists to avoid redundancy and data messing up
+        db.deleteComplaintsByUUID(patientDetails.getUid());
 
         if (complaints.pc201.equals("1")) {
             insertComplaintsRecord(complaints.getPc201(), "");

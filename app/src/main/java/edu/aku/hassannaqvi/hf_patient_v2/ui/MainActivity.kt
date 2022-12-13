@@ -374,7 +374,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.main_menu, menu)
 
         val action_database = menu.findItem(R.id.action_database)
-        action_database.isVisible = MainApp.admin
+//        action_database.isVisible = MainApp.admin
 
         return true
     }
