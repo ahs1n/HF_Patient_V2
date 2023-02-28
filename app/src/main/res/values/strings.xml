@@ -1772,5 +1772,6 @@
     <string name="data_sync_activity">Data Sync Screen</string>
     <string name="select_medicine">Please select medicine</string>
     <string name="prno_short">PR Number</string>
+    <string name="username_password_same">Username and Password cannot be same.</string>
 
 </resources>
