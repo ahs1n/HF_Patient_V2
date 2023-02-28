@@ -92,13 +92,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:hint="####"
-                            android:inputType="number"
-                            android:maxLength="4"
+                            android:hint="######"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="6"
                             android:text="@={form.prno}"
-                            app:maxValue="9999"
-                            app:minValue="1"
-                            app:type="range" />
+                            app:pattern="[A-Z0-9]([0-9]{1,5})" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
