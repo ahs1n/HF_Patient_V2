@@ -160,28 +160,29 @@
                             <RadioGroup
                                 android:id="@+id/sv102"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/sv10201"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:checked="@{form.sv102.equals(`1`)}"
                                     android:onClick="@{()->form.setSv102(`1`)}"
                                     android:text="@string/sv10201" />
 
                                 <RadioButton
                                     android:id="@+id/sv10202"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:checked="@{form.sv102.equals(`2`)}"
                                     android:onClick="@{()->form.setSv102(`2`)}"
                                     android:text="@string/sv10202" />
 
                                 <RadioButton
                                     android:id="@+id/sv10203"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:checked="@{form.sv102.equals(`3`)}"
                                     android:onClick="@{()->form.setSv102(`3`)}"
                                     android:text="@string/sv10203" />
@@ -334,19 +335,22 @@
                                     android:text="@string/Q_sv105" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="2"
                                     android:text="@string/sv105" />
 
-                            </LinearLayout>
+                                <EditText
+                                    android:id="@+id/sv105"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:gravity="center"
+                                    android:hint="@string/sv105"
+                                    android:text="@={form.sv105}" />
 
-                            <EditText
-                                android:id="@+id/sv105"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/sv105"
-                                android:text="@={form.sv105}" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -410,7 +414,8 @@
                     <!-- sv107  CheckBox   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVsv107"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
