@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
-import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.prescription;
 
@@ -28,7 +27,6 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionPrescriptionBinding;
-import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate;
 
@@ -336,7 +334,6 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
 
     private boolean insertMedicineRecord(String medCode, String dose, String frequency, String duration, String other) {
 
-//        if (!prescription.getUid().equals("")) return;
         MainApp.prescription.populateMeta();
         MainApp.patientDetails.setiStatus("1");
 
@@ -417,13 +414,11 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
             return false;
         }
         return true;
-//        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        //if (!insertNewRecord()) return;
 
         // Delete records if already exists to avoid redundancy and data messing up
         db.deletePrescriptionByUUID(patientDetails.getUid());
@@ -602,15 +597,12 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
                 intent = new Intent(this, FormsReportDate.class);
                 Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
             } else {
-//                intent = new Intent(this, SectionScreeningActivity.class);
                 intent = new Intent(this, SectionScreeningActivity.class);
-//                startActivity(new Intent(this, SectionScreeningActivity.class));
                 Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
             }
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
-//                startActivity(new Intent(this, SectionScreeningActivity.class));
 
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
@@ -622,15 +614,12 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
         db.setIStatus(PDContract.COMPLAINTSTable.TABLE_NAME, PDContract.COMPLAINTSTable.COLUMN_ISTATUS, PDContract.COMPLAINTSTable.COLUMN_UUID, uuid);
         db.setIStatus(PDContract.DIAGNOSISTable.TABLE_NAME, PDContract.DIAGNOSISTable.COLUMN_ISTATUS, PDContract.DIAGNOSISTable.COLUMN_UUID, uuid);
         db.setIStatus(PDContract.PRESCRIPTIONTable.TABLE_NAME, PDContract.PRESCRIPTIONTable.COLUMN_ISTATUS, PDContract.PRESCRIPTIONTable.COLUMN_UUID, uuid);
-
-//        if (MainApp.patientDetails.ss104y.length() > 0 && Integer.parseInt(MainApp.patientDetails.ss104y) < 5)
         db.setIStatus(PDContract.VACCINATIONTable.TABLE_NAME, PDContract.VACCINATIONTable.COLUMN_ISTATUS, PDContract.VACCINATIONTable.COLUMN_UUID, uuid);
     }
 
 
     public void BtnEnd(View view) {
         finish();
-//        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     @Override
@@ -643,8 +632,6 @@ public class SectionPrescriptionActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-//        setResult(RESULT_CANCELED);
         finish();
     }
 }

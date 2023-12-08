@@ -124,15 +124,10 @@ public class MainApp extends Application {
             }
 
             public void onFinish() {
-                //Logout
-                //
-                //   finish();
-                // lockScreen();
                 Intent intent = new Intent();
                 intent.setClass(c, LockActivity.class);
                 c.startActivity(intent);
                 timer.cancel();
-                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
             }
         };
         timer.start();

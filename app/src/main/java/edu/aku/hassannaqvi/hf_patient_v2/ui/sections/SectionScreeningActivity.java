@@ -182,8 +182,13 @@ public class SectionScreeningActivity extends AppCompatActivity implements Compo
         if (updateDB()) {
             finish();
             MainApp.PATIENT_DETAIL_EDIT = patientDetails;
-            complaints = new Complaints();
-            startActivity(new Intent(this, SectionComplaintsActivity.class));
+            if (patientDetails.ss10701.equals("") && patientDetails.ss10702.equals("") &&
+                    patientDetails.ss10703.equals("3") && patientDetails.ss10704.equals("")) {
+                startActivity(new Intent(this, SectionVaccinationActivity.class));
+            } else {
+                complaints = new Complaints();
+                startActivity(new Intent(this, SectionComplaintsActivity.class));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

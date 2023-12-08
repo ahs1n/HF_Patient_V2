@@ -70,7 +70,6 @@ public class SectionExaminationActivity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-//            finish();
             diagnosis = new Diagnosis();
             startActivity(new Intent(this, SectionDiagnosisActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
@@ -79,7 +78,6 @@ public class SectionExaminationActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-//        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     @Override
@@ -92,8 +90,6 @@ public class SectionExaminationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-//        setResult(RESULT_CANCELED);
         finish();
     }
 }

@@ -1,13 +1,11 @@
 package edu.aku.hassannaqvi.hf_patient_v2.ui.sections;
 
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.complaints;
-import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.diagnosis;
 import static edu.aku.hassannaqvi.hf_patient_v2.core.MainApp.patientDetails;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -243,8 +241,6 @@ public class SectionComplaintsActivity extends AppCompatActivity {
                     complaints.setPc200nr(_complaints.getCompCode());
                     break;
             }
-
-//            bi.setForm(complaints);
         }
     }
 
@@ -273,8 +269,6 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
 
     private boolean insertComplaintsRecord(String compCode, String otherSpecify) {
-
-//        if (!prescription.getUid().equals("")) return;
         complaints.populateMeta();
 
         complaints.updateComplaints(compCode, otherSpecify);
@@ -322,7 +316,6 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-//        if (!insertNewRecord()) return;
 
         // Delete records if already exists to avoid redundancy and data messing up
         db.deleteComplaintsByUUID(patientDetails.getUid());
@@ -581,7 +574,6 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
 
         if (updateDB()) {
-//            finish();
             startActivity(new Intent(this, SectionHistoryActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
@@ -589,7 +581,6 @@ public class SectionComplaintsActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-//        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     @Override
@@ -604,8 +595,5 @@ public class SectionComplaintsActivity extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(this, SectionScreeningActivity.class));
         finish();
-//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-//        setResult(RESULT_CANCELED);
-//        finish();
     }
 }

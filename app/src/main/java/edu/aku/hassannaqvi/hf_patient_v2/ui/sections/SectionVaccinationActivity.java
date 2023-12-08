@@ -28,6 +28,7 @@ import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionVaccinationBinding;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
+import edu.aku.hassannaqvi.hf_patient_v2.ui.list_activity.FormsReportDate;
 
 public class SectionVaccinationActivity extends AppCompatActivity {
 
@@ -155,16 +156,39 @@ public class SectionVaccinationActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
-//            finish();
-            prescription = new Prescription();
-            startActivity(new Intent(this, SectionPrescriptionActivity.class));
+            if (patientDetails.ss10701.equals("") && patientDetails.ss10702.equals("") &&
+                    patientDetails.ss10703.equals("3") && patientDetails.ss10704.equals("")) {
+                setIStatuses();
+                MainApp.PATIENT_DETAIL_EDIT = null;
+                MainApp.isClearStack = true;
+                Intent intent;
+                if (MainApp.isUpdate) {
+                    MainApp.isUpdate = false;
+                    intent = new Intent(this, FormsReportDate.class);
+                    Toast.makeText(this, "Record Updated", Toast.LENGTH_SHORT).show();
+                } else {
+                    intent = new Intent(this, SectionScreeningActivity.class);
+                    Toast.makeText(this, "Record Entered", Toast.LENGTH_SHORT).show();
+                }
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            } else {
+                prescription = new Prescription();
+                startActivity(new Intent(this, SectionPrescriptionActivity.class));
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+    }
+
+    private void setIStatuses() {
+        String uuid = MainApp.patientDetails.getUid();
+        db.setIStatus(PDContract.PDTable.TABLE_NAME, PDContract.PDTable.COLUMN_ISTATUS, PDContract.PDTable.COLUMN_UID, uuid);
+        db.setIStatus(PDContract.VACCINATIONTable.TABLE_NAME, PDContract.VACCINATIONTable.COLUMN_ISTATUS, PDContract.VACCINATIONTable.COLUMN_UUID, uuid);
     }
 
 
     public void BtnEnd(View view) {
         finish();
-//        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     @Override
@@ -177,8 +201,6 @@ public class SectionVaccinationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-//        setResult(RESULT_CANCELED);
         finish();
     }
 }

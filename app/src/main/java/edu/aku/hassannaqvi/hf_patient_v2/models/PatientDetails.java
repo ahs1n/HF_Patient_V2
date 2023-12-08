@@ -500,6 +500,36 @@ public class PatientDetails extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss106);
     }
 
+    private void clearSs107() {
+        setSs201s(_EMPTY_);
+        setSs201d(_EMPTY_);
+        setSs201nr(_EMPTY_);
+        setSs202(_EMPTY_);
+        setSs202nr(_EMPTY_);
+        setSs203(_EMPTY_);
+        setSs203nr(_EMPTY_);
+        setSs204(_EMPTY_);
+        setSs204a(_EMPTY_);
+        setSs204nr(_EMPTY_);
+        setSs205(_EMPTY_);
+        setSs205nr(_EMPTY_);
+        setSs301(_EMPTY_);
+        setSs301nr(_EMPTY_);
+        setSs302(_EMPTY_);
+        setSs302nr(_EMPTY_);
+        setSs303(_EMPTY_);
+        setSs303nr(_EMPTY_);
+        setSs304(_EMPTY_);
+        setSs304nr(_EMPTY_);
+        setSs401(_EMPTY_);
+        setSs401nr(_EMPTY_);
+        setSs501(_EMPTY_);
+        setSs502(_EMPTY_);
+        setSs503(_EMPTY_);
+        setSs503nr(_EMPTY_);
+        setSs504(_EMPTY_);
+    }
+
     @Bindable
     public String getSs10701() {
         return ss10701;
@@ -508,6 +538,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs10701(String ss10701) {
         if (this.ss10701.equals(ss10701)) return; // for all checkboxes
         this.ss10701 = ss10701;
+        if (ss10701.equals("") && ss10702.equals("") && ss10703.equals("3") && ss10704.equals("")) {
+            clearSs107();
+        }
         notifyPropertyChanged(BR.ss10701);
     }
 
@@ -520,6 +553,9 @@ public class PatientDetails extends BaseObservable implements Observable {
         if (this.ss10702.equals(ss10702)) return; // for all checkboxes
         this.ss10702 = ss10702;
         setSs10704(ss10702.equals("2") ? "" : this.ss10704);
+        if (ss10701.equals("") && ss10702.equals("") && ss10703.equals("3") && ss10704.equals("")) {
+            clearSs107();
+        }
         notifyPropertyChanged(BR.ss10702);
     }
 
@@ -531,6 +567,9 @@ public class PatientDetails extends BaseObservable implements Observable {
     public void setSs10703(String ss10703) {
         if (this.ss10703.equals(ss10703)) return; // for all checkboxes
         this.ss10703 = ss10703;
+        if (ss10701.equals("") && ss10702.equals("") && ss10703.equals("3") && ss10704.equals("")) {
+            clearSs107();
+        }
         notifyPropertyChanged(BR.ss10703);
     }
 
@@ -543,6 +582,9 @@ public class PatientDetails extends BaseObservable implements Observable {
         if (this.ss10704.equals(ss10704)) return; // for all checkboxes
         this.ss10704 = ss10704;
         setSs10702(ss10704.equals("4") ? "" : this.ss10702);
+        if (ss10701.equals("") && ss10702.equals("") && ss10703.equals("3") && ss10704.equals("")) {
+            clearSs107();
+        }
         notifyPropertyChanged(BR.ss10704);
     }
 

@@ -24,7 +24,6 @@ import edu.aku.hassannaqvi.hf_patient_v2.contracts.PDContract;
 import edu.aku.hassannaqvi.hf_patient_v2.core.MainApp;
 import edu.aku.hassannaqvi.hf_patient_v2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.hf_patient_v2.databinding.ActivitySectionDiagnosisBinding;
-import edu.aku.hassannaqvi.hf_patient_v2.models.Complaints;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Diagnosis;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Prescription;
 import edu.aku.hassannaqvi.hf_patient_v2.models.Vaccination;
@@ -544,7 +543,6 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
 
 
         if (updateDB()) {
-//            finish();
             if (patientDetails.ss104y.length() > 0 && Integer.parseInt(patientDetails.ss104y) < 5
                     && (patientDetails.getSs601().equals("1") || patientDetails.getSs601().equals("3"))) {
                 vaccination = new Vaccination();
@@ -565,15 +563,12 @@ public class SectionDiagnosisActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-//        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-//        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-//        setResult(RESULT_CANCELED);
         finish();
     }
 }
